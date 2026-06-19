@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#100d0a;color:#e7dccb;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+::selection{background:rgba(210,130,63,0.32);color:#fff;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+[data-tabscroll]::-webkit-scrollbar{height:6px;}
+[data-tabscroll]::-webkit-scrollbar-thumb{background:#2e271e;border-radius:3px;}
+@keyframes oaabGlow{0%,100%{opacity:.45;}50%{opacity:.8;}}
+@keyframes oaabFade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</helmet>
+
+<div data-root="" style="position:relative;background:#100d0a;--ember:#d2823f;--azura:#9a92d6;min-height:100vh;">
+
+<nav data-nav="" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:15px 32px;border-bottom:1px solid #2b241c;background:rgba(16,13,10,0.9);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);">
+  <a href="OAAB Home.dc.html#top" style="display:flex;align-items:center;gap:14px;">
+    <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB — Of Ash and Blight" style="height:30px;width:auto;display:block;">
+    <span style="font-family:'EB Garamond',serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:#80735f;border-left:1px solid #3a3127;padding-left:14px;line-height:1.5;">Of Ash<br>&amp; Blight</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:30px;">
+    <div style="display:flex;gap:26px;font-family:'EB Garamond',serif;font-size:15.5px;color:#c3b6a0;letter-spacing:.01em;">
+      <a href="OAAB Home.dc.html#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
+      <a href="The Library.dc.html" style="color:var(--ember,#d2823f);transition:color .2s;">Library</a>
+      <a href="OAAB Home.dc.html#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
+      <a href="Releases.dc.html" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Releases</a>
+      <a href="https://www.oaab.dev/" target="_blank" rel="noopener" style="transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Wiki</a>
+      <a href="OAAB Home.dc.html#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
+    </div>
+    <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:9px 18px;border-radius:7px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .2s,box-shadow .25s;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Join Discord</a>
+  </div>
+</nav>
+
+<header style="position:relative;overflow:hidden;padding:148px 32px 56px;border-bottom:1px solid #221c15;">
+  <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/velothi%20tombs.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;opacity:.5;">
+  <div style="position:absolute;inset:0;background:radial-gradient(110% 120% at 78% 0%,rgba(210,130,63,0.12),transparent 55%);animation:oaabGlow 9s ease-in-out infinite;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,13,10,0.78) 0%,rgba(16,13,10,0.6) 40%,rgba(16,13,10,0.92) 100%);"></div>
+  <div style="position:relative;max-width:1180px;margin:0 auto;width:100%;">
+    <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.36em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">The Library</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.0;letter-spacing:-.015em;color:#f4ecdd;margin:16px 0 0;max-width:18ch;">Every asset, catalogued.</h1>
+    <p style="font-family:'EB Garamond',serif;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#bcae97;max-width:60ch;margin:22px 0 0;">A browsable index of OAAB_Data's in-game objects — tilesets, creatures, armor, books, clutter, and more!<br><br>Drag and drop thumbnails directly into the CSSE render window.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:34px;margin-top:34px;">
+      <div><span style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ total }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-left:10px;text-transform:uppercase;">catalogued objects</span></div>
+      <div><span style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ typeCount }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-left:10px;text-transform:uppercase;">record types</span></div>
+    </div>
+  </div>
+</header>
+
+<div data-tabbar="" style="position:sticky;top:61px;z-index:40;background:rgba(18,14,11,0.92);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid #221c15;">
+  <div style="max-width:1180px;margin:0 auto;padding:12px 32px 13px;">
+    <div style="display:flex;align-items:flex-start;gap:16px;padding-bottom:12px;border-bottom:1px solid #221c15;">
+      <span style="flex:0 0 auto;width:38px;padding-top:11px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Type</span>
+      <div data-tabscroll="" style="flex:1 1 auto;display:flex;flex-wrap:wrap;gap:8px;">
+        <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="12">
+          <button data-ttab="{{ tab.label }}" onClick="{{ pickTab }}" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;font-family:'EB Garamond',serif;font-size:15px;font-weight:{{ tab.fw }};padding:8px 16px;border-radius:999px;background:{{ tab.bg }};color:{{ tab.fg }};border:1px solid {{ tab.bd }};cursor:pointer;white-space:nowrap;transition:all .18s;">
+            <span>{{ tab.label }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.7;">{{ tab.count }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
+      <span style="flex:0 0 auto;width:38px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Tags</span>
+      <div data-tagdd="" style="position:relative;flex:0 0 auto;">
+        <button onClick="{{ toggleTags }}" style="display:inline-flex;align-items:center;gap:10px;font-family:'EB Garamond',serif;font-size:15px;color:{{ tagBtnFg }};background:{{ tagBtnBg }};border:1px solid {{ tagBtnBd }};border-radius:9px;padding:10px 14px;cursor:pointer;white-space:nowrap;transition:all .18s;" style-hover="border-color:#9a92d6;">
+          <span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#9a92d6;opacity:{{ tagDotOp }};"></span>
+          <span>{{ tagSummary }}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;opacity:.7;transition:transform .2s;transform:rotate({{ chevronDeg }}deg);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <sc-if value="{{ tagOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:calc(100% + 8px);left:0;z-index:60;width:288px;background:#15100b;border:1px solid #322a20;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,0.55);padding:6px;animation:oaabFade .14s ease both;">
+            <button data-all="1" onClick="{{ pickTag }}" style="display:flex;align-items:center;justify-content:space-between;width:100%;font-family:'EB Garamond',serif;font-size:14.5px;color:{{ allRow.color }};background:transparent;border:none;border-radius:8px;padding:9px 11px;cursor:pointer;text-align:left;transition:background .14s;" style-hover="background:#1e1812;">
+              <span style="display:inline-flex;align-items:center;gap:10px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:5px;background:{{ allRow.checkBg }};border:1px solid {{ allRow.checkBd }};font-size:11px;line-height:1;color:#161019;">{{ allRow.mark }}</span>Show all tags</span>
+            </button>
+            <div style="height:1px;background:#221c15;margin:5px 4px;"></div>
+            <div data-tabscroll="" style="max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:1px;">
+              <sc-for list="{{ tagMenu }}" as="tag" hint-placeholder-count="14">
+                <button data-tag="{{ tag.label }}" data-all="0" onClick="{{ pickTag }}" style="display:flex;align-items:center;justify-content:space-between;width:100%;font-family:'EB Garamond',serif;font-size:14.5px;background:transparent;border:none;border-radius:8px;padding:8px 11px;cursor:pointer;text-align:left;transition:background .14s;" style-hover="background:#1e1812;">
+                  <span style="display:inline-flex;align-items:center;gap:10px;color:{{ tag.labelColor }};"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:5px;background:{{ tag.checkBg }};border:1px solid {{ tag.checkBd }};font-size:11px;line-height:1;color:#161019;">{{ tag.mark }}</span>{{ tag.label }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:{{ tag.countColor }};">{{ tag.count }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <div style="flex:1 1 auto;position:relative;display:flex;align-items:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#80735f" stroke-width="2" style="position:absolute;left:13px;width:16px;height:16px;pointer-events:none;"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search by ID or name — e.g. AB_r_TombDoor, Bonemold…" spellcheck="false" autocomplete="off" style="flex:1 1 auto;width:100%;font-family:'EB Garamond',serif;font-size:15.5px;color:#e7dccb;background:#15100b;border:1px solid #322a20;border-radius:9px;padding:10px 38px 10px 38px;outline:none;transition:border-color .18s,box-shadow .18s;" style-focus="border-color:var(--ember,#d2823f);box-shadow:0 0 0 3px rgba(210,130,63,0.12);">
+        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ clearSearch }}" title="Clear search" style="position:absolute;right:9px;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#2a2218;color:#b3a690;border:none;cursor:pointer;font-size:14px;line-height:1;transition:background .18s,color .18s;" style-hover="background:var(--ember,#d2823f);color:#15110c;">×</button>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="padding:34px 32px 110px;background:#100d0a;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px;">
+      <div style="display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;">
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;color:#f1e8d8;margin:0;">{{ activeLabel }}</h2>
+        <sc-if value="{{ hasTagFilter }}" hint-placeholder-val="{{ false }}">
+          <span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b3a8c4;border:1px solid #3a3350;border-radius:999px;padding:4px 11px;"><span style="width:6px;height:6px;border-radius:50%;background:#9a92d6;"></span>{{ tagLabel }}</span>
+        </sc-if>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;color:#80735f;text-transform:uppercase;">{{ shownCount }} thumbnails</div>
+    </div>
+
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:80px 24px;text-align:center;border:1px dashed #2e271e;border-radius:14px;background:#15100b;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#cdbfa6;">No thumbnails in this category yet.</div>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;color:#80735f;margin:10px 0 0;">These records exist in OAAB_Data but aren't part of the current render set.</p>
+      </div>
+    </sc-if>
+
+    <div data-grid="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:14px;">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="18">
+        <figure title="{{ it.nif }}" draggable="{{ yes }}" data-eid="{{ it.id }}" onDragStart="{{ onDrag }}" style="margin:0;display:flex;flex-direction:column;border:1px solid #2c241b;border-radius:11px;overflow:hidden;background:#16110b;cursor:grab;transition:border-color .2s,transform .2s,box-shadow .25s;animation:oaabFade .4s ease both;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.42);" style-active="cursor:grabbing;border-color:var(--azura,#9a92d6);">
+          <div style="position:relative;aspect-ratio:1/1;background:radial-gradient(120% 120% at 50% 18%,#221913 0%,#140f0a 72%);overflow:hidden;">
+            <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onError="{{ imgErr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:12px;pointer-events:none;">
+            <span style="position:absolute;left:9px;top:9px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#d8c7ad;background:rgba(12,9,6,0.66);backdrop-filter:blur(3px);padding:3px 7px;border-radius:5px;">{{ it.type }}</span>
+          </div>
+          <figcaption style="padding:11px 12px 13px;border-top:1px solid #221c15;display:flex;flex-direction:column;gap:3px;min-height:0;">
+            <code style="font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.35;color:#e7b07a;word-break:break-word;">{{ it.id }}</code>
+            <sc-if value="{{ it.hasName }}" hint-placeholder-val="{{ true }}">
+              <span style="font-family:'EB Garamond',serif;font-size:14px;color:#9a8d77;line-height:1.3;">{{ it.name }}</span>
+            </sc-if>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0c0a07;border-top:1px solid #221c15;padding:48px 32px;">
+  <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB" style="height:24px;width:auto;display:block;">
+      <span style="font-family:'EB Garamond',serif;font-size:13.5px;color:#80735f;">The Library · OAAB_Data asset index</span>
+    </div>
+    <a href="OAAB Home.dc.html#top" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">← Back to home</a>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { data: null, active: 'All', tags: [], query: '', tagOpen: false };
+
+  componentDidMount() {
+    // Pick up an initial tag filter from the URL hash (e.g. #tag=Telvanni),
+    // used by the home page's library links.
+    const hm = /[#&]tag=([^&]+)/.exec(location.hash || '');
+    if (hm) {
+      try { this.setState({ tags: [decodeURIComponent(hm[1])] }); } catch (e) {}
+    }
+
+    this._onDocDown = (e) => {
+      if (this.state.tagOpen && !(e.target.closest && e.target.closest('[data-tagdd]'))) {
+        this.setState({ tagOpen: false });
+      }
+    };
+    document.addEventListener('mousedown', this._onDocDown, true);
+
+    const REPO = 'https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main';
+    const THUMB = REPO + '/assets/images/library/thumbnails/meshes/';
+
+    // Deprecated IDs come straight from OAAB_Data's own metadata file
+    // ([tools.csse] deprecated = [ ... ]), so the list stays current as the
+    // team marks new objects deprecated — no separate snapshot to maintain.
+    const META = 'https://raw.githubusercontent.com/OAAB-Modding/Data/master/00%20Core/OAAB_Data-metadata.toml';
+    const loadDeprecated = fetch(META)
+      .then(r => r.text())
+      .then(txt => {
+        const set = Object.create(null);
+        this.tomlArray(txt, 'deprecated').forEach(id => { set[id] = 1; });
+        return set;
+      })
+      .catch(e => { console.warn('deprecated list load failed', e); return Object.create(null); });
+
+    Promise.all([
+      fetch(REPO + '/assets/data/library/records.json').then(r => r.json()),
+      loadDeprecated,
+    ])
+      .then(([records, deprecated]) => {
+        // Some records carry a raw numeric TES3 record tag instead of a label.
+        const TYPE_LABELS = { '1497648962': 'Body Part' };
+        const labelType = (t) => {
+          t = (t == null ? '' : String(t));
+          if (TYPE_LABELS[t]) return TYPE_LABELS[t];
+          if (/^\d+$/.test(t)) {
+            // Decode a 32-bit little-endian record tag (e.g. "BODY").
+            let n = parseInt(t, 10), tag = '';
+            for (let i = 0; i < 4; i++) { const c = n & 0xff; if (c >= 32 && c < 127) tag += String.fromCharCode(c); n >>>= 8; }
+            return tag || 'Misc';
+          }
+          return t || 'Misc';
+        };
+        const seen = Object.create(null);
+        const items = [];
+        records.forEach(r => {
+          const mesh = (r.mesh || '');
+          const norm = mesh.replace(/\\/g, '/');
+          // Thumbnails only exist for OAAB-namespaced meshes.
+          if (!/^oaab\//i.test(norm)) return;
+          const id = r.object_id;
+          if (!id || seen[id]) return;
+          if (deprecated[id]) return; // skip deprecated IDs
+          seen[id] = 1;
+          const rel = norm.replace(/^oaab\//i, 'oaab/').replace(/\.nif$/i, '.webp');
+          items.push({
+            id: id,
+            name: r.object_name || '',
+            type: labelType(r.object_type),
+            img: THUMB + rel,
+            mesh: mesh,
+          });
+        });
+        items.sort((a, b) => a.id.localeCompare(b.id));
+        const counts = Object.create(null);
+        items.forEach(x => { counts[x.type] = (counts[x.type] || 0) + 1; });
+        const types = Object.keys(counts)
+          .map(k => ({ label: k, count: counts[k] }))
+          .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+        this.setState({ data: { total: items.length, types, items } });
+      })
+      .catch(e => console.error('library data load failed', e));
+  }
+
+  componentWillUnmount() {
+    if (this._onDocDown) document.removeEventListener('mousedown', this._onDocDown, true);
+  }
+
+  // Extract a TOML array literal (key = [ "a", "b", ... ]) by key, returning the
+  // decoded string entries. Tolerates nested brackets and \u escapes.
+  tomlArray(toml, key) {
+    const m = new RegExp(key + '\\s*=\\s*\\[').exec(toml);
+    if (!m) return [];
+    let depth = 1, i = m.index + m[0].length, end = -1;
+    for (; i < toml.length; i++) {
+      const ch = toml[i];
+      if (ch === '[') depth++;
+      else if (ch === ']' && --depth === 0) { end = i; break; }
+    }
+    if (end === -1) return [];
+    const toks = toml.slice(m.index + m[0].length, end).match(/"(?:[^"\\]|\\.)*"/g) || [];
+    return toks.map(t => { try { return JSON.parse(t); } catch (e) { return null; } }).filter(Boolean);
+  }
+
+  renderVals() {
+    const d = this.state.data;
+    const all = (d && d.items) || [];
+    const types = (d && d.types) || [];
+    const total = (d && d.total) || 0;
+
+    const active = this.state.active;
+    const selTags = this.state.tags || [];
+
+    // Tag rules: each matches against the object ID. * is a wildcard.
+    const TAG_DEFS = [
+      { label: 'Ashlander',      re: /Ashl|DungBurnt/ },
+      { label: 'Telvanni',       re: /Tel|Parasol/ },
+      { label: 'Velothi',        re: /Vel|In_Sewer/ },
+      { label: 'Sixth House',    re: /6th|Sixth|Corprus/ },
+      { label: 'Bonemold',       re: /Bonem/ },
+      { label: 'Mold Cave',      re: /CaveMold/ },
+      { label: 'Effects',        re: /Fx/ },
+      { label: 'Head',           re: /b_.*Head/ },
+      { label: 'Hair',           re: /b_.*Hair/ },
+      { label: 'Ascadian Isles', re: /(Flora|Terr)_Ai/ },
+      { label: 'Bitter Coast',   re: /(Flora|Terr)_Bc/ },
+      { label: "Azura's Coast",  re: /(Flora|Terr)_Ac/ },
+      { label: 'Dunmer',         re: /Furn_De|Guarcart|Temple|Furn_Urn/ },
+      { label: 'Common',         re: /ComCook|ComRch|ComMid|ComPln|Furn_Com|In_Com|Ex_Com/ },
+      { label: 'Colony',         re: /Colony/ },
+      { label: 'Crypt',          re: /Crypt|ComGraves|Coffin/ },
+      { label: 'Dwemer',         re: /Dwe|Dwrv|Dwemer|Dwarven|Oilslick/ },
+      { label: 'Hlaalu',         re: /Hla/ },
+      { label: 'Imperial',       re: /Imp/ },
+      { label: 'Oblivion',       re: /Infernace|Mv|Dae|Vae|MV/ },
+      { label: 'Redoran',        re: /Red/ },
+      { label: 'Stronghold',     re: /Str|Strong/ },
+      { label: 'Ashlands',       re: /Flora_Ash|Terr_Al|Terr_Ash|Flora_Al/ },
+      { label: 'Grazelands',     re: /Flora_Gl|Terr_Gl/ },
+      { label: 'West Gash',      re: /Flora_Wg|Terr_Wg/ },
+      { label: 'Red Mountain',   re: /Rm/ },
+      { label: 'Underwater',     re: /Kelp/ },
+      { label: 'Horror',         re: /Furn_Bone|Blood|Corpse|StakeHead|Web/ },
+      { label: 'Dungeon',        re: /Dng/ },
+      { label: 'Mine',           re: /Mine|ClimbingPick|WheelBarrow|Wheelbr|CaveWood/ },
+      { label: 'Py Cave',        re: /CavePy/ },
+      { label: 'Docks',          re: /Ship|Dock|Gall/ },
+      { label: 'Farm',           re: /Straw|Grain|SackHuge/ },
+      { label: 'Kwama',          re: /Kwama/ },
+      { label: 'Nord',           re: /Nord/ },
+    ];
+    const tagsFor = (id) => TAG_DEFS.filter(t => t.re.test(id)).map(t => t.label);
+
+    // Type filter first.
+    const typeFiltered = active === 'All' ? all : all.filter(x => x.type === active);
+
+    // Tag counts reflect the current type selection.
+    const tagCounts = {};
+    TAG_DEFS.forEach(t => { tagCounts[t.label] = 0; });
+    typeFiltered.forEach(x => tagsFor(x.id).forEach(l => { tagCounts[l]++; }));
+
+    const mkType = (label, count) => {
+      const on = label === active;
+      return {
+        label, count,
+        bg: on ? '#d2823f' : 'transparent',
+        fg: on ? '#15110c' : '#b3a690',
+        bd: on ? '#d2823f' : '#322a20',
+        fw: on ? '600' : '400',
+      };
+    };
+    const tabs = [mkType('All', total)].concat(types.map(t => mkType(t.label, t.count)));
+
+    const noTags = selTags.length === 0;
+    const mkTagRow = (label, count, isAll) => {
+      const on = isAll ? noTags : selTags.indexOf(label) !== -1;
+      const dim = (!isAll && count === 0);
+      return {
+        label,
+        count: isAll ? '' : count,
+        mark: on ? '\u2713' : '',
+        checkBg: on ? '#9a92d6' : 'transparent',
+        checkBd: on ? '#9a92d6' : '#4a4234',
+        labelColor: on ? '#efe9f6' : (dim ? '#5a5346' : '#cabfdb'),
+        countColor: dim ? '#5a5346' : '#80735f',
+      };
+    };
+    const allRow = mkTagRow('All', 0, true);
+    const tagMenu = TAG_DEFS
+      // Hide tags with no matches under the current Type, unless already selected.
+      .filter(t => tagCounts[t.label] > 0 || selTags.indexOf(t.label) !== -1)
+      .map(t => mkTagRow(t.label, tagCounts[t.label], false));
+
+    // Tag filter (OR across selected tags) applied on top of the type filter.
+    const tagFiltered = noTags ? typeFiltered : typeFiltered.filter(x => {
+      const tl = tagsFor(x.id);
+      return selTags.some(s => tl.indexOf(s) !== -1);
+    });
+
+    // Text search applied on top, matching ID or name (case-insensitive).
+    const q = (this.state.query || '').trim().toLowerCase();
+    const filtered = !q ? tagFiltered : tagFiltered.filter(x =>
+      (x.id || '').toLowerCase().indexOf(q) !== -1 ||
+      (x.name || '').toLowerCase().indexOf(q) !== -1
+    );
+
+    const items = filtered.map(x => ({
+      id: x.id,
+      name: x.name || '',
+      hasName: !!(x.name && x.name.length),
+      type: x.type,
+      img: x.img,
+      nif: x.mesh || (x.img || ''),
+    }));
+
+    const tagLabel = noTags ? '' : (selTags.length === 1 ? selTags[0] : selTags.length + ' tags');
+
+    return {
+      yes: true,
+      no: false,
+      imgErr: (e) => { e.target.style.opacity = '0'; },
+      onDrag: (e) => {
+        const id = e.currentTarget.dataset.eid;
+        if (!id) return;
+        // Format A — Unicode text (CF_UNICODETEXT)
+        e.dataTransfer.setData('text/plain', 'mwse-cs-object:' + id);
+        // Format B — HTML Format, element carrying data-mwse-object
+        e.dataTransfer.setData('text/html',
+          '<div data-mwse-object="' + id + '">' + id + '</div>');
+        e.dataTransfer.effectAllowed = 'copy';
+      },
+      total,
+      query: this.state.query || '',
+      hasQuery: !!q,
+      onSearch: (e) => this.setState({ query: e.target.value }),
+      clearSearch: () => this.setState({ query: '' }),
+      typeCount: types.length,
+      tabs,
+      allRow,
+      tagMenu,
+      tagOpen: !!this.state.tagOpen,
+      toggleTags: () => this.setState(s => ({ tagOpen: !s.tagOpen })),
+      closeTags: () => this.setState({ tagOpen: false }),
+      tagSummary: noTags ? 'All tags' : (selTags.length === 1 ? selTags[0] : selTags.length + ' tags selected'),
+      tagDotOp: noTags ? '0' : '1',
+      chevronDeg: this.state.tagOpen ? '180' : '0',
+      tagBtnFg: noTags ? '#cabfdb' : '#efe9f6',
+      tagBtnBg: noTags ? '#15100b' : 'rgba(154,146,214,0.12)',
+      tagBtnBd: noTags ? '#322a20' : '#5a5380',
+      items,
+      activeLabel: active === 'All' ? 'All objects' : active,
+      tagLabel,
+      hasTagFilter: !noTags,
+      shownCount: items.length,
+      isEmpty: !!d && items.length === 0,
+      pickTab: (e) => {
+        const label = e.currentTarget.dataset.ttab;
+        this.setState({ active: label });
+        window.scrollTo({ top: Math.min(window.scrollY, 620), behavior: 'auto' });
+      },
+      pickTag: (e) => {
+        const label = e.currentTarget.dataset.tag;
+        if (e.currentTarget.dataset.all === '1') { this.setState({ tags: [] }); return; }
+        const cur = this.state.tags || [];
+        const next = cur.indexOf(label) !== -1 ? cur.filter(l => l !== label) : cur.concat(label);
+        this.setState({ tags: next });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

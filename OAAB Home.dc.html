@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:88px;}
+body{margin:0;background:#100d0a;color:#e7dccb;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+::selection{background:rgba(210,130,63,0.32);color:#fff;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+@keyframes oaabMote{0%{transform:translateY(0) translateX(0);opacity:0;}12%{opacity:.5;}82%{opacity:.32;}100%{transform:translateY(-240px) translateX(30px);opacity:0;}}
+@keyframes oaabGlow{0%,100%{opacity:.45;}50%{opacity:.8;}}
+@keyframes oaabPulse{0%,100%{box-shadow:0 0 0 0 rgba(210,130,63,0.45);}50%{box-shadow:0 0 0 6px rgba(210,130,63,0);}}
+</style>
+</helmet>
+
+<div data-root="" style="position:relative;background:#100d0a;--ember:#d2823f;--azura:#9a92d6;">
+
+<nav data-nav="" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:15px 32px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent;background:transparent;">
+  <a href="#top" style="display:flex;align-items:center;gap:14px;">
+    <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB — Of Ash and Blight" style="height:30px;width:auto;display:block;">
+    <span style="font-family:'EB Garamond',serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:#80735f;border-left:1px solid #3a3127;padding-left:14px;line-height:1.5;">Of Ash<br>&amp; Blight</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:30px;">
+    <div style="display:flex;gap:26px;font-family:'EB Garamond',serif;font-size:15.5px;color:#c3b6a0;letter-spacing:.01em;">
+      <a href="#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
+      <a href="The Library.dc.html" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Library</a>
+      <a href="#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
+      <a href="Releases.dc.html" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Releases</a>
+      <a href="https://www.oaab.dev/" target="_blank" rel="noopener" style="transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Wiki</a>
+      <a href="#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
+    </div>
+    <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:9px 18px;border-radius:7px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .2s,box-shadow .25s;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Join Discord</a>
+  </div>
+</nav>
+
+<header id="top" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;padding-top:150px;box-sizing:border-box;">
+  <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/hero%20image.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 85% at 72% 8%,rgba(210,130,63,0.12),transparent 58%);animation:oaabGlow 9s ease-in-out infinite;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,13,10,0.62) 0%,rgba(16,13,10,0.18) 26%,rgba(16,13,10,0.82) 74%,#100d0a 100%);"></div>
+
+
+  <div data-motes="" style="position:absolute;inset:0;pointer-events:none;">
+      <div style="position:absolute;left:11%;bottom:0;width:3px;height:3px;border-radius:50%;background:var(--ember,#d2823f);filter:blur(.4px);animation:oaabMote 9s linear infinite;"></div>
+      <div style="position:absolute;left:24%;bottom:0;width:2px;height:2px;border-radius:50%;background:#e7b07a;animation:oaabMote 12s linear infinite;animation-delay:1.5s;"></div>
+      <div style="position:absolute;left:38%;bottom:0;width:4px;height:4px;border-radius:50%;background:var(--ember,#d2823f);filter:blur(.6px);animation:oaabMote 11s linear infinite;animation-delay:3s;"></div>
+      <div style="position:absolute;left:52%;bottom:0;width:2px;height:2px;border-radius:50%;background:#d99b6a;animation:oaabMote 14s linear infinite;animation-delay:.7s;"></div>
+      <div style="position:absolute;left:66%;bottom:0;width:3px;height:3px;border-radius:50%;background:var(--ember,#d2823f);filter:blur(.4px);animation:oaabMote 10s linear infinite;animation-delay:2.2s;"></div>
+      <div style="position:absolute;left:79%;bottom:0;width:2px;height:2px;border-radius:50%;background:#e7b07a;animation:oaabMote 13s linear infinite;animation-delay:4s;"></div>
+      <div style="position:absolute;left:90%;bottom:0;width:3px;height:3px;border-radius:50%;background:var(--ember,#d2823f);filter:blur(.5px);animation:oaabMote 12s linear infinite;animation-delay:1s;"></div>
+  </div>
+
+  <div style="position:relative;max-width:1180px;margin:0 auto;width:100%;padding:0 32px 104px;">
+    <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.36em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">OAAB · Of Ash and Blight</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,7vw,86px);line-height:1.0;letter-spacing:-.015em;color:#f4ecdd;margin:20px 0 0;max-width:14ch;">A shared foundation for a richer Vvardenfell.</h1>
+    <p style="font-family:'EB Garamond',serif;font-size:clamp(18px,1.7vw,21px);line-height:1.65;color:#bcae97;max-width:60ch;margin:26px 0 0;">OAAB_Data is a free-to-use library of tilesets, creatures, items, and lore — crafted to a <em style="color:#d9cbb2;font-style:italic;">vanilla+</em> standard and shared across the Morrowind modding community.</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:38px;">
+      <a href="https://www.oaab.dev/" target="_blank" style="display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:600;padding:14px 28px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .18s,box-shadow .25s,transform .15s;" style-hover="filter:brightness(1.08);box-shadow:0 10px 34px rgba(210,130,63,0.28);transform:translateY(-1px);">Explore the Wiki</a>
+      <a href="https://www.nexusmods.com/morrowind/mods/49042" target="_blank" style="display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:600;padding:14px 26px;border-radius:8px;background:transparent;color:#e7dccb;border:1px solid #4a3f30;transition:border-color .2s,color .2s;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">OAAB_Data on Nexus</a>
+      <a href="https://github.com/OAAB-Modding" target="_blank" style="font-size:16px;color:#9a8d77;padding:8px 4px;transition:color .2s;" style-hover="color:#e7dccb;">View on GitHub →</a>
+    </div>
+  </div>
+
+  <div style="position:relative;margin-top:auto;border-top:1px solid #2b241c;background:rgba(16,13,10,0.5);backdrop-filter:blur(4px);">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);">
+      <div style="padding:24px 32px;border-right:1px solid #221c15;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ endorsements }}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-top:7px;text-transform:uppercase;">Nexus endorsements</div>
+      </div>
+      <div style="padding:24px 32px;border-right:1px solid #221c15;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ modCount }}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-top:7px;text-transform:uppercase;">Mods built on it</div>
+      </div>
+      <div style="padding:24px 32px;border-right:1px solid #221c15;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ version }}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-top:7px;text-transform:uppercase;">Current release</div>
+      </div>
+      <div style="padding:24px 32px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">2020</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-top:7px;text-transform:uppercase;">Crafting since</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" style="padding:120px 32px;background:#100d0a;border-top:1px solid #1d1812;">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
+    <div>
+      <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">What is OAAB</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;">More detail, faithfully Morrowind.</h2>
+      <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.72;color:#b3a690;margin:24px 0 0;">OAAB_Data is an asset repository for the Morrowind community. It does nothing on its own — but the mods that depend on it share its resources, so generic items work between mods, inventories aren't cluttered with duplicates, and the island stays cohesive.</p>
+      <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.72;color:#b3a690;margin:18px 0 0;">It began as <em style="font-style:italic;color:#d9cbb2;">Of Ash and Blight</em>, Melchior Dahrk's project to overhaul Vvardenfell. Today a team of contributors keeps it growing under a single vision.</p>
+      <div style="margin-top:30px;padding:20px 22px;border:1px solid #2c241b;border-left:2px solid var(--ember,#d2823f);border-radius:0 10px 10px 0;background:#16110b;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember,#d2823f);">Vanilla+, defined</div>
+        <p style="font-family:'EB Garamond',serif;font-size:16.5px;line-height:1.6;color:#bcae97;margin:10px 0 0;">Models are more detailed than vanilla, reuse vanilla textures wherever possible, and&nbsp;high definition textures are available&nbsp;— so new assets blend into any install, modded or not.&nbsp;</p>
+      </div>
+      <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.6;color:#80735f;margin:22px 0 0;font-style:italic;">Where Tamriel_Data spans every province, OAAB keeps a narrow focus on Vvardenfell.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
+        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">01</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">Rooted in canon</h3></div>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Drawn from the original concept art and early developer texts — expanding on what's already there if you look hard enough.</p>
+      </div>
+      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
+        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">02</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">A harsher island</h3></div>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Leans into ash, blight, and disease to make Vvardenfell a more dangerous place to walk.</p>
+      </div>
+      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
+        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">03</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">Dunmer, deepened</h3></div>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Expands Dunmer culture, economy, and lore in a way respectful to the original game — inconsistencies and all.</p>
+      </div>
+      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
+        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">04</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">Built to blend</h3></div>
+        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Quality guidelines keep every asset at home in both a vanilla and a graphically modded game.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="library" style="padding:120px 32px;background:#15100b;border-top:1px solid #221c15;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">The Library</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;max-width:18ch;">Thousands of assets, one cohesive aesthetic.</h2>
+    <p style="font-family:'EB Garamond',serif;font-size:18.5px;line-height:1.65;color:#b3a690;max-width:62ch;margin:22px 0 0;">From Dwemer ruins and Velothi tombs to new creatures, kwama hives, and sunken shipwrecks — every asset is built to the vanilla+ standard and shared freely across the community.</p>
+    <div style="margin-top:26px;"><a href="The Library.dc.html" style="display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:600;padding:12px 24px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .18s,box-shadow .25s,transform .15s;" style-hover="filter:brightness(1.08);box-shadow:0 10px 34px rgba(210,130,63,0.28);transform:translateY(-1px);">Browse the full library →</a></div>
+    <div style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+      <a href="The Library.dc.html#tag=Telvanni" style="position:relative;grid-column:span 2;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/telvanni%20tunnels.png" alt="Telvanni tunnels" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:18px;bottom:16px;right:18px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;color:#f4ecdd;line-height:1.05;">#Telvanni</div></div></a>
+      <a href="The Library.dc.html#tag=Velothi" style="position:relative;grid-column:span 1;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/velothi%20tombs.png" alt="Velothi tombs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:16px;bottom:14px;right:16px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#f4ecdd;line-height:1.05;">#Velothi</div></div></a>
+      <a href="The Library.dc.html#tag=Crypt" style="position:relative;grid-column:span 1;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/crypts.png" alt="Common crypt set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:16px;bottom:14px;right:16px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#f4ecdd;line-height:1.05;">#Crypt</div></div></a>
+      <a href="The Library.dc.html#tag=Kwama" style="position:relative;grid-column:span 4;height:230px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/kwama%20hives.png" alt="Kwama hives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:18px;bottom:16px;right:18px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f4ecdd;line-height:1.05;">#Kwama</div></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="mods" data-screen-label="Ecosystem" style="padding:120px 32px;background:#100d0a;border-top:1px solid #1d1812;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;">
+      <div style="max-width:62ch;">
+        <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">The Ecosystem</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 6px;">{{ modsHeading }}</h2>
+        <p style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.6;color:#a89b87;margin:0;">See all the cool mods tagged #OAAB_Data on Nexus!</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button data-prev="" onClick="{{ prevPage }}" aria-label="Previous mods" style="display:inline-flex;align-items:center;gap:9px;font-family:'EB Garamond',serif;font-size:15.5px;font-weight:600;padding:11px 20px;border-radius:8px;background:transparent;color:#e7dccb;border:1px solid #463b2d;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">← Previous</button>
+        <button data-shuffle="" onClick="{{ reshuffle }}" style="display:inline-flex;align-items:center;gap:9px;font-family:'EB Garamond',serif;font-size:15.5px;font-weight:600;padding:11px 20px;border-radius:8px;background:transparent;color:#e7dccb;border:1px solid #463b2d;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">↻ Shuffle the deck</button>
+        <a href="https://www.nexusmods.com/games/morrowind/mods?tag=OAAB_Data" target="_blank" style="display:inline-flex;align-items:center;gap:9px;font-family:'EB Garamond',serif;font-size:15.5px;font-weight:600;padding:11px 20px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .18s,box-shadow .25s;white-space:nowrap;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Browse all</a>
+      </div>
+    </div>
+
+    <div data-showcase-grid="" style="margin-top:40px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;transition:opacity .36s ease;">
+      <sc-for list="{{ visible }}" as="mod" hint-placeholder-count="5">
+        <a href="{{ mod.url }}" target="_blank" style="display:flex;flex-direction:column;border:1px solid #2c241b;border-radius:13px;overflow:hidden;background:#16110b;transition:border-color .2s,transform .2s,box-shadow .25s;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.42);">
+          <div style="position:relative;aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#1a1208 0 14px,#1f160d 14px 28px);overflow:hidden;border-bottom:1px solid #2c241b;">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:700;color:#3a2f20;">{{ mod.initial }}</div>
+            <div style="position:absolute;inset:0;background:radial-gradient(150% 120% at 50% 0%,rgba(210,130,63,0.1),transparent 60%);"></div>
+            <sc-if value="{{ mod.hasImage }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ mod.image }}" alt="{{ mod.name }}" loading="lazy" onError="{{ imgFail }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            </sc-if>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,9,6,0.82) 100%);"></div>
+            <sc-if value="{{ mod.hasCat }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;left:12px;top:11px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#d8c7ad;background:rgba(12,9,6,0.66);backdrop-filter:blur(3px);padding:4px 8px;border-radius:5px;">{{ mod.cat }}</span></sc-if>
+          </div>
+          <div style="padding:15px 15px 16px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;line-height:1.12;color:#f1e8d8;margin:0;text-wrap:pretty;">{{ mod.name }}</h3>
+            <div style="font-family:'EB Garamond',serif;font-size:13.5px;color:#80735f;margin-top:5px;">by {{ mod.by }}</div>
+            <span style="margin-top:auto;padding-top:13px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--ember,#d2823f);">View on Nexus →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:24px;display:flex;align-items:center;gap:11px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.05em;color:#6d6253;text-transform:uppercase;">
+      <span style="width:7px;height:7px;border-radius:50%;background:var(--ember,#d2823f);animation:oaabPulse 2.4s ease-in-out infinite;flex-shrink:0;"></span>
+      <span>Live from Nexus · #OAAB_Data</span>
+    </div>
+  </div>
+</section>
+
+<section id="wiki" style="padding:120px 32px;background:#120e0c;border-top:1px solid #221c15;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--azura,#9a92d6);">The Wiki</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;max-width:16ch;">A growing codex of Vvardenfell lore.</h2>
+        <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.7;color:#b3a690;margin:38px 0 0;max-width:54ch;">The wiki gathers lore, world-building, and characterization from across OAAB-compatible mods into one place — a reference for keeping new work consistent and cohesive.</p>
+      </div>
+      <a href="https://www.oaab.dev/" target="_blank" style="justify-self:end;align-self:center;display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:600;padding:14px 26px;border-radius:8px;background:transparent;color:#cfc6e6;border:1px solid #3f3a55;transition:border-color .2s,color .2s,background .2s;" style-hover="border-color:var(--azura,#9a92d6);color:#fff;background:rgba(154,146,214,0.08);">Enter the wiki →</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:11px;margin-top:44px;">
+      <sc-for list="{{ wikiCats }}" as="cat" hint-placeholder-count="12">
+        <a href="{{ cat.href }}" target="_blank" style="display:inline-flex;align-items:center;font-family:'EB Garamond',serif;font-size:16px;color:#c3b6a0;padding:11px 20px;border:1px solid #2f2937;border-radius:999px;background:#15121a;transition:all .2s;" style-hover="border-color:var(--azura,#9a92d6);color:#fff;background:rgba(154,146,214,0.1);">{{ cat.icon }}{{ cat.label }}</a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="modders" style="padding:120px 32px;background:#100d0a;border-top:1px solid #1d1812;">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
+    <div>
+      <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">For Modders</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;">Depend on it. Don't copy it.</h2>
+      <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.72;color:#b3a690;margin:24px 0 0;">Make your mod dependent on the ESM rather than extracting resources. Players won't end up with three kinds of guar meat, your files stay small, and your assets update whenever OAAB_Data does.</p>
+      <div style="display:flex;flex-direction:column;gap:13px;margin-top:30px;">
+        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Automatic compatibility across every OAAB-dependent mod</span></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Smaller downloads and shorter load times for players</span></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Leveled lists stay current as new items are added</span></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Palette cells (OAAB_Cells.esp) to speed up your workflow</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="border:1px solid #2c241b;border-radius:12px;background:#16110b;overflow:hidden;">
+        <div style="display:flex;gap:7px;align-items:center;padding:13px 18px;border-bottom:1px solid #261f17;background:#1a140e;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#3a3127;"></span><span style="width:10px;height:10px;border-radius:50%;background:#3a3127;"></span><span style="width:10px;height:10px;border-radius:50%;background:#3a3127;"></span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#80735f;margin-left:8px;letter-spacing:.04em;">getting started</span>
+        </div>
+        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:15px;align-items:flex-start;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);flex-shrink:0;">01</span><div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#ece2d2;font-weight:600;">Add OAAB_Data.esm as a master</div><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#80735f;margin-top:4px;">requires Tribunal &amp; Bloodmoon</div></div></div>
+          <div style="display:flex;gap:15px;align-items:flex-start;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);flex-shrink:0;">02</span><div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#ece2d2;font-weight:600;">Build with shared items, kits &amp; leveled lists</div><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#80735f;margin-top:4px;">reference the palette cells for context</div></div></div>
+          <div style="display:flex;gap:15px;align-items:flex-start;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);flex-shrink:0;">03</span><div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#ece2d2;font-weight:600;">Tag your release #oaab_data on Nexus</div><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#80735f;margin-top:4px;">so players can find what's compatible</div></div></div>
+        </div>
+      </div>
+      <div style="padding:22px 24px;border:1px solid #2c241b;border-left:2px solid var(--ember,#d2823f);border-radius:0 10px 10px 0;background:#16110b;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember,#d2823f);">License — free to use</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:13px;font-family:'EB Garamond',serif;font-size:16px;color:#bcae97;">
+          <div><strong style="color:#ece2d2;">Adapt</strong> — remix, transform &amp; build upon for Morrowind</div>
+          <div><strong style="color:#ece2d2;">Attribution</strong> — give appropriate credit</div>
+          <div><strong style="color:#ece2d2;">Non-commercial</strong> — never behind a paywall</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contribute" style="padding:120px 32px 110px;background:#15100b;border-top:1px solid #221c15;">
+  <div style="max-width:1180px;margin:0 auto;text-align:center;">
+    <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">Contribute</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.6vw,58px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px auto 0;max-width:20ch;">Made by the community, for the community.</h2>
+    <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.7;color:#b3a690;margin:22px auto 0;max-width:58ch;">OAAB has grown from a solo project into the work of dozens of artists, modders, and writers. New contributors are always welcome — come share what you're building.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:36px;">
+      <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:600;padding:14px 28px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .18s,box-shadow .25s,transform .15s;" style-hover="filter:brightness(1.08);box-shadow:0 10px 34px rgba(210,130,63,0.28);transform:translateY(-1px);">Join the Discord</a>
+      <a href="https://github.com/OAAB-Modding" target="_blank" style="display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:600;padding:14px 26px;border-radius:8px;background:transparent;color:#e7dccb;border:1px solid #463b2d;transition:border-color .2s,color .2s;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">Browse the repos</a>
+    </div>
+    <div style="margin-top:56px;padding-top:40px;border-top:1px solid #2b241c;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#80735f;margin-bottom:22px;">The team &amp; contributors</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:980px;margin:0 auto;">
+        <sc-for list="{{ contributors }}" as="name" hint-placeholder-count="36">
+          <span style="font-family:'EB Garamond',serif;font-size:15px;color:#a89b87;padding:7px 14px;border:1px solid #28221a;border-radius:999px;background:#14100b;transition:all .2s;" style-hover="border-color:var(--ember,#d2823f);color:#ece2d2;">{{ name }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0c0a07;border-top:1px solid #221c15;padding:64px 32px 40px;">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB" style="height:26px;width:auto;display:block;">
+        <span style="font-family:'EB Garamond',serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#80735f;border-left:1px solid #2a231b;padding-left:12px;line-height:1.5;">Of Ash<br>&amp; Blight</span>
+      </div>
+      <p style="font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.6;color:#80735f;margin:18px 0 0;max-width:38ch;">A free-to-use asset repository and lore wiki for The Elder Scrolls III: Morrowind.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6d6253;margin-bottom:4px;">Project</div>
+      <a href="https://www.oaab.dev/" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Wiki</a>
+      <a href="https://www.nexusmods.com/morrowind/mods/49042" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">OAAB_Data on Nexus</a>
+      <a href="https://github.com/OAAB-Modding" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">GitHub</a>
+      <a href="https://discord.gg/g5E2HUp" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Discord</a>
+      <a href="https://www.patreon.com/oaab_data" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Patreon</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6d6253;margin-bottom:4px;">Mods</div>
+      <a href="https://www.oaab.dev/" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Of Ash and Blight</a>
+      <a href="https://www.oaab.dev/sources/oaab-grazelands" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">OAAB Grazelands</a>
+      <a href="https://www.oaab.dev/sources/oaab-tel-mora" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">OAAB Tel Mora</a>
+      <a href="https://www.oaab.dev/sources/aspect-of-azura" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Aspect of Azura</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6d6253;margin-bottom:4px;">Wiki</div>
+      <a href="https://www.oaab.dev/creatures/" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Creatures</a>
+      <a href="https://www.oaab.dev/gods/" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Gods</a>
+      <a href="https://www.oaab.dev/places/" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Places</a>
+      <a href="https://www.oaab.dev/books/" target="_blank" style="font-family:'EB Garamond',serif;font-size:15.5px;color:#a89b87;transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Books</a>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:48px auto 0;padding-top:26px;border-top:1px solid #1d1812;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;">
+    <div style="font-family:'EB Garamond',serif;font-size:13.5px;color:#5d5446;max-width:64ch;">Free to use · Attribution · Non-commercial. The Elder Scrolls III: Morrowind © Bethesda Softworks. OAAB is an unofficial, fan-made community project.</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#5d5446;letter-spacing:.04em;">{{ version }} · updated May 2026</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#d2823f&quot;},&quot;loreColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9a92d6&quot;},&quot;ashMotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true}}">
+class Component extends DCLogic {
+  state = { scrolled: false, asset: 0, page: 0, modCount: null, endorsements: null, version: null, team: null, order: [0, 1, 2, 3, 4, 5, 6].sort(function () { return Math.random() - 0.5; }) };
+  _pool = [
+    { id: 52781, name: 'OAAB Greater Samarys Tomb', cat: 'Dungeons & Locations', by: 'Varlothen', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/52781/52781-1683010655-1472298450.jpeg' },
+    { id: 50307, name: 'OAAB & Community Equipment Integration', cat: 'Weapons & Armour', by: 'Lucas9 & team', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/50307/50307-1633535938-2076544592.jpeg' },
+    { id: 49045, name: 'OAAB Integrations', cat: 'Patches', by: 'OAAB_Data Team', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/49045/49045-1605538654-226549657.gif' },
+    { id: 58036, name: 'OAAB & TR Summoning Followers', cat: 'Companions', by: 'Kragos', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/58036/58036-1767440895-1937611876.jpg' },
+    { id: 55325, name: 'Blood and Gore OAAB & TR Patch', cat: 'Patches', by: 'Community' },
+    { id: 49131, name: 'OAAB - Tombs and Towers', cat: "Modders' Resources", by: 'OAAB_Data Team' },
+    { id: 48667, name: 'Concept Art Hlaalu Balconies', cat: "Modders' Resources", by: 'Community' },
+  ];
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const nav = document.querySelector('[data-nav]');
+      if (!nav) return;
+      const s = window.scrollY > 40;
+      nav.style.background = s ? 'rgba(16,13,10,0.9)' : 'transparent';
+      nav.style.borderBottomColor = s ? '#2b241c' : 'transparent';
+      nav.style.backdropFilter = nav.style.webkitBackdropFilter = s ? 'saturate(140%) blur(12px)' : 'none';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+    this.scrollToHash();
+    this._onHash = () => this.scrollToHash();
+    window.addEventListener('hashchange', this._onHash);
+    this.applyStyles();
+    this.loadMods();
+    this.loadStats();
+    this.loadTeam();
+    this._timer = setInterval(() => this.advance(), 12000);
+  }
+  componentDidUpdate() { this.applyStyles(); }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._onHash) window.removeEventListener('hashchange', this._onHash);
+    if (this._timer) clearInterval(this._timer);
+  }
+  // The DC mounts after the browser's initial hash jump, so cross-page links
+  // (OAAB Home.dc.html#about) land at the top. Re-run the scroll once the
+  // sections exist, honoring the fixed-nav offset.
+  scrollToHash() {
+    const id = (location.hash || '').slice(1);
+    if (!id) return;
+    const go = (tries) => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 88;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      } else if (tries > 0) {
+        setTimeout(() => go(tries - 1), 60);
+      }
+    };
+    requestAnimationFrame(() => go(8));
+  }
+  // Extract a TOML array literal (key = [ "a", "b", ... ]) by key.
+  tomlArray(toml, key) {
+    const m = new RegExp(key + '\\s*=\\s*\\[').exec(toml);
+    if (!m) return [];
+    let depth = 1, i = m.index + m[0].length, end = -1;
+    for (; i < toml.length; i++) {
+      const ch = toml[i];
+      if (ch === '[') depth++;
+      else if (ch === ']' && --depth === 0) { end = i; break; }
+    }
+    if (end === -1) return [];
+    const toks = toml.slice(m.index + m[0].length, end).match(/"(?:[^"\\]|\\.)*"/g) || [];
+    return toks.map(t => { try { return JSON.parse(t); } catch (e) { return null; } }).filter(Boolean);
+  }
+  // Pull the authoritative team list from OAAB_Data's metadata ([package] authors),
+  // so the credits stay in sync with the repo. Falls back to the baked-in list.
+  async loadTeam() {
+    const META = 'https://raw.githubusercontent.com/OAAB-Modding/Data/master/00%20Core/OAAB_Data-metadata.toml';
+    try {
+      const c = JSON.parse(localStorage.getItem('oaab_team_v1') || 'null');
+      if (c && c.ts && (Date.now() - c.ts < 864e5) && Array.isArray(c.team) && c.team.length) { this.setState({ team: c.team }); return; }
+    } catch (e) {}
+    try {
+      const txt = await fetch(META).then(r => r.text());
+      const team = this.tomlArray(txt, 'authors');
+      if (team.length) {
+        try { localStorage.setItem('oaab_team_v1', JSON.stringify({ ts: Date.now(), team: team })); } catch (e) {}
+        this.setState({ team: team });
+      }
+    } catch (e) { console.warn('team list load failed', e); }
+  }
+  shuffleOrder(n) {
+    const a = [];
+    for (let i = 0; i < n; i++) a.push(i);
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  async gqlPage(offset, count, rich) {
+    const fields = rich
+      ? 'modId name uploader { name } pictureUrl modCategory { name }'
+      : 'modId name pictureUrl';
+    const query = 'query($filter: ModsFilter, $offset: Int, $count: Int){ mods(filter: $filter, offset: $offset, count: $count){ nodes { ' + fields + ' } totalCount } }';
+    const variables = { filter: { tag: [{ value: 'OAAB_Data' }] }, offset: offset, count: count };
+    const res = await fetch('https://api.nexusmods.com/v2/graphql', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ query: query, variables: variables }),
+    });
+    if (!res.ok) throw new Error('http ' + res.status);
+    const json = await res.json();
+    if (json.errors) throw new Error('gql');
+    return json.data.mods;
+  }
+  applyPool(mods) {
+    this._pool = mods;
+    this.setState({ order: this.shuffleOrder(mods.length), page: 0 });
+  }
+  applyStats(stats) {
+    if (!stats) return;
+    const next = {};
+    if (stats.modCount != null) next.modCount = stats.modCount;
+    if (stats.endorsements != null) next.endorsements = stats.endorsements;
+    if (stats.version != null) next.version = stats.version;
+    if (Object.keys(next).length) this.setState(next);
+  }
+  async loadMods() {
+    try {
+      const c = JSON.parse(localStorage.getItem('oaab_mods_v2') || 'null');
+      if (c && c.ts && (Date.now() - c.ts < 864e5) && Array.isArray(c.mods) && c.mods.length) {
+        this.applyPool(c.mods);
+        return;
+      }
+    } catch (e) {}
+    for (const rich of [true, false]) {
+      try {
+        const all = [];
+        let offset = 0, total = Infinity;
+        const count = 50;
+        while (offset < total && all.length < 1500) {
+          const page = await this.gqlPage(offset, count, rich);
+          total = (typeof page.totalCount === 'number') ? page.totalCount : all.length;
+          const nodes = page.nodes || [];
+          all.push.apply(all, nodes);
+          if (nodes.length === 0) break;
+          offset += count;
+        }
+        if (all.length) {
+          const mods = all.map(function (n) {
+            return {
+              id: n.modId,
+              name: n.name,
+              cat: (n.modCategory && n.modCategory.name) || '',
+              by: (n.uploader && n.uploader.name) || 'OAAB modder',
+              img: n.pictureUrl || null,
+            };
+          });
+          try { localStorage.setItem('oaab_mods_v2', JSON.stringify({ ts: Date.now(), mods: mods })); } catch (e) {}
+          this.applyPool(mods);
+          return;
+        }
+      } catch (e) {}
+    }
+  }
+  // Headline counts come straight from OAAB_Data's own mod page (modId 49042, Morrowind gameId 100):
+  // dependent-mod count (the "Requirements → mods requiring this file" total), endorsements, and version.
+  async loadStats() {
+    try {
+      const c = JSON.parse(localStorage.getItem('oaab_stats_v1') || 'null');
+      if (c && c.ts && (Date.now() - c.ts < 864e5) && c.stats) { this.applyStats(c.stats); return; }
+    } catch (e) {}
+    try {
+      const query = 'query($filter: ModsFilter){ mods(filter: $filter, count: 1){ nodes { endorsements version modRequirements { modsRequiringThisMod(count: 1){ totalCount } } } } }';
+      const variables = { filter: { modId: [{ value: '49042' }], gameId: [{ value: '100' }] } };
+      const res = await fetch('https://api.nexusmods.com/v2/graphql', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ query: query, variables: variables }),
+      });
+      if (!res.ok) throw new Error('http ' + res.status);
+      const json = await res.json();
+      if (json.errors) throw new Error('gql');
+      const node = json.data && json.data.mods && json.data.mods.nodes && json.data.mods.nodes[0];
+      if (!node) return;
+      const dep = node.modRequirements && node.modRequirements.modsRequiringThisMod;
+      const stats = {
+        modCount: (dep && typeof dep.totalCount === 'number') ? dep.totalCount : null,
+        endorsements: (typeof node.endorsements === 'number') ? node.endorsements : null,
+        version: node.version || null,
+      };
+      try { localStorage.setItem('oaab_stats_v1', JSON.stringify({ ts: Date.now(), stats: stats })); } catch (e) {}
+      this.applyStats(stats);
+    } catch (e) {}
+  }
+  advance() { this.step(1); }
+  step(dir) {
+    const pages = Math.max(1, Math.ceil(this._pool.length / 5));
+    const grid = document.querySelector('[data-showcase-grid]');
+    if (grid) grid.style.opacity = '0';
+    setTimeout(() => {
+      this.setState(s => ({ page: (s.page + dir + pages) % pages }), () => {
+        const g = document.querySelector('[data-showcase-grid]');
+        if (g) g.style.opacity = '1';
+      });
+    }, 360);
+  }
+  // Restart the auto-advance clock after a manual page change so it doesn't jump right away.
+  resetTimer() {
+    if (this._timer) clearInterval(this._timer);
+    this._timer = setInterval(() => this.advance(), 12000);
+  }
+  applyStyles() {
+    const ember = this.props.accentColor ?? '#d2823f';
+    const azura = this.props.loreColor ?? '#9a92d6';
+    const motesOn = this.props.ashMotes ?? true;
+    const root = document.querySelector('[data-root]');
+    if (root) { root.style.setProperty('--ember', ember); root.style.setProperty('--azura', azura); }
+    const motes = document.querySelector('[data-motes]');
+    if (motes) motes.style.display = motesOn ? 'block' : 'none';
+    const ai = this.state.asset;
+    document.querySelectorAll('[data-atab]').forEach(b => {
+      const on = (+b.dataset.atab) === ai;
+      b.style.background = on ? ember : 'transparent';
+      b.style.color = on ? '#15110c' : '#b3a690';
+      b.style.borderColor = on ? ember : '#322a20';
+      b.style.fontWeight = on ? '600' : '400';
+    });
+  }
+
+  renderVals() {
+    const ember = this.props.accentColor ?? '#d2823f';
+    const azura = this.props.loreColor ?? '#9a92d6';
+    const motesOn = this.props.ashMotes ?? true;
+
+    const ASSETS = [
+      { key: 'Architecture', title: 'Architecture & Tilesets', desc: 'Dwemer ruins, Velothi towers, Hlaalu canals, and Daedric shrines — full interior and exterior kits that snap to the vanilla grid.', tiles: ['Dwemer building set', 'Velothi tower interior', 'Hlaalu sewer set', 'Daedric mezzanine kit', 'Telvanni root tunnels', 'Imperial galleon set'] },
+      { key: 'Creatures', title: 'Creatures', desc: 'New beasts and horrors that make Vvardenfell a more dangerous place to wander.', tiles: ['Land Dreugh', 'Storm Monarch', 'Iron Atronach', 'Ancient Lich', 'Giant Spider', 'Bone Alit'] },
+      { key: 'Items & Clutter', title: 'Items & Clutter', desc: 'Thousands of shared items, so no player ever ends up carrying three different kinds of guar meat.', tiles: ['Glassware additions', 'Dwemer drafting desk', 'Tableware expansion', 'New gems', 'Alchemy jars', 'Copperware set'] },
+      { key: 'Weapons & Armor', title: 'Weapons & Armor', desc: 'Lore-friendly arms and armor across every material tier, from chitin to ebony.', tiles: ['Imperial Battlemage armor', 'Dreugh weapons', 'Glass weapon set', 'Ebony weapon set', 'Light Steel armor', 'Chitin weapons'] },
+      { key: 'Flora', title: 'Flora', desc: 'Plants and fungi from across the island — herbalism-ready and graphic-herbalism compatible.', tiles: ['Trama', 'Glowing Chanterelle', 'Blue Kanet', 'Golden Reed', 'Stoneflower', 'Veiled Urnula'] },
+      { key: 'Books & Lore', title: 'Books & Lore', desc: 'Original book art and texts that quietly expand Dunmer culture, history, and faith.', tiles: ['Maps of Vvardenfell', 'Red Wisdom', 'Codex Arcana', 'Aetherial Ephemeris', 'Province maps', 'Ruined books & pages'] },
+    ];
+
+    // Section icons lifted verbatim from the wiki's own LinksHeader (Lucide).
+    const WIKI = [
+      ['Arcana', 'arcana/', 'arcana'], ['Books', 'books/', 'books'], ['Creatures', 'creatures/', 'creatures'], ['Factions', 'factions/', 'factions'],
+      ['Flora', 'flora/', 'flora'], ['Gods', 'gods/', 'gods'], ['Items', 'items/', 'items'], ['Language', 'language/', 'language'],
+      ['NPCs', 'people/', 'people'], ['Places', 'places/', 'places'], ['Races', 'races/', 'races'], ['Resources', 'resources/', 'resources'],
+    ];
+    const WIKI_ICONS = {
+      arcana: [['path', { d: 'M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z' }], ['path', { d: 'M20 3v4' }], ['path', { d: 'M22 5h-4' }], ['path', { d: 'M4 17v2' }], ['path', { d: 'M5 18H3' }]],
+      books: [['path', { d: 'm16 6 4 14' }], ['path', { d: 'M12 6v14' }], ['path', { d: 'M8 8v12' }], ['path', { d: 'M4 4v16' }]],
+      creatures: [['circle', { cx: 11, cy: 4, r: 2 }], ['circle', { cx: 18, cy: 8, r: 2 }], ['circle', { cx: 20, cy: 16, r: 2 }], ['path', { d: 'M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z' }]],
+      factions: [['polyline', { points: '14.5 17.5 3 6 3 3 6 3 17.5 14.5' }], ['line', { x1: 13, x2: 19, y1: 19, y2: 13 }], ['line', { x1: 16, x2: 20, y1: 16, y2: 20 }], ['line', { x1: 19, x2: 21, y1: 21, y2: 19 }], ['polyline', { points: '14.5 6.5 18 3 21 3 21 6 17.5 9.5' }], ['line', { x1: 5, x2: 9, y1: 14, y2: 18 }], ['line', { x1: 7, x2: 4, y1: 17, y2: 20 }], ['line', { x1: 3, x2: 5, y1: 19, y2: 21 }]],
+      flora: [['path', { d: 'M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z' }], ['path', { d: 'M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12' }]],
+      gods: [['path', { d: 'M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973' }], ['path', { d: 'm13 12-3 5h4l-3 5' }]],
+      items: [['path', { d: 'M12 12h.01' }], ['path', { d: 'M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2' }], ['path', { d: 'M22 13a18.15 18.15 0 0 1-20 0' }], ['rect', { width: 20, height: 14, x: 2, y: 6, rx: 2 }]],
+      language: [['path', { d: 'm5 8 6 6' }], ['path', { d: 'm4 14 6-6 2-3' }], ['path', { d: 'M2 5h12' }], ['path', { d: 'M7 2h1' }], ['path', { d: 'm22 22-5-10-5 10' }], ['path', { d: 'M14 18h6' }]],
+      people: [['circle', { cx: 12, cy: 5, r: 1 }], ['path', { d: 'm9 20 3-6 3 6' }], ['path', { d: 'm6 8 6 2 6-2' }], ['path', { d: 'M12 10v4' }]],
+      places: [['path', { d: 'm12 8 6-3-6-3v10' }], ['path', { d: 'm8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12' }], ['path', { d: 'm6.49 12.85 11.02 6.3' }], ['path', { d: 'M17.51 12.85 6.5 19.15' }]],
+      races: [['path', { d: 'M18 21a8 8 0 0 0-16 0' }], ['circle', { cx: 10, cy: 8, r: 5 }], ['path', { d: 'M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3' }]],
+      resources: [['path', { d: 'M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z' }], ['path', { d: 'm16 12 2 2 4-4' }], ['path', { d: 'M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3' }]],
+    };
+    const makeWikiIcon = (children) => React.createElement('svg', {
+      xmlns: 'http://www.w3.org/2000/svg', width: 17, height: 17, viewBox: '0 0 24 24', fill: 'none',
+      stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round',
+      style: { flexShrink: 0, marginRight: 9, display: 'block', opacity: 0.92 },
+    }, (children || []).map((c, i) => React.createElement(c[0], Object.assign({ key: i }, c[1]))));
+
+    const contributors = (this.state.team && this.state.team.length)
+      ? this.state.team
+      : ['Anroha', 'Axeljk', 'Corsair', 'Dallara', 'DimNussens', 'Endoran', 'Greatness7', 'Hemaris', 'Lord Zircon', 'Melchior Dahrk', 'Merlord', 'MwGek', 'Olaf', 'OperatorJack', 'PikachunoTM', 'R-Zero', 'RedFurryDemon', 'Remiros', 'Revenorror', 'Tewlwolow', 'Wolli', 'XeroFoxx'];
+
+    const ai = this.state.asset;
+    const cur = ASSETS[ai];
+    const POOL = this._pool, N = POOL.length, order = this.state.order, start = this.state.page * 5;
+    const visible = [];
+    for (let i = 0; i < 5; i++) {
+      const m = POOL[order[(start + i) % N]];
+      const image = m.img || null;
+      visible.push({
+        id: m.id, name: m.name, cat: m.cat, by: m.by,
+        url: 'https://www.nexusmods.com/morrowind/mods/' + m.id,
+        image: image, hasImage: !!image, hasCat: !!m.cat,
+        initial: (m.name.replace(/^OAAB[\s_-]*/i, '').trim().charAt(0) || 'M').toUpperCase(),
+      });
+    }
+    // Headline counts — dynamic from Nexus, with the last-known values as fallback while loading.
+    const modCountNum = this.state.modCount;
+    const modCount = modCountNum != null ? modCountNum.toLocaleString() : '800+';
+    const modsHeading = 'More than ' + (modCountNum != null ? (Math.floor(modCountNum / 100) * 100) : 800) + ' mods build on it.';
+    const endorsements = this.state.endorsements != null ? this.state.endorsements.toLocaleString() : '5,159';
+    const rawVer = this.state.version;
+    const version = rawVer ? (/^v/i.test(rawVer) ? rawVer : 'v' + rawVer) : 'v2.6.2';
+
+    const out = {
+      modCount: modCount,
+      modsHeading: modsHeading,
+      endorsements: endorsements,
+      version: version,
+      imgFail: (e) => { e.currentTarget.style.display = 'none'; },
+      pickAsset: (e) => { this.setState({ asset: +e.currentTarget.dataset.atab }); setTimeout(() => this.applyStyles(), 0); },
+      reshuffle: () => { this.setState({ order: this.shuffleOrder(this._pool.length), page: 0 }); this.resetTimer(); },
+      prevPage: () => { this.step(-1); this.resetTimer(); },
+      assetTitle: cur.title, assetDesc: cur.desc,
+      visible: visible,
+      wikiCats: WIKI.map(([label, p, ic]) => ({ label, href: 'https://www.oaab.dev/' + p, icon: makeWikiIcon(WIKI_ICONS[ic]) })),
+      contributors,
+    };
+    for (let k = 0; k < 6; k++) out['tile' + k] = '// ' + (cur.tiles[k] || '').toLowerCase();
+    return out;
+  }
+}
+</script>
+</body>
+</html>
