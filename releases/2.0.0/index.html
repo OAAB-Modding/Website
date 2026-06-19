@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -51,24 +51,24 @@ button{font-family:inherit;}
 .rbody .dl-btn.ghost{background:transparent;color:#e7dccb;border-color:#463b2d;}
 .rbody .dl-btn.ghost:hover{border-color:#d2823f;color:#d2823f;box-shadow:none;}
 </style>
-<script src="./releases-data.js"></script>
+<script src="/releases-data.js"></script>
 </helmet>
 
 <div data-root="" style="position:relative;background:#100d0a;--ember:#d2823f;--azura:#9a92d6;min-height:100vh;">
 
 <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:15px 32px;border-bottom:1px solid #2b241c;background:rgba(16,13,10,0.9);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);">
-  <a href="index.html#top" style="display:flex;align-items:center;gap:14px;">
+  <a href="/#top" style="display:flex;align-items:center;gap:14px;">
     <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB — Of Ash and Blight" style="height:30px;width:auto;display:block;">
     <span style="font-family:'EB Garamond',serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:#80735f;border-left:1px solid #3a3127;padding-left:14px;line-height:1.5;">Of Ash<br>&amp; Blight</span>
   </a>
   <div style="display:flex;align-items:center;gap:30px;">
     <div style="display:flex;gap:26px;font-family:'EB Garamond',serif;font-size:15.5px;color:#c3b6a0;letter-spacing:.01em;">
-      <a href="index.html#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
-      <a href="library.html" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Library</a>
-      <a href="index.html#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
-      <a href="releases.html" style="color:var(--ember,#d2823f);transition:color .2s;">Releases</a>
+      <a href="/#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
+      <a href="/library/" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Library</a>
+      <a href="/#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
+      <a href="/releases/" style="color:var(--ember,#d2823f);transition:color .2s;">Releases</a>
       <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" style="transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Wiki</a>
-      <a href="index.html#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
+      <a href="/#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
     </div>
     <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:9px 18px;border-radius:7px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .2s,box-shadow .25s;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Join Discord</a>
   </div>
@@ -77,7 +77,7 @@ button{font-family:inherit;}
 <article data-screen-label="Release article" style="position:relative;padding:128px 32px 40px;">
   <div style="position:absolute;inset:0;height:360px;background:radial-gradient(100% 130% at 78% 0%,rgba(210,130,63,0.13),transparent 58%);animation:oaabGlow 9s ease-in-out infinite;pointer-events:none;"></div>
   <div style="position:relative;max-width:820px;margin:0 auto;">
-    <a href="releases.html" style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#80735f;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">← All releases</a>
+    <a href="/releases/" style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#80735f;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">← All releases</a>
 
     <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
       <div style="margin-top:22px;">
@@ -111,7 +111,7 @@ button{font-family:inherit;}
       <div style="margin-top:60px;padding:54px 34px;border:1px solid #2c241b;border-radius:14px;background:#16110b;text-align:center;">
         <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:40px;color:#f1e8d8;margin:0;">Release not found</h1>
         <p style="font-family:'EB Garamond',serif;font-size:18px;color:#b3a690;margin:14px 0 0;">Pick a version from the releases index.</p>
-        <a href="releases.html" style="display:inline-flex;margin-top:24px;font-size:16px;font-weight:600;padding:12px 24px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;">Browse releases →</a>
+        <a href="/releases/" style="display:inline-flex;margin-top:24px;font-size:16px;font-weight:600;padding:12px 24px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;">Browse releases →</a>
       </div>
     </sc-if>
   </div>
@@ -137,7 +137,7 @@ button{font-family:inherit;}
 
 <footer style="background:#0c0a07;border-top:1px solid #221c15;padding:44px 32px 40px;">
   <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;">
-    <a href="index.html#top" style="display:flex;align-items:center;gap:12px;">
+    <a href="/#top" style="display:flex;align-items:center;gap:12px;">
       <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB" style="height:24px;width:auto;display:block;">
       <span style="font-family:'EB Garamond',serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#80735f;border-left:1px solid #2a231b;padding-left:12px;line-height:1.5;">Of Ash<br>&amp; Blight</span>
     </a>
@@ -149,7 +149,7 @@ button{font-family:inherit;}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { version: "2.2.0" };
+  state = { version: "2.0.0" };
 
   componentDidMount() { this.injectBody(); }
   componentDidUpdate() { this.injectBody(); }
@@ -203,7 +203,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const { api, rel, idx, all } = this.current();
-    const link = (v) => 'release-' + v + '.html';
+    const link = (v) => '/releases/' + v + '/';
     if (!api) return { found: false, notFound: false, rel: {}, nav: {} };
     if (!rel) return { found: false, notFound: true, rel: {}, nav: {} };
 

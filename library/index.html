@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -28,18 +28,18 @@ button{font-family:inherit;}
 <div data-root="" style="position:relative;background:#100d0a;--ember:#d2823f;--azura:#9a92d6;min-height:100vh;">
 
 <nav data-nav="" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:15px 32px;border-bottom:1px solid #2b241c;background:rgba(16,13,10,0.9);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);">
-  <a href="index.html#top" style="display:flex;align-items:center;gap:14px;">
+  <a href="/#top" style="display:flex;align-items:center;gap:14px;">
     <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB — Of Ash and Blight" style="height:30px;width:auto;display:block;">
     <span style="font-family:'EB Garamond',serif;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:#80735f;border-left:1px solid #3a3127;padding-left:14px;line-height:1.5;">Of Ash<br>&amp; Blight</span>
   </a>
   <div style="display:flex;align-items:center;gap:30px;">
     <div style="display:flex;gap:26px;font-family:'EB Garamond',serif;font-size:15.5px;color:#c3b6a0;letter-spacing:.01em;">
-      <a href="index.html#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
-      <a href="library.html" style="color:var(--ember,#d2823f);transition:color .2s;">Library</a>
-      <a href="index.html#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
-      <a href="releases.html" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Releases</a>
+      <a href="/#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
+      <a href="/library/" style="color:var(--ember,#d2823f);transition:color .2s;">Library</a>
+      <a href="/#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
+      <a href="/releases/" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Releases</a>
       <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" style="transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Wiki</a>
-      <a href="index.html#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
+      <a href="/#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
     </div>
     <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:9px 18px;border-radius:7px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .2s,box-shadow .25s;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Join Discord</a>
   </div>
@@ -159,7 +159,7 @@ button{font-family:inherit;}
       <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB" style="height:24px;width:auto;display:block;">
       <span style="font-family:'EB Garamond',serif;font-size:13.5px;color:#80735f;">The Library · OAAB_Data asset index</span>
     </div>
-    <a href="index.html#top" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">← Back to home</a>
+    <a href="/#top" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">← Back to home</a>
   </div>
 </footer>
 
@@ -242,7 +242,9 @@ class Component extends DCLogic {
           if (!id || seen[id]) return;
           if (deprecated[id]) return; // skip deprecated IDs
           seen[id] = 1;
-          const rel = norm.replace(/^oaab\//i, 'oaab/').replace(/\.nif$/i, '.webp');
+          // Thumbnail files are stored lowercased, so normalize the whole
+          // relative path — mesh/webp matching is case-insensitive.
+          const rel = norm.replace(/\.nif$/i, '.webp').toLowerCase();
           items.push({
             id: id,
             name: r.object_name || '',
