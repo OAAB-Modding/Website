@@ -35,6 +35,7 @@ button{font-family:inherit;}
 
 <div data-root="" style="position:relative;background:#100d0a;--ember:#d2823f;--azura:#9a92d6;min-height:100vh;">
 
+<sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
 <nav data-nav="" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:15px 32px;border-bottom:1px solid #2b241c;background:rgba(16,13,10,0.9);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);">
   <a href="/#top" style="display:flex;align-items:center;gap:14px;">
     <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB — Of Ash and Blight" style="height:30px;width:auto;display:block;">
@@ -52,7 +53,9 @@ button{font-family:inherit;}
     <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:9px 18px;border-radius:7px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .2s,box-shadow .25s;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Join Discord</a>
   </div>
 </nav>
+</sc-if>
 
+<sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
 <header style="position:relative;overflow:hidden;padding:148px 32px 56px;border-bottom:1px solid #221c15;">
   <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/velothi%20tombs.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;opacity:.5;">
   <div style="position:absolute;inset:0;background:radial-gradient(110% 120% at 78% 0%,rgba(210,130,63,0.12),transparent 55%);animation:oaabGlow 9s ease-in-out infinite;"></div>
@@ -67,8 +70,24 @@ button{font-family:inherit;}
     </div>
   </div>
 </header>
+</sc-if>
 
-<div data-tabbar="" style="position:sticky;top:61px;z-index:40;background:rgba(18,14,11,0.92);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid #221c15;">
+<sc-if value="{{ isPopout }}" hint-placeholder-val="{{ false }}">
+<div style="position:sticky;top:0;z-index:45;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 24px;background:rgba(16,13,10,0.96);border-bottom:1px solid #221c15;backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);">
+  <div style="display:flex;align-items:center;gap:13px;">
+    <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB" style="height:22px;width:auto;display:block;">
+    <span style="font-family:'EB Garamond',serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#80735f;border-left:1px solid #3a3127;padding-left:11px;line-height:1.5;">The<br>Library</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#80735f;"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#f1e8d8;">{{ total }}</span> objects&nbsp;&nbsp;·&nbsp;&nbsp;<span style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#f1e8d8;">{{ typeCount }}</span> types</span>
+    <a href="./" target="_blank" rel="noopener" title="Open the full library" style="display:inline-flex;align-items:center;gap:6px;font-family:'EB Garamond',serif;font-size:13.5px;color:#9a8d77;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Open full
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+    </a>
+  </div>
+</div>
+</sc-if>
+
+<div data-tabbar="" style="position:sticky;top:{{ tabbarTop }}px;z-index:40;background:rgba(18,14,11,0.92);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid #221c15;">
   <div style="max-width:1180px;margin:0 auto;padding:12px 32px 13px;">
     <div style="display:flex;align-items:flex-start;gap:16px;padding-bottom:12px;border-bottom:1px solid #221c15;">
       <span style="flex:0 0 auto;width:58px;padding-top:11px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Type</span>
@@ -161,6 +180,11 @@ button{font-family:inherit;}
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px;">
       <div style="display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;">
         <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:28px;color:#f1e8d8;margin:0;">{{ activeLabel }}</h2>
+        <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ openPopout }}" title="Pop out a minimal window" style="display:inline-flex;align-items:center;justify-content:center;align-self:center;width:32px;height:32px;border-radius:8px;background:transparent;border:1px solid #3a3127;color:#9a8d77;cursor:pointer;transition:border-color .2s,color .2s;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M9 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"></path><polyline points="14 4 20 4 20 10"></polyline><line x1="20" y1="4" x2="11" y2="13"></line></svg>
+          </button>
+        </sc-if>
         <sc-if value="{{ hasTagFilter }}" hint-placeholder-val="{{ false }}">
           <span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b3a8c4;border:1px solid #3a3350;border-radius:999px;padding:4px 11px;"><span style="width:6px;height:6px;border-radius:50%;background:#9a92d6;"></span>{{ tagLabel }}</span>
         </sc-if>
@@ -200,6 +224,7 @@ button{font-family:inherit;}
   </div>
 </section>
 
+<sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
 <footer style="background:#0c0a07;border-top:1px solid #221c15;padding:48px 32px;">
   <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;">
     <div style="display:flex;align-items:center;gap:12px;">
@@ -209,6 +234,7 @@ button{font-family:inherit;}
     <a href="/#top" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:#a89b87;transition:color .2s;" style-hover="color:var(--ember,#d2823f);">← Back to home</a>
   </div>
 </footer>
+</sc-if>
 
 </div>
 </x-dc>
@@ -323,6 +349,7 @@ class Component extends DCLogic {
           if (!/^oaab\//i.test(norm)) return;
           const id = r.object_id;
           if (!id || seen[id]) return;
+          if (/^AB_[ac]_/i.test(id)) return; // hide body parts (AB_a_*, AB_c_*) from the library
           if (deprecated[id]) return; // skip deprecated IDs
           seen[id] = 1;
           // Thumbnail files preserve the mesh's original filename case; only
@@ -717,9 +744,30 @@ class Component extends DCLogic {
     });
     const tagLabel = noTags ? '' : (selTags.length === 1 ? selTags[0] : selTags.length + ' tags');
 
+    // Popout mode strips the nav/hero/footer for a minimal, embeddable window.
+    const isPopout = this._isPopout != null
+      ? this._isPopout
+      : (this._isPopout = /[?&]popout=1/.test(location.search || ''));
+
     return {
       yes: true,
       no: false,
+      isPopout,
+      showChrome: !isPopout,
+      tabbarTop: isPopout ? 45 : 61,
+      openPopout: () => {
+        const w = 1180, h = 820;
+        const sx = window.screenLeft != null ? window.screenLeft : (screen.availLeft || 0);
+        const sy = window.screenTop != null ? window.screenTop : 0;
+        const left = Math.max(0, Math.round(sx + (window.outerWidth - w) / 2));
+        const top = Math.max(0, Math.round(sy + (window.outerHeight - h) / 2));
+        const win = window.open(
+          location.pathname + '?popout=1',
+          'oaab_library_popout',
+          'popup=yes,width=' + w + ',height=' + h + ',left=' + left + ',top=' + top
+        );
+        if (win) win.focus();
+      },
       imgLoad: (e) => { e.target.style.opacity = '1'; },
       imgErr: (e) => { e.target.style.opacity = '0'; },
       onDrag: (e) => {
