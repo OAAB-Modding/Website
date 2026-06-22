@@ -64,10 +64,6 @@ button{font-family:inherit;}
     <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.36em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">The Library</div>
     <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.0;letter-spacing:-.015em;color:#f4ecdd;margin:16px 0 0;max-width:18ch;">Every asset, catalogued.</h1>
     <p style="font-family:'EB Garamond',serif;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#bcae97;max-width:60ch;margin:22px 0 0;">A browsable index of OAAB_Data's in-game objects — tilesets, creatures, armor, books, clutter, and more!<br><br>Drag and drop thumbnails directly into the CSSE render window.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:34px;margin-top:34px;">
-      <div><span style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ total }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-left:10px;text-transform:uppercase;">catalogued objects</span></div>
-      <div><span style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f1e8d8;line-height:1;">{{ typeCount }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#80735f;margin-left:10px;text-transform:uppercase;">record types</span></div>
-    </div>
   </div>
 </header>
 </sc-if>
@@ -101,7 +97,13 @@ button{font-family:inherit;}
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
-      <span style="flex:0 0 auto;width:58px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Tags</span>
+      <div style="flex:1 1 auto;position:relative;display:flex;align-items:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#80735f" stroke-width="2" style="position:absolute;left:13px;width:16px;height:16px;pointer-events:none;"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search by ID or name — e.g. AB_r_TombDoor, Bonemold…" spellcheck="false" autocomplete="off" style="flex:1 1 auto;width:100%;font-family:'EB Garamond',serif;font-size:15.5px;color:#e7dccb;background:#15100b;border:1px solid #322a20;border-radius:9px;padding:10px 38px 10px 38px;outline:none;transition:border-color .18s,box-shadow .18s;" style-focus="border-color:var(--ember,#d2823f);box-shadow:0 0 0 3px rgba(210,130,63,0.12);">
+        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ clearSearch }}" title="Clear search" style="position:absolute;right:9px;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#2a2218;color:#b3a690;border:none;cursor:pointer;font-size:14px;line-height:1;transition:background .18s,color .18s;" style-hover="background:var(--ember,#d2823f);color:#15110c;">×</button>
+        </sc-if>
+      </div>
       <div data-tagdd="" style="position:relative;flex:0 0 auto;">
         <button onClick="{{ toggleTags }}" style="display:inline-flex;align-items:center;gap:10px;font-family:'EB Garamond',serif;font-size:15px;color:{{ tagBtnFg }};background:{{ tagBtnBg }};border:1px solid {{ tagBtnBd }};border-radius:9px;padding:10px 14px;cursor:pointer;white-space:nowrap;transition:all .18s;" style-hover="border-color:#9a92d6;">
           <span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#9a92d6;opacity:{{ tagDotOp }};"></span>
@@ -125,17 +127,7 @@ button{font-family:inherit;}
           </div>
         </sc-if>
       </div>
-      <div style="flex:1 1 auto;position:relative;display:flex;align-items:center;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#80735f" stroke-width="2" style="position:absolute;left:13px;width:16px;height:16px;pointer-events:none;"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search by ID or name — e.g. AB_r_TombDoor, Bonemold…" spellcheck="false" autocomplete="off" style="flex:1 1 auto;width:100%;font-family:'EB Garamond',serif;font-size:15.5px;color:#e7dccb;background:#15100b;border:1px solid #322a20;border-radius:9px;padding:10px 38px 10px 38px;outline:none;transition:border-color .18s,box-shadow .18s;" style-focus="border-color:var(--ember,#d2823f);box-shadow:0 0 0 3px rgba(210,130,63,0.12);">
-        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
-          <button onClick="{{ clearSearch }}" title="Clear search" style="position:absolute;right:9px;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#2a2218;color:#b3a690;border:none;cursor:pointer;font-size:14px;line-height:1;transition:background .18s,color .18s;" style-hover="background:var(--ember,#d2823f);color:#15110c;">×</button>
-        </sc-if>
-      </div>
-    </div>
-    <sc-if value="{{ hasReleases }}" hint-placeholder-val="{{ false }}">
-    <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
-      <span style="flex:0 0 auto;width:58px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Release</span>
+      <sc-if value="{{ hasReleases }}" hint-placeholder-val="{{ false }}">
       <div data-reldd="" style="position:relative;flex:0 0 auto;">
         <button onClick="{{ toggleRel }}" style="display:inline-flex;align-items:center;gap:10px;min-width:158px;justify-content:space-between;font-family:'EB Garamond',serif;font-size:15px;color:{{ relBtnFg }};background:{{ relBtnBg }};border:1px solid {{ relBtnBd }};border-radius:9px;padding:10px 14px;cursor:pointer;white-space:nowrap;transition:all .18s;" style-hover="border-color:#9a92d6;">
           <span style="display:inline-flex;align-items:center;gap:10px;"><span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#9a92d6;opacity:{{ relDotOp }};"></span><span>{{ relSummary }}</span></span>
@@ -165,13 +157,17 @@ button{font-family:inherit;}
           </sc-for>
         </div>
       </sc-if>
-      <div style="flex:1 1 auto;"></div>
-      <span style="flex:0 0 auto;display:inline-flex;align-items:center;gap:15px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f6552;">
+      <span style="flex:0 0 auto;display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6f6552;">
         <span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:3px;background:rgba(210,130,63,0.94);"></span>New</span>
         <span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:3px;background:transparent;border:1px solid rgba(154,146,214,0.7);"></span>Updated</span>
       </span>
+      </sc-if>
+      <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ clearAll }}" title="Clear all filters" style="flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:9px;background:rgba(210,130,63,0.1);border:1px solid #4a3526;color:#e7b07a;cursor:pointer;transition:all .18s;" style-hover="background:var(--ember,#d2823f);border-color:var(--ember,#d2823f);color:#15110c;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;"><path d="M13.013 3H2l8 9.46V19l4 2v-8.54l.9-1.055"></path><path d="m22 3-5 5"></path><path d="m17 3 5 5"></path></svg>
+        </button>
+      </sc-if>
     </div>
-    </sc-if>
   </div>
 </div>
 
@@ -826,6 +822,11 @@ class Component extends DCLogic {
         this.setState({ releases: next });
       },
       setRelMode: (e) => this.setState({ relMode: e.currentTarget.dataset.mode }),
+      anyFilter: active !== 'All' || selTags.length > 0 || !!q || relSels.length > 0 || relMode !== 'all',
+      clearAll: () => this.setState({
+        active: 'All', tags: [], query: '', releases: [], relMode: 'all',
+        tagOpen: false, relOpen: false,
+      }),
       shownCount: filtered.length,
       isEmpty: !!d && filtered.length === 0,
       pickTab: (e) => {
