@@ -577,6 +577,7 @@ class Component extends DCLogic {
     const tagMenu = TAG_DEFS
       // Hide tags with no matches under the current Type, unless already selected.
       .filter(t => tagCounts[t.label] > 0 || selTags.indexOf(t.label) !== -1)
+      .sort((a, b) => a.label.localeCompare(b.label))
       .map(t => mkTagRow(t.label, tagCounts[t.label], false));
 
     // Tag filter (OR across selected tags) applied on top of the type filter.
