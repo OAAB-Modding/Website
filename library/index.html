@@ -69,7 +69,7 @@ button{font-family:inherit;}
 </sc-if>
 
 <div data-tabbar="" style="position:sticky;top:{{ tabbarTop }}px;z-index:40;background:rgba(18,14,11,0.92);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid #221c15;">
-  <div style="max-width:1180px;margin:0 auto;padding:12px 32px 13px;">
+  <div style="max-width:1180px;margin:0 auto;padding:12px {{ barPadX }}px 13px;">
     <div style="display:flex;align-items:flex-start;gap:16px;padding-bottom:12px;border-bottom:1px solid #221c15;">
       <span style="flex:0 0 auto;width:58px;padding-top:11px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Type</span>
       <div data-tabscroll="" style="flex:1 1 auto;display:flex;flex-wrap:wrap;gap:8px;">
@@ -159,7 +159,7 @@ button{font-family:inherit;}
   </div>
 </div>
 
-<section style="padding:34px 32px 110px;background:#100d0a;">
+<section style="padding:34px {{ secPadX }}px 110px;background:#100d0a;">
   <div style="max-width:1180px;margin:0 auto;">
     <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px;">
@@ -777,6 +777,8 @@ class Component extends DCLogic {
       isPopout,
       showChrome: !isPopout,
       tabbarTop: isPopout ? 0 : 61,
+      barPadX: isPopout ? 12 : 32,
+      secPadX: isPopout ? 12 : 32,
       openPopout: () => {
         const w = 1180, h = 820;
         const sx = window.screenLeft != null ? window.screenLeft : (screen.availLeft || 0);
