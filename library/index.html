@@ -147,6 +147,9 @@ button{font-family:inherit;}
         <span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:3px;background:transparent;border:1px solid rgba(154,146,214,0.7);"></span>Updated</span>
       </span>
       </sc-if>
+      <button onClick="{{ toggleCompact }}" title="{{ compactTitle }}" style="flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:9px;background:{{ compactBg }};border:1px solid {{ compactBd }};color:{{ compactFg }};cursor:pointer;transition:all .18s;" style-hover="border-color:#9a92d6;">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:17px;height:17px;"><rect x="3" y="3" width="7" height="7" rx="1.4"></rect><rect x="14" y="3" width="7" height="7" rx="1.4"></rect><rect x="3" y="14" width="7" height="7" rx="1.4"></rect><rect x="14" y="14" width="7" height="7" rx="1.4"></rect></svg>
+      </button>
       <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}">
         <button onClick="{{ clearAll }}" title="Clear all filters" style="flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:9px;background:rgba(210,130,63,0.1);border:1px solid #4a3526;color:#e7b07a;cursor:pointer;transition:all .18s;" style-hover="background:var(--ember,#d2823f);border-color:var(--ember,#d2823f);color:#15110c;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;"><path d="M13.013 3H2l8 9.46V19l4 2v-8.54l.9-1.055"></path><path d="m22 3-5 5"></path><path d="m17 3 5 5"></path></svg>
@@ -185,22 +188,26 @@ button{font-family:inherit;}
       </div>
     </sc-if>
 
-    <div data-grid="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:14px;padding-top:{{ gridPadTop }}px;padding-bottom:{{ gridPadBottom }}px;overflow-anchor:none;">
+    <div data-grid="" style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }}px;padding-top:{{ gridPadTop }}px;padding-bottom:{{ gridPadBottom }}px;overflow-anchor:none;">
       <sc-for list="{{ items }}" as="it" hint-placeholder-count="18">
-        <figure title="{{ it.nif }}" draggable="{{ yes }}" data-eid="{{ it.id }}" onDragStart="{{ onDrag }}" style="margin:0;display:flex;flex-direction:column;border:1px solid #2c241b;border-radius:11px;overflow:hidden;background:#16110b;cursor:grab;transition:border-color .2s,transform .2s,box-shadow .25s;animation:oaabFade .4s ease both;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.42);" style-active="cursor:grabbing;border-color:var(--azura,#9a92d6);">
+        <figure title="{{ it.tip }}" draggable="{{ yes }}" data-eid="{{ it.id }}" onDragStart="{{ onDrag }}" style="margin:0;display:flex;flex-direction:column;border:1px solid #2c241b;border-radius:11px;overflow:hidden;background:#16110b;cursor:grab;transition:border-color .2s,transform .2s,box-shadow .25s;animation:oaabFade .4s ease both;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.42);" style-active="cursor:grabbing;border-color:var(--azura,#9a92d6);">
           <div style="position:relative;aspect-ratio:1/1;background:radial-gradient(120% 120% at 50% 18%,#221913 0%,#140f0a 72%);overflow:hidden;">
-            <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onLoad="{{ imgLoad }}" onError="{{ imgErr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:12px;pointer-events:none;">
+            <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onLoad="{{ imgLoad }}" onError="{{ imgErr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:{{ imgPad }}px;pointer-events:none;">
+            <sc-if value="{{ comfortable }}" hint-placeholder-val="{{ true }}">
             <span style="position:absolute;left:9px;top:9px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#d8c7ad;background:rgba(12,9,6,0.66);backdrop-filter:blur(3px);padding:3px 7px;border-radius:5px;">{{ it.type }}</span>
+            </sc-if>
             <sc-if value="{{ it.relShow }}" hint-placeholder-val="{{ false }}">
               <span title="Touched in OAAB_Data {{ it.relVer }}" style="position:absolute;right:9px;top:9px;display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.03em;padding:3px 7px 3px 6px;border-radius:5px;background:{{ it.relBg }};color:{{ it.relFg }};border:1px solid {{ it.relBd }};backdrop-filter:blur(3px);box-shadow:0 1px 5px rgba(0,0,0,0.32);"><span style="font-size:10px;line-height:1;">{{ it.relGlyph }}</span>{{ it.relVer }}</span>
             </sc-if>
           </div>
+          <sc-if value="{{ comfortable }}" hint-placeholder-val="{{ true }}">
           <figcaption style="height:78px;padding:11px 12px 13px;border-top:1px solid #221c15;display:flex;flex-direction:column;gap:3px;overflow:hidden;">
             <code style="font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.35;color:#e7b07a;word-break:break-word;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;">{{ it.id }}</code>
             <sc-if value="{{ it.hasName }}" hint-placeholder-val="{{ true }}">
               <span style="font-family:'EB Garamond',serif;font-size:14px;color:#9a8d77;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ it.name }}</span>
             </sc-if>
           </figcaption>
+          </sc-if>
         </figure>
       </sc-for>
     </div>
@@ -227,52 +234,10 @@ class Component extends DCLogic {
     data: null, active: 'All', tags: [], query: '', tagOpen: false,
     relData: [], releases: [], relMode: 'all', relOpen: false,
     gridWidth: 0, virtualStartRow: 0, virtualEndRow: 8,
+    compact: (typeof localStorage !== 'undefined' && localStorage.getItem('oaab_compact') === '1'),
   };
 
-  encodeFilterUrl() {
-    const p = new URLSearchParams();
-    p.set('popout', '1');
-    if (this.state.active && this.state.active !== 'All') p.set('type', this.state.active);
-    (this.state.tags || []).forEach(t => { if (t) p.append('tag', t); });
-    if (this.state.query) p.set('q', this.state.query);
-    (this.state.releases || []).forEach(r => { if (r) p.append('release', r); });
-    if (this.state.relMode && this.state.relMode !== 'all') p.set('relMode', this.state.relMode);
-    return location.pathname + '?' + p.toString();
-  }
-
-  readFilterUrl() {
-    const next = {};
-    try {
-      const p = new URLSearchParams(location.search || '');
-      const type = p.get('type');
-      if (type) next.active = type;
-      const tags = p.getAll('tag').filter(Boolean);
-      if (tags.length) next.tags = tags;
-      const q = p.get('q');
-      if (q != null) next.query = q;
-      const releases = p.getAll('release').filter(Boolean);
-      if (releases.length) next.releases = releases;
-      const relMode = p.get('relMode');
-      if (relMode === 'all' || relMode === 'added' || relMode === 'modified') next.relMode = relMode;
-    } catch (e) {}
-
-    // Pick up an initial tag filter from the URL hash (e.g. #tag=Telvanni),
-    // used by the home page's library links. Query params win when both exist.
-    if (!next.tags) {
-      const hm = /[#&]tag=([^&]+)/.exec(location.hash || '');
-      if (hm) {
-        try { next.tags = [decodeURIComponent(hm[1])]; } catch (e) {}
-      }
-    }
-    return next;
-  }
-
   componentDidMount() {
-    const initialFilters = this.readFilterUrl();
-    if (Object.keys(initialFilters).length) {
-      try { this.setState(initialFilters); } catch (e) {}
-    }
-
     // In popout mode, remember it for this window and tidy the address bar so
     // the ?popout=1 query string isn't shown (the browser's own URL bar on a
     // popup window can't be removed by the page, but we keep it clean).
@@ -283,6 +248,13 @@ class Component extends DCLogic {
           history.replaceState(null, '', location.pathname + location.hash);
         }
       } catch (e) {}
+    }
+
+    // Pick up an initial tag filter from the URL hash (e.g. #tag=Telvanni),
+    // used by the home page's library links.
+    const hm = /[#&]tag=([^&]+)/.exec(location.hash || '');
+    if (hm) {
+      try { this.setState({ tags: [decodeURIComponent(hm[1])] }); } catch (e) {}
     }
 
     this._onDocDown = (e) => {
@@ -355,12 +327,9 @@ class Component extends DCLogic {
 
     Promise.all([
       fetch(REPO + '/assets/data/library/records.json').then(r => r.json()),
-      fetch(REPO + '/assets/data/library/thumbnail-paths.json')
-        .then(r => r.ok ? r.json() : [])
-        .catch(e => { console.warn('thumbnail path manifest load failed', e); return []; }),
       loadDeprecated,
     ])
-      .then(([records, thumbnailPaths, deprecated]) => {
+      .then(([records, deprecated]) => {
         // Some records carry a raw numeric TES3 record tag instead of a label.
         const TYPE_LABELS = { '1497648962': 'Body Part' };
         const labelType = (t) => {
@@ -374,11 +343,6 @@ class Component extends DCLogic {
           }
           return t || 'Misc';
         };
-        const thumbnails = Object.create(null);
-        (Array.isArray(thumbnailPaths) ? thumbnailPaths : []).forEach(p => {
-          p = String(p || '').replace(/\\/g, '/');
-          if (p) thumbnails[p.toLowerCase()] = p;
-        });
         const seen = Object.create(null);
         const items = [];
         records.forEach(r => {
@@ -391,16 +355,15 @@ class Component extends DCLogic {
           if (/^AB_[ac]_/i.test(id)) return; // hide body parts (AB_a_*, AB_c_*) from the library
           if (deprecated[id]) return; // skip deprecated IDs
           seen[id] = 1;
+          // Thumbnail files preserve the mesh's original filename case; only
+          // the top-level OAAB folder is stored lowercased. Lowercasing the
+          // whole path here would 404 on case-sensitive jsdelivr/GitHub.
           const rel = norm.replace(/\.nif$/i, '.webp').replace(/^oaab\//i, 'oaab/');
-          // jsDelivr/GitHub paths are case-sensitive, while TES3 mesh paths are
-          // not. Resolve through the published thumbnail list so record casing
-          // mismatches still hit the actual file.
-          const thumbRel = thumbnails[rel.toLowerCase()] || rel;
           items.push({
             id: id,
             name: r.object_name || '',
             type: labelType(r.object_type),
-            img: THUMB + thumbRel,
+            img: THUMB + rel,
             mesh: mesh,
           });
         });
@@ -491,11 +454,12 @@ class Component extends DCLogic {
   }
 
   gridMetrics(width) {
-    const gap = 14;
-    const minCardWidth = 176;
-    const captionHeight = 78;
+    const compact = !!this.state.compact;
+    const gap = compact ? 10 : 14;
+    const minCardWidth = compact ? 112 : 176;
+    const captionHeight = compact ? 0 : 78;
     const columns = Math.max(1, Math.floor((Math.max(0, width) + gap) / (minCardWidth + gap)));
-    const cardWidth = (Math.max(minCardWidth, width) - gap * (columns - 1)) / columns;
+    const cardWidth = compact ? minCardWidth : (Math.max(minCardWidth, width) - gap * (columns - 1)) / columns;
     const rowHeight = cardWidth + captionHeight;
     return { columns, rowHeight, rowPitch: rowHeight + gap };
   }
@@ -524,44 +488,46 @@ class Component extends DCLogic {
 
     const active = this.state.active;
     const selTags = this.state.tags || [];
+    const compact = !!this.state.compact;
+    const comfortable = !compact;
 
     // Tag rules: each matches against the object ID. * is a wildcard.
     const TAG_DEFS = this._tagDefs || (this._tagDefs = [
-      { label: 'Ascadian Isles', re: /(Flora|Terr)_Ai/ },
       { label: 'Ashlander',      re: /Ashl|DungBurnt/ },
-      { label: 'Ashlands',       re: /Flora_Ash|Terr_Al|Terr_Ash|Flora_Al/ },
-      { label: "Azura's Coast",  re: /(Flora|Terr)_Ac/ },
-      { label: 'Bitter Coast',   re: /(Flora|Terr)_Bc/ },
-      { label: 'Bonemold',       re: /Bonem/ },
-      { label: 'Colony',         re: /Colony/ },
-      { label: 'Common',         re: /ComCook|ComRch|ComMid|ComPln|Furn_Com|In_Com|Ex_Com/ },
-      { label: 'Crypt',          re: /Crypt|ComGraves|Coffin/ },
-      { label: 'Docks',          re: /Ship|Dock|Gall/ },
-      { label: 'Dungeon',        re: /Dng/ },
-      { label: 'Dunmer',         re: /Furn_De|Guarcart|Temple|Furn_Urn/ },
-      { label: 'Dwemer',         re: /Dwe|Dwrv|Dwemer|Dwarven|Oilslick/ },
-      { label: 'Effects',        re: /Fx/ },
-      { label: 'Farm',           re: /Straw|Grain|SackHuge/ },
-      { label: 'Grazelands',     re: /Flora_Gl|Terr_Gl/ },
-      { label: 'Hair',           re: /b_.*Hair/ },
-      { label: 'Head',           re: /b_.*Head/ },
-      { label: 'Hlaalu',         re: /Hla/ },
-      { label: 'Horror',         re: /Furn_Bone|Blood|Corpse|StakeHead|Web/ },
-      { label: 'Imperial',       re: /Imp/ },
-      { label: 'Kwama',          re: /Kwama/ },
-      { label: 'Mine',           re: /Mine|ClimbingPick|WheelBarrow|Wheelbr|CaveWood/ },
-      { label: 'Mold Cave',      re: /CaveMold/ },
-      { label: 'Nord',           re: /Nord/ },
-      { label: 'Oblivion',       re: /Infernace|Mv|Dae|Vae|MV/ },
-      { label: 'Py Cave',        re: /CavePy/ },
-      { label: 'Red Mountain',   re: /Rm/ },
-      { label: 'Redoran',        re: /Red/ },
-      { label: 'Sixth House',    re: /6th|Sixth|Corprus/ },
-      { label: 'Stronghold',     re: /Str|Strong/ },
       { label: 'Telvanni',       re: /Tel|Parasol/ },
-      { label: 'Underwater',     re: /Kelp/ },
       { label: 'Velothi',        re: /Vel|In_Sewer/ },
+      { label: 'Sixth House',    re: /6th|Sixth|Corprus/ },
+      { label: 'Bonemold',       re: /Bonem/ },
+      { label: 'Mold Cave',      re: /CaveMold/ },
+      { label: 'Effects',        re: /Fx/ },
+      { label: 'Head',           re: /b_.*Head/ },
+      { label: 'Hair',           re: /b_.*Hair/ },
+      { label: 'Ascadian Isles', re: /(Flora|Terr)_Ai/ },
+      { label: 'Bitter Coast',   re: /(Flora|Terr)_Bc/ },
+      { label: "Azura's Coast",  re: /(Flora|Terr)_Ac/ },
+      { label: 'Dunmer',         re: /Furn_De|Guarcart|Temple|Furn_Urn/ },
+      { label: 'Common',         re: /ComCook|ComRch|ComMid|ComPln|Furn_Com|In_Com|Ex_Com/ },
+      { label: 'Colony',         re: /Colony/ },
+      { label: 'Crypt',          re: /Crypt|ComGraves|Coffin/ },
+      { label: 'Dwemer',         re: /Dwe|Dwrv|Dwemer|Dwarven|Oilslick/ },
+      { label: 'Hlaalu',         re: /Hla/ },
+      { label: 'Imperial',       re: /Imp/ },
+      { label: 'Oblivion',       re: /Infernace|Mv|Dae|Vae|MV/ },
+      { label: 'Redoran',        re: /Red/ },
+      { label: 'Stronghold',     re: /Str|Strong/ },
+      { label: 'Ashlands',       re: /Flora_Ash|Terr_Al|Terr_Ash|Flora_Al/ },
+      { label: 'Grazelands',     re: /Flora_Gl|Terr_Gl/ },
       { label: 'West Gash',      re: /Flora_Wg|Terr_Wg/ },
+      { label: 'Red Mountain',   re: /Rm/ },
+      { label: 'Underwater',     re: /Kelp/ },
+      { label: 'Horror',         re: /Furn_Bone|Blood|Corpse|StakeHead|Web/ },
+      { label: 'Dungeon',        re: /Dng/ },
+      { label: 'Mine',           re: /Mine|ClimbingPick|WheelBarrow|Wheelbr|CaveWood/ },
+      { label: 'Py Cave',        re: /CavePy/ },
+      { label: 'Docks',          re: /Ship|Dock|Gall/ },
+      { label: 'Farm',           re: /Straw|Grain|SackHuge/ },
+      { label: 'Kwama',          re: /Kwama/ },
+      { label: 'Nord',           re: /Nord/ },
     ]);
     const tagsFor = (id) => {
       const cache = this._tagCache || (this._tagCache = Object.create(null));
@@ -613,7 +579,6 @@ class Component extends DCLogic {
     const tagMenu = TAG_DEFS
       // Hide tags with no matches under the current Type, unless already selected.
       .filter(t => tagCounts[t.label] > 0 || selTags.indexOf(t.label) !== -1)
-      .sort((a, b) => a.label.localeCompare(b.label))
       .map(t => mkTagRow(t.label, tagCounts[t.label], false));
 
     // Tag filter (OR across selected tags) applied on top of the type filter.
@@ -775,7 +740,10 @@ class Component extends DCLogic {
         type: x.type,
         img: x.img,
         nif: x.mesh || (x.img || ''),
-        relShow: !!prov,
+        tip: comfortable
+          ? (x.mesh || x.img || '')
+          : (x.id + (x.name ? '  \u00b7  ' + x.name : '') + (x.type ? '\n' + x.type : '') + (x.mesh ? '\n' + x.mesh : '')),
+        relShow: !!prov && comfortable,
         relVer: prov ? prov.version : '',
         relGlyph: sty.glyph,
         relBg: sty.bg,
@@ -793,6 +761,19 @@ class Component extends DCLogic {
     return {
       yes: true,
       no: false,
+      comfortable,
+      gridCols: compact ? 'repeat(auto-fill,112px)' : 'repeat(auto-fill,minmax(176px,1fr))',
+      gridGap: compact ? 10 : 14,
+      imgPad: compact ? 7 : 12,
+      compactBg: compact ? 'rgba(154,146,214,0.12)' : '#15100b',
+      compactBd: compact ? '#5a5380' : '#322a20',
+      compactFg: compact ? '#efe9f6' : '#9a8d77',
+      compactTitle: compact ? 'Compact thumbnails \u2014 click for comfortable view' : 'Comfortable thumbnails \u2014 click for compact view',
+      toggleCompact: () => this.setState(s => {
+        const next = !s.compact;
+        try { localStorage.setItem('oaab_compact', next ? '1' : '0'); } catch (e) {}
+        return { compact: next };
+      }),
       isPopout,
       showChrome: !isPopout,
       tabbarTop: isPopout ? 0 : 61,
@@ -803,7 +784,7 @@ class Component extends DCLogic {
         const left = Math.max(0, Math.round(sx + (window.outerWidth - w) / 2));
         const top = Math.max(0, Math.round(sy + (window.outerHeight - h) / 2));
         const win = window.open(
-          this.encodeFilterUrl(),
+          location.pathname + '?popout=1',
           'oaab_library_popout',
           'popup=yes,width=' + w + ',height=' + h + ',left=' + left + ',top=' + top
         );
