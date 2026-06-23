@@ -70,6 +70,7 @@ button{font-family:inherit;}
 
 <div data-tabbar="" style="position:sticky;top:{{ tabbarTop }}px;z-index:40;background:rgba(18,14,11,0.92);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid #221c15;">
   <div style="max-width:1180px;margin:0 auto;padding:12px {{ barPadX }}px 13px;">
+    <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
     <div style="display:flex;align-items:flex-start;gap:16px;padding-bottom:12px;border-bottom:1px solid #221c15;">
       <span style="flex:0 0 auto;width:58px;padding-top:11px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6f6552;">Type</span>
       <div data-tabscroll="" style="flex:1 1 auto;display:flex;flex-wrap:wrap;gap:8px;">
@@ -81,14 +82,34 @@ button{font-family:inherit;}
         </sc-for>
       </div>
     </div>
-    <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
-      <div style="flex:1 1 auto;position:relative;display:flex;align-items:center;">
+    </sc-if>
+    <div style="display:flex;align-items:center;flex-wrap:{{ rowWrap }};gap:12px;margin-top:12px;">
+      <div style="flex:{{ searchFlex }};position:relative;display:flex;align-items:center;">
         <svg viewBox="0 0 24 24" fill="none" stroke="#80735f" stroke-width="2" style="position:absolute;left:13px;width:16px;height:16px;pointer-events:none;"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
         <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search by ID or name — e.g. AB_r_TombDoor, Bonemold…" spellcheck="false" autocomplete="off" style="flex:1 1 auto;width:100%;font-family:'EB Garamond',serif;font-size:15.5px;color:#e7dccb;background:#15100b;border:1px solid #322a20;border-radius:9px;padding:10px 38px 10px 38px;outline:none;transition:border-color .18s,box-shadow .18s;" style-focus="border-color:var(--ember,#d2823f);box-shadow:0 0 0 3px rgba(210,130,63,0.12);">
         <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
           <button onClick="{{ clearSearch }}" title="Clear search" style="position:absolute;right:9px;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#2a2218;color:#b3a690;border:none;cursor:pointer;font-size:14px;line-height:1;transition:background .18s,color .18s;" style-hover="background:var(--ember,#d2823f);color:#15110c;">×</button>
         </sc-if>
       </div>
+      <sc-if value="{{ isPopout }}" hint-placeholder-val="{{ false }}">
+      <div data-typedd="" style="position:relative;flex:0 0 auto;">
+        <button onClick="{{ toggleType }}" style="display:inline-flex;align-items:center;gap:10px;min-width:150px;justify-content:space-between;font-family:'EB Garamond',serif;font-size:15px;color:{{ typeBtnFg }};background:{{ typeBtnBg }};border:1px solid {{ typeBtnBd }};border-radius:9px;padding:10px 14px;cursor:pointer;white-space:nowrap;transition:all .18s;" style-hover="border-color:#d2823f;">
+          <span>{{ typeBtnLabel }}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;opacity:.7;transition:transform .2s;transform:rotate({{ typeChevronDeg }}deg);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <sc-if value="{{ typeOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:calc(100% + 8px);left:0;z-index:60;width:240px;background:#15100b;border:1px solid #322a20;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,0.55);padding:6px;animation:oaabFade .14s ease both;">
+            <div data-tabscroll="" style="max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:1px;">
+              <sc-for list="{{ typeMenu }}" as="ty" hint-placeholder-count="12">
+                <button data-type="{{ ty.label }}" onClick="{{ pickType }}" style="display:flex;align-items:center;width:100%;font-family:'EB Garamond',serif;font-size:14.5px;background:transparent;border:none;border-radius:8px;padding:8px 11px;cursor:pointer;text-align:left;transition:background .14s;" style-hover="background:#1e1812;">
+                  <span style="display:inline-flex;align-items:center;gap:10px;color:{{ ty.labelColor }};"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:5px;background:{{ ty.checkBg }};border:1px solid {{ ty.checkBd }};font-size:11px;line-height:1;color:#161019;">{{ ty.mark }}</span>{{ ty.displayLabel }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      </sc-if>
       <div data-tagdd="" style="position:relative;flex:0 0 auto;">
         <button onClick="{{ toggleTags }}" style="display:inline-flex;align-items:center;gap:10px;font-family:'EB Garamond',serif;font-size:15px;color:{{ tagBtnFg }};background:{{ tagBtnBg }};border:1px solid {{ tagBtnBd }};border-radius:9px;padding:10px 14px;cursor:pointer;white-space:nowrap;transition:all .18s;" style-hover="border-color:#9a92d6;">
           <span style="display:inline-flex;width:7px;height:7px;border-radius:50%;background:#9a92d6;opacity:{{ tagDotOp }};"></span>
@@ -231,7 +252,7 @@ button{font-family:inherit;}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = {
-    data: null, active: 'All', tags: [], query: '', tagOpen: false,
+    data: null, active: 'All', tags: [], query: '', tagOpen: false, typeOpen: false,
     relData: [], releases: [], relMode: 'all', relOpen: false,
     gridWidth: 0, virtualStartRow: 0, virtualEndRow: 8,
     compact: (typeof localStorage !== 'undefined' && localStorage.getItem('oaab_compact') === '1'),
@@ -261,6 +282,9 @@ class Component extends DCLogic {
       const t = e.target;
       if (this.state.tagOpen && !(t.closest && t.closest('[data-tagdd]'))) {
         this.setState({ tagOpen: false });
+      }
+      if (this.state.typeOpen && !(t.closest && t.closest('[data-typedd]'))) {
+        this.setState({ typeOpen: false });
       }
       if (this.state.relOpen && !(t.closest && t.closest('[data-reldd]'))) {
         this.setState({ relOpen: false });
@@ -561,6 +585,19 @@ class Component extends DCLogic {
     };
     const tabs = [mkType('All', total)].concat(types.map(t => mkType(t.label, t.count)));
 
+    // Single-select Type dropdown (popout only) — no counts.
+    const mkTypeRow = (label, displayLabel) => {
+      const on = label === active;
+      return {
+        label, displayLabel,
+        mark: on ? '\u2713' : '',
+        checkBg: on ? '#d2823f' : 'transparent',
+        checkBd: on ? '#d2823f' : '#4a4234',
+        labelColor: on ? '#f4ecdd' : '#cbbfa6',
+      };
+    };
+    const typeMenu = [mkTypeRow('All', 'All objects')].concat(types.map(t => mkTypeRow(t.label, t.label)));
+
     const noTags = selTags.length === 0;
     const mkTagRow = (label, count, isAll) => {
       const on = isAll ? noTags : selTags.indexOf(label) !== -1;
@@ -811,6 +848,17 @@ class Component extends DCLogic {
       clearSearch: () => this.setState({ query: '' }),
       typeCount: types.length,
       tabs,
+      typeOpen: !!this.state.typeOpen,
+      toggleType: () => this.setState(s => ({ typeOpen: !s.typeOpen, tagOpen: false, relOpen: false })),
+      typeMenu,
+      typeBtnLabel: active === 'All' ? 'All objects' : active,
+      typeChevronDeg: this.state.typeOpen ? '180' : '0',
+      typeBtnFg: active === 'All' ? '#cbbfa6' : '#f4ecdd',
+      typeBtnBg: active === 'All' ? '#15100b' : 'rgba(210,130,63,0.12)',
+      typeBtnBd: active === 'All' ? '#322a20' : '#4a3526',
+      pickType: (e) => this.setState({ active: e.currentTarget.dataset.type, typeOpen: false }),
+      searchFlex: isPopout ? '1 1 100%' : '1 1 auto',
+      rowWrap: isPopout ? 'wrap' : 'nowrap',
       allRow,
       tagMenu,
       tagOpen: !!this.state.tagOpen,
