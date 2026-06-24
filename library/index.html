@@ -218,7 +218,7 @@ button{font-family:inherit;}
       </div>
     </sc-if>
 
-    <div data-grid="" style="display:grid;grid-template-columns:{{ gridCols }};gap:{{ gridGap }}px;padding-top:{{ gridPadTop }}px;padding-bottom:{{ gridPadBottom }}px;overflow-anchor:none;">
+    <div data-grid="" style="display:grid;grid-template-columns:{{ gridCols }};justify-content:center;gap:{{ gridGap }}px;padding-top:{{ gridPadTop }}px;padding-bottom:{{ gridPadBottom }}px;overflow-anchor:none;">
       <sc-for list="{{ items }}" as="it" hint-placeholder-count="18">
         <figure title="{{ it.tip }}" draggable="{{ yes }}" data-eid="{{ it.id }}" onDragStart="{{ onDrag }}" style="margin:0;display:flex;flex-direction:column;border:1px solid #2c241b;border-radius:11px;overflow:hidden;background:#16110b;cursor:grab;transition:border-color .2s,transform .2s,box-shadow .25s;animation:oaabFade .4s ease both;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.42);" style-active="cursor:grabbing;border-color:var(--azura,#9a92d6);">
           <div style="position:relative;aspect-ratio:1/1;background:radial-gradient(120% 120% at 50% 18%,#221913 0%,#140f0a 72%);overflow:hidden;">
@@ -500,7 +500,7 @@ class Component extends DCLogic {
     const minCardWidth = Math.round((compact ? 112 : 176) * scale);
     const captionHeight = compact ? 0 : 78;
     const columns = Math.max(1, Math.floor((Math.max(0, width) + gap) / (minCardWidth + gap)));
-    const cardWidth = compact ? minCardWidth : (Math.max(minCardWidth, width) - gap * (columns - 1)) / columns;
+    const cardWidth = minCardWidth;
     const rowHeight = cardWidth + captionHeight;
     return { columns, rowHeight, rowPitch: rowHeight + gap };
   }
@@ -817,7 +817,7 @@ class Component extends DCLogic {
       no: false,
       comfortable,
       compact,
-      gridCols: compact ? ('repeat(auto-fill,' + Math.round(112 * (this.state.scale || 1)) + 'px)') : ('repeat(auto-fill,minmax(' + Math.round(176 * (this.state.scale || 1)) + 'px,1fr))'),
+      gridCols: 'repeat(auto-fill,' + Math.round((compact ? 112 : 176) * (this.state.scale || 1)) + 'px)',
       gridGap: Math.round((compact ? 10 : 14) * (this.state.scale || 1)),
       imgPad: Math.round((compact ? 7 : 12) * (this.state.scale || 1)),
       scale: this.state.scale || 1,
