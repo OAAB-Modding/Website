@@ -30,6 +30,7 @@ button{font-family:inherit;}
 @keyframes oaabGlow{0%,100%{opacity:.45;}50%{opacity:.8;}}
 @keyframes oaabPulse{0%,100%{box-shadow:0 0 0 0 rgba(210,130,63,0.45);}50%{box-shadow:0 0 0 6px rgba(210,130,63,0);}}
 </style>
+<script src="releases-data.js"></script>
 </helmet>
 
 <div data-root="" style="position:relative;background:#100d0a;--ember:#d2823f;--azura:#9a92d6;">
@@ -41,12 +42,11 @@ button{font-family:inherit;}
   </a>
   <div style="display:flex;align-items:center;gap:30px;">
     <div style="display:flex;gap:26px;font-family:'EB Garamond',serif;font-size:15.5px;color:#c3b6a0;letter-spacing:.01em;">
-      <a href="#about" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">About</a>
-      <a href="/library/" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Library</a>
-      <a href="#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
       <a href="/releases/" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Releases</a>
+      <a href="#mods" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Mods</a>
+      <a href="/library/" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">Library</a>
       <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" style="transition:color .2s;" style-hover="color:var(--azura,#9a92d6);">Wiki</a>
-      <a href="#modders" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">For Modders</a>
+      <a href="/faq/" style="transition:color .2s;" style-hover="color:var(--ember,#d2823f);">FAQ</a>
     </div>
     <a href="https://discord.gg/g5E2HUp" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:9px 18px;border-radius:7px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .2s,box-shadow .25s;" style-hover="filter:brightness(1.08);box-shadow:0 6px 22px rgba(210,130,63,0.28);">Join Discord</a>
   </div>
@@ -101,52 +101,39 @@ button{font-family:inherit;}
   </div>
 </header>
 
-<section id="about" style="padding:120px 32px;background:#100d0a;border-top:1px solid #1d1812;">
-  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
-    <div>
-      <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">What is OAAB</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;">More detail, faithfully Morrowind.</h2>
-      <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.72;color:#b3a690;margin:24px 0 0;">OAAB_Data is an asset repository for the Morrowind community. It does nothing on its own — but the mods that depend on it share its resources, so generic items work between mods, inventories aren't cluttered with duplicates, and the island stays cohesive.</p>
-      <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.72;color:#b3a690;margin:18px 0 0;">It began as <em style="font-style:italic;color:#d9cbb2;">Of Ash and Blight</em>, Melchior Dahrk's project to overhaul Vvardenfell. Today a team of contributors keeps it growing under a single vision.</p>
-      <div style="margin-top:30px;padding:20px 22px;border:1px solid #2c241b;border-left:2px solid var(--ember,#d2823f);border-radius:0 10px 10px 0;background:#16110b;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember,#d2823f);">Vanilla+, defined</div>
-        <p style="font-family:'EB Garamond',serif;font-size:16.5px;line-height:1.6;color:#bcae97;margin:10px 0 0;">Models are more detailed than vanilla, reuse vanilla textures wherever possible, and&nbsp;high definition textures are available&nbsp;— so new assets blend into any install, modded or not.&nbsp;</p>
-      </div>
-      <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.6;color:#80735f;margin:22px 0 0;font-style:italic;">Where Tamriel_Data spans every province, OAAB keeps a narrow focus on Vvardenfell.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
-        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">01</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">Rooted in canon</h3></div>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Drawn from the original concept art and early developer texts — expanding on what's already there if you look hard enough.</p>
-      </div>
-      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
-        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">02</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">A harsher island</h3></div>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Leans into ash, blight, and disease to make Vvardenfell a more dangerous place to walk.</p>
-      </div>
-      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
-        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">03</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">Dunmer, deepened</h3></div>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Expands Dunmer culture, economy, and lore in a way respectful to the original game — inconsistencies and all.</p>
-      </div>
-      <div style="padding:24px 26px;border:1px solid #2c241b;border-radius:12px;background:#16110b;transition:border-color .2s;" style-hover="border-color:#3d3324;">
-        <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);">04</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f1e8d8;margin:0;">Built to blend</h3></div>
-        <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:#a89b87;margin:11px 0 0;">Quality guidelines keep every asset at home in both a vanilla and a graphically modded game.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="library" style="padding:120px 32px;background:#15100b;border-top:1px solid #221c15;">
+<section id="releases" data-screen-label="Latest release" style="padding:120px 32px;background:#120e0c;border-top:1px solid #221c15;">
   <div style="max-width:1180px;margin:0 auto;">
-    <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">The Library</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;max-width:18ch;">Thousands of assets, one cohesive aesthetic.</h2>
-    <p style="font-family:'EB Garamond',serif;font-size:18.5px;line-height:1.65;color:#b3a690;max-width:62ch;margin:22px 0 0;">From Dwemer ruins and Velothi tombs to new creatures, kwama hives, and sunken shipwrecks — every asset is built to the vanilla+ standard and shared freely across the community.</p>
-    <div style="margin-top:26px;"><a href="/library/" style="display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:600;padding:12px 24px;border-radius:8px;background:var(--ember,#d2823f);color:#1a120a;border:1px solid var(--ember,#d2823f);transition:filter .18s,box-shadow .25s,transform .15s;" style-hover="filter:brightness(1.08);box-shadow:0 10px 34px rgba(210,130,63,0.28);transform:translateY(-1px);">Browse the full library →</a></div>
-    <div style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
-      <a href="/library/#tag=Telvanni" style="position:relative;grid-column:span 2;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/telvanni%20tunnels.png" alt="Telvanni tunnels" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:18px;bottom:16px;right:18px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;color:#f4ecdd;line-height:1.05;">#Telvanni</div></div></a>
-      <a href="/library/#tag=Velothi" style="position:relative;grid-column:span 1;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/velothi%20tombs.png" alt="Velothi tombs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:16px;bottom:14px;right:16px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#f4ecdd;line-height:1.05;">#Velothi</div></div></a>
-      <a href="/library/#tag=Crypt" style="position:relative;grid-column:span 1;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/crypts.png" alt="Common crypt set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:16px;bottom:14px;right:16px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#f4ecdd;line-height:1.05;">#Crypt</div></div></a>
-      <a href="/library/#tag=Kwama" style="position:relative;grid-column:span 4;height:230px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/kwama%20hives.png" alt="Kwama hives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:18px;bottom:16px;right:18px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f4ecdd;line-height:1.05;">#Kwama</div></div></a>
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember,#d2823f);display:flex;align-items:center;gap:11px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--ember,#d2823f);animation:oaabPulse 2.4s ease-in-out infinite;"></span>Latest release
+        </div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;">Release {{ latestRelease.version }}</h2>
+      </div>
+      <a href="/releases/" style="display:inline-flex;align-items:center;gap:9px;font-family:'EB Garamond',serif;font-size:16px;font-weight:600;padding:12px 22px;border-radius:8px;background:transparent;color:#e7dccb;border:1px solid #463b2d;transition:border-color .2s,color .2s;white-space:nowrap;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">Browse all releases →</a>
     </div>
+
+    <a href="{{ latestRelease.href }}" style="margin-top:40px;display:grid;grid-template-columns:1.05fr 1fr;gap:0;border:1px solid #34291c;border-radius:16px;overflow:hidden;background:#16110b;transition:border-color .25s,transform .25s,box-shadow .3s;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 22px 52px rgba(0,0,0,0.5);">
+      <div style="position:relative;min-height:320px;background:repeating-linear-gradient(135deg,#1a1208 0 16px,#1f160d 16px 32px);">
+        <sc-if value="{{ latestRelease.cover }}" hint-placeholder-val="{{ true }}">
+          <img src="{{ latestRelease.cover }}" alt="{{ latestRelease.version }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        </sc-if>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(22,17,11,0.9) 100%);"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(22,17,11,0.55) 100%);"></div>
+        <span style="position:absolute;left:18px;top:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#1a120a;background:var(--ember,#d2823f);padding:5px 11px;border-radius:6px;font-weight:600;">Latest · {{ latestRelease.version }}</span>
+      </div>
+      <div style="padding:38px 38px 34px;display:flex;flex-direction:column;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;color:#80735f;">{{ latestRelease.date }} · by {{ latestRelease.author }}</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,3.2vw,42px);line-height:1.04;color:#f4ecdd;margin:12px 0 0;">Release {{ latestRelease.version }}</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.62;color:#b3a690;margin:16px 0 0;text-wrap:pretty;">{{ latestRelease.excerpt }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;">
+          <sc-for list="{{ latestRelease.labels }}" as="lab" hint-placeholder-count="6">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:#c3b6a0;padding:5px 11px;border:1px solid #2f2920;border-radius:999px;background:#14100b;">{{ lab }}</span>
+          </sc-for>
+        </div>
+        <span style="margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-family:'EB Garamond',serif;font-size:16.5px;font-weight:600;color:var(--ember,#d2823f);">Read the release notes →</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -193,6 +180,25 @@ button{font-family:inherit;}
   </div>
 </section>
 
+<section id="library" style="padding:120px 32px;background:#15100b;border-top:1px solid #221c15;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;">
+      <div style="max-width:62ch;">
+        <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">The Library</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;max-width:18ch;">Thousands of assets, one cohesive aesthetic.</h2>
+        <p style="font-family:'EB Garamond',serif;font-size:18.5px;line-height:1.65;color:#b3a690;max-width:62ch;margin:22px 0 0;">From Dwemer ruins and Velothi tombs to new creatures, kwama hives, and sunken shipwrecks — every asset is built to the vanilla+ standard and shared freely across the community.</p>
+      </div>
+      <a href="/library/" style="display:inline-flex;align-items:center;gap:9px;font-family:'EB Garamond',serif;font-size:16px;font-weight:600;padding:12px 22px;border-radius:8px;background:transparent;color:#e7dccb;border:1px solid #463b2d;transition:border-color .2s,color .2s;white-space:nowrap;" style-hover="border-color:var(--ember,#d2823f);color:var(--ember,#d2823f);">Browse the full library →</a>
+    </div>
+    <div style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+      <a href="/library/#tag=Telvanni" style="position:relative;grid-column:span 2;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/telvanni%20tunnels.png" alt="Telvanni tunnels" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:18px;bottom:16px;right:18px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;color:#f4ecdd;line-height:1.05;">#Telvanni</div></div></a>
+      <a href="/library/#tag=Velothi" style="position:relative;grid-column:span 1;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/velothi%20tombs.png" alt="Velothi tombs" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:16px;bottom:14px;right:16px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#f4ecdd;line-height:1.05;">#Velothi</div></div></a>
+      <a href="/library/#tag=Crypt" style="position:relative;grid-column:span 1;height:300px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/crypts.png" alt="Common crypt set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:16px;bottom:14px;right:16px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:#f4ecdd;line-height:1.05;">#Crypt</div></div></a>
+      <a href="/library/#tag=Kwama" style="position:relative;grid-column:span 4;height:230px;border:1px solid #2e271e;border-radius:12px;overflow:hidden;background:#15100b;transition:border-color .2s,transform .2s;text-decoration:none;display:block;" style-hover="border-color:#5a4a32;transform:translateY(-2px);"><img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/kwama%20hives.png" alt="Kwama hives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,9,6,0.9) 100%);"></div><div style="position:absolute;left:18px;bottom:16px;right:18px;"><div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#f4ecdd;line-height:1.05;">#Kwama</div></div></a>
+    </div>
+  </div>
+</section>
+
 <section id="wiki" style="padding:120px 32px;background:#120e0c;border-top:1px solid #221c15;">
   <div style="max-width:1180px;margin:0 auto;">
     <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;">
@@ -211,43 +217,6 @@ button{font-family:inherit;}
   </div>
 </section>
 
-<section id="modders" style="padding:120px 32px;background:#100d0a;border-top:1px solid #1d1812;">
-  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
-    <div>
-      <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">For Modders</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4.4vw,54px);line-height:1.04;letter-spacing:-.01em;color:#f1e8d8;margin:18px 0 0;">Depend on it. Don't copy it.</h2>
-      <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.72;color:#b3a690;margin:24px 0 0;">Make your mod dependent on the ESM rather than extracting resources. Players won't end up with three kinds of guar meat, your files stay small, and your assets update whenever OAAB_Data does.</p>
-      <div style="display:flex;flex-direction:column;gap:13px;margin-top:30px;">
-        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Automatic compatibility across every OAAB-dependent mod</span></div>
-        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Smaller downloads and shorter load times for players</span></div>
-        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Leveled lists stay current as new items are added</span></div>
-        <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--ember,#d2823f);font-size:18px;line-height:1.5;">✦</span><span style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#bcae97;">Palette cells (OAAB_Cells.esp) to speed up your workflow</span></div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div style="border:1px solid #2c241b;border-radius:12px;background:#16110b;overflow:hidden;">
-        <div style="display:flex;gap:7px;align-items:center;padding:13px 18px;border-bottom:1px solid #261f17;background:#1a140e;">
-          <span style="width:10px;height:10px;border-radius:50%;background:#3a3127;"></span><span style="width:10px;height:10px;border-radius:50%;background:#3a3127;"></span><span style="width:10px;height:10px;border-radius:50%;background:#3a3127;"></span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#80735f;margin-left:8px;letter-spacing:.04em;">getting started</span>
-        </div>
-        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:18px;">
-          <div style="display:flex;gap:15px;align-items:flex-start;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);flex-shrink:0;">01</span><div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#ece2d2;font-weight:600;">Add OAAB_Data.esm as a master</div><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#80735f;margin-top:4px;">requires Tribunal &amp; Bloodmoon</div></div></div>
-          <div style="display:flex;gap:15px;align-items:flex-start;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);flex-shrink:0;">02</span><div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#ece2d2;font-weight:600;">Build with shared items, kits &amp; leveled lists</div><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#80735f;margin-top:4px;">reference the palette cells for context</div></div></div>
-          <div style="display:flex;gap:15px;align-items:flex-start;"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ember,#d2823f);flex-shrink:0;">03</span><div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#ece2d2;font-weight:600;">Tag your release #oaab_data on Nexus</div><div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#80735f;margin-top:4px;">so players can find what's compatible</div></div></div>
-        </div>
-      </div>
-      <div style="padding:22px 24px;border:1px solid #2c241b;border-left:2px solid var(--ember,#d2823f);border-radius:0 10px 10px 0;background:#16110b;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember,#d2823f);">License — free to use</div>
-        <div style="display:flex;flex-direction:column;gap:7px;margin-top:13px;font-family:'EB Garamond',serif;font-size:16px;color:#bcae97;">
-          <div><strong style="color:#ece2d2;">Adapt</strong> — remix, transform &amp; build upon for Morrowind</div>
-          <div><strong style="color:#ece2d2;">Attribution</strong> — give appropriate credit</div>
-          <div><strong style="color:#ece2d2;">Non-commercial</strong> — never behind a paywall</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="contribute" style="padding:120px 32px 110px;background:#15100b;border-top:1px solid #221c15;">
   <div style="max-width:1180px;margin:0 auto;text-align:center;">
     <div style="font-family:'EB Garamond',serif;text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600;color:var(--ember,#d2823f);">Contribute</div>
@@ -260,8 +229,13 @@ button{font-family:inherit;}
     <div style="margin-top:56px;padding-top:40px;border-top:1px solid #2b241c;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#80735f;margin-bottom:22px;">The team &amp; contributors</div>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:980px;margin:0 auto;">
-        <sc-for list="{{ contributors }}" as="name" hint-placeholder-count="36">
-          <span style="font-family:'EB Garamond',serif;font-size:15px;color:#a89b87;padding:7px 14px;border:1px solid #28221a;border-radius:999px;background:#14100b;transition:all .2s;" style-hover="border-color:var(--ember,#d2823f);color:#ece2d2;">{{ name }}</span>
+        <sc-for list="{{ contributors }}" as="c" hint-placeholder-count="36">
+          <sc-if value="{{ c.hasLink }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ c.href }}" target="_blank" rel="noopener" style="font-family:'EB Garamond',serif;font-size:15px;color:#c3b6a0;padding:7px 14px;border:1px solid #2f2920;border-radius:999px;background:#14100b;transition:all .2s;" style-hover="border-color:var(--ember,#d2823f);color:#ece2d2;background:rgba(210,130,63,0.08);">{{ c.name }}</a>
+          </sc-if>
+          <sc-if value="{{ c.noLink }}" hint-placeholder-val="{{ true }}">
+            <span style="font-family:'EB Garamond',serif;font-size:15px;color:#a89b87;padding:7px 14px;border:1px solid #28221a;border-radius:999px;background:#14100b;transition:all .2s;" style-hover="border-color:var(--ember,#d2823f);color:#ece2d2;">{{ c.name }}</span>
+          </sc-if>
         </sc-for>
       </div>
     </div>
@@ -571,9 +545,24 @@ class Component extends DCLogic {
       style: { flexShrink: 0, marginRight: 9, display: 'block', opacity: 0.92 },
     }, (children || []).map((c, i) => React.createElement(c[0], Object.assign({ key: i }, c[1]))));
 
-    const contributors = (this.state.team && this.state.team.length)
+    const contributorNames = (this.state.team && this.state.team.length)
       ? this.state.team
       : ['Anroha', 'Axeljk', 'Corsair', 'Dallara', 'DimNussens', 'Endoran', 'Greatness7', 'Hemaris', 'Lord Zircon', 'Melchior Dahrk', 'Merlord', 'MwGek', 'Olaf', 'OperatorJack', 'PikachunoTM', 'R-Zero', 'RedFurryDemon', 'Remiros', 'Revenorror', 'Tewlwolow', 'Wolli', 'XeroFoxx'];
+    // Nexus profile links for the team, lifted from the OAAB_Data mod page credits.
+    const U = (id) => 'https://www.nexusmods.com/morrowind/users/' + id;
+    const PROFILES = {
+      'anroha': U(47765413), 'axeljk': U(25459689), 'corsair': U(23131859), 'dallara': U(3346952),
+      'dimnussens': 'https://next.nexusmods.com/profile/DimNussens', 'endoran': U(44230747),
+      'greatness7': U(64030), 'hemaris': U(102938538), 'lord zircon': 'https://next.nexusmods.com/profile/Zzarcon',
+      'melchior dahrk': U(962116), 'merlord': U(3040468), 'mwgek': U(4462276), 'olaf': U(8753233),
+      'operatorjack': U(61791411), 'pikachunotm': U(16269634), 'r-zero': U(3241081),
+      'redfurrydemon': U(46908543), 'remiros': U(899234), 'revenorror': U(86600168),
+      'tewlwolow': U(1152341), 'wolli': U(1615721), 'xerofoxx': U(109130978),
+    };
+    const contributors = contributorNames.map((name) => {
+      const href = PROFILES[String(name).trim().toLowerCase()] || null;
+      return { name: name, href: href, hasLink: !!href, noLink: !href };
+    });
 
     const ai = this.state.asset;
     const cur = ASSETS[ai];
@@ -597,6 +586,15 @@ class Component extends DCLogic {
     const rawVer = this.state.version;
     const version = rawVer ? (/^v/i.test(rawVer) ? rawVer : 'v' + rawVer) : 'v2.6.2';
 
+    // Latest release blog, pulled from the shared releases data (newest first).
+    const relApi = (typeof window !== 'undefined' && window.OAAB_RELEASES) ? window.OAAB_RELEASES : { all: [] };
+    const latestRaw = (relApi.all || [])[0] || null;
+    const latestRelease = latestRaw ? {
+      version: latestRaw.version, date: latestRaw.date, author: latestRaw.author,
+      excerpt: latestRaw.excerpt, cover: latestRaw.cover || null,
+      labels: latestRaw.labels || [], href: '/releases/' + latestRaw.version + '/',
+    } : { version: '', date: '', author: '', excerpt: '', cover: null, labels: [], href: '/releases/' };
+
     const out = {
       modCount: modCount,
       modsHeading: modsHeading,
@@ -610,6 +608,7 @@ class Component extends DCLogic {
       visible: visible,
       wikiCats: WIKI.map(([label, p, ic]) => ({ label, href: 'https://www.oaab.dev/wiki/' + p, icon: makeWikiIcon(WIKI_ICONS[ic]) })),
       contributors,
+      latestRelease: latestRelease,
     };
     for (let k = 0; k < 6; k++) out['tile' + k] = '// ' + (cur.tiles[k] || '').toLowerCase();
     return out;
