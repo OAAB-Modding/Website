@@ -418,6 +418,10 @@ button {
 .release-mode-button:hover {
   border-color: #5a5380 !important;
 }
+.release-mode-button[data-mode="added"]:hover {
+  border-color: #d2823f !important;
+  box-shadow: 0 0 0 3px rgba(210,130,63,0.12) !important;
+}
 .clear-filters-button:hover {
   background: var(--ember,#d2823f) !important;
   border-color: var(--ember,#d2823f) !important;

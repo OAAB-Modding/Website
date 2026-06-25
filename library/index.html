@@ -154,10 +154,6 @@
           </sc-for>
         </div>
       </sc-if>
-      <span style="order:{{ dropOrder }};" class="release-legend">
-        <span class="legend-row"><span class="legend-new-swatch"></span>New</span>
-        <span class="legend-row"><span class="legend-updated-swatch"></span>Updated</span>
-      </span>
       </sc-if>
       <div style="order:{{ ctrlBtnOrder }};margin-left:{{ ctrlBtnMargin }};" class="thumb-scale-control">
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" class="scale-icon-small"><rect x="6" y="6" width="12" height="12" rx="1.6"></rect></svg>
@@ -258,7 +254,7 @@
 class Component extends DCLogic {
   state = {
     data: null, active: 'All', tags: [], query: '', tagOpen: false, typeOpen: false,
-    relData: [], releases: [], relMode: 'all', relOpen: false,
+    relData: [], releases: [], relKinds: ['added', 'modified'], relOpen: false,
     gridWidth: 0, virtualStartRow: 0, virtualEndRow: 8,
     compact: (typeof localStorage !== 'undefined' && localStorage.getItem('oaab_compact_v2') === '1'),
     scale: (function () {
@@ -651,7 +647,8 @@ class Component extends DCLogic {
     // most recent one that touched it — that's the id's default card badge.
     const relData = this.state.relData || [];
     const relSels = this.state.releases || [];
-    const relMode = this.state.relMode || 'all';
+    const relKinds = this.state.relKinds || ['added', 'modified'];
+    const kindOn = (k) => relKinds.indexOf(k) !== -1;
     let relSet, relMap;
     const relCache = this._relCache;
     if (relCache && relCache.data === relData) {
@@ -689,6 +686,7 @@ class Component extends DCLogic {
     // OR'd together (show assets touched in ANY selected release).
     const activeRels = relSels.filter(v => relSet[v]);
     const relKey = relSels.join('\u0000');
+    const kindKey = relKinds.slice().sort().join('\u0000');
     let relFiltered;
     const relFilterCache = this._relFilterCache;
     if (
@@ -696,7 +694,7 @@ class Component extends DCLogic {
       relFilterCache.items === tagFiltered &&
       relFilterCache.data === relData &&
       relFilterCache.key === relKey &&
-      relFilterCache.mode === relMode
+      relFilterCache.mode === kindKey
     ) {
       relFiltered = relFilterCache.filtered;
     } else {
@@ -704,14 +702,12 @@ class Component extends DCLogic {
       if (activeRels.length) {
         relFiltered = tagFiltered.filter(x => activeRels.some(v => {
           const s = relSet[v];
-          const inA = s.added.has(x.id), inM = s.modified.has(x.id);
-          if (relMode === 'added') return inA;
-          if (relMode === 'modified') return inM;
-          return inA || inM;
+          return (kindOn('added') && s.added.has(x.id)) ||
+                 (kindOn('modified') && s.modified.has(x.id));
         }));
       }
       this._relFilterCache = {
-        items: tagFiltered, data: relData, key: relKey, mode: relMode, filtered: relFiltered,
+        items: tagFiltered, data: relData, key: relKey, mode: kindKey, filtered: relFiltered,
       };
     }
 
@@ -730,13 +726,20 @@ class Component extends DCLogic {
     };
     const relAllRow = mkRelRow('', 0, true);
     const relMenu = relData.map(r => mkRelRow(r.version, relCounts[r.version], false));
-    const relMode_ = (k, label) => ({
-      key: k, label,
-      bg: relMode === k ? 'rgba(154,146,214,0.16)' : 'transparent',
-      fg: relMode === k ? '#efe9f6' : '#9a8d77',
-      bd: relMode === k ? '#5a5380' : '#322a20',
-    });
-    const relModes = [relMode_('all', 'All'), relMode_('added', 'New'), relMode_('modified', 'Updated')];
+    const relModes = [
+      {
+        key: 'added', label: 'New',
+        bg: kindOn('added') ? 'rgba(210,130,63,0.16)' : 'transparent',
+        fg: kindOn('added') ? '#e8a86a' : '#9a8d77',
+        bd: kindOn('added') ? '#7a4e2c' : '#322a20',
+      },
+      {
+        key: 'modified', label: 'Updated',
+        bg: kindOn('modified') ? 'rgba(154,146,214,0.16)' : 'transparent',
+        fg: kindOn('modified') ? '#cdc5ea' : '#9a8d77',
+        bd: kindOn('modified') ? '#5a5380' : '#322a20',
+      },
+    ];
 
     // Text search applied on top, matching ID or name (case-insensitive).
     const q = (this.state.query || '').trim().toLowerCase();
@@ -779,8 +782,8 @@ class Component extends DCLogic {
           const v = relData[i].version;
           if (activeRels.indexOf(v) === -1) continue;
           const s = relSet[v];
-          if (s.added.has(x.id)) { prov = { version: v, status: 'added' }; break; }
-          if (s.modified.has(x.id)) { prov = { version: v, status: 'modified' }; break; }
+          if (kindOn('added') && s.added.has(x.id)) { prov = { version: v, status: 'added' }; break; }
+          if (kindOn('modified') && s.modified.has(x.id)) { prov = { version: v, status: 'modified' }; break; }
         }
       }
       const sty = prov ? (prov.status === 'added' ? REL_ADDED : REL_UPD) : REL_UPD;
@@ -926,16 +929,22 @@ class Component extends DCLogic {
       relBtnBd: relSels.length ? '#5a5380' : '#322a20',
       toggleRel: () => this.setState(s => ({ relOpen: !s.relOpen, tagOpen: false })),
       pickRel: (e) => {
-        if (e.currentTarget.dataset.all === '1') { this.setState({ releases: [], relMode: 'all', relOpen: false }); return; }
+        if (e.currentTarget.dataset.all === '1') { this.setState({ releases: [], relKinds: ['added', 'modified'], relOpen: false }); return; }
         const v = e.currentTarget.dataset.rel || '';
         const cur = this.state.releases || [];
         const next = cur.indexOf(v) !== -1 ? cur.filter(x => x !== v) : cur.concat(v);
         this.setState({ releases: next });
       },
-      setRelMode: (e) => this.setState({ relMode: e.currentTarget.dataset.mode }),
-      anyFilter: active !== 'All' || selTags.length > 0 || !!q || relSels.length > 0 || relMode !== 'all',
+      setRelMode: (e) => {
+        const k = e.currentTarget.dataset.mode;
+        const cur = this.state.relKinds || ['added', 'modified'];
+        const next = cur.indexOf(k) !== -1 ? cur.filter(x => x !== k) : cur.concat(k);
+        if (next.length === 0) return; // keep at least one kind selected
+        this.setState({ relKinds: next });
+      },
+      anyFilter: active !== 'All' || selTags.length > 0 || !!q || relSels.length > 0,
       clearAll: () => this.setState({
-        active: 'All', tags: [], query: '', releases: [], relMode: 'all',
+        active: 'All', tags: [], query: '', releases: [], relKinds: ['added', 'modified'],
         tagOpen: false, relOpen: false,
       }),
       shownCount: filtered.length,
