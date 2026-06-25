@@ -210,7 +210,12 @@
       <sc-for list="{{ items }}" as="it" hint-placeholder-count="18">
         <figure title="{{ it.tip }}" draggable="{{ yes }}" data-eid="{{ it.id }}" onDragStart="{{ onDrag }}" style="margin:0;display:flex;flex-direction:column;border:1px solid #2c241b;border-radius:11px;overflow:hidden;background:#16110b;cursor:grab;transition:border-color .2s,transform .2s,box-shadow .25s;animation:oaabFade .4s ease both;" style-hover="border-color:var(--ember,#d2823f);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.42);" style-active="cursor:grabbing;border-color:var(--azura,#9a92d6);">
           <div style="position:relative;aspect-ratio:1/1;background:radial-gradient(120% 120% at 50% 18%,#221913 0%,#140f0a 72%);overflow:hidden;">
-            <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onLoad="{{ imgLoad }}" onError="{{ imgErr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:{{ imgPad }}px;pointer-events:none;">
+            <div key="{{ it.img }}" data-thumb="" style="position:absolute;inset:0;">
+              <div data-spin="" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;animation:oaabThumbPulse 1.3s ease-in-out infinite;">
+                <div style="width:24px;height:24px;border-radius:50%;border:2px solid rgba(210,130,63,0.18);border-top-color:rgba(210,130,63,0.82);animation:oaabSpin .7s linear infinite;"></div>
+              </div>
+              <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onLoad="{{ imgLoad }}" onError="{{ imgErr }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:{{ imgPad }}px;pointer-events:none;opacity:0;transition:opacity .3s ease;">
+            </div>
             <sc-if value="{{ comfortable }}" hint-placeholder-val="{{ true }}">
             <span style="position:absolute;left:9px;top:9px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#d8c7ad;background:rgba(12,9,6,0.66);backdrop-filter:blur(3px);padding:3px 7px;border-radius:5px;">{{ it.type }}</span>
             </sc-if>
@@ -842,8 +847,18 @@ class Component extends DCLogic {
         );
         if (win) win.focus();
       },
-      imgLoad: (e) => { e.target.style.opacity = '1'; },
-      imgErr: (e) => { e.target.style.opacity = '0'; },
+      imgLoad: (e) => {
+        e.target.style.opacity = '1';
+        const wrap = e.target.parentNode;
+        const spin = wrap && wrap.querySelector('[data-spin]');
+        if (spin) spin.style.display = 'none';
+      },
+      imgErr: (e) => {
+        e.target.style.opacity = '0';
+        const wrap = e.target.parentNode;
+        const spin = wrap && wrap.querySelector('[data-spin]');
+        if (spin) spin.style.display = 'none';
+      },
       onDrag: (e) => {
         const id = e.currentTarget.dataset.eid;
         if (!id) return;
