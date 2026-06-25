@@ -304,8 +304,8 @@ class Component extends DCLogic {
     // Release provenance is derived live from the per-release mesh diffs the
     // site publishes under assets/data/library/ (mesh_diff_<from>_to_<to>.json).
     // Each diff lists the .nif meshes added/modified in that span; we map those
-    // mesh paths back to object_ids through records.json once it's loaded (see
-    // loadMeshDiffs, called from the records .then below).
+    // mesh paths back to object IDs through OAAB_Data_filtered.json once it's
+    // loaded (see loadMeshDiffs, called from the records .then below).
 
     // Keep only the visible grid rows mounted. The handler updates state only
     // when the row window changes, avoiding a React render on every scroll tick.
@@ -359,10 +359,11 @@ class Component extends DCLogic {
       .catch(e => { console.warn('deprecated list load failed', e); return Object.create(null); });
 
     Promise.all([
-      fetch(REPO + '/assets/data/library/records.json').then(r => r.json()),
+      fetch(REPO + '/assets/data/library/OAAB_Data_filtered.json').then(r => r.json()),
+      fetch(REPO + '/assets/data/library/OAAB_Data_thumbnails.json').then(r => r.json()),
       loadDeprecated,
     ])
-      .then(([records, deprecated]) => {
+      .then(([records, thumbnails, deprecated]) => {
         // Some records carry a raw numeric TES3 record tag instead of a label.
         const TYPE_LABELS = { '1497648962': 'Body Part' };
         const labelType = (t) => {
@@ -376,6 +377,11 @@ class Component extends DCLogic {
           }
           return t || 'Misc';
         };
+        const thumbById = Object.create(null);
+        (thumbnails || []).forEach(t => {
+          if (!t || !t.id || !t.mesh) return;
+          thumbById[t.id] = String(t.mesh).replace(/\\/g, '/').replace(/^oaab\//i, 'oaab/');
+        });
         const seen = Object.create(null);
         const items = [];
         records.forEach(r => {
@@ -383,19 +389,17 @@ class Component extends DCLogic {
           const norm = mesh.replace(/\\/g, '/');
           // Thumbnails only exist for OAAB-namespaced meshes.
           if (!/^oaab\//i.test(norm)) return;
-          const id = r.object_id;
+          const id = r.id;
           if (!id || seen[id]) return;
           if (/^AB_[ac]_/i.test(id)) return; // hide body parts (AB_a_*, AB_c_*) from the library
           if (deprecated[id]) return; // skip deprecated IDs
+          const rel = thumbById[id];
+          if (!rel) return;
           seen[id] = 1;
-          // Thumbnail files preserve the mesh's original filename case; only
-          // the top-level OAAB folder is stored lowercased. Lowercasing the
-          // whole path here would 404 on case-sensitive jsdelivr/GitHub.
-          const rel = norm.replace(/\.nif$/i, '.webp').replace(/^oaab\//i, 'oaab/');
           items.push({
             id: id,
-            name: r.object_name || '',
-            type: labelType(r.object_type),
+            name: r.name || '',
+            type: labelType(r.type),
             img: THUMB + rel,
             mesh: mesh,
           });
@@ -427,7 +431,7 @@ class Component extends DCLogic {
   }
 
   // Normalise a mesh path to a lowercase, forward-slash key beginning at
-  // "oaab/". records.json stores "OAAB\\m\\foo.nif"; the diffs store full repo
+  // "oaab/". OAAB_Data_filtered.json stores "OAAB\\m\\foo.nif"; the diffs store full repo
   // paths like "00 Core/meshes/oaab/m/foo.nif" (and patch sub-folders) — both
   // collapse to the same key so a changed file lines up with its catalogue id.
   meshKey(p) {
@@ -437,7 +441,7 @@ class Component extends DCLogic {
   }
 
   // Build the Release facet (relData) from the published mesh diffs. One mesh
-  // can back several object_ids, so a single changed file may badge multiple
+  // can back several object IDs, so a single changed file may badge multiple
   // library cards. Releases are returned newest-first; the newest entry that
   // contains an id wins its default card badge.
   loadMeshDiffs(repo, items) {

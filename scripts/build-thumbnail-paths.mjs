@@ -2,18 +2,19 @@
 /**
  * build-thumbnail-paths.mjs
  * -------------------------------------------------------------------------
- * Writes the Library thumbnail manifest used for case-insensitive lookups in
- * library/index.html. The manifest stores each thumbnail's real repo path
- * relative to assets/images/library/thumbnails/meshes/.
+ * Writes the Library thumbnail manifest consumed by library/index.html. The
+ * manifest maps each object id to the thumbnail's real repo path relative to
+ * assets/images/library/thumbnails/meshes/.
  */
 
-import { readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, relative, sep } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const RECORDS = join(ROOT, 'assets/data/library/OAAB_Data_filtered.json');
 const THUMB_ROOT = join(ROOT, 'assets/images/library/thumbnails/meshes');
-const OUT = join(ROOT, 'assets/data/library/thumbnail-paths.json');
+const OUT = join(ROOT, 'assets/data/library/OAAB_Data_thumbnails.json');
 
 async function webpFiles(dir) {
   const out = [];
@@ -28,6 +29,26 @@ async function webpFiles(dir) {
   return out;
 }
 
-const paths = (await webpFiles(THUMB_ROOT)).sort((a, b) => a.localeCompare(b));
-await writeFile(OUT, JSON.stringify(paths, null, 2) + '\n');
-console.log(`Wrote ${OUT} - ${paths.length} thumbnail paths.`);
+function meshKey(p) {
+  const fwd = String(p || '').replace(/\\/g, '/').toLowerCase();
+  const i = fwd.lastIndexOf('oaab/');
+  return i === -1 ? null : fwd.slice(i).replace(/\.nif$/i, '.webp');
+}
+
+const records = JSON.parse((await readFile(RECORDS, 'utf8')).replace(/^\uFEFF/, ''));
+const thumbPaths = await webpFiles(THUMB_ROOT);
+const realPathByKey = new Map(thumbPaths.map(p => [p.toLowerCase(), p]));
+const seen = new Set();
+const thumbnails = [];
+
+for (const record of records) {
+  const key = meshKey(record.mesh);
+  const path = key && realPathByKey.get(key);
+  if (!path || !record.id || seen.has(record.id)) continue;
+  seen.add(record.id);
+  thumbnails.push({ id: record.id, mesh: path, source: 'OAAB_Data' });
+}
+
+thumbnails.sort((a, b) => a.id.localeCompare(b.id));
+await writeFile(OUT, JSON.stringify(thumbnails, null, 2) + '\n');
+console.log(`Wrote ${OUT} - ${thumbnails.length} thumbnail records.`);

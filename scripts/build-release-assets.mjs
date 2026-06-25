@@ -14,9 +14,9 @@
  *     prior X.Y.0 in version order), via the GitHub compare API. Because that
  *     compares tag-to-tag, any intermediate hotfix work is naturally absorbed
  *     into the next major's "what changed".
- *   • Changed mesh files (*.nif) are mapped back to TES3 object_ids through the
- *     site's own records.json. One mesh can back several object_ids, so a single
- *     changed file may badge multiple library cards.
+ *   • Changed mesh files (*.nif) are mapped back to TES3 object IDs through the
+ *     site's own OAAB_Data_filtered.json. One mesh can back several object IDs,
+ *     so a single changed file may badge multiple library cards.
  *
  * Usage:
  *   GITHUB_TOKEN=ghp_xxx node scripts/build-release-assets.mjs
@@ -31,7 +31,7 @@ import { dirname, join } from 'node:path';
 const DATA_REPO = 'OAAB-Modding/Data';        // source of releases + meshes
 const API = 'https://api.github.com';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const RECORDS = join(ROOT, 'assets/data/library/records.json'); // site-local catalogue
+const RECORDS = join(ROOT, 'assets/data/library/OAAB_Data_filtered.json'); // site-local catalogue
 const OUT = join(ROOT, 'release-assets.json');
 
 const TOKEN = process.env.GITHUB_TOKEN || '';
@@ -65,8 +65,8 @@ async function majorTags() {
   return tags;
 }
 
-// --- 2. mesh path -> [object_id, …] from the site catalogue ----------------
-//   records.json mesh: "OAAB\\m\\foo.nif"  (relative to Morrowind's Meshes/)
+// --- 2. mesh path -> [object IDs, ...] from the site catalogue -------------
+//   OAAB_Data_filtered.json mesh: "OAAB\\m\\foo.nif"  (relative to Morrowind's Meshes/)
 //   compare filename:  ".../Meshes/OAAB/m/foo.nif"
 //   Normalise both to a lowercase, forward-slash key beginning at "oaab/".
 function meshKey(p) {
@@ -75,13 +75,14 @@ function meshKey(p) {
   return i === -1 ? null : fwd.slice(i);
 }
 async function meshToIds() {
-  const records = JSON.parse(await readFile(RECORDS, 'utf8'));
+  const records = JSON.parse((await readFile(RECORDS, 'utf8')).replace(/^\uFEFF/, ''));
   const map = new Map();
   for (const r of records) {
+    if (!r.id) continue;
     const k = meshKey(r.mesh || '');
     if (!k) continue;
     if (!map.has(k)) map.set(k, []);
-    map.get(k).push(r.object_id);
+    map.get(k).push(r.id);
   }
   return map;
 }
