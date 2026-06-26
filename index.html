@@ -583,8 +583,8 @@ class Component extends DCLogic {
     const latestRelease = latestRaw ? {
       version: latestRaw.version, date: latestRaw.date, author: latestRaw.author,
       excerpt: latestRaw.excerpt, cover: latestRaw.cover || null,
-      labels: latestRaw.labels || [], href: '/releases/' + latestRaw.version + '/',
-    } : { version: '', date: '', author: '', excerpt: '', cover: null, labels: [], href: '/releases/' };
+      labels: latestRaw.labels || [], href: '/releases#' + encodeURIComponent(latestRaw.version),
+    } : { version: '', date: '', author: '', excerpt: '', cover: null, labels: [], href: '/releases' };
 
     const out = {
       modCount: modCount,

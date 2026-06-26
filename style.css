@@ -124,7 +124,7 @@ button {
 }
 
 /* --- Release article body -------------------------------------------------
-   Used only by the individual release pages (releases/<version>/). The notes
+   Used by the hash-routed release article view (/releases#<version>). The notes
    are injected verbatim from GitHub as a markup blob, so they're styled by
    class here rather than with per-element inline styles. Harmless on pages
    that have no .rbody element.
