@@ -109,7 +109,7 @@
         </button>
         <sc-if value="{{ tagOpen }}" hint-placeholder-val="{{ false }}">
           <div class="dropdown-menu-tags">
-            <button data-all="1" onClick="{{ pickTag }}" style="color:{{ allRow.color }};" class="dropdown-row-all">
+            <button data-all="1" onClick="{{ pickTag }}" style="color:{{ allRow.labelColor }};" class="dropdown-row-all">
               <span class="menu-label"><span style="background:{{ allRow.checkBg }};border:1px solid {{ allRow.checkBd }};" class="menu-check">{{ allRow.mark }}</span>Show all tags</span>
             </button>
             <div class="dropdown-divider"></div>
@@ -297,6 +297,53 @@ class Component extends DCLogic {
     };
     document.addEventListener('mousedown', this._onDocDown, true);
 
+    // Type-ahead: while the Tag dropdown is open, typing letters jumps to the
+    // first matching tag (alphabetical). Repeating the same letter cycles
+    // through tags starting with it; Escape closes the menu.
+    this._typeBuf = '';
+    this._typeTs = 0;
+    this._typeIdx = 0;
+    this._onKey = (e) => {
+      if (!this.state.tagOpen) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key === 'Escape') { this.setState({ tagOpen: false }); return; }
+      const k = e.key;
+      if (!k || k.length !== 1 || !/[a-z0-9]/i.test(k)) return;
+      const dd = document.querySelector('[data-tagdd]');
+      if (!dd) return;
+      const scroller = dd.querySelector('.dropdown-scroll');
+      const btns = [].slice.call(dd.querySelectorAll('[data-tag]'));
+      if (!btns.length) return;
+
+      const now = Date.now();
+      if (now - this._typeTs > 800) this._typeBuf = '';
+      this._typeTs = now;
+      this._typeBuf += k.toLowerCase();
+
+      let buf = this._typeBuf, cycle = false;
+      if (buf.length > 1 && /^(.)\1+$/.test(buf)) { buf = buf[0]; cycle = true; }
+      const matches = btns.filter(b => (b.dataset.tag || '').toLowerCase().indexOf(buf) === 0);
+      if (!matches.length) return;
+
+      let match;
+      if (cycle) {
+        this._typeIdx = (this._typeIdx + 1) % matches.length;
+        match = matches[this._typeIdx];
+      } else {
+        this._typeIdx = 0;
+        match = matches[0];
+      }
+
+      e.preventDefault();
+      if (scroller) {
+        const r = match.getBoundingClientRect();
+        const cr = scroller.getBoundingClientRect();
+        scroller.scrollTop += (r.top - cr.top) - 8;
+      }
+      try { match.focus({ preventScroll: true }); } catch (err) { match.focus(); }
+    };
+    document.addEventListener('keydown', this._onKey, true);
+
     // Release provenance is derived live from the per-release mesh diffs the
     // site publishes under assets/data/library/ (mesh_diff_<from>_to_<to>.json).
     // Each diff lists the .nif meshes added/modified in that span; we map those
@@ -405,7 +452,7 @@ class Component extends DCLogic {
         items.forEach(x => { counts[x.type] = (counts[x.type] || 0) + 1; });
         const types = Object.keys(counts)
           .map(k => ({ label: k, count: counts[k] }))
-          .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+          .sort((a, b) => a.label.localeCompare(b.label));
         this.setState({ data: { total: items.length, types, items } });
         this.loadMeshDiffs(REPO, items);
       })
@@ -414,6 +461,7 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     if (this._onDocDown) document.removeEventListener('mousedown', this._onDocDown, true);
+    if (this._onKey) document.removeEventListener('keydown', this._onKey, true);
     if (this._onScroll) {
       window.removeEventListener('scroll', this._onScroll);
       window.removeEventListener('resize', this._onScroll);
@@ -626,6 +674,8 @@ class Component extends DCLogic {
     const tagMenu = TAG_DEFS
       // Hide tags with no matches under the current Type, unless already selected.
       .filter(t => tagCounts[t.label] > 0 || selTags.indexOf(t.label) !== -1)
+      .slice()
+      .sort((a, b) => a.label.localeCompare(b.label))
       .map(t => mkTagRow(t.label, tagCounts[t.label], false));
 
     // Tag filter (OR across selected tags) applied on top of the type filter.
