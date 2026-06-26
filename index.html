@@ -38,6 +38,14 @@
       <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" class="nav-link nav-link--wiki">Wiki</a>
       <a href="/faq/" class="nav-link">FAQ</a>
     </div>
+    <button type="button" data-theme-toggle="" onClick="{{ toggleTheme }}" aria-label="Toggle light mode" title="Toggle light / dark" class="theme-toggle">
+      <sc-if value="{{ isLight }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </sc-if>
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      </sc-if>
+    </button>
     <a href="https://discord.gg/g5E2HUp" target="_blank" class="site-nav-cta">Join Discord</a>
   </div>
 </nav>
@@ -269,7 +277,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#d2823f&quot;},&quot;loreColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9a92d6&quot;},&quot;ashMotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true}}">
 class Component extends DCLogic {
-  state = { scrolled: false, asset: 0, page: 0, modCount: null, endorsements: null, version: null, team: null, order: [0, 1, 2, 3, 4, 5, 6].sort(function () { return Math.random() - 0.5; }) };
+  state = { scrolled: false, asset: 0, page: 0, modCount: null, endorsements: null, version: null, team: null, theme: 'dark', order: [0, 1, 2, 3, 4, 5, 6].sort(function () { return Math.random() - 0.5; }) };
   _pool = [
     { id: 52781, name: 'OAAB Greater Samarys Tomb', cat: 'Dungeons & Locations', by: 'Varlothen', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/52781/52781-1683010655-1472298450.jpeg' },
     { id: 50307, name: 'OAAB & Community Equipment Integration', cat: 'Weapons & Armour', by: 'Lucas9 & team', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/50307/50307-1633535938-2076544592.jpeg' },
@@ -281,13 +289,19 @@ class Component extends DCLogic {
   ];
 
   componentDidMount() {
+    try {
+      const t = localStorage.getItem('oaab_theme_v1');
+      if (t === 'light' || t === 'dark') this.state.theme = t;
+    } catch (e) {}
     this._onScroll = () => {
       const nav = document.querySelector('[data-nav]');
       if (!nav) return;
+      const light = this.state.theme === 'light';
       const s = window.scrollY > 40;
-      nav.style.background = s ? 'rgba(16,13,10,0.9)' : 'transparent';
-      nav.style.borderBottomColor = s ? '#2b241c' : 'transparent';
+      nav.style.background = s ? (light ? 'rgba(244,237,224,0.9)' : 'rgba(16,13,10,0.9)') : 'transparent';
+      nav.style.borderBottomColor = s ? (light ? '#ddd2bf' : '#2b241c') : 'transparent';
       nav.style.backdropFilter = nav.style.webkitBackdropFilter = s ? 'saturate(140%) blur(12px)' : 'none';
+      nav.classList.toggle('nav-scrolled', s);
     };
     window.addEventListener('scroll', this._onScroll, { passive: true });
     this._onScroll();
@@ -482,8 +496,15 @@ class Component extends DCLogic {
     const ember = this.props.accentColor ?? '#d2823f';
     const azura = this.props.loreColor ?? '#9a92d6';
     const motesOn = this.props.ashMotes ?? true;
+    const light = this.state.theme === 'light';
     const root = document.querySelector('[data-root]');
-    if (root) { root.style.setProperty('--ember', ember); root.style.setProperty('--azura', azura); }
+    if (root) {
+      root.style.setProperty('--ember', ember);
+      root.style.setProperty('--azura', azura);
+      root.classList.toggle('theme-light', light);
+    }
+    document.body.style.background = light ? '#f4ede0' : '#100d0a';
+    if (this._onScroll) this._onScroll();
     const motes = document.querySelector('[data-motes]');
     if (motes) motes.style.display = motesOn ? 'block' : 'none';
     const ai = this.state.asset;
@@ -592,6 +613,13 @@ class Component extends DCLogic {
       endorsements: endorsements,
       version: version,
       imgFail: (e) => { e.currentTarget.style.display = 'none'; },
+      isLight: this.state.theme === 'light',
+      isDark: this.state.theme !== 'light',
+      toggleTheme: () => {
+        const next = this.state.theme === 'light' ? 'dark' : 'light';
+        try { localStorage.setItem('oaab_theme_v1', next); } catch (e) {}
+        this.setState({ theme: next });
+      },
       pickAsset: (e) => { this.setState({ asset: +e.currentTarget.dataset.atab }); setTimeout(() => this.applyStyles(), 0); },
       reshuffle: () => { this.setState({ order: this.shuffleOrder(this._pool.length), page: 0 }); this.resetTimer(); },
       prevPage: () => { this.step(-1); this.resetTimer(); },

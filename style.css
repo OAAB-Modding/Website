@@ -2743,4 +2743,170 @@ button {
   letter-spacing:.04em;
   color:var(--ember,#d2823f);
 }
+/* --- Light mode ----------------------------------------------------------
+   Scoped overrides applied when the home root carries .theme-light. The dark
+   palette is the default; these rules remap the warm-black surfaces, parchment
+   text, and hairline borders to a warm-paper light scheme. The ember/azura
+   accents are kept as-is — they read well on both. The hero keeps light text
+   because it sits over a dark illustration; only its bottom fade is retinted
+   so it blends into the light page below.
+   ------------------------------------------------------------------------- */
+.site-root.theme-light {
+  background:#f4ede0;
+}
+
+/* Theme toggle button in the nav */
+.theme-toggle {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:8px;
+  background:transparent;
+  border:1px solid rgba(160,140,110,0.45);
+  color:#e7dccb;
+  cursor:pointer;
+  padding:0;
+  transition:border-color .2s,color .2s,background .2s;
+}
+.theme-toggle svg {
+  width:18px;
+  height:18px;
+  display:block;
+}
+.theme-toggle:hover {
+  border-color:var(--ember,#d2823f);
+  color:var(--ember,#d2823f);
+}
+.theme-light .home-nav.nav-scrolled .theme-toggle {
+  color:#5c5142;
+  border-color:#d8cdb8;
+}
+.theme-light .home-nav.nav-scrolled .nav-link {
+  color:#5c5142;
+}
+.theme-light .home-nav.nav-scrolled .nav-link--wiki {
+  color:#6b6092;
+}
+.theme-light .home-nav.nav-scrolled .brand-mark-text {
+  color:#8a7c66;
+  border-left-color:#d3c8b2;
+}
+
+/* Hero — keep light text on the dark art, retint only the bottom fade */
+.theme-light .home-hero-shade {
+  background:linear-gradient(180deg,rgba(16,13,10,0.55) 0%,rgba(16,13,10,0.16) 26%,rgba(40,32,22,0.5) 70%,#f4ede0 100%);
+}
+.theme-light .home-stats-band {
+  border-top-color:rgba(120,100,70,0.4);
+  background:rgba(28,22,15,0.42);
+}
+
+/* Section surfaces */
+.theme-light .section-alt {
+  background:#ece4d4;
+  border-top-color:#ddd2bf;
+}
+.theme-light .section-default {
+  background:#f4ede0;
+  border-top-color:#e2d8c6;
+}
+.theme-light .section-muted,
+.theme-light .contribute-section {
+  background:#e7dcc9;
+  border-top-color:#dad0bc;
+}
+.theme-light .home-footer {
+  background:#e2d6c0;
+  border-top-color:#d3c8b2;
+}
+
+/* Headings */
+.theme-light .section-title,
+.theme-light .section-title-release,
+.theme-light .section-title-library,
+.theme-light .wiki-title,
+.theme-light .contribute-title,
+.theme-light .featured-release-title-home,
+.theme-light .showcase-title {
+  color:#2b2218;
+}
+
+/* Body / secondary / muted copy */
+.theme-light .section-copy,
+.theme-light .section-copy-large,
+.theme-light .feature-copy,
+.theme-light .wiki-copy,
+.theme-light .contribute-copy,
+.theme-light .home-hero-emphasis {
+  color:#6a5d49;
+}
+.theme-light .showcase-byline,
+.theme-light .release-meta,
+.theme-light .home-footer-copy,
+.theme-light .footer-link,
+.theme-light .home-stat-label,
+.theme-light .contributors-label,
+.theme-light .footer-col-heading,
+.theme-light .status-line {
+  color:#8a7c66;
+}
+.theme-light .legal-copy,
+.theme-light .legal-version {
+  color:#9c8e76;
+}
+
+/* Cards & tiles */
+.theme-light .featured-release-card-home,
+.theme-light .card-link {
+  background:#fbf7ef;
+  border-color:#e2d6c2;
+}
+.theme-light .showcase-media,
+.theme-light .featured-release-media-home {
+  border-bottom-color:#e2d6c2;
+}
+.theme-light .showcase-body {
+  background:#fbf7ef;
+}
+.theme-light .chip,
+.theme-light .contributor-chip,
+.theme-light .contributor-chip-muted {
+  background:#f1e8d8;
+  border-color:#ddd0ba;
+  color:#6a5d49;
+}
+.theme-light .wiki-chip {
+  background:#efe6f3;
+  border-color:#d8d0e0;
+  color:#5b5170;
+}
+
+/* Buttons — ghost variants */
+.theme-light .btn-ghost-md,
+.theme-light .btn-ghost-lg,
+.theme-light .btn-ghost-lg-alt,
+.theme-light .btn-ghost-compact {
+  color:#4a4031;
+  border-color:#cdbfa6;
+}
+.theme-light .btn-wiki {
+  color:#5b5170;
+  border-color:#cdc3dc;
+}
+.theme-light .subtle-text-link {
+  color:#8a7c66;
+}
+
+/* Section dividers / contributors rule */
+.theme-light .contributors-block {
+  border-top-color:#d3c8b2;
+}
+.theme-light .home-footer-bottom {
+  border-top-color:#d3c8b2;
+}
+
+/* --- End light mode ------------------------------------------------------- */
+
 /* --- End components ------------------------------------------------------- */
