@@ -398,6 +398,21 @@ class Component extends DCLogic {
     const REPO = 'https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main';
     const THUMB = REPO + '/assets/images/library/thumbnails/meshes/';
 
+    // Data JSON must always reflect the freshly deployed source. jsdelivr caches
+    // the mutable @main ref for hours, so a lowercased mesh path (or any data
+    // edit) lags well behind the repo — which is why the catalogue still showed
+    // "OAAB\\…" tooltips after the source was lowercased. Read data same-origin
+    // (GitHub Pages purges its CDN on every deploy, so it is always current) and
+    // fall back to raw.githubusercontent (also always current) when the page is
+    // not served from the site itself, e.g. a local file open or a preview.
+    const DATA_LOCAL = '/assets/data/library/';
+    const DATA_RAW = 'https://raw.githubusercontent.com/OAAB-Modding/OAAB-Modding.github.io/main/assets/data/library/';
+    const fetchData = (file) =>
+      fetch(DATA_LOCAL + file)
+        .then(r => { if (!r.ok) throw new Error('http ' + r.status); return r; })
+        .catch(() => fetch(DATA_RAW + file));
+    this._fetchData = fetchData;
+
     // Deprecated IDs come straight from OAAB_Data's own metadata file
     // ([tools.csse] deprecated = [ ... ]), so the list stays current as the
     // team marks new objects deprecated — no separate snapshot to maintain.
@@ -412,7 +427,7 @@ class Component extends DCLogic {
       .catch(e => { console.warn('deprecated list load failed', e); return Object.create(null); });
 
     Promise.all([
-      fetch(REPO + '/assets/data/library/OAAB_Data_filtered.json').then(r => r.json()),
+      fetchData('OAAB_Data_filtered.json').then(r => r.json()),
       loadDeprecated,
     ])
       .then(([records, deprecated]) => {
@@ -463,7 +478,7 @@ class Component extends DCLogic {
           .map(k => ({ label: k, count: counts[k] }))
           .sort((a, b) => a.label.localeCompare(b.label));
         this.setState({ data: { total: items.length, types, items } });
-        this.loadMeshDiffs(REPO, items);
+        this.loadMeshDiffs(items);
       })
       .catch(e => console.error('library data load failed', e));
   }
@@ -521,7 +536,7 @@ class Component extends DCLogic {
   // can back several object IDs, so a single changed file may badge multiple
   // library cards. Releases are returned newest-first; the newest entry that
   // contains an id wins its default card badge.
-  loadMeshDiffs(repo, items) {
+  loadMeshDiffs(items) {
     const meshToIds = Object.create(null);
     items.forEach(x => {
       const k = this.meshKey(x.mesh);
@@ -534,14 +549,13 @@ class Component extends DCLogic {
     const CHAIN = ['1.9.0', '1.10.0', '1.11.0', '1.12.0', '1.13.0', '1.14.0',
       '1.15.0', '1.16.0', '2.0.0', '2.1.0', '2.2.0', '2.3.0', '2.4.0',
       '2.5.0', '2.6.0'];
-    const BASE = repo + '/assets/data/library/';
+    const fetchData = this._fetchData;
 
     const jobs = [];
     for (let i = 1; i < CHAIN.length; i++) {
       const from = CHAIN[i - 1], to = CHAIN[i];
-      const url = BASE + 'mesh_diff_' + from + '_to_' + to + '.json';
       jobs.push(
-        fetch(url)
+        fetchData('mesh_diff_' + from + '_to_' + to + '.json')
           .then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
           .then(diff => {
             const added = new Set(), modified = new Set();
