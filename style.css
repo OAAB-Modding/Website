@@ -572,6 +572,44 @@ button {
 .home-hero-inner .eyebrow-ember-wide {
   color:#f1e8d8;
 }
+.hero-lockup {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:fit-content;
+  gap:20px;
+  margin-bottom:2px;
+}
+.hero-logo-mark {
+  width:clamp(250px,33vw,410px);
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 8px 26px rgba(0,0,0,.6));
+}
+.hero-wordmark-rule {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding-left:4px;
+}
+.hero-wordmark-rule .hr-line {
+  height:1px;
+  width:clamp(26px,4.5vw,58px);
+  background:linear-gradient(90deg,transparent,var(--ember,#d2823f));
+  opacity:.8;
+}
+.hero-wordmark-rule .hr-line:last-child {
+  background:linear-gradient(90deg,var(--ember,#d2823f),transparent);
+}
+.hero-wordmark-text {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.3em;
+  font-size:clamp(15px,1.5vw,21px);
+  color:#e9ddc7;
+  white-space:nowrap;
+}
 .faq-hero-title {
   font-family:'Cormorant Garamond',serif;
   font-weight:600;
