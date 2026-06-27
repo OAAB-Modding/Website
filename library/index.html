@@ -704,47 +704,51 @@ class Component extends DCLogic {
       ? { surface: '#fbf7ef', border: '#d8cdb8', muted: '#6a5d49', soft: '#8a7c66', strong: '#2b2218', dim: '#b3a89a', tagText: '#5b5170', tagOn: '#3f3768' }
       : { surface: '#15100b', border: '#322a20', muted: '#b3a690', soft: '#9a8d77', strong: '#f4ecdd', dim: '#5a5346', tagText: '#cabfdb', tagOn: '#efe9f6' };
 
-    // Tag rules: each matches against the object ID. * is a wildcard.
+    // Tag rules: each matches against the object ID only. Keep matching
+    // case-insensitive because vanilla IDs are not consistently cased.
     const TAG_DEFS = this._tagDefs || (this._tagDefs = [
-      { label: 'Ashlander',      re: /Ashl|DungBurnt/ },
-      { label: 'Telvanni',       re: /Tel|Parasol/ },
-      { label: 'Velothi',        re: /Vel|In_Sewer/ },
-      { label: 'Sixth House',    re: /6th|Sixth|Corprus/ },
-      { label: 'Bonemold',       re: /Bonem/ },
-      { label: 'Mold Cave',      re: /CaveMold/ },
-      { label: 'Effects',        re: /Fx/ },
-      { label: 'Head',           re: /b_.*Head/ },
-      { label: 'Hair',           re: /b_.*Hair/ },
-      { label: 'Ascadian Isles', re: /(Flora|Terr)_Ai/ },
-      { label: 'Bitter Coast',   re: /(Flora|Terr)_Bc/ },
-      { label: "Azura's Coast",  re: /(Flora|Terr)_Ac/ },
-      { label: 'Dunmer',         re: /Furn_De|Guarcart|Temple|Furn_Urn/ },
-      { label: 'Common',         re: /ComCook|ComRch|ComMid|ComPln|Furn_Com|In_Com|Ex_Com/ },
-      { label: 'Colony',         re: /Colony/ },
-      { label: 'Crypt',          re: /Crypt|ComGraves|Coffin/ },
-      { label: 'Dwemer',         re: /Dwe|Dwrv|Dwemer|Dwarven|Oilslick/ },
-      { label: 'Hlaalu',         re: /Hla/ },
-      { label: 'Imperial',       re: /Imp/ },
-      { label: 'Oblivion',       re: /Infernace|Mv|Dae|Vae|MV/ },
-      { label: 'Redoran',        re: /Red/ },
-      { label: 'Stronghold',     re: /Str|Strong/ },
-      { label: 'Ashlands',       re: /Flora_Ash|Terr_Al|Terr_Ash|Flora_Al/ },
-      { label: 'Grazelands',     re: /Flora_Gl|Terr_Gl/ },
-      { label: 'West Gash',      re: /Flora_Wg|Terr_Wg/ },
-      { label: 'Red Mountain',   re: /Rm/ },
-      { label: 'Underwater',     re: /Kelp/ },
-      { label: 'Horror',         re: /Furn_Bone|Blood|Corpse|StakeHead|Web/ },
-      { label: 'Dungeon',        re: /Dng/ },
-      { label: 'Mine',           re: /Mine|ClimbingPick|WheelBarrow|Wheelbr|CaveWood/ },
-      { label: 'Py Cave',        re: /CavePy/ },
-      { label: 'Docks',          re: /Ship|Dock|Gall/ },
-      { label: 'Farm',           re: /Straw|Grain|SackHuge/ },
-      { label: 'Kwama',          re: /Kwama/ },
-      { label: 'Nord',           re: /Nord/ },
+      { label: 'Ashlander',      re: /(?:^|_)ashl(?!and)|dungburnt/i },
+      { label: 'Telvanni',       re: /_t_|_tel|telvanni|parasol/i },
+      { label: 'Velothi',        re: /_v_|_vel|velothi|in_sewer/i },
+      { label: 'Sixth House',    re: /6th|sixth|corprus/i },
+      { label: 'Bonemold',       re: /bonemold/i },
+      { label: 'Mold Cave',      re: /in_mold|cavemold/i },
+      { label: 'Effects',        re: /fx/i },
+      { label: 'Head',           re: /_head_|b_.*head/i },
+      { label: 'Hair',           re: /_hair_|b_.*hair/i },
+      { label: 'Ascadian Isles', re: /_ai_|(flora|terr)_ai/i },
+      { label: 'Bitter Coast',   re: /_bc_|(flora|terr)_bc/i },
+      { label: "Azura's Coast",  re: /_ac_|(flora|terr)_ac/i },
+      { label: 'Dunmer',         re: /furn_de|guarcart|temple|furn_urn/i },
+      { label: 'Common',         re: /_c_|comcook|comrch|commid|compln|furn_com|in_com|ex_com/i },
+      { label: 'Colony',         re: /colony/i },
+      { label: 'Crypt',          re: /crypt|comgraves|coffin/i },
+      { label: 'Dwemer',         re: /dwrv|dwe|dwemer|dwarven|oilslick/i },
+      { label: 'Hlaalu',         re: /hlaalu|_hla/i },
+      { label: 'Imperial',       re: /_imp|imperial/i },
+      { label: 'Oblivion',       re: /infernace|mv|dae|vae/i },
+      { label: 'Redoran',        re: /redoran|in_red|ex_red/i },
+      { label: 'Stronghold',     re: /strong|strruin/i },
+      { label: 'Ashlands',       re: /ashland|flora_ash|terr_al|terr_ash|flora_al/i },
+      { label: 'Grazelands',     re: /_gl_|flora_gl|terr_gl/i },
+      { label: 'West Gash',      re: /_wg_|flora_wg|terr_wg/i },
+      { label: 'Red Mountain',   re: /_rm_|terr_rm/i },
+      { label: 'Underwater',     re: /_kelp|kelp/i },
+      { label: 'Horror',         re: /furn_bone|blood|corpse|stakehead|web/i },
+      { label: 'Dungeon',        re: /dng/i },
+      { label: 'Mine',           re: /_rail(?:_|[0-9]|$)|mine|climbingpick|wheelbarrow|wheelbr|cavewood/i, exclude: /ingmine/i },
+      { label: 'Py Cave',        re: /in_pycave|cavepy/i },
+      { label: 'Docks',          re: /ship|dock|gall/i },
+      { label: 'Farm',           re: /straw|grain|sackhuge/i },
+      { label: 'Kwama',          re: /kwama/i },
+      { label: 'Nord',           re: /nord/i },
     ]);
     const tagsFor = (id) => {
       const cache = this._tagCache || (this._tagCache = Object.create(null));
-      return cache[id] || (cache[id] = TAG_DEFS.filter(t => t.re.test(id)).map(t => t.label));
+      const key = String(id || '');
+      return cache[key] || (cache[key] = TAG_DEFS
+        .filter(t => t.re.test(key) && !(t.exclude && t.exclude.test(key)))
+        .map(t => t.label));
     };
 
     // Type filtering and tag counts do not change while the virtual row window
