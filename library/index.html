@@ -163,6 +163,12 @@
         </div>
       </sc-if>
       </sc-if>
+      <button onClick="{{ toggleVanilla }}" title="{{ vanillaTitle }}" aria-pressed="{{ vanillaOn }}" style="order:{{ dropOrder }};background:{{ vanillaBg }};color:{{ vanillaFg }};border:1px solid {{ vanillaBd }};" class="vanilla-toggle">
+        <span style="background:{{ vanillaTrackBg }};" class="vanilla-switch">
+          <span style="transform:translateX({{ vanillaKnobX }}px);background:{{ vanillaKnobBg }};" class="vanilla-knob"></span>
+        </span>
+        <span>Vanilla</span>
+      </button>
       <div style="order:{{ ctrlBtnOrder }};margin-left:{{ ctrlBtnMargin }};" class="thumb-scale-control">
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" class="scale-icon-small"><rect x="6" y="6" width="12" height="12" rx="1.6"></rect></svg>
         <input type="range" min="0.5" max="3" step="0.1" value="{{ scale }}" onInput="{{ onScale }}" title="Thumbnail size" aria-label="Thumbnail size" class="scale-slider">
@@ -265,6 +271,7 @@ class Component extends DCLogic {
     relData: [], releases: [], relKinds: ['added', 'modified'], relOpen: false,
     gridWidth: 0, virtualStartRow: 0, virtualEndRow: 8,
     compact: (typeof localStorage !== 'undefined' && localStorage.getItem('oaab_compact_v2') === '1'),
+    vanilla: (typeof localStorage !== 'undefined' && localStorage.getItem('oaab_vanilla') === '1'),
     scale: (function () {
       try { const v = parseFloat(localStorage.getItem('oaab_scale')); return (v >= 0.5 && v <= 3) ? v : 1; }
       catch (e) { return 1; }
@@ -397,6 +404,7 @@ class Component extends DCLogic {
 
     const REPO = 'https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main';
     const THUMB = REPO + '/assets/images/library/thumbnails/meshes/';
+    this._THUMB = THUMB;
 
     // Data JSON must always reflect the freshly deployed source. jsdelivr caches
     // the mutable @main ref for hours, so a lowercased mesh path (or any data
@@ -431,19 +439,7 @@ class Component extends DCLogic {
       loadDeprecated,
     ])
       .then(([records, deprecated]) => {
-        // Some records carry a raw numeric TES3 record tag instead of a label.
-        const TYPE_LABELS = { '1497648962': 'Body Part' };
-        const labelType = (t) => {
-          t = (t == null ? '' : String(t));
-          if (TYPE_LABELS[t]) return TYPE_LABELS[t];
-          if (/^\d+$/.test(t)) {
-            // Decode a 32-bit little-endian record tag (e.g. "BODY").
-            let n = parseInt(t, 10), tag = '';
-            for (let i = 0; i < 4; i++) { const c = n & 0xff; if (c >= 32 && c < 127) tag += String.fromCharCode(c); n >>>= 8; }
-            return tag || 'Misc';
-          }
-          return t || 'Misc';
-        };
+        const labelType = (t) => this.labelType(t);
         const thumbnailPath = (mesh) => {
           const rel = String(mesh || '').replace(/\\/g, '/').toLowerCase();
           if (!/^oaab\//.test(rel) || !/\.nif$/.test(rel)) return null;
@@ -472,13 +468,10 @@ class Component extends DCLogic {
           });
         });
         items.sort((a, b) => a.id.localeCompare(b.id));
-        const counts = Object.create(null);
-        items.forEach(x => { counts[x.type] = (counts[x.type] || 0) + 1; });
-        const types = Object.keys(counts)
-          .map(k => ({ label: k, count: counts[k] }))
-          .sort((a, b) => a.label.localeCompare(b.label));
-        this.setState({ data: { total: items.length, types, items } });
+        this._oaabItems = items;
+        this.setState({ data: this.buildData() });
         this.loadMeshDiffs(items);
+        if (this.state.vanilla) this.loadVanilla();
       })
       .catch(e => console.error('library data load failed', e));
   }
@@ -530,6 +523,89 @@ class Component extends DCLogic {
     const fwd = String(p || '').replace(/\\/g, '/').toLowerCase();
     const i = fwd.lastIndexOf('oaab/');
     return i === -1 ? null : fwd.slice(i);
+  }
+
+  // Map a record's raw type tag to a readable label. Some records carry a raw
+  // numeric TES3 record tag instead of a string label.
+  labelType(t) {
+    const TYPE_LABELS = { '1497648962': 'Body Part' };
+    t = (t == null ? '' : String(t));
+    if (TYPE_LABELS[t]) return TYPE_LABELS[t];
+    if (/^\d+$/.test(t)) {
+      // Decode a 32-bit little-endian record tag (e.g. "BODY").
+      let n = parseInt(t, 10), tag = '';
+      for (let i = 0; i < 4; i++) { const c = n & 0xff; if (c >= 32 && c < 127) tag += String.fromCharCode(c); n >>>= 8; }
+      return tag || 'Misc';
+    }
+    return t || 'Misc';
+  }
+
+  // Compose the catalogue shown in the grid. OAAB objects are always present;
+  // when the Vanilla toggle is on, the base-game objects (Morrowind, Tribunal,
+  // Bloodmoon) are merged in too. Type counts/tabs are derived from the merged
+  // set so the toggle updates them automatically. Called only on data load and
+  // when the toggle flips — never per render — so `data` identity stays stable
+  // for the renderVals caches.
+  buildData(vanillaOn) {
+    const showVan = (vanillaOn != null) ? vanillaOn : this.state.vanilla;
+    const oaab = this._oaabItems || [];
+    const van = (showVan && this._vanillaItems) ? this._vanillaItems : [];
+    let items;
+    if (!van.length) {
+      items = oaab.slice();
+    } else {
+      const seen = Object.create(null);
+      items = [];
+      oaab.forEach(x => { seen[x.id] = 1; items.push(x); });
+      van.forEach(x => { if (!seen[x.id]) { seen[x.id] = 1; items.push(x); } });
+      items.sort((a, b) => a.id.localeCompare(b.id));
+    }
+    const counts = Object.create(null);
+    items.forEach(x => { counts[x.type] = (counts[x.type] || 0) + 1; });
+    const types = Object.keys(counts)
+      .map(k => ({ label: k, count: counts[k] }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+    return { total: items.length, types, items };
+  }
+
+  // Lazily load the vanilla object catalogues. The three base-game files share
+  // the same {type,id,mesh} shape as OAAB_Data and their thumbnails live under
+  // the same meshes/ tree (just without the oaab/ prefix), so the mesh path maps
+  // straight to a .webp. The three sources are merged into one set — the toggle
+  // doesn't distinguish between games.
+  loadVanilla() {
+    if (this._vanillaItems || this._vanillaLoading) return;
+    this._vanillaLoading = true;
+    const THUMB = this._THUMB;
+    const files = ['Morrowind_filtered.json', 'Bloodmoon_filtered.json', 'Tribunal_filtered.json'];
+    Promise.all(files.map(f =>
+      this._fetchData(f).then(r => r.json()).catch(e => { console.warn('vanilla load failed: ' + f, e); return []; })
+    )).then(parts => {
+      const seen = Object.create(null);
+      const items = [];
+      parts.forEach(records => {
+        (records || []).forEach(r => {
+          const mesh = r.mesh || '';
+          const norm = mesh.replace(/\\/g, '/').toLowerCase();
+          if (!/\.nif$/.test(norm)) return;
+          const id = r.id;
+          if (!id || seen[id]) return;
+          seen[id] = 1;
+          items.push({
+            id: id,
+            name: r.name || '',
+            type: this.labelType(r.type),
+            img: THUMB + norm.replace(/\.nif$/, '.webp'),
+            mesh: mesh,
+            vanilla: true,
+          });
+        });
+      });
+      items.sort((a, b) => a.id.localeCompare(b.id));
+      this._vanillaItems = items;
+      this._vanillaLoading = false;
+      if (this.state.vanilla) this.setState({ data: this.buildData() });
+    });
   }
 
   // Build the Release facet (relData) from the published mesh diffs. One mesh
@@ -619,6 +695,7 @@ class Component extends DCLogic {
     const selTags = this.state.tags || [];
     const compact = !!this.state.compact;
     const comfortable = !compact;
+    const vanillaOn = !!this.state.vanilla;
 
     // Theme-aware neutral palette for the toolbar's inline-coloured controls.
     // Accent (ember/azura) selected states stay the same in both themes.
@@ -940,6 +1017,20 @@ class Component extends DCLogic {
         try { localStorage.setItem('oaab_compact_v2', next ? '1' : '0'); } catch (e) {}
         return { compact: next };
       }),
+      vanillaOn,
+      vanillaBg: vanillaOn ? 'rgba(210,130,63,0.14)' : P.surface,
+      vanillaBd: vanillaOn ? '#7a4f2c' : P.border,
+      vanillaFg: vanillaOn ? (light ? '#7a3f12' : '#f0c89c') : P.soft,
+      vanillaTrackBg: vanillaOn ? 'rgba(210,130,63,0.9)' : (light ? '#d8cdb8' : '#3a3226'),
+      vanillaKnobBg: vanillaOn ? '#15110c' : (light ? '#fbf7ef' : '#9a8d77'),
+      vanillaKnobX: vanillaOn ? 13 : 2,
+      vanillaTitle: vanillaOn ? 'Vanilla assets shown \u2014 click to hide' : 'Show vanilla Morrowind, Tribunal & Bloodmoon assets',
+      toggleVanilla: () => {
+        const next = !this.state.vanilla;
+        try { localStorage.setItem('oaab_vanilla', next ? '1' : '0'); } catch (e) {}
+        if (next && !this._vanillaItems) this.loadVanilla();
+        this.setState({ vanilla: next, data: this.buildData(next) });
+      },
       isPopout,
       showChrome: !isPopout,
       tabbarTop: isPopout ? 0 : 61,
