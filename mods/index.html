@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OAAB &mdash; Mods</title>
+<link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main/assets/images/general/icon.png">
+<meta property="og:title" content="OAAB &mdash; Mods">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main/assets/images/general/og-image.png">
+<meta property="og:url" content="https://oaab.dev/mods/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main/assets/images/general/og-image.png">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script src="../theme.js"></script>
+</helmet>
+
+<div data-root="" class="site-root-fill">
+
+<nav class="site-nav">
+  <a href="/#top" class="brand-link">
+    <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB &mdash; Of Ash and Blight" class="brand-logo">
+    <span class="brand-mark-text">Of Ash<br>&amp; Blight</span>
+  </a>
+  <div class="site-nav-actions">
+    <div class="site-nav-links">
+      <a href="/releases/" class="nav-link">Releases</a>
+      <a href="/mods/" class="nav-link-current">Mods</a>
+      <a href="/library/" class="nav-link">Library</a>
+      <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" class="nav-link nav-link--wiki">Wiki</a>
+      <a href="/faq/" class="nav-link">FAQ</a>
+    </div>
+    <button type="button" data-theme-toggle="" onClick="{{ toggleTheme }}" aria-label="Toggle light mode" title="Toggle light / dark" class="theme-toggle">
+      <sc-if value="{{ isLight }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </sc-if>
+      <sc-if value="{{ isDark }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      </sc-if>
+    </button>
+    <details class="nav-burger">
+      <summary class="nav-burger-btn" aria-label="Open menu" title="Menu">
+        <svg class="nav-burger-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <svg class="nav-burger-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+      </summary>
+      <div class="nav-burger-panel">
+        <a href="/releases/" class="nav-burger-link">Releases</a>
+        <a href="/mods/" class="nav-burger-link">Mods</a>
+        <a href="/library/" class="nav-burger-link">Library</a>
+        <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" class="nav-burger-link">Wiki</a>
+        <a href="/faq/" class="nav-burger-link">FAQ</a>
+        <a href="https://discord.gg/g5E2HUp" target="_blank" class="nav-burger-cta">Join Discord</a>
+      </div>
+    </details>
+    <a href="https://discord.gg/g5E2HUp" target="_blank" class="site-nav-cta">Join Discord</a>
+  </div>
+</nav>
+
+<header class="mods-hero">
+  <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/screenshots/shipwrecks.png" alt="" class="library-hero-image">
+  <div class="page-hero-glow"></div>
+  <div class="library-hero-shade"></div>
+  <div class="page-hero-inner">
+    <div class="eyebrow-ember-wide">Mods</div>
+    <p class="page-hero-copy-wide">Browse OAAB_Data-dependent releases from the team and the wider Morrowind modding community.</p>
+  </div>
+</header>
+
+<main>
+  <section class="section-alt">
+    <div class="container-wide">
+      <div class="section-heading-row">
+        <div>
+          <div class="section-kicker-live"><span class="pulse-dot"></span>{{ monthLabel }}</div>
+          <h2 class="section-title-release">Mod of the Day</h2>
+        </div>
+      </div>
+
+      <a href="{{ modOfMonth.url }}" target="_blank" rel="noopener" class="mod-month-card">
+        <div class="mod-month-media">
+          <div class="showcase-initial">{{ modOfMonth.initial }}</div>
+          <div class="showcase-radial"></div>
+          <sc-if value="{{ modOfMonth.hasImage }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ modOfMonth.image }}" alt="{{ modOfMonth.name }}" onerror="this.style.display='none'" class="cover-fill">
+          </sc-if>
+          <div class="featured-release-side-shade"></div>
+          <div class="featured-release-bottom-shade"></div>
+          <sc-if value="{{ modOfMonth.hasCat }}" hint-placeholder-val="{{ true }}"><span class="featured-release-badge">{{ modOfMonth.cat }}</span></sc-if>
+        </div>
+        <div class="featured-release-body">
+          <div class="release-meta">by {{ modOfMonth.by }}</div>
+          <h3 class="featured-release-title-home">{{ modOfMonth.name }}</h3>
+          <p class="feature-copy">{{ modOfMonth.summary }}</p>
+          <span class="read-more-link">Open the mod page &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="highlight-reel" class="section-default">
+    <div class="container-wide">
+      <div class="section-heading-row-wide">
+        <div class="section-copy-block">
+          <div class="section-eyebrow">Highlight Reel</div>
+          <p class="section-copy">Mods tagged #OAAB_Data on Nexus.</p>
+        </div>
+        <div class="inline-cluster-12">
+          <button data-prev="" onClick="{{ prevPage }}" aria-label="Previous mods" class="btn-ghost-compact">&larr; Previous</button>
+          <button data-shuffle="" onClick="{{ reshuffle }}" class="btn-ghost-compact">Shuffle the deck</button>
+          <a href="https://www.nexusmods.com/games/morrowind/mods?tag=OAAB_Data" target="_blank" rel="noopener" class="btn-primary-compact">Browse all</a>
+        </div>
+      </div>
+
+      <div data-showcase-grid="" class="showcase-grid">
+        <sc-for list="{{ visible }}" as="mod" hint-placeholder-count="5">
+          <a href="{{ mod.url }}" target="_blank" rel="noopener" class="card-link">
+            <div class="showcase-media">
+              <div class="showcase-initial">{{ mod.initial }}</div>
+              <div class="showcase-radial"></div>
+              <sc-if value="{{ mod.hasImage }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ mod.image }}" alt="{{ mod.name }}" loading="lazy" onerror="this.style.display='none'" class="cover-fill">
+              </sc-if>
+              <div class="showcase-shade"></div>
+              <sc-if value="{{ mod.hasCat }}" hint-placeholder-val="{{ true }}"><span class="media-label">{{ mod.cat }}</span></sc-if>
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">{{ mod.name }}</h3>
+              <div class="showcase-byline">by {{ mod.by }}</div>
+              <span class="card-cta">View on Nexus &rarr;</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+
+      <div class="status-line">
+        <span class="pulse-dot-fixed"></span>
+        <span>Live from Nexus &middot; #OAAB_Data</span>
+      </div>
+      <div class="reel-timer" aria-hidden="true">
+        <div data-reel-progress="" class="reel-timer-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team-mods" class="section-muted">
+    <div class="container-wide">
+      <div class="section-heading-row-wide">
+        <div class="section-copy-block">
+          <div class="section-eyebrow">Team Mods</div>
+          <p class="section-copy-large">Click a name to see their #oaab_data tagged mods.</p>
+        </div>
+        <a href="{{ selectedProfile }}" target="_blank" rel="noopener" class="btn-ghost-md">Profile or search &rarr;</a>
+      </div>
+
+      <div class="mod-team-list">
+        <sc-for list="{{ contributors }}" as="c" hint-placeholder-count="24">
+          <button type="button" data-member="{{ c.key }}" onClick="{{ pickMember }}" title="{{ c.countLabel }}" style="background:{{ c.bg }};color:{{ c.fg }};border-color:{{ c.bd }};" class="mod-team-chip">
+            <span>{{ c.name }}</span>
+            <span class="mod-team-count">{{ c.count }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <div class="member-mods-head">
+        <div>
+          <div class="contributors-label">Selected member</div>
+          <h3 class="member-mods-title">{{ selectedName }}</h3>
+        </div>
+        <div class="member-mods-count">{{ selectedCount }}</div>
+      </div>
+
+      <sc-if value="{{ hasMemberMods }}" hint-placeholder-val="{{ true }}">
+        <div class="member-mods-grid">
+          <sc-for list="{{ memberMods }}" as="mod" hint-placeholder-count="6">
+            <a href="{{ mod.url }}" target="_blank" rel="noopener" class="card-link">
+              <div class="showcase-media">
+                <div class="showcase-initial">{{ mod.initial }}</div>
+                <div class="showcase-radial"></div>
+                <sc-if value="{{ mod.hasImage }}" hint-placeholder-val="{{ true }}">
+                  <img src="{{ mod.image }}" alt="{{ mod.name }}" loading="lazy" onerror="this.style.display='none'" class="cover-fill">
+                </sc-if>
+                <div class="showcase-shade"></div>
+                <sc-if value="{{ mod.hasCat }}" hint-placeholder-val="{{ true }}"><span class="media-label">{{ mod.cat }}</span></sc-if>
+              </div>
+              <div class="showcase-body">
+                <h3 class="showcase-title">{{ mod.name }}</h3>
+                <div class="showcase-byline">by {{ mod.by }}</div>
+                <span class="card-cta">View on Nexus &rarr;</span>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noMemberMods }}" hint-placeholder-val="{{ false }}">
+        <div class="mod-empty-card">
+          <h3 class="callout-title">No tagged uploads found</h3>
+          <p class="callout-copy">This member is part of the OAAB_Data team, but the current Nexus #OAAB_Data feed does not show a matching upload name for them.</p>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer-simple">
+  <div class="site-footer-inner">
+    <div class="inline-cluster-12">
+      <img src="https://cdn.jsdelivr.net/gh/OAAB-Modding/Website@main/assets/images/general/oaab_logo.png" alt="OAAB" class="footer-logo">
+      <span class="footer-context-text">Mods &middot; OAAB_Data ecosystem</span>
+    </div>
+    <a href="/#top" class="footer-back-link">&larr; Back to home</a>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 0, member: null, team: null, theme: (typeof window !== 'undefined' && window.OAAB_THEME) ? window.OAAB_THEME.read() : 'dark', order: [0, 1, 2, 3, 4, 5, 6].sort(function () { return Math.random() - 0.5; }) };
+  _pool = [
+    { id: 52781, name: 'OAAB Greater Samarys Tomb', cat: 'Dungeons & Locations', by: 'Varlothen', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/52781/52781-1683010655-1472298450.jpeg' },
+    { id: 50307, name: 'OAAB & Community Equipment Integration', cat: 'Weapons & Armour', by: 'Lucas9 & team', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/50307/50307-1633535938-2076544592.jpeg' },
+    { id: 49045, name: 'OAAB Integrations', cat: 'Patches', by: 'OAAB_Data Team', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/49045/49045-1605538654-226549657.gif' },
+    { id: 58036, name: 'OAAB & TR Summoning Followers', cat: 'Companions', by: 'Kragos', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/58036/58036-1767440895-1937611876.jpg' },
+    { id: 55325, name: 'Blood and Gore OAAB & TR Patch', cat: 'Patches', by: 'Community' },
+    { id: 49131, name: 'OAAB - Tombs and Towers', cat: "Modders' Resources", by: 'OAAB_Data Team' },
+    { id: 48667, name: 'Concept Art Hlaalu Balconies', cat: "Modders' Resources", by: 'Community' },
+  ];
+
+  componentDidMount() {
+    this.initTheme(0);
+    this.loadMods();
+    this.loadTeam();
+    this._timer = setInterval(() => this.advance(), 12000);
+    this.restartReelProgress();
+  }
+  componentDidUpdate() { this.applyTheme(); }
+  componentWillUnmount() { if (this._timer) clearInterval(this._timer); }
+
+  initTheme(tries) {
+    if (window.OAAB_THEME) {
+      const t = window.OAAB_THEME.read();
+      window.OAAB_THEME.apply(t);
+      if (t !== this.state.theme) this.setState({ theme: t });
+      return;
+    }
+    if ((tries || 0) < 20) setTimeout(() => this.initTheme((tries || 0) + 1), 50);
+  }
+  applyTheme() { if (window.OAAB_THEME) window.OAAB_THEME.apply(this.state.theme); }
+
+  tomlArray(toml, key) {
+    const m = new RegExp(key + '\\s*=\\s*\\[').exec(toml);
+    if (!m) return [];
+    let depth = 1, i = m.index + m[0].length, end = -1;
+    for (; i < toml.length; i++) {
+      const ch = toml[i];
+      if (ch === '[') depth++;
+      else if (ch === ']' && --depth === 0) { end = i; break; }
+    }
+    if (end === -1) return [];
+    const toks = toml.slice(m.index + m[0].length, end).match(/"(?:[^"\\]|\\.)*"/g) || [];
+    return toks.map(t => { try { return JSON.parse(t); } catch (e) { return null; } }).filter(Boolean);
+  }
+  async loadTeam() {
+    const META = 'https://raw.githubusercontent.com/OAAB-Modding/Data/master/00%20Core/OAAB_Data-metadata.toml';
+    try {
+      const c = JSON.parse(localStorage.getItem('oaab_team_v1') || 'null');
+      if (c && c.ts && (Date.now() - c.ts < 864e5) && Array.isArray(c.team) && c.team.length) { this.setState({ team: c.team }); return; }
+    } catch (e) {}
+    try {
+      const txt = await fetch(META).then(r => r.text());
+      const team = this.tomlArray(txt, 'authors');
+      if (team.length) {
+        try { localStorage.setItem('oaab_team_v1', JSON.stringify({ ts: Date.now(), team: team })); } catch (e) {}
+        this.setState({ team: team });
+      }
+    } catch (e) { console.warn('team list load failed', e); }
+  }
+  shuffleOrder(n) {
+    const a = [];
+    for (let i = 0; i < n; i++) a.push(i);
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  async gqlPage(offset, count, rich) {
+    const fields = rich ? 'modId name summary description uploader { name } pictureUrl modCategory { name }' : 'modId name summary description pictureUrl';
+    const query = 'query($filter: ModsFilter, $offset: Int, $count: Int){ mods(filter: $filter, offset: $offset, count: $count){ nodes { ' + fields + ' } totalCount } }';
+    const variables = { filter: { tag: [{ value: 'OAAB_Data' }] }, offset: offset, count: count };
+    const res = await fetch('https://api.nexusmods.com/v2/graphql', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ query: query, variables: variables }),
+    });
+    if (!res.ok) throw new Error('http ' + res.status);
+    const json = await res.json();
+    if (json.errors) throw new Error('gql');
+    return json.data.mods;
+  }
+  applyPool(mods) {
+    const filtered = (mods || []).filter(function (m) { return String(m.id) !== '49042'; });
+    this._pool = filtered.length ? filtered : this._pool;
+    this.setState({ order: this.shuffleOrder(this._pool.length), page: 0 });
+  }
+  async loadMods() {
+    try {
+      const c = JSON.parse(localStorage.getItem('oaab_mods_v3') || 'null');
+      if (c && c.ts && (Date.now() - c.ts < 864e5) && Array.isArray(c.mods) && c.mods.length) {
+        this.applyPool(c.mods);
+        return;
+      }
+    } catch (e) {}
+    for (const rich of [true, false]) {
+      try {
+        const all = [];
+        let offset = 0, total = Infinity;
+        const count = 50;
+        while (offset < total && all.length < 1500) {
+          const page = await this.gqlPage(offset, count, rich);
+          total = (typeof page.totalCount === 'number') ? page.totalCount : all.length;
+          const nodes = page.nodes || [];
+          all.push.apply(all, nodes);
+          if (nodes.length === 0) break;
+          offset += count;
+        }
+        if (all.length) {
+          const mods = all.map(function (n) {
+            return {
+              id: n.modId,
+              name: n.name,
+              cat: (n.modCategory && n.modCategory.name) || '',
+              by: (n.uploader && n.uploader.name) || 'OAAB modder',
+              img: n.pictureUrl || null,
+              summary: n.summary || '',
+              description: n.description || '',
+            };
+          });
+          try { localStorage.setItem('oaab_mods_v3', JSON.stringify({ ts: Date.now(), mods: mods })); } catch (e) {}
+          this.applyPool(mods);
+          return;
+        }
+      } catch (e) {}
+    }
+  }
+  advance() { this.step(1); }
+  step(dir) {
+    const pages = Math.max(1, Math.ceil(this._pool.length / 5));
+    const grid = document.querySelector('[data-showcase-grid]');
+    if (grid) grid.style.opacity = '0';
+    setTimeout(() => {
+      this.setState(s => ({ page: (s.page + dir + pages) % pages }), () => {
+        const g = document.querySelector('[data-showcase-grid]');
+        if (g) g.style.opacity = '1';
+      });
+    }, 360);
+  }
+  resetTimer() {
+    if (this._timer) clearInterval(this._timer);
+    this._timer = setInterval(() => this.advance(), 12000);
+    this.restartReelProgress();
+  }
+  restartReelProgress() {
+    requestAnimationFrame(() => {
+      const bar = document.querySelector('[data-reel-progress]');
+      if (!bar) return;
+      bar.style.animation = 'none';
+      void bar.offsetWidth;
+      bar.style.animation = '';
+    });
+  }
+  norm(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ''); }
+  profileUrl(name) {
+    const U = (id) => 'https://www.nexusmods.com/morrowind/users/' + id;
+    const profiles = {
+      'anroha': U(47765413), 'axeljk': U(25459689), 'corsair': U(23131859), 'dallara': U(3346952),
+      'dimnussens': 'https://next.nexusmods.com/profile/DimNussens', 'endoran': U(44230747),
+      'greatness7': U(64030), 'hemaris': U(102938538), 'lord zircon': 'https://next.nexusmods.com/profile/Zzarcon',
+      'melchior dahrk': U(962116), 'merlord': U(3040468), 'mwgek': U(4462276), 'olaf': U(8753233),
+      'operatorjack': U(61791411), 'pikachunotm': U(16269634), 'r-zero': U(3241081),
+      'redfurrydemon': U(46908543), 'remiros': U(899234), 'revenorror': U(86600168),
+      'tewlwolow': U(1152341), 'wolli': U(1615721), 'xerofoxx': U(109130978),
+    };
+    return profiles[String(name).trim().toLowerCase()] || ('https://www.nexusmods.com/games/morrowind/mods?keyword=' + encodeURIComponent(name) + '&tag=OAAB_Data');
+  }
+  memberAliases(name) {
+    const key = String(name).trim().toLowerCase();
+    const extra = {
+      'lord zircon': ['Zzarcon', 'LordZircon'],
+      'melchior dahrk': ['MelchiorDahrk', 'Melchior'],
+      'redfurrydemon': ['Red Furry Demon'],
+      'pikachunotm': ['Pikachuno'],
+      'r-zero': ['RZero', 'R Zero'],
+      'xerofoxx': ['XeroFox'],
+    };
+    return [name].concat(extra[key] || []).map(s => this.norm(s)).filter(Boolean);
+  }
+  memberMatches(mod, name) {
+    const by = this.norm(mod.by);
+    const aliases = this.memberAliases(name);
+    return aliases.some(a => by.indexOf(a) !== -1);
+  }
+  decodeEntities(text) {
+    if (typeof document === 'undefined') return text;
+    const box = document.createElement('textarea');
+    box.innerHTML = text;
+    return box.value;
+  }
+  cleanNexusText(text) {
+    let out = String(text || '');
+    out = out.replace(/\[img\][\s\S]*?\[\/img\]/gi, ' ');
+    out = out.replace(/\[url=[^\]]+\]([\s\S]*?)\[\/url\]/gi, '$1');
+    out = out.replace(/\[(?:\/)?(?:b|i|u|center|font|size|color|list|spoiler|quote|indent|left|right|hr|youtube|video)[^\]]*\]/gi, ' ');
+    out = out.replace(/<br\s*\/?>/gi, ' ');
+    out = out.replace(/<[^>]+>/g, ' ');
+    out = this.decodeEntities(out);
+    out = out.replace(/\s+/g, ' ').trim();
+    out = out.replace(/\s+([.,;:!?])/g, '$1');
+    return out;
+  }
+  clipText(text, max) {
+    const clean = this.cleanNexusText(text);
+    if (!clean || clean.length <= max) return clean;
+    const cut = clean.slice(0, max + 1);
+    return cut.slice(0, Math.max(cut.lastIndexOf(' '), max - 40)).trim() + '...';
+  }
+  dailyPick(pool) {
+    const list = (pool || []).filter(Boolean);
+    if (!list.length) return null;
+    const day = Math.floor(Date.now() / 86400000);
+    return list[day % list.length];
+  }
+  decorateMod(m) {
+    const image = m.img || null;
+    const summary = this.clipText(m.summary, 220) || 'A featured OAAB_Data-dependent project from the Nexus ecosystem.';
+    const about = this.clipText(m.description, 360);
+    return {
+      id: m.id,
+      name: m.name,
+      cat: m.cat,
+      by: m.by,
+      url: 'https://www.nexusmods.com/morrowind/mods/' + m.id,
+      image: image,
+      hasImage: !!image,
+      hasCat: !!m.cat,
+      summary: summary,
+      about: about,
+      hasAbout: !!about,
+      initial: (m.name.replace(/^OAAB[\s_-]*/i, '').trim().charAt(0) || 'M').toUpperCase(),
+    };
+  }
+
+  renderVals() {
+    const light = this.state.theme === 'light';
+    const ember = '#d2823f';
+    const contributorNames = (this.state.team && this.state.team.length)
+      ? this.state.team
+      : ['Anroha', 'Axeljk', 'Corsair', 'Dallara', 'DimNussens', 'Endoran', 'Greatness7', 'Hemaris', 'Lord Zircon', 'Melchior Dahrk', 'Merlord', 'MwGek', 'Olaf', 'OperatorJack', 'PikachunoTM', 'R-Zero', 'RedFurryDemon', 'Remiros', 'Revenorror', 'Tewlwolow', 'Wolli', 'XeroFoxx'];
+    const POOL = this._pool;
+    const N = POOL.length;
+    const order = this.state.order.length === N ? this.state.order : this.shuffleOrder(N);
+    const start = this.state.page * 5;
+    const visible = [];
+    for (let i = 0; i < Math.min(5, N); i++) {
+      visible.push(this.decorateMod(POOL[order[(start + i) % N]]));
+    }
+
+    const teamWithMods = contributorNames.map(name => {
+      const mods = POOL.filter(m => this.memberMatches(m, name));
+      return { name: name, mods: mods, count: mods.length };
+    }).filter(c => c.count > 0);
+    const preferred = teamWithMods[0] ? teamWithMods[0].name : contributorNames[0];
+    const selectedName = (teamWithMods.find(c => this.norm(c.name) === this.state.member) || teamWithMods[0] || { name: preferred }).name;
+    const selectedEntry = teamWithMods.find(c => this.norm(c.name) === this.norm(selectedName));
+    const memberMods = ((selectedEntry && selectedEntry.mods) || []).map(m => this.decorateMod(m)).slice(0, 12);
+    const dayPick = this.dailyPick(POOL) || POOL[0];
+    const dayLabel = new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+
+    return {
+      isLight: light,
+      isDark: !light,
+      toggleTheme: () => {
+        const n = light ? 'dark' : 'light';
+        if (window.OAAB_THEME) window.OAAB_THEME.set(n);
+        this.setState({ theme: n });
+      },
+      imgFail: (e) => { e.currentTarget.style.display = 'none'; },
+      reshuffle: () => { this.setState({ order: this.shuffleOrder(this._pool.length), page: 0 }); this.resetTimer(); },
+      prevPage: () => { this.step(-1); this.resetTimer(); },
+      pickMember: (e) => { this.setState({ member: e.currentTarget.dataset.member }); },
+      visible: visible,
+      monthLabel: dayLabel,
+      modOfMonth: this.decorateMod(dayPick),
+      contributors: teamWithMods.map(c => {
+        const name = c.name;
+        const active = this.norm(name) === this.norm(selectedName);
+        const count = c.count;
+        return {
+          key: this.norm(name),
+          name: name,
+          count: count,
+          countLabel: count + ' tagged mod' + (count === 1 ? '' : 's'),
+          bg: active ? ember : (light ? '#f1e8d8' : '#14100b'),
+          fg: active ? '#1a120a' : (light ? '#6a5d49' : '#c3b6a0'),
+          bd: active ? ember : (light ? '#ddd0ba' : '#2f2920'),
+        };
+      }),
+      selectedName: selectedName,
+      selectedCount: memberMods.length ? (memberMods.length + ' tagged mod' + (memberMods.length === 1 ? '' : 's')) : 'No tagged uploads',
+      selectedProfile: this.profileUrl(selectedName),
+      memberMods: memberMods,
+      hasMemberMods: memberMods.length > 0,
+      noMemberMods: memberMods.length === 0,
+    };
+  }
+}
+</script>
+</body>
+</html>

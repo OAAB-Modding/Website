@@ -33,7 +33,7 @@
   <div class="site-nav-actions">
     <div class="site-nav-links">
       <a href="/releases/" class="nav-link">Releases</a>
-      <a href="#mods" class="nav-link">Mods</a>
+      <a href="/mods/" class="nav-link">Mods</a>
       <a href="/library/" class="nav-link">Library</a>
       <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" class="nav-link nav-link--wiki">Wiki</a>
       <a href="/faq/" class="nav-link">FAQ</a>
@@ -53,7 +53,7 @@
       </summary>
       <div class="nav-burger-panel">
         <a href="/releases/" class="nav-burger-link">Releases</a>
-        <a href="#mods" class="nav-burger-link">Mods</a>
+        <a href="/mods/" class="nav-burger-link">Mods</a>
         <a href="/library/" class="nav-burger-link">Library</a>
         <a href="https://www.oaab.dev/wiki" target="_blank" rel="noopener" class="nav-burger-link">Wiki</a>
         <a href="/faq/" class="nav-burger-link">FAQ</a>
@@ -159,13 +159,13 @@
   <div class="container-wide">
     <div class="section-heading-row-wide">
       <div class="section-copy-block">
-        <div class="section-eyebrow">The Ecosystem</div>
+        <div class="section-eyebrow">The Mods</div>
         <p class="section-copy">See all the cool mods tagged #OAAB_Data on Nexus!</p>
       </div>
       <div class="inline-cluster-12">
         <button data-prev="" onClick="{{ prevPage }}" aria-label="Previous mods" class="btn-ghost-compact">← Previous</button>
         <button data-shuffle="" onClick="{{ reshuffle }}" class="btn-ghost-compact">↻ Shuffle the deck</button>
-        <a href="https://www.nexusmods.com/games/morrowind/mods?tag=OAAB_Data" target="_blank" class="btn-primary-compact">Browse all</a>
+        <a href="/mods/" class="btn-primary-compact">See more</a>
       </div>
     </div>
 
@@ -193,6 +193,9 @@
     <div class="status-line">
       <span class="pulse-dot-fixed"></span>
       <span>Live from Nexus · #OAAB_Data</span>
+    </div>
+    <div class="reel-timer" aria-hidden="true">
+      <div data-reel-progress="" class="reel-timer-bar"></div>
     </div>
   </div>
 </section>
@@ -338,6 +341,7 @@ class Component extends DCLogic {
     // Re-fetch the live download count periodically so it reflects reality.
     this._statsTimer = setInterval(() => this.loadStats(), 60000);
     this._timer = setInterval(() => this.advance(), 12000);
+    this.restartReelProgress();
   }
   componentDidUpdate() {
     this.applyStyles();
@@ -597,6 +601,16 @@ class Component extends DCLogic {
   resetTimer() {
     if (this._timer) clearInterval(this._timer);
     this._timer = setInterval(() => this.advance(), 12000);
+    this.restartReelProgress();
+  }
+  restartReelProgress() {
+    requestAnimationFrame(() => {
+      const bar = document.querySelector('[data-reel-progress]');
+      if (!bar) return;
+      bar.style.animation = 'none';
+      void bar.offsetWidth;
+      bar.style.animation = '';
+    });
   }
   applyStyles() {
     const ember = this.props.accentColor ?? '#d2823f';

@@ -107,6 +107,16 @@ button {
 /* Library thumbnail loading spinner — shown until each thumbnail's own
    image has decoded, so a recycled grid cell never flashes the previous
    object's thumbnail while the correct one is still loading. */
+/* Reverse countdown for the highlight reel auto-advance. */
+@keyframes oaabReelTimer {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
 @keyframes oaabSpin {
   to {
     transform: rotate(360deg);
@@ -1426,6 +1436,108 @@ button {
   background:var(--ember,#d2823f);
   animation:oaabPulse 2.4s ease-in-out infinite;
   flex-shrink:0;
+}
+.reel-timer {
+  margin-top:12px;
+  height:3px;
+  width:100%;
+  overflow:hidden;
+  border-radius:999px;
+  background:#241d15;
+}
+.reel-timer-bar {
+  height:100%;
+  width:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--ember,#d2823f),#e0b071);
+  transform-origin:left center;
+  animation:oaabReelTimer 12s linear infinite;
+}
+.mods-hero {
+  position:relative;
+  overflow:hidden;
+  padding:152px 32px 86px;
+  border-bottom:1px solid #221c15;
+}
+.mod-month-card {
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:0;
+  border:1px solid #34291c;
+  border-radius:16px;
+  overflow:hidden;
+  background:#16110b;
+  transition:border-color .25s,transform .25s,box-shadow .3s;
+}
+.mod-month-media {
+  position:relative;
+  min-height:360px;
+  overflow:hidden;
+  background:repeating-linear-gradient(135deg,#1a1208 0 16px,#1f160d 16px 32px);
+}
+.mod-team-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:40px;
+}
+.mod-team-chip {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'EB Garamond',serif;
+  font-size:15px;
+  padding:8px 14px;
+  border:1px solid #2f2920;
+  border-radius:999px;
+  cursor:pointer;
+  transition:border-color .2s,background .2s,color .2s,transform .2s;
+}
+.mod-team-count {
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  line-height:1;
+  opacity:.75;
+}
+.member-mods-head {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:22px;
+  margin-top:44px;
+  padding-top:26px;
+  border-top:1px solid #2b241c;
+}
+.member-mods-title {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:clamp(28px,3.5vw,42px);
+  line-height:1.04;
+  color:#f1e8d8;
+  margin:0;
+}
+.member-mods-count {
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#80735f;
+  white-space:nowrap;
+}
+.member-mods-grid {
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.mod-empty-card {
+  margin-top:26px;
+  padding:34px 30px;
+  border:1px solid #2c241b;
+  border-radius:14px;
+  background:#15100b;
+  text-align:center;
 }
 .section-muted {
   padding:120px 32px;
@@ -3027,12 +3139,14 @@ button {
 
 /* Cards & tiles */
 .theme-light .featured-release-card-home,
-.theme-light .card-link {
+.theme-light .card-link,
+.theme-light .mod-month-card {
   background:#fbf7ef;
   border-color:#e2d6c2;
 }
 .theme-light .showcase-media,
-.theme-light .featured-release-media-home {
+.theme-light .featured-release-media-home,
+.theme-light .mod-month-media {
   border-bottom-color:#e2d6c2;
 }
 .theme-light .showcase-body {
@@ -3073,6 +3187,15 @@ button {
 /* Section dividers / contributors rule */
 .theme-light .contributors-block {
   border-top-color:#d3c8b2;
+}
+.theme-light .member-mods-head {
+  border-top-color:#d3c8b2;
+}
+.theme-light .member-mods-count {
+  color:#8a7c66;
+}
+.theme-light .reel-timer {
+  background:#ddd2bf;
 }
 .theme-light .home-footer-bottom {
   border-top-color:#d3c8b2;
@@ -3125,7 +3248,8 @@ button {
 /* ---- Page heroes (light ink kept over the dark art; bottom fade retinted) ---- */
 .theme-light .faq-hero,
 .theme-light .library-hero,
-.theme-light .releases-hero {
+.theme-light .releases-hero,
+.theme-light .mods-hero {
   border-bottom-color:#ddd2bf;
 }
 /* Light-mode hero: a cream wash (instead of the dark shade) lets the art show
@@ -3139,7 +3263,8 @@ button {
 }
 .theme-light .faq-hero-title,
 .theme-light .library-hero-title,
-.theme-light .releases-hero-title {
+.theme-light .releases-hero-title,
+.theme-light .member-mods-title {
   color:#2b2218;
 }
 .theme-light .page-hero-copy-wide,
@@ -3177,6 +3302,10 @@ button {
   color:#6a5d49;
 }
 .theme-light .callout-card {
+  background:#fbf7ef;
+  border-color:#e2d6c2;
+}
+.theme-light .mod-empty-card {
   background:#fbf7ef;
   border-color:#e2d6c2;
 }
@@ -3594,7 +3723,15 @@ button {
     grid-template-columns: 1fr;
     margin-top: 28px;
   }
+  .mod-month-card {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
   .featured-release-media-home {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+  .mod-month-media {
     min-height: 0;
     aspect-ratio: 16 / 9;
   }
@@ -3626,6 +3763,27 @@ button {
   }
   .section-heading-row-wide .inline-cluster-12 {
     width: 100%;
+  }
+
+  .mods-hero {
+    padding: 116px 18px 60px;
+  }
+  .mod-team-list {
+    margin-top: 28px;
+  }
+  .mod-team-chip {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    min-width: min(100%, 144px);
+  }
+  .member-mods-head {
+    align-items:flex-start;
+    flex-direction:column;
+    margin-top:34px;
+  }
+  .member-mods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   /* --- Library preview tiles → single column --- */
@@ -3680,7 +3838,7 @@ button {
   }
 
   /* --- Shared page heroes (FAQ / Library / Releases) --- */
-  .faq-hero, .library-hero, .releases-hero {
+  .faq-hero, .library-hero, .releases-hero, .mods-hero {
     padding: 116px 18px 48px;
   }
   .home-hero-copy, .library-hero-copy, .page-hero-copy-wide {
@@ -3780,6 +3938,9 @@ button {
   }
   .brand-mark-text {
     display: none;
+  }
+  .member-mods-grid {
+    grid-template-columns: 1fr;
   }
 }
 
