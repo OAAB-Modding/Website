@@ -197,6 +197,13 @@
             </a>
           </sc-for>
         </div>
+        <sc-if value="{{ hasMemberPages }}" hint-placeholder-val="{{ false }}">
+          <div class="member-pagination">
+            <button type="button" onClick="{{ prevMemberPage }}" disabled="{{ memberPrevDisabled }}" class="btn-ghost-compact">Previous</button>
+            <span class="member-page-status">{{ memberPageStatus }}</span>
+            <button type="button" onClick="{{ nextMemberPage }}" disabled="{{ memberNextDisabled }}" class="btn-ghost-compact">Next</button>
+          </div>
+        </sc-if>
       </sc-if>
       <sc-if value="{{ noMemberMods }}" hint-placeholder-val="{{ false }}">
         <div class="mod-empty-card">
@@ -222,7 +229,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { page: 0, member: null, team: null, theme: (typeof window !== 'undefined' && window.OAAB_THEME) ? window.OAAB_THEME.read() : 'dark', order: [0, 1, 2, 3, 4, 5, 6].sort(function () { return Math.random() - 0.5; }) };
+  state = { page: 0, memberPage: 0, member: null, team: null, theme: (typeof window !== 'undefined' && window.OAAB_THEME) ? window.OAAB_THEME.read() : 'dark', order: [0, 1, 2, 3, 4, 5, 6].sort(function () { return Math.random() - 0.5; }) };
   _pool = [
     { id: 52781, name: 'OAAB Greater Samarys Tomb', cat: 'Dungeons & Locations', by: 'Varlothen', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/52781/52781-1683010655-1472298450.jpeg' },
     { id: 50307, name: 'OAAB & Community Equipment Integration', cat: 'Weapons & Armour', by: 'Lucas9 & team', img: 'https://staticdelivery.nexusmods.com/mods/100/images/thumbnails/50307/50307-1633535938-2076544592.jpeg' },
@@ -476,7 +483,12 @@ class Component extends DCLogic {
     const preferred = teamWithMods[0] ? teamWithMods[0].name : contributorNames[0];
     const selectedName = (teamWithMods.find(c => this.norm(c.name) === this.state.member) || teamWithMods[0] || { name: preferred }).name;
     const selectedEntry = teamWithMods.find(c => this.norm(c.name) === this.norm(selectedName));
-    const memberMods = ((selectedEntry && selectedEntry.mods) || []).map(m => this.decorateMod(m)).slice(0, 12);
+    const allMemberMods = ((selectedEntry && selectedEntry.mods) || []).map(m => this.decorateMod(m));
+    const memberPageSize = 12;
+    const memberPages = Math.max(1, Math.ceil(allMemberMods.length / memberPageSize));
+    const memberPage = Math.max(0, Math.min(this.state.memberPage || 0, memberPages - 1));
+    const memberStart = memberPage * memberPageSize;
+    const memberMods = allMemberMods.slice(memberStart, memberStart + memberPageSize);
     const dayPick = this.dailyPick(POOL) || POOL[0];
     const dayLabel = new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
 
@@ -491,7 +503,9 @@ class Component extends DCLogic {
       imgFail: (e) => { e.currentTarget.style.display = 'none'; },
       reshuffle: () => { this.setState({ order: this.shuffleOrder(this._pool.length), page: 0 }); this.resetTimer(); },
       prevPage: () => { this.step(-1); this.resetTimer(); },
-      pickMember: (e) => { this.setState({ member: e.currentTarget.dataset.member }); },
+      pickMember: (e) => { this.setState({ member: e.currentTarget.dataset.member, memberPage: 0 }); },
+      prevMemberPage: () => { this.setState(s => ({ memberPage: Math.max(0, (s.memberPage || 0) - 1) })); },
+      nextMemberPage: () => { this.setState(s => ({ memberPage: Math.min(memberPages - 1, (s.memberPage || 0) + 1) })); },
       visible: visible,
       monthLabel: dayLabel,
       modOfMonth: this.decorateMod(dayPick),
@@ -510,11 +524,15 @@ class Component extends DCLogic {
         };
       }),
       selectedName: selectedName,
-      selectedCount: memberMods.length ? (memberMods.length + ' tagged mod' + (memberMods.length === 1 ? '' : 's')) : 'No tagged uploads',
+      selectedCount: allMemberMods.length ? (allMemberMods.length + ' tagged mod' + (allMemberMods.length === 1 ? '' : 's')) : 'No tagged uploads',
       selectedProfile: this.profileUrl(selectedName),
       memberMods: memberMods,
       hasMemberMods: memberMods.length > 0,
       noMemberMods: memberMods.length === 0,
+      hasMemberPages: allMemberMods.length > memberPageSize,
+      memberPageStatus: 'Page ' + (memberPage + 1) + ' of ' + memberPages,
+      memberPrevDisabled: memberPage <= 0,
+      memberNextDisabled: memberPage >= memberPages - 1,
     };
   }
 }

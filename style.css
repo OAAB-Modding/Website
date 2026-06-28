@@ -1531,6 +1531,24 @@ button {
   grid-template-columns:repeat(3,1fr);
   gap:14px;
 }
+.member-pagination {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-top:26px;
+}
+.member-page-status {
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#80735f;
+}
+.member-pagination .btn-ghost-compact:disabled {
+  opacity:.42;
+  cursor:default;
+}
 .mod-empty-card {
   margin-top:26px;
   padding:34px 30px;
@@ -3192,6 +3210,9 @@ button {
   border-top-color:#d3c8b2;
 }
 .theme-light .member-mods-count {
+  color:#8a7c66;
+}
+.theme-light .member-page-status {
   color:#8a7c66;
 }
 .theme-light .reel-timer {
