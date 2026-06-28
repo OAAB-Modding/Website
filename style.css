@@ -3349,13 +3349,13 @@ button {
   height: 21px;
   display: block;
 }
-.nav-burger-close {
+.nav-burger-btn .nav-burger-close {
   display: none;
 }
-.nav-burger[open] .nav-burger-open {
+.nav-burger[open] .nav-burger-btn .nav-burger-open {
   display: none;
 }
-.nav-burger[open] .nav-burger-close {
+.nav-burger[open] .nav-burger-btn .nav-burger-close {
   display: block;
 }
 .nav-burger-panel {
