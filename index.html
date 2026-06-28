@@ -384,16 +384,52 @@ class Component extends DCLogic {
   scrollToHash() {
     const id = (location.hash || '').slice(1);
     if (!id) return;
-    const go = (tries) => {
+
+    // Bail out of auto-alignment the moment the user takes over scrolling, so we
+    // never fight a deliberate swipe/wheel/keypress. (Programmatic scrollTo does
+    // not trigger these events, so our own corrections won't self-cancel.)
+    let interrupted = false;
+    const flag = () => { interrupted = true; };
+    const evs = ['wheel', 'touchmove', 'keydown'];
+    evs.forEach(e => window.addEventListener(e, flag, { passive: true }));
+    const stop = () => evs.forEach(e => window.removeEventListener(e, flag));
+
+    const topOf = () => {
       const el = document.getElementById(id);
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 88;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-      } else if (tries > 0) {
-        setTimeout(() => go(tries - 1), 60);
-      }
+      return el ? Math.max(0, el.getBoundingClientRect().top + window.scrollY - 88) : null;
     };
-    requestAnimationFrame(() => go(8));
+
+    // Cross-page landings (e.g. arriving at /#mods from another page) mount the
+    // DC after the browser's initial hash jump, and late-loading imagery (hero,
+    // release cover, mod thumbnails) keeps shifting the target down for a second
+    // or two. Do the initial smooth scroll once the section exists, then re-align
+    // with instant corrections until the target stops moving — otherwise the
+    // one-shot scroll lands short and the page appears to ignore the anchor.
+    let waits = 20;
+    const begin = () => {
+      if (interrupted) return stop();
+      const t = topOf();
+      if (t == null) { if (waits-- > 0) setTimeout(begin, 60); else stop(); return; }
+      window.scrollTo({ top: t, behavior: 'smooth' });
+      let stable = 0, last = t, elapsed = 0;
+      const realign = () => {
+        if (interrupted) return stop();
+        const nt = topOf();
+        if (nt == null) return stop();
+        if (Math.abs(nt - last) <= 2) {
+          stable++;
+        } else {
+          stable = 0;
+          window.scrollTo({ top: nt, behavior: 'auto' });
+        }
+        last = nt;
+        elapsed += 150;
+        if (stable < 3 && elapsed < 3000) setTimeout(realign, 150);
+        else stop();
+      };
+      setTimeout(realign, 450);
+    };
+    requestAnimationFrame(begin);
   }
   // Extract a TOML array literal (key = [ "a", "b", ... ]) by key.
   tomlArray(toml, key) {
