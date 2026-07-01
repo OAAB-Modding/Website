@@ -248,7 +248,7 @@
               </div>
               <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onLoad="{{ imgLoad }}" onError="{{ imgErr }}" style="padding:{{ imgPad }}px;" class="asset-image">
               <sc-if value="{{ it.lightTint }}" hint-placeholder-val="{{ false }}">
-                <span aria-hidden="true" style="background:{{ it.lightTint }};--asset-light-mask:url('{{ it.img }}');" class="asset-light-tint"></span>
+                <span aria-hidden="true" style="background:{{ it.lightTint }};--asset-light-mask:url('{{ it.lightMask }}');--asset-light-inset:{{ imgPad }}px;" class="asset-light-tint"></span>
               </sc-if>
             </div>
             <sc-if value="{{ comfortable }}" hint-placeholder-val="{{ true }}">
@@ -256,6 +256,9 @@
             </sc-if>
             <sc-if value="{{ it.relShow }}" hint-placeholder-val="{{ false }}">
               <span title="Touched in OAAB_Data {{ it.relVer }}" style="background:{{ it.relBg }};color:{{ it.relFg }};border:1px solid {{ it.relBd }};" class="asset-release-badge"><span class="asset-release-glyph">{{ it.relGlyph }}</span>{{ it.relVer }}</span>
+            </sc-if>
+            <sc-if value="{{ it.lightColor }}" hint-placeholder-val="{{ false }}">
+              <span title="{{ it.lightColor }}" style="background:{{ it.lightColor }};" class="asset-light-swatch"></span>
             </sc-if>
             <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
               <code class="asset-id-overlay">{{ it.id }}</code>
@@ -439,7 +442,9 @@ class Component extends DCLogic {
 
     const REPO = 'https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main';
     const THUMB = REPO + '/assets/images/library/thumbnails/meshes/';
+    const LIGHT_MASK = REPO + '/assets/images/library/masks/marker_light_mask.webp';
     this._THUMB = THUMB;
+    this._LIGHT_MASK = LIGHT_MASK;
 
     // Data JSON must always reflect the freshly deployed source. jsdelivr caches
     // the mutable @main ref for hours, so a lowercased mesh path (or any data
@@ -486,6 +491,7 @@ class Component extends DCLogic {
           const mesh = (r.mesh || '');
           const norm = mesh.replace(/\\/g, '/');
           const markerLight = this.isMeshlessLight(r);
+          const lightColor = this.labelType(r.type).toLowerCase() === 'light' ? this.lightColorCss(r) : '';
           // Thumbnails only exist for OAAB-namespaced meshes, except meshless
           // lights which use the editor light marker tinted by their RGB color.
           if (!markerLight && !/^oaab\//i.test(norm)) return;
@@ -502,7 +508,9 @@ class Component extends DCLogic {
             type: labelType(r.type),
             img: THUMB + rel,
             mesh: mesh,
-            lightTint: markerLight ? this.lightColorCss(r) : '',
+            lightTint: markerLight ? lightColor : '',
+            lightColor: lightColor,
+            lightMask: markerLight ? LIGHT_MASK : '',
           });
         });
         items.sort((a, b) => a.id.localeCompare(b.id));
@@ -637,6 +645,7 @@ class Component extends DCLogic {
     if (this._vanillaItems || this._vanillaLoading) return;
     this._vanillaLoading = true;
     const THUMB = this._THUMB;
+    const LIGHT_MASK = this._LIGHT_MASK;
     const files = ['Morrowind_filtered.json', 'Bloodmoon_filtered.json', 'Tribunal_filtered.json'];
     Promise.all(files.map(f =>
       this._fetchData(f).then(r => r.json()).catch(e => { console.warn('vanilla load failed: ' + f, e); return []; })
@@ -648,6 +657,7 @@ class Component extends DCLogic {
           const mesh = r.mesh || '';
           const norm = mesh.replace(/\\/g, '/').toLowerCase();
           const markerLight = this.isMeshlessLight(r);
+          const lightColor = this.labelType(r.type).toLowerCase() === 'light' ? this.lightColorCss(r) : '';
           if (!markerLight && !/\.nif$/.test(norm)) return;
           const id = r.id;
           if (!id || seen[id]) return;
@@ -660,7 +670,9 @@ class Component extends DCLogic {
             type: this.labelType(r.type),
             img: THUMB + rel,
             mesh: mesh,
-            lightTint: markerLight ? this.lightColorCss(r) : '',
+            lightTint: markerLight ? lightColor : '',
+            lightColor: lightColor,
+            lightMask: markerLight ? LIGHT_MASK : '',
             vanilla: true,
           });
         });
@@ -1045,8 +1057,10 @@ class Component extends DCLogic {
         hasName: !!(x.name && x.name.length),
         type: x.type,
         img: x.img,
-        thumbKey: x.id + '|' + (x.img || '') + '|' + (x.lightTint || ''),
+        thumbKey: x.id + '|' + (x.img || '') + '|' + (x.lightTint || '') + '|' + (x.lightColor || '') + '|' + (x.lightMask || ''),
         lightTint: x.lightTint || '',
+        lightColor: x.lightColor || '',
+        lightMask: x.lightMask || '',
         nif: x.mesh || (x.img || ''),
         tip: comfortable
           ? (x.mesh || x.id || x.img || '')
