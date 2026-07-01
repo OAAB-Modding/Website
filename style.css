@@ -2527,6 +2527,15 @@ button {
   opacity:0;
   transition:opacity .3s ease;
 }
+.asset-light-tint {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.82;
+  mix-blend-mode:color;
+  -webkit-mask:var(--asset-light-mask) center/contain no-repeat;
+  mask:var(--asset-light-mask) center/contain no-repeat;
+}
 .asset-type-label {
   position:absolute;
   left:9px;

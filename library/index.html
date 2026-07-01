@@ -242,11 +242,14 @@
       <sc-for list="{{ items }}" as="it" hint-placeholder-count="18">
         <figure title="{{ it.tip }}" draggable="{{ yes }}" data-eid="{{ it.id }}" onDragStart="{{ onDrag }}" class="asset-card">
           <div class="asset-thumb-frame">
-            <div key="{{ it.img }}" data-thumb="" class="asset-thumb-layer">
+            <div key="{{ it.thumbKey }}" data-thumb="" class="asset-thumb-layer">
               <div data-spin="" class="asset-spinner-wrap">
                 <div class="asset-spinner"></div>
               </div>
               <img src="{{ it.img }}" alt="{{ it.id }}" loading="lazy" decoding="async" draggable="{{ no }}" onLoad="{{ imgLoad }}" onError="{{ imgErr }}" style="padding:{{ imgPad }}px;" class="asset-image">
+              <sc-if value="{{ it.lightTint }}" hint-placeholder-val="{{ false }}">
+                <span aria-hidden="true" style="background:{{ it.lightTint }};--asset-light-mask:url('{{ it.img }}');" class="asset-light-tint"></span>
+              </sc-if>
             </div>
             <sc-if value="{{ comfortable }}" hint-placeholder-val="{{ true }}">
             <span class="asset-type-label">{{ it.type }}</span>
@@ -482,13 +485,15 @@ class Component extends DCLogic {
         records.forEach(r => {
           const mesh = (r.mesh || '');
           const norm = mesh.replace(/\\/g, '/');
-          // Thumbnails only exist for OAAB-namespaced meshes.
-          if (!/^oaab\//i.test(norm)) return;
+          const markerLight = this.isMeshlessLight(r);
+          // Thumbnails only exist for OAAB-namespaced meshes, except meshless
+          // lights which use the editor light marker tinted by their RGB color.
+          if (!markerLight && !/^oaab\//i.test(norm)) return;
           const id = r.id;
           if (!id || seen[id]) return;
           if (this.isHiddenBodyPart(r)) return;
           if (deprecated[id]) return; // skip deprecated IDs
-          const rel = thumbnailPath(mesh);
+          const rel = markerLight ? 'marker_light.webp' : thumbnailPath(mesh);
           if (!rel) return;
           seen[id] = 1;
           items.push({
@@ -497,6 +502,7 @@ class Component extends DCLogic {
             type: labelType(r.type),
             img: THUMB + rel,
             mesh: mesh,
+            lightTint: markerLight ? this.lightColorCss(r) : '',
           });
         });
         items.sort((a, b) => a.id.localeCompare(b.id));
@@ -576,6 +582,17 @@ class Component extends DCLogic {
     return t || 'Misc';
   }
 
+  isMeshlessLight(r) {
+    return this.labelType(r && r.type).toLowerCase() === 'light' && !String((r && r.mesh) || '').trim();
+  }
+
+  lightColorCss(r) {
+    const c = r && r.data && r.data.color;
+    if (!Array.isArray(c) || c.length < 3) return '';
+    const rgb = c.slice(0, 3).map(v => Math.max(0, Math.min(255, parseInt(v, 10) || 0)));
+    return 'rgb(' + rgb.join(', ') + ')';
+  }
+
   isHiddenBodyPart(r) {
     const type = this.labelType(r && r.type).replace(/\s+/g, '').toLowerCase();
     if (type !== 'bodypart') return false;
@@ -630,17 +647,20 @@ class Component extends DCLogic {
         (records || []).forEach(r => {
           const mesh = r.mesh || '';
           const norm = mesh.replace(/\\/g, '/').toLowerCase();
-          if (!/\.nif$/.test(norm)) return;
+          const markerLight = this.isMeshlessLight(r);
+          if (!markerLight && !/\.nif$/.test(norm)) return;
           const id = r.id;
           if (!id || seen[id]) return;
           if (this.isHiddenBodyPart(r)) return;
           seen[id] = 1;
+          const rel = markerLight ? 'marker_light.webp' : norm.replace(/\.nif$/, '.webp');
           items.push({
             id: id,
             name: r.name || '',
             type: this.labelType(r.type),
-            img: THUMB + norm.replace(/\.nif$/, '.webp'),
+            img: THUMB + rel,
             mesh: mesh,
+            lightTint: markerLight ? this.lightColorCss(r) : '',
             vanilla: true,
           });
         });
@@ -1025,9 +1045,11 @@ class Component extends DCLogic {
         hasName: !!(x.name && x.name.length),
         type: x.type,
         img: x.img,
+        thumbKey: x.id + '|' + (x.img || '') + '|' + (x.lightTint || ''),
+        lightTint: x.lightTint || '',
         nif: x.mesh || (x.img || ''),
         tip: comfortable
-          ? (x.mesh || x.img || '')
+          ? (x.mesh || x.id || x.img || '')
           : ((x.type ? x.type + '\n' : '') + x.id + (x.name ? '  \u00b7  ' + x.name : '') + (x.mesh ? '\n' + x.mesh : '')),
         relShow: !!prov && comfortable,
         relVer: prov ? prov.version : '',
