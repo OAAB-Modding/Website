@@ -258,7 +258,7 @@
               <span title="Touched in OAAB_Data {{ it.relVer }}" style="background:{{ it.relBg }};color:{{ it.relFg }};border:1px solid {{ it.relBd }};" class="asset-release-badge"><span class="asset-release-glyph">{{ it.relGlyph }}</span>{{ it.relVer }}</span>
             </sc-if>
             <sc-if value="{{ it.lightColor }}" hint-placeholder-val="{{ false }}">
-              <span title="{{ it.lightColor }}" style="background:{{ it.lightColor }};" class="asset-light-swatch"></span>
+              <button type="button" data-color="{{ it.lightHex }}" onClick="{{ pickColor }}" title="{{ it.lightHex }}" style="background:{{ it.lightColor }};" class="asset-light-swatch"></button>
             </sc-if>
             <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
               <code class="asset-id-overlay">{{ it.id }}</code>
@@ -492,6 +492,8 @@ class Component extends DCLogic {
           const norm = mesh.replace(/\\/g, '/');
           const markerLight = this.isMeshlessLight(r);
           const lightColor = this.labelType(r.type).toLowerCase() === 'light' ? this.lightColorCss(r) : '';
+          const lightHex = lightColor ? this.lightColorHex(r) : '';
+          const lightRgb = lightColor ? this.lightColorRgb(r) : null;
           // Thumbnails only exist for OAAB-namespaced meshes, except meshless
           // lights which use the editor light marker tinted by their RGB color.
           if (!markerLight && !/^oaab\//i.test(norm)) return;
@@ -510,6 +512,8 @@ class Component extends DCLogic {
             mesh: mesh,
             lightTint: markerLight ? lightColor : '',
             lightColor: lightColor,
+            lightHex: lightHex,
+            lightRgb: lightRgb,
             lightMask: markerLight ? LIGHT_MASK : '',
           });
         });
@@ -595,10 +599,47 @@ class Component extends DCLogic {
   }
 
   lightColorCss(r) {
+    const rgb = this.lightColorRgb(r);
+    return rgb ? 'rgb(' + rgb.join(', ') + ')' : '';
+  }
+
+  lightColorHex(r) {
+    const rgb = this.lightColorRgb(r);
+    return rgb ? this.rgbToHex(rgb) : '';
+  }
+
+  lightColorRgb(r) {
     const c = r && r.data && r.data.color;
-    if (!Array.isArray(c) || c.length < 3) return '';
-    const rgb = c.slice(0, 3).map(v => Math.max(0, Math.min(255, parseInt(v, 10) || 0)));
-    return 'rgb(' + rgb.join(', ') + ')';
+    if (!Array.isArray(c) || c.length < 3) return null;
+    return c.slice(0, 3).map(v => Math.max(0, Math.min(255, parseInt(v, 10) || 0)));
+  }
+
+  rgbToHex(rgb) {
+    return '#' + rgb.map(v => {
+      const h = Math.max(0, Math.min(255, parseInt(v, 10) || 0)).toString(16);
+      return h.length === 1 ? '0' + h : h;
+    }).join('');
+  }
+
+  parseColorQuery(query) {
+    const s = String(query || '').trim();
+    const six = /#?([0-9a-f]{6})(?:~(\d{1,3}))?/i.exec(s);
+    const three = /#([0-9a-f]{3})(?:~(\d{1,3}))?/i.exec(s);
+    const m = six || three;
+    if (!m) return null;
+    let hex = m[1].toLowerCase();
+    if (hex.length === 3) hex = hex.split('').map(ch => ch + ch).join('');
+    const rgb = [0, 2, 4].map(i => parseInt(hex.slice(i, i + 2), 16));
+    const tolerance = Math.max(0, Math.min(255, parseInt(m[2], 10) || 48));
+    return { hex: '#' + hex, rgb, tolerance, toleranceSq: tolerance * tolerance };
+  }
+
+  colorDistanceSq(a, b) {
+    if (!Array.isArray(a) || !Array.isArray(b)) return Infinity;
+    const dr = (a[0] || 0) - (b[0] || 0);
+    const dg = (a[1] || 0) - (b[1] || 0);
+    const db = (a[2] || 0) - (b[2] || 0);
+    return dr * dr + dg * dg + db * db;
   }
 
   isHiddenBodyPart(r) {
@@ -658,6 +699,8 @@ class Component extends DCLogic {
           const norm = mesh.replace(/\\/g, '/').toLowerCase();
           const markerLight = this.isMeshlessLight(r);
           const lightColor = this.labelType(r.type).toLowerCase() === 'light' ? this.lightColorCss(r) : '';
+          const lightHex = lightColor ? this.lightColorHex(r) : '';
+          const lightRgb = lightColor ? this.lightColorRgb(r) : null;
           if (!markerLight && !/\.nif$/.test(norm)) return;
           const id = r.id;
           if (!id || seen[id]) return;
@@ -672,6 +715,8 @@ class Component extends DCLogic {
             mesh: mesh,
             lightTint: markerLight ? lightColor : '',
             lightColor: lightColor,
+            lightHex: lightHex,
+            lightRgb: lightRgb,
             lightMask: markerLight ? LIGHT_MASK : '',
             vanilla: true,
           });
@@ -1005,16 +1050,20 @@ class Component extends DCLogic {
     // Text search applied on top, matching ID or name (case-insensitive).
     const rawQuery = (this.state.query || '').trim();
     const q = rawQuery.toLowerCase();
+    const colorQuery = this.parseColorQuery(rawQuery);
+    const colorKey = colorQuery ? colorQuery.hex + '~' + colorQuery.tolerance : '';
     let filtered;
     const queryCache = this._queryCache;
-    if (queryCache && queryCache.items === relFiltered && queryCache.query === q) {
+    if (queryCache && queryCache.items === relFiltered && queryCache.query === q && queryCache.colorKey === colorKey) {
       filtered = queryCache.filtered;
     } else {
       filtered = !q ? relFiltered : relFiltered.filter(x =>
         (x.id || '').toLowerCase().indexOf(q) !== -1 ||
-        (x.name || '').toLowerCase().indexOf(q) !== -1
+        (x.name || '').toLowerCase().indexOf(q) !== -1 ||
+        ((x.lightHex || '').toLowerCase().indexOf(q) !== -1) ||
+        (colorQuery && this.colorDistanceSq(x.lightRgb, colorQuery.rgb) <= colorQuery.toleranceSq)
       );
-      this._queryCache = { items: relFiltered, query: q, filtered };
+      this._queryCache = { items: relFiltered, query: q, colorKey, filtered };
     }
 
     // Materialise only complete rows around the viewport. Fixed-height captions
@@ -1057,9 +1106,10 @@ class Component extends DCLogic {
         hasName: !!(x.name && x.name.length),
         type: x.type,
         img: x.img,
-        thumbKey: x.id + '|' + (x.img || '') + '|' + (x.lightTint || '') + '|' + (x.lightColor || '') + '|' + (x.lightMask || ''),
+        thumbKey: x.id + '|' + (x.img || '') + '|' + (x.lightTint || '') + '|' + (x.lightColor || '') + '|' + (x.lightHex || '') + '|' + (x.lightMask || ''),
         lightTint: x.lightTint || '',
         lightColor: x.lightColor || '',
+        lightHex: x.lightHex || '',
         lightMask: x.lightMask || '',
         nif: x.mesh || (x.img || ''),
         tip: comfortable
@@ -1090,7 +1140,7 @@ class Component extends DCLogic {
     let emptyCopy = "These records exist in the library data but aren't part of the current thumbnail render set.";
     if (q) {
       emptyTitle = 'No matching records.';
-      emptyCopy = 'No object ID or name contains "' + rawQuery + '".';
+      emptyCopy = 'No object ID, name, or light color matches "' + rawQuery + '".';
     } else if (hasFilterWithoutSearch) {
       emptyTitle = 'No matching thumbnails.';
       emptyCopy = 'Try clearing a type, tag, or release filter.';
@@ -1200,6 +1250,19 @@ class Component extends DCLogic {
       hasQuery: !!q,
       onSearch: (e) => this.setState({ query: e.target.value }),
       clearSearch: () => this.setState({ query: '' }),
+      pickColor: (e) => {
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+        const color = e.currentTarget && e.currentTarget.dataset ? (e.currentTarget.dataset.color || '') : '';
+        if (!color) return;
+        this.setState({ query: color });
+        requestAnimationFrame(() => {
+          const input = document.querySelector('.search-input');
+          if (input) {
+            try { input.focus({ preventScroll: true }); } catch (err) { input.focus(); }
+          }
+        });
+      },
       typeCount: types.length,
       tabs,
       typeOpen: !!this.state.typeOpen,
