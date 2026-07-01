@@ -486,7 +486,7 @@ class Component extends DCLogic {
           if (!/^oaab\//i.test(norm)) return;
           const id = r.id;
           if (!id || seen[id]) return;
-          if (/^AB_[ac]_/i.test(id)) return; // hide body parts (AB_a_*, AB_c_*) from the library
+          if (this.isHiddenBodyPart(r)) return;
           if (deprecated[id]) return; // skip deprecated IDs
           const rel = thumbnailPath(mesh);
           if (!rel) return;
@@ -576,6 +576,18 @@ class Component extends DCLogic {
     return t || 'Misc';
   }
 
+  isHiddenBodyPart(r) {
+    const id = String((r && r.id) || '').toLowerCase();
+    const hasBodyPartPrefix =
+      id.indexOf('a_') === 0 ||
+      id.indexOf('c_') === 0 ||
+      id.indexOf('ab_a_') === 0 ||
+      id.indexOf('ab_c_') === 0;
+    if (!hasBodyPartPrefix) return false;
+    const type = this.labelType(r && r.type).replace(/\s+/g, '').toLowerCase();
+    return type === 'bodypart';
+  }
+
   // Compose the catalogue shown in the grid. OAAB objects are always present;
   // when the Vanilla toggle is on, the base-game objects (Morrowind, Tribunal,
   // Bloodmoon) are merged in too. Type counts/tabs are derived from the merged
@@ -626,6 +638,7 @@ class Component extends DCLogic {
           if (!/\.nif$/.test(norm)) return;
           const id = r.id;
           if (!id || seen[id]) return;
+          if (this.isHiddenBodyPart(r)) return;
           seen[id] = 1;
           items.push({
             id: id,
