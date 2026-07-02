@@ -19675,106 +19675,40 @@
   {
     "type": "Npc",
     "flags": "",
-    "id": "BM_Imperial Guard",
-    "name": "Guard",
-    "script": "fortloreboozeScript",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "BM_Imperial Guard_Carn1",
-    "name": "Guard",
-    "script": "fortloreboozeCarn1Script",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "BM_Imperial Guard_Carn2",
-    "name": "Guard",
-    "script": "fortloreboozeCarn2Script",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "BM_Imperial Guard_Carn3",
-    "name": "Guard",
-    "script": "fortloreboozeCarn3Script",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
     "id": "bm_ice_witch_nord",
     "name": "Ice Witch",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_darkelf",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_darkelf_f",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_imperial",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_imperial_f",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_redguard",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_redguard_f",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_smugglers_woodelf",
-    "name": "Smuggler",
-    "script": "nolore",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "bm_wind_witch_nord",
-    "name": "Wind Witch",
-    "script": "nolore",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM Winterwound Dagger"
+      ],
+      [
+        1,
+        "common_pants_03_c"
+      ],
+      [
+        1,
+        "bm_randomcuirass_smugglers"
+      ],
+      [
+        1,
+        "bm_randomhelmet_smugglers"
+      ],
+      [
+        1,
+        "bm_randomhealth_smugglers"
+      ],
+      [
+        1,
+        "bm_randomloot_smugglers"
+      ],
+      [
+        1,
+        "bm_randomboots_smugglers"
+      ]
+    ]
   },
   {
     "type": "Armor",

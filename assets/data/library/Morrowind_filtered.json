@@ -100803,7 +100803,57 @@
     "id": "Company Guard_unique",
     "name": "Company Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial broadsword"
+      ],
+      [
+        1,
+        "imperial skirt_clothing"
+      ],
+      [
+        1,
+        "imperial belt"
+      ],
+      [
+        1,
+        "imperial shield"
+      ],
+      [
+        1,
+        "imperial right gauntlet"
+      ],
+      [
+        1,
+        "imperial left gauntlet"
+      ],
+      [
+        1,
+        "imperial boots"
+      ],
+      [
+        1,
+        "imperial right pauldron"
+      ],
+      [
+        1,
+        "imperial left pauldron"
+      ],
+      [
+        1,
+        "imperial cuirass_armor"
+      ],
+      [
+        1,
+        "imperial helmet armor"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -100811,103 +100861,21 @@
     "id": "Dreamer_Talker",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker01",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker02",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker03",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker04",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker05",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker06",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker07",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker08",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker09",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker10",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker11",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Dreamer_Talker12",
-    "name": "Dreamer",
-    "script": "dreamer_talkerEnable",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "chitin club"
+      ],
+      [
+        1,
+        "common_pants_03"
+      ],
+      [
+        1,
+        "ingred_6th_corprusmeat_01"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -100915,7 +100883,61 @@
     "id": "Imperial Guard",
     "name": "Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial belt"
+      ],
+      [
+        1,
+        "imperial right gauntlet"
+      ],
+      [
+        1,
+        "imperial left gauntlet"
+      ],
+      [
+        1,
+        "imperial boots"
+      ],
+      [
+        1,
+        "imperial_greaves"
+      ],
+      [
+        1,
+        "imperial cuirass_armor"
+      ],
+      [
+        1,
+        "Imperial Guard Random Helmet"
+      ],
+      [
+        1,
+        "Imperial Guard Random LPauldron"
+      ],
+      [
+        1,
+        "Imperial Guard Random RPauldron"
+      ],
+      [
+        1,
+        "Imperial Guard Random Shield"
+      ],
+      [
+        1,
+        "Imperial Guard Random Skirt"
+      ],
+      [
+        1,
+        "Imperial Guard Random Weapon"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -100923,119 +100945,57 @@
     "id": "Imperial Guard_ebonhear",
     "name": "Guard",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Imperial Guard_prisoner",
-    "name": "Guard",
-    "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "aundae vampire 1",
-    "name": "Vampire",
-    "script": "Vampire_Aundae",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "aundae vampire 2",
-    "name": "Vampire",
-    "script": "Vampire_Aundae",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "aundae vampire 3",
-    "name": "Vampire",
-    "script": "Vampire_Aundae",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "aundae vampire 4",
-    "name": "Vampire",
-    "script": "Vampire_Aundae",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "BLOCKED",
-    "id": "aundae vampire 5",
-    "name": "Vampire",
-    "script": "Vampire_Aundae",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "berne vampire 1",
-    "name": "Vampire",
-    "script": "Vampire_Berne",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "berne vampire 2",
-    "name": "Vampire",
-    "script": "Vampire_Berne",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "berne vampire 3",
-    "name": "Vampire",
-    "script": "Vampire_Berne",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "berne vampire 4",
-    "name": "Vampire",
-    "script": "Vampire_Berne",
-    "mesh": "base_animkna.nif"
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "berne vampire 5",
-    "name": "Vampire",
-    "script": "Vampire_Berne",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "din",
-    "name": "Din",
-    "script": "dinScript",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "dreamer",
-    "name": "Dreamer",
-    "script": "diseaseWither",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "dreamer worker",
-    "name": "Dreamer Worker",
-    "script": "dreamerWorkerScript",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial broadsword"
+      ],
+      [
+        1,
+        "imperial skirt_clothing"
+      ],
+      [
+        1,
+        "imperial belt"
+      ],
+      [
+        1,
+        "imperial shield"
+      ],
+      [
+        1,
+        "imperial right gauntlet"
+      ],
+      [
+        1,
+        "imperial left gauntlet"
+      ],
+      [
+        1,
+        "imperial boots"
+      ],
+      [
+        1,
+        "imperial right pauldron"
+      ],
+      [
+        1,
+        "imperial left pauldron"
+      ],
+      [
+        1,
+        "imperial cuirass_armor"
+      ],
+      [
+        1,
+        "imperial helmet armor"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101043,7 +101003,13 @@
     "id": "dreamer_02",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron club"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101051,7 +101017,17 @@
     "id": "dreamer_04",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron club"
+      ],
+      [
+        1,
+        "ingred_6th_corprusmeat_01"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101059,7 +101035,17 @@
     "id": "dreamer_05",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron club"
+      ],
+      [
+        1,
+        "ingred_6th_corprusmeat_01"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101067,15 +101053,17 @@
     "id": "dreamer_06",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "dreamer_dead",
-    "name": "Dead Dreamer",
-    "script": "Sound_Flies",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron club"
+      ],
+      [
+        1,
+        "ingred_6th_corprusmeat_01"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101083,7 +101071,17 @@
     "id": "dreamer_f_01",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron club"
+      ],
+      [
+        1,
+        "ingred_6th_corprusmeat_04"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101091,7 +101089,13 @@
     "id": "dreamer_ranged",
     "name": "Dreamer",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        50,
+        "steel dart"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101099,7 +101103,57 @@
     "id": "hlaalu guard",
     "name": "Hlaalu Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel longsword"
+      ],
+      [
+        1,
+        "expensive_pants_01_e"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_tshield_hlaaluguard"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_helm"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101107,7 +101161,57 @@
     "id": "hlaalu guard_outside",
     "name": "Hlaalu Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel longsword"
+      ],
+      [
+        1,
+        "expensive_pants_01_e"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_tshield_hlaaluguard"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_helm"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101115,7 +101219,57 @@
     "id": "hlaalu sharpshooter",
     "name": "Hlaalu Sharpshooter Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        20,
+        "steel arrow"
+      ],
+      [
+        1,
+        "steel longbow"
+      ],
+      [
+        1,
+        "expensive_pants_01_e"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_tshield_hlaaluguard"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_helm"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101123,7 +101277,53 @@
     "id": "imperial archer",
     "name": "Imperial Archer",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        100,
+        "iron arrow"
+      ],
+      [
+        20,
+        "cruel sparkarrow"
+      ],
+      [
+        1,
+        "steel longbow"
+      ],
+      [
+        1,
+        "iron viperblade"
+      ],
+      [
+        1,
+        "imperial belt"
+      ],
+      [
+        1,
+        "common_shirt_05"
+      ],
+      [
+        1,
+        "common_shoes_05"
+      ],
+      [
+        1,
+        "common_pants_05"
+      ],
+      [
+        1,
+        "imperial_chain_greaves"
+      ],
+      [
+        1,
+        "imperial_chain_cuirass"
+      ],
+      [
+        1,
+        "imperial_chain_coif_helm"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101131,7 +101331,53 @@
     "id": "imperial guard captain",
     "name": "Guard Captain",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial broadsword"
+      ],
+      [
+        1,
+        "imperial skirt_clothing"
+      ],
+      [
+        1,
+        "imperial belt"
+      ],
+      [
+        1,
+        "imperial shield"
+      ],
+      [
+        1,
+        "imperial right gauntlet"
+      ],
+      [
+        1,
+        "imperial left gauntlet"
+      ],
+      [
+        1,
+        "imperial boots"
+      ],
+      [
+        1,
+        "imperial right pauldron"
+      ],
+      [
+        1,
+        "imperial left pauldron"
+      ],
+      [
+        1,
+        "imperial cuirass_armor"
+      ],
+      [
+        1,
+        "imperial helmet armor"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101139,7 +101385,53 @@
     "id": "ordinator stationary",
     "name": "Ordinator",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "ebony mace"
+      ],
+      [
+        1,
+        "indoril_belt"
+      ],
+      [
+        1,
+        "expensive_pants_02"
+      ],
+      [
+        1,
+        "indoril shield"
+      ],
+      [
+        1,
+        "indoril right gauntlet"
+      ],
+      [
+        1,
+        "indoril left gauntlet"
+      ],
+      [
+        1,
+        "indoril boots"
+      ],
+      [
+        1,
+        "indoril pauldron right"
+      ],
+      [
+        1,
+        "indoril pauldron left"
+      ],
+      [
+        1,
+        "indoril cuirass"
+      ],
+      [
+        1,
+        "indoril helmet"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101147,79 +101439,57 @@
     "id": "ordinator wander",
     "name": "Ordinator",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "ordinator wander_hp",
-    "name": "Ordinator",
-    "script": "hlaaluPrisonGuard",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "ordinator_high fane",
-    "name": "Ordinator",
-    "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "ordinator_wander_hvault",
-    "name": "Ordinator",
-    "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "ordinator_wander_tvault",
-    "name": "Ordinator",
-    "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "quarra vampire 1",
-    "name": "Vampire",
-    "script": "Vampire_Quarra",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "quarra vampire 2",
-    "name": "Vampire",
-    "script": "Vampire_Quarra",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "quarra vampire 3",
-    "name": "Vampire",
-    "script": "Vampire_Quarra",
-    "mesh": "base_animkna.nif"
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "quarra vampire 4",
-    "name": "Vampire",
-    "script": "Vampire_Quarra",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "quarra vampire 5",
-    "name": "Vampire",
-    "script": "Vampire_Quarra",
-    "mesh": "base_animkna.nif"
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "ebony mace"
+      ],
+      [
+        1,
+        "indoril_belt"
+      ],
+      [
+        1,
+        "expensive_pants_02"
+      ],
+      [
+        1,
+        "indoril shield"
+      ],
+      [
+        1,
+        "indoril right gauntlet"
+      ],
+      [
+        1,
+        "indoril left gauntlet"
+      ],
+      [
+        1,
+        "indoril boots"
+      ],
+      [
+        1,
+        "indoril pauldron right"
+      ],
+      [
+        1,
+        "indoril pauldron left"
+      ],
+      [
+        1,
+        "indoril cuirass"
+      ],
+      [
+        1,
+        "indoril helmet"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101227,7 +101497,65 @@
     "id": "redoran guard female",
     "name": "Redoran Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "silver longsword"
+      ],
+      [
+        1,
+        "extravagant_skirt_01"
+      ],
+      [
+        1,
+        "extravagant_belt_01"
+      ],
+      [
+        1,
+        "extravagant_shirt_01_r"
+      ],
+      [
+        1,
+        "extravagant_shoes_01"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_cuirass"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_helm"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101235,23 +101563,73 @@
     "id": "redoran guard male",
     "name": "Redoran Guard",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "redoran guard sarethi3",
-    "name": "Redoran Guard",
-    "script": "regularSarethiGuard",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "redoran guard sarethi4",
-    "name": "Redoran Guard",
-    "script": "regularSarethiGuard",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel mace"
+      ],
+      [
+        1,
+        "expensive_amulet_01"
+      ],
+      [
+        1,
+        "extravagant_glove_left_01"
+      ],
+      [
+        1,
+        "extravagant_glove_right_01"
+      ],
+      [
+        1,
+        "extravagant_shirt_01"
+      ],
+      [
+        1,
+        "extravagant_shoes_01"
+      ],
+      [
+        1,
+        "extravagant_pants_01"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_cuirass"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_helm"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101259,7 +101637,73 @@
     "id": "redoran guard shooter",
     "name": "Sharpshooter Redoran Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        10,
+        "ebony arrow"
+      ],
+      [
+        1,
+        "expensive_amulet_01"
+      ],
+      [
+        1,
+        "extravagant_glove_left_01"
+      ],
+      [
+        1,
+        "extravagant_glove_right_01"
+      ],
+      [
+        1,
+        "extravagant_shirt_01"
+      ],
+      [
+        1,
+        "extravagant_shoes_01"
+      ],
+      [
+        1,
+        "extravagant_pants_01"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_cuirass"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_helm"
+      ],
+      [
+        1,
+        "l_n_wpn_missle_bow"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101267,7 +101711,65 @@
     "id": "telvanni guard",
     "name": "Telvanni Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        50,
+        "iron arrow"
+      ],
+      [
+        1,
+        "chitin short bow"
+      ],
+      [
+        1,
+        "steel war axe"
+      ],
+      [
+        1,
+        "common_pants_05"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_tshield_telvanniguard"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "cephalopod_helm"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101275,7 +101777,61 @@
     "id": "telvanni guard_stand",
     "name": "Telvanni Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        50,
+        "iron arrow"
+      ],
+      [
+        1,
+        "chitin short bow"
+      ],
+      [
+        1,
+        "steel war axe"
+      ],
+      [
+        1,
+        "common_pants_05"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_tshield_telvanniguard"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "cephalopod_helm"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -101283,7 +101839,57 @@
     "id": "telvanni sharpshooter",
     "name": "Telvanni Sharpshooter",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        15,
+        "ebony arrow"
+      ],
+      [
+        1,
+        "bonemold long bow"
+      ],
+      [
+        1,
+        "expensive_pants_01"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_tshield_telvanniguard"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "cephalopod_helm"
+      ]
+    ]
   },
   {
     "type": "Armor",

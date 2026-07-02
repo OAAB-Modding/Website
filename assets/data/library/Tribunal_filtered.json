@@ -17384,47 +17384,49 @@
     "id": "Guard_Helseth",
     "name": "Royal Guard",
     "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Guard_Helseth_attack",
-    "name": "Royal Guard",
-    "script": "fab_attack_helseth",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Guard_HighOrd_Attack",
-    "name": "High Ordinator",
-    "script": "fab_attack_highord",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "Imperial Guard_M_Sadri",
-    "name": "Elite Guard",
-    "script": "",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "ordinator_mh_TBasement",
-    "name": "High Ordinator",
-    "script": "PlagueOrdBasement",
-    "mesh": ""
-  },
-  {
-    "type": "Npc",
-    "flags": "",
-    "id": "ordinator_mh_TH_UNI",
-    "name": "High Ordinator",
-    "script": "PlagueOrdHall",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "adamantium_claymore"
+      ],
+      [
+        1,
+        "Helsethguard_gauntlet_right"
+      ],
+      [
+        1,
+        "Helsethguard_gauntlet_left"
+      ],
+      [
+        1,
+        "Helsethguard_boots"
+      ],
+      [
+        1,
+        "Helsethguard_greaves"
+      ],
+      [
+        1,
+        "Helsethguard_pauldron_right"
+      ],
+      [
+        1,
+        "Helsethguard_pauldron_left"
+      ],
+      [
+        1,
+        "Helsethguard_cuirass"
+      ],
+      [
+        1,
+        "Helsethguard_Helmet"
+      ],
+      [
+        5,
+        "p_restore_health_e"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -17432,7 +17434,49 @@
     "id": "ordinator_mh_stationary",
     "name": "High Ordinator",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Ebony Scimitar"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_shield"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_gauntlet_R"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_gauntlet_L"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_boots"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Greaves"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Pauldron_R"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Pauldron_L"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Cuirass"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_helmet"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -17440,7 +17484,49 @@
     "id": "ordinator_mournhold",
     "name": "High Ordinator",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Ebony Scimitar"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_shield"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_gauntlet_R"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_gauntlet_L"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_boots"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Greaves"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Pauldron_R"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Pauldron_L"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_Cuirass"
+      ],
+      [
+        1,
+        "Indoril_MH_Guard_helmet"
+      ]
+    ]
   },
   {
     "type": "Armor",

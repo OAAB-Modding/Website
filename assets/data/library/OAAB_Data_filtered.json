@@ -47063,7 +47063,69 @@
     "id": "AB_TelvanniGuardF",
     "name": "Telvanni Guard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_tshield_telvanniguard"
+      ],
+      [
+        1,
+        "cephalopod_helm"
+      ],
+      [
+        1,
+        "chitin short bow"
+      ],
+      [
+        1,
+        "expensive_pants_01"
+      ],
+      [
+        1,
+        "exquisite_skirt_01"
+      ],
+      [
+        50,
+        "iron arrow"
+      ],
+      [
+        1,
+        "steel war axe"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -47071,7 +47133,61 @@
     "id": "AB_TelvanniMarksmanF",
     "name": "Telvanni Sharpshooter",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold long bow"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_tshield_telvanniguard"
+      ],
+      [
+        1,
+        "cephalopod_helm"
+      ],
+      [
+        15,
+        "ebony arrow"
+      ],
+      [
+        1,
+        "expensive_pants_01"
+      ],
+      [
+        1,
+        "exquisite_skirt_01"
+      ]
+    ]
   },
   {
     "type": "Npc",
@@ -47079,7 +47195,57 @@
     "id": "AB_TelvanniWarWizard",
     "name": "Telvanni War Wizard",
     "script": "",
-    "mesh": ""
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_CephHelmOpen"
+      ],
+      [
+        1,
+        "AB_a_CephPauldronLeft"
+      ],
+      [
+        1,
+        "AB_a_CephPauldronRight"
+      ],
+      [
+        1,
+        "AB_lvl_w_WarWizard"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "common_pants_05"
+      ],
+      [
+        1,
+        "common_skirt_05"
+      ],
+      [
+        1,
+        "torch_infinite_time"
+      ]
+    ]
   },
   {
     "type": "Armor",

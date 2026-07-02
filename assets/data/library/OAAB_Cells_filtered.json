@@ -1,0 +1,8349 @@
+[
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "AB_Misc_MemoryStoneEmptyEXAMPLE",
+    "name": "Memory Stone (Empty)",
+    "script": "",
+    "mesh": "oaab\\m\\memory_stone.nif",
+    "icon": "OAAB\\m\\memory_stone.dds",
+    "data": {
+      "weight": 1.0,
+      "value": 40,
+      "flags": ""
+    }
+  },
+  {
+    "type": "MiscItem",
+    "flags": "",
+    "id": "AB_Misc_MemoryStoneFullEXAMPLE",
+    "name": "Memory Stone (Full)",
+    "script": "AB_MemoryStoneEXAMPLE_s",
+    "mesh": "oaab\\m\\memory_stone2.nif",
+    "icon": "OAAB\\m\\memory_stone_2.dds",
+    "data": {
+      "weight": 1.0,
+      "value": 40,
+      "flags": ""
+    }
+  },
+  {
+    "type": "Container",
+    "flags": "",
+    "id": "AB_o_ClutterChestARMO",
+    "name": "Chest of Armor",
+    "script": "",
+    "mesh": "oaab\\o\\mv_chest_01.nif",
+    "encumbrance": 40.0,
+    "container_flags": "IS_BASE",
+    "inventory": [
+      [
+        1,
+        "AB_a_BonemLightBracerR"
+      ],
+      [
+        1,
+        "AB_a_DreughBracerR"
+      ],
+      [
+        1,
+        "AB_a_DustBracerRight"
+      ],
+      [
+        1,
+        "AB_a_BonemLightBracerL"
+      ],
+      [
+        1,
+        "AB_a_DreughBracerL"
+      ],
+      [
+        1,
+        "AB_a_DustBracerLeft"
+      ],
+      [
+        1,
+        "AB_a_BugBlueShield"
+      ],
+      [
+        1,
+        "AB_a_BugGreenShield"
+      ],
+      [
+        1,
+        "AB_a_BugBlueGntRight"
+      ],
+      [
+        1,
+        "AB_a_BugGreenGntRight"
+      ],
+      [
+        1,
+        "AB_a_SteelGntlRight"
+      ],
+      [
+        1,
+        "AB_a_BugBlueGntLeft"
+      ],
+      [
+        1,
+        "AB_a_BugGreenGntLeft"
+      ],
+      [
+        1,
+        "AB_a_SteelGntlLeft"
+      ],
+      [
+        1,
+        "AB_a_BonemLightBoots"
+      ],
+      [
+        1,
+        "AB_a_BugBlueBoots"
+      ],
+      [
+        1,
+        "AB_a_BugGreenBoots"
+      ],
+      [
+        1,
+        "AB_a_DreughBoots"
+      ],
+      [
+        1,
+        "AB_a_DustBoots"
+      ],
+      [
+        1,
+        "AB_a_ImpBmBoots"
+      ],
+      [
+        1,
+        "AB_a_IronDeBoots"
+      ],
+      [
+        1,
+        "AB_a_SteelBoots"
+      ],
+      [
+        1,
+        "AB_a_BonemLightGreaves"
+      ],
+      [
+        1,
+        "AB_a_BugBlueGreaves"
+      ],
+      [
+        1,
+        "AB_a_BugGreenGreaves"
+      ],
+      [
+        1,
+        "AB_a_DreughGreaves"
+      ],
+      [
+        1,
+        "AB_a_DustGreaves"
+      ],
+      [
+        1,
+        "AB_a_ImpBmGreaves"
+      ],
+      [
+        1,
+        "AB_a_SteelGreaves"
+      ],
+      [
+        1,
+        "AB_a_Backbasket"
+      ],
+      [
+        1,
+        "AB_a_BonemLightPaulR"
+      ],
+      [
+        1,
+        "AB_a_BugBluePldRight"
+      ],
+      [
+        1,
+        "AB_a_BugGreenPldRight"
+      ],
+      [
+        1,
+        "AB_a_CephPauldronRight"
+      ],
+      [
+        1,
+        "AB_a_DreughPldRight"
+      ],
+      [
+        1,
+        "AB_a_DustPldrRight"
+      ],
+      [
+        1,
+        "AB_a_ImpBmPldRight"
+      ],
+      [
+        1,
+        "AB_a_IronDePldRight"
+      ],
+      [
+        1,
+        "AB_a_NetchBoilPldRight"
+      ],
+      [
+        1,
+        "AB_a_SteelPldrRight"
+      ],
+      [
+        1,
+        "AB_a_BonemLightPaulL"
+      ],
+      [
+        1,
+        "AB_a_BugBluePldLeft"
+      ],
+      [
+        1,
+        "AB_a_BugGreenPldLeft"
+      ],
+      [
+        1,
+        "AB_a_CephPauldronLeft"
+      ],
+      [
+        1,
+        "AB_a_DreughPldLeft"
+      ],
+      [
+        1,
+        "AB_a_DustPldrLeft"
+      ],
+      [
+        1,
+        "AB_a_ImpBmPldLeft"
+      ],
+      [
+        1,
+        "AB_a_IronDePldLeft"
+      ],
+      [
+        1,
+        "AB_a_NetchBoilPldLeft"
+      ],
+      [
+        1,
+        "AB_a_SteelPldrLeft"
+      ],
+      [
+        1,
+        "AB_a_BonemLightCuirass"
+      ],
+      [
+        1,
+        "AB_a_BugBlueCuirass"
+      ],
+      [
+        1,
+        "AB_a_BugGreenCuirass"
+      ],
+      [
+        1,
+        "AB_a_DustChest"
+      ],
+      [
+        1,
+        "AB_a_ImpBmCuirass"
+      ],
+      [
+        1,
+        "AB_a_IronDeCuirass"
+      ],
+      [
+        1,
+        "AB_a_SteelCuirass"
+      ],
+      [
+        1,
+        "AB_a_BonemLightHelm"
+      ],
+      [
+        1,
+        "AB_a_BugBlueHelm"
+      ],
+      [
+        1,
+        "AB_a_BugGreenHelm"
+      ],
+      [
+        1,
+        "AB_a_CephHelmOpen"
+      ],
+      [
+        1,
+        "AB_a_ClothHelm1"
+      ],
+      [
+        1,
+        "AB_a_ClothHelm2"
+      ],
+      [
+        1,
+        "AB_a_ClothHelm3"
+      ],
+      [
+        1,
+        "AB_a_DaeDagonHelm"
+      ],
+      [
+        1,
+        "AB_a_DaeMolagHelm"
+      ],
+      [
+        1,
+        "AB_a_DaeSheogHelm"
+      ],
+      [
+        1,
+        "AB_a_DreughHelmClose"
+      ],
+      [
+        1,
+        "AB_a_DustHelm"
+      ],
+      [
+        1,
+        "AB_a_EggminerHelm"
+      ],
+      [
+        1,
+        "AB_a_GlassHelmClose"
+      ],
+      [
+        1,
+        "AB_a_ImpBmHelm"
+      ],
+      [
+        1,
+        "AB_a_IronDeHelm"
+      ],
+      [
+        1,
+        "AB_a_MoragTongHelm01"
+      ],
+      [
+        1,
+        "AB_a_MoragTongHelm02"
+      ],
+      [
+        1,
+        "AB_a_MoragTongHelm03"
+      ],
+      [
+        1,
+        "AB_a_MoragTongHelm04"
+      ],
+      [
+        1,
+        "AB_a_OrcHelmOpen"
+      ],
+      [
+        1,
+        "AB_a_SteelHelm"
+      ],
+      [
+        1,
+        "AB_a_WickerHelm"
+      ],
+      [
+        1,
+        "AB_a_WickerHelm02"
+      ]
+    ]
+  },
+  {
+    "type": "Container",
+    "flags": "",
+    "id": "AB_o_ClutterChestCLOT",
+    "name": "Chest of Clothing",
+    "script": "",
+    "mesh": "oaab\\o\\mv_chest_01.nif",
+    "encumbrance": 40.0,
+    "container_flags": "IS_BASE",
+    "inventory": [
+      [
+        1,
+        "AB_c_CommonAmulet01"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveAmulet01"
+      ],
+      [
+        1,
+        "AB_c_ExquisiteAmulet01"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantAmulet01"
+      ],
+      [
+        1,
+        "AB_c_CommonRing01"
+      ],
+      [
+        1,
+        "AB_c_CommonRing02"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveRing01"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveRing02"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveRing03"
+      ],
+      [
+        1,
+        "AB_c_ExquisiteRing01"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantRing01"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantRing02"
+      ],
+      [
+        1,
+        "AB_c_CommonBelt01"
+      ],
+      [
+        1,
+        "AB_c_CommonBelt02"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveBelt01"
+      ],
+      [
+        1,
+        "AB_c_CommonShirt02b"
+      ],
+      [
+        1,
+        "AB_c_CommonShirt05L"
+      ],
+      [
+        1,
+        "AB_c_CommonHood01"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02h"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02hh"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02r"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02rr"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02t"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02tt"
+      ],
+      [
+        1,
+        "AB_c_CommonHood03"
+      ],
+      [
+        1,
+        "AB_c_CommonHood03a"
+      ],
+      [
+        1,
+        "AB_c_CommonHood03b"
+      ],
+      [
+        1,
+        "AB_c_CommonHood04"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05a"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05b"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05c"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood01"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood02"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood02a"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood03"
+      ],
+      [
+        1,
+        "AB_c_ExquisiteHood01"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01a"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01b"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01c"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01h"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01r"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01t"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood02"
+      ]
+    ]
+  },
+  {
+    "type": "Container",
+    "flags": "",
+    "id": "AB_o_ClutterChestWEAP",
+    "name": "Chest of Weapons",
+    "script": "",
+    "mesh": "oaab\\o\\mv_chest_01.nif",
+    "encumbrance": 40.0,
+    "container_flags": "IS_BASE",
+    "inventory": [
+      [
+        1,
+        "AB_w_BoneBolt"
+      ],
+      [
+        1,
+        "AB_w_EbonyBolt"
+      ],
+      [
+        1,
+        "AB_w_EbonyBolt_Bdeath"
+      ],
+      [
+        1,
+        "AB_w_EbonyBolt_Rdeath"
+      ],
+      [
+        1,
+        "AB_w_EbonyBolt_Viper"
+      ],
+      [
+        1,
+        "AB_w_WoodBolt"
+      ],
+      [
+        1,
+        "AB_w_BoneArrow"
+      ],
+      [
+        1,
+        "AB_w_GoblinArrow"
+      ],
+      [
+        1,
+        "AB_w_HuntsArrow"
+      ],
+      [
+        1,
+        "AB_w_OrcishArrow"
+      ],
+      [
+        1,
+        "AB_w_StalhrimArrow"
+      ],
+      [
+        1,
+        "AB_w_DaedricKnife"
+      ],
+      [
+        1,
+        "AB_w_GlassDart"
+      ],
+      [
+        1,
+        "AB_w_SilverKnife"
+      ],
+      [
+        1,
+        "AB_w_SixthKnife"
+      ],
+      [
+        1,
+        "AB_w_DwrvArbalest"
+      ],
+      [
+        1,
+        "AB_w_ReCrossbow"
+      ],
+      [
+        1,
+        "AB_w_WoodCrossbow"
+      ],
+      [
+        1,
+        "AB_w_EbonyBow"
+      ],
+      [
+        1,
+        "AB_w_HuntsBow"
+      ],
+      [
+        1,
+        "AB_w_ImpBow"
+      ],
+      [
+        1,
+        "AB_w_NordicSilverBow"
+      ],
+      [
+        1,
+        "AB_w_StalhrimBow"
+      ],
+      [
+        1,
+        "AB_w_WoodBow"
+      ],
+      [
+        1,
+        "AB_w_FlintAxe"
+      ],
+      [
+        1,
+        "AB_w_FlintPickaxe"
+      ],
+      [
+        1,
+        "AB_w_ToolEbonyPick"
+      ],
+      [
+        1,
+        "AB_w_CookKnifeCleave"
+      ],
+      [
+        1,
+        "AB_w_ToolClimbingPick"
+      ],
+      [
+        1,
+        "AB_w_ToolWoodAxe"
+      ],
+      [
+        1,
+        "AB_w_DaedricHalberd"
+      ],
+      [
+        1,
+        "AB_w_DaeLongpear"
+      ],
+      [
+        1,
+        "AB_w_DwrvLongspear"
+      ],
+      [
+        1,
+        "AB_w_EbonyGlaive"
+      ],
+      [
+        1,
+        "AB_w_EbonyHalberd"
+      ],
+      [
+        1,
+        "AB_w_EggminerHook"
+      ],
+      [
+        1,
+        "AB_w_FlintSpear"
+      ],
+      [
+        1,
+        "AB_w_GlassSpear"
+      ],
+      [
+        1,
+        "AB_w_ImpSpear"
+      ],
+      [
+        1,
+        "AB_w_NordicLongAxe"
+      ],
+      [
+        1,
+        "AB_w_NordicSilverSpear"
+      ],
+      [
+        1,
+        "AB_w_SilverHalberd"
+      ],
+      [
+        1,
+        "AB_w_StalhrimSpear"
+      ],
+      [
+        1,
+        "AB_w_ToolPitchfork"
+      ],
+      [
+        1,
+        "AB_w_ToolScythe"
+      ],
+      [
+        1,
+        "AB_w_ResinStaff"
+      ],
+      [
+        1,
+        "AB_w_ResinStaffDevouring"
+      ],
+      [
+        1,
+        "AB_w_ResinStaffFire"
+      ],
+      [
+        1,
+        "AB_w_ResinStaffTerror"
+      ],
+      [
+        1,
+        "AB_w_ToolFishingNet"
+      ],
+      [
+        1,
+        "AB_w_GlassWarhammer"
+      ],
+      [
+        1,
+        "AB_w_BoneScepter"
+      ],
+      [
+        1,
+        "AB_w_BoneScepterBldFeast"
+      ],
+      [
+        1,
+        "AB_w_BoneScepterDevil"
+      ],
+      [
+        1,
+        "AB_w_BoneScepterFiend"
+      ],
+      [
+        1,
+        "AB_w_BoneScepterSummAnc"
+      ],
+      [
+        1,
+        "AB_w_BoneScepterSummSkel"
+      ],
+      [
+        1,
+        "AB_w_DaedricScepter"
+      ],
+      [
+        1,
+        "AB_w_DaedricScepterSheo"
+      ],
+      [
+        1,
+        "AB_w_DwrvScepter"
+      ],
+      [
+        1,
+        "AB_w_DwrvScepterDrnFatigue"
+      ],
+      [
+        1,
+        "AB_w_DwrvScepterPoison"
+      ],
+      [
+        1,
+        "AB_w_DwrvScepterShock"
+      ],
+      [
+        1,
+        "AB_w_DwrvScepterSound"
+      ],
+      [
+        1,
+        "AB_w_EbonyScepter"
+      ],
+      [
+        1,
+        "AB_w_EbonyScepterBonelord"
+      ],
+      [
+        1,
+        "AB_w_EbonyScepterMagician"
+      ],
+      [
+        1,
+        "AB_w_GlassScepter"
+      ],
+      [
+        1,
+        "AB_w_GlassScepterFlame"
+      ],
+      [
+        1,
+        "AB_w_GlassScepterFrost"
+      ],
+      [
+        1,
+        "AB_w_GlassScepterPoison"
+      ],
+      [
+        1,
+        "AB_w_GlassScepterShock"
+      ],
+      [
+        1,
+        "AB_w_OrcishMace"
+      ],
+      [
+        1,
+        "AB_w_SilverScepter"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterChastening"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterFlame"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterFrost"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterPeace"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterPoison"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterShaming"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterShock"
+      ],
+      [
+        1,
+        "AB_w_SilverScepterWar"
+      ],
+      [
+        1,
+        "AB_w_ToolSmithHammer"
+      ],
+      [
+        1,
+        "AB_w_EbonyClaymore"
+      ],
+      [
+        1,
+        "AB_w_GlassDkatana"
+      ],
+      [
+        1,
+        "AB_w_GoldStClaymore"
+      ],
+      [
+        1,
+        "AB_w_ImpDaiKatana"
+      ],
+      [
+        1,
+        "AB_w_AdamRapier"
+      ],
+      [
+        1,
+        "AB_w_BoneSaw"
+      ],
+      [
+        1,
+        "AB_w_DaedricRapier"
+      ],
+      [
+        1,
+        "AB_w_GlassKatana"
+      ],
+      [
+        1,
+        "AB_w_GlassRapier"
+      ],
+      [
+        1,
+        "AB_w_GlassRapierDirFla"
+      ],
+      [
+        1,
+        "AB_w_GlassRapierDirFro"
+      ],
+      [
+        1,
+        "AB_w_GlassRapierDirSto"
+      ],
+      [
+        1,
+        "AB_w_GlassRapierDirVip"
+      ],
+      [
+        1,
+        "AB_w_ImpKatana"
+      ],
+      [
+        1,
+        "AB_w_IronRapierFla"
+      ],
+      [
+        1,
+        "AB_w_IronRapierSha"
+      ],
+      [
+        1,
+        "AB_w_IronRapierSpa"
+      ],
+      [
+        1,
+        "AB_w_IronRapierVip"
+      ],
+      [
+        1,
+        "AB_w_Machete"
+      ],
+      [
+        1,
+        "AB_w_SilverRapierCruFla"
+      ],
+      [
+        1,
+        "AB_w_SilverRapierCruSha"
+      ],
+      [
+        1,
+        "AB_w_SilverRapierCruSpa"
+      ],
+      [
+        1,
+        "AB_w_SilverRapierCruVip"
+      ],
+      [
+        1,
+        "AB_w_SteelRapierCruFla"
+      ],
+      [
+        1,
+        "AB_w_SteelRapierCruSha"
+      ],
+      [
+        1,
+        "AB_w_SteelRapierCruSpa"
+      ],
+      [
+        1,
+        "AB_w_SteelRapierCruVip"
+      ],
+      [
+        1,
+        "AB_w_BottleBroken"
+      ],
+      [
+        1,
+        "AB_w_CookKnifeBone"
+      ],
+      [
+        1,
+        "AB_w_CookKnifeBread"
+      ],
+      [
+        1,
+        "AB_w_CookKnifeChef"
+      ],
+      [
+        1,
+        "AB_w_CookKnifeDinner"
+      ],
+      [
+        1,
+        "AB_w_FlintKnife"
+      ],
+      [
+        1,
+        "AB_w_GlassTanto"
+      ],
+      [
+        1,
+        "AB_w_GlassWakizashi"
+      ],
+      [
+        1,
+        "AB_w_MarkingKnife"
+      ],
+      [
+        1,
+        "AB_w_StalhrimShortsword"
+      ],
+      [
+        1,
+        "AB_w_SteelShortSaber"
+      ],
+      [
+        1,
+        "AB_w_ToolHandscythe00"
+      ],
+      [
+        1,
+        "AB_w_ToolHandscythe01"
+      ],
+      [
+        1,
+        "AB_w_WoodStake"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_01",
+    "name": "Common Shirt (Blue)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_c_CommonShirt02b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_02",
+    "name": "Common Shirt (Green)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_c_CommonShirt05L"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_03",
+    "name": "Sal-Amur Bonemold Set Op. Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_BonemLightBracerR"
+      ],
+      [
+        1,
+        "AB_a_BonemLightBracerL"
+      ],
+      [
+        1,
+        "AB_a_BonemLightBoots"
+      ],
+      [
+        1,
+        "AB_a_BonemLightGreaves"
+      ],
+      [
+        1,
+        "AB_a_BonemLightPaulR"
+      ],
+      [
+        1,
+        "AB_a_BonemLightPaulL"
+      ],
+      [
+        1,
+        "AB_a_BonemLightCuirass"
+      ],
+      [
+        1,
+        "AB_a_BonemHelmOpen"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_04",
+    "name": "Sal-Amur Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_BonemLightBracerR"
+      ],
+      [
+        1,
+        "AB_a_BonemLightBracerL"
+      ],
+      [
+        1,
+        "AB_a_BonemLightBoots"
+      ],
+      [
+        1,
+        "AB_a_BonemLightGreaves"
+      ],
+      [
+        1,
+        "AB_a_BonemLightPaulR"
+      ],
+      [
+        1,
+        "AB_a_BonemLightPaulL"
+      ],
+      [
+        1,
+        "AB_a_BonemLightCuirass"
+      ],
+      [
+        1,
+        "AB_a_BonemLightHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_05",
+    "name": "Blue Bug Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_BugBlueShield"
+      ],
+      [
+        1,
+        "AB_a_BugBlueGntRight"
+      ],
+      [
+        1,
+        "AB_a_BugBlueGntLeft"
+      ],
+      [
+        1,
+        "AB_a_BugBlueBoots"
+      ],
+      [
+        1,
+        "AB_a_BugBlueGreaves"
+      ],
+      [
+        1,
+        "AB_a_BugBluePldRight"
+      ],
+      [
+        1,
+        "AB_a_BugBluePldLeft"
+      ],
+      [
+        1,
+        "AB_a_BugBlueCuirass"
+      ],
+      [
+        1,
+        "AB_a_BugBlueHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_06",
+    "name": "Green Bug Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_BugGreenShield"
+      ],
+      [
+        1,
+        "AB_a_BugGreenGntRight"
+      ],
+      [
+        1,
+        "AB_a_BugGreenGntLeft"
+      ],
+      [
+        1,
+        "AB_a_BugGreenBoots"
+      ],
+      [
+        1,
+        "AB_a_BugGreenGreaves"
+      ],
+      [
+        1,
+        "AB_a_BugGreenPldRight"
+      ],
+      [
+        1,
+        "AB_a_BugGreenPldLeft"
+      ],
+      [
+        1,
+        "AB_a_BugGreenCuirass"
+      ],
+      [
+        1,
+        "AB_a_BugGreenHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_07",
+    "name": "Dreugh Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_DreughBracerR"
+      ],
+      [
+        1,
+        "AB_a_DreughBracerL"
+      ],
+      [
+        1,
+        "AB_a_DreughBoots"
+      ],
+      [
+        1,
+        "AB_a_DreughGreaves"
+      ],
+      [
+        1,
+        "AB_a_DreughPldRight"
+      ],
+      [
+        1,
+        "AB_a_DreughPldLeft"
+      ],
+      [
+        1,
+        "dreugh_cuirass"
+      ],
+      [
+        1,
+        "AB_a_DreughHelmClose"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_08",
+    "name": "Dust Merchant Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_DustBracerRight"
+      ],
+      [
+        1,
+        "AB_a_DustBracerLeft"
+      ],
+      [
+        1,
+        "AB_a_DustBoots"
+      ],
+      [
+        1,
+        "AB_a_DustGreaves"
+      ],
+      [
+        1,
+        "AB_a_DustPldrRight"
+      ],
+      [
+        1,
+        "AB_a_DustPldrLeft"
+      ],
+      [
+        1,
+        "AB_a_DustChest"
+      ],
+      [
+        1,
+        "AB_a_DustHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_09",
+    "name": "Imperial Battlemage Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ImpBmBoots"
+      ],
+      [
+        1,
+        "AB_a_ImpBmGreaves"
+      ],
+      [
+        1,
+        "AB_a_ImpBmPldRight"
+      ],
+      [
+        1,
+        "AB_a_ImpBmPldLeft"
+      ],
+      [
+        1,
+        "AB_a_ImpBmCuirass"
+      ],
+      [
+        1,
+        "AB_a_ImpBmHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_10",
+    "name": "Basket",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_Backbasket"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_100",
+    "name": "Common Set 06",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_06"
+      ],
+      [
+        1,
+        "common_shoes_06"
+      ],
+      [
+        1,
+        "common_pants_06"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_100f",
+    "name": "Common Set 06",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_06"
+      ],
+      [
+        1,
+        "common_shoes_06"
+      ],
+      [
+        1,
+        "common_pants_06"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_101",
+    "name": "Common Set 07",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_07"
+      ],
+      [
+        1,
+        "common_shoes_07"
+      ],
+      [
+        1,
+        "common_pants_07"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_101f",
+    "name": "Common Set 07",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_07"
+      ],
+      [
+        1,
+        "common_shoes_07"
+      ],
+      [
+        1,
+        "common_pants_07"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_102",
+    "name": "Gondolier Shirt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_gondolier"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_102f",
+    "name": "Gondolier Shirt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_gondolier"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_103",
+    "name": "Common Skirt 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_104",
+    "name": "Common Skirt 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_105",
+    "name": "Common Skirt 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_106",
+    "name": "Common Skirt 04",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_04"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_107",
+    "name": "Common Skirt 04c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_04_c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_108",
+    "name": "Common Skirt 05",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_05"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_109",
+    "name": "Common Skirt 06",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_06"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_11",
+    "name": "Cephalopod Helm & Pauldrons",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_CephPauldronRight"
+      ],
+      [
+        1,
+        "AB_a_CephPauldronLeft"
+      ],
+      [
+        1,
+        "AB_a_CephHelmOpen"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_110",
+    "name": "Common Skirt 07",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_skirt_07"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_111",
+    "name": "Expensive Mournhold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Expensive_shirt_Mournhold"
+      ],
+      [
+        1,
+        "Expensive_shoes_Mournhold"
+      ],
+      [
+        1,
+        "Expensive_pants_Mournhold"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_111f",
+    "name": "Expensive Mournhold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Expensive_shirt_Mournhold"
+      ],
+      [
+        1,
+        "Expensive_shoes_Mournhold"
+      ],
+      [
+        1,
+        "Expensive_pants_Mournhold"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_112",
+    "name": "Expensive Mournhold Skirt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_skirt_Mournhold"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_113",
+    "name": "Expensive Set 01a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_a"
+      ],
+      [
+        1,
+        "expensive_pants_01_a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_113f",
+    "name": "Expensive Set 01a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_a"
+      ],
+      [
+        1,
+        "expensive_pants_01_a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_114",
+    "name": "Expensive Set 01e",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_e"
+      ],
+      [
+        1,
+        "expensive_pants_01_e"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_114f",
+    "name": "Expensive Set 01e",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_e"
+      ],
+      [
+        1,
+        "expensive_pants_01_e"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_115",
+    "name": "Expensive Set 01u",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_u"
+      ],
+      [
+        1,
+        "expensive_pants_01_u"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_115f",
+    "name": "Expensive Set 01u",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_u"
+      ],
+      [
+        1,
+        "expensive_pants_01_u"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_116",
+    "name": "Expensive Set 01z",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_z"
+      ],
+      [
+        1,
+        "expensive_pants_01_z"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_116f",
+    "name": "Expensive Set 01z",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_01_z"
+      ],
+      [
+        1,
+        "expensive_pants_01_z"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_117",
+    "name": "Expensive Set 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_02"
+      ],
+      [
+        1,
+        "expensive_shoes_02"
+      ],
+      [
+        1,
+        "expensive_pants_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_117f",
+    "name": "Expensive Set 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_02"
+      ],
+      [
+        1,
+        "expensive_shoes_02"
+      ],
+      [
+        1,
+        "expensive_pants_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_118",
+    "name": "Expensive Set 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_03"
+      ],
+      [
+        1,
+        "expensive_shoes_03"
+      ],
+      [
+        1,
+        "expensive_pants_03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_118f",
+    "name": "Expensive Set 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_shirt_03"
+      ],
+      [
+        1,
+        "expensive_shoes_03"
+      ],
+      [
+        1,
+        "expensive_pants_03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_119",
+    "name": "Expensive Skirt 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_skirt_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_12",
+    "name": "Chitin Open Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ChitinHelmOpen"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_120",
+    "name": "Expensive Skirt 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_skirt_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_121",
+    "name": "Expensive Skirt 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_skirt_03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_122",
+    "name": "Exquisite Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "exquisite_shirt_01"
+      ],
+      [
+        1,
+        "exquisite_shoes_01"
+      ],
+      [
+        1,
+        "exquisite_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_122f",
+    "name": "Exquisite Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "exquisite_shirt_01"
+      ],
+      [
+        1,
+        "exquisite_shoes_01"
+      ],
+      [
+        1,
+        "exquisite_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_123",
+    "name": "Exquisite Skirt 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "exquisite_skirt_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_124",
+    "name": "Extravagant Shirt 01h",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_01_h"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_124f",
+    "name": "Extravagant Shirt 01h",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_01_h"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_125",
+    "name": "Extravagant Shirt 01r",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_01_r"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_125f",
+    "name": "Extravagant Shirt 01r",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_01_r"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_126",
+    "name": "Extravagant Shirt 01t",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_01_t"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_126f",
+    "name": "Extravagant Shirt 01t",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_01_t"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_127",
+    "name": "Extravagant Set 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_02"
+      ],
+      [
+        1,
+        "extravagant_shoes_02"
+      ],
+      [
+        1,
+        "extravagant_pants_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_127f",
+    "name": "Extravagant Set 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_shirt_02"
+      ],
+      [
+        1,
+        "extravagant_shoes_02"
+      ],
+      [
+        1,
+        "extravagant_pants_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_128",
+    "name": "Extravagant Skirt 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_skirt_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_129",
+    "name": "Extravagant Skirt 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_skirt_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_13",
+    "name": "Khestis Chitin Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ChitinHlaHelm01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_130",
+    "name": "Imperial Skirt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial skirt_clothing"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_131",
+    "name": "Imperial Templar Skirt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "templar skirt obj"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_132",
+    "name": "Adamantium Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "adamantium_bracer_right"
+      ],
+      [
+        1,
+        "adamantium_bracer_left"
+      ],
+      [
+        1,
+        "adamantium boots"
+      ],
+      [
+        1,
+        "adamantium_greaves"
+      ],
+      [
+        1,
+        "adamantium_pauldron_right"
+      ],
+      [
+        1,
+        "adamantium_pauldron_left"
+      ],
+      [
+        1,
+        "adamantium_cuirass"
+      ],
+      [
+        1,
+        "addamantium_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_132f",
+    "name": "Adamantium Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "adamantium_bracer_right"
+      ],
+      [
+        1,
+        "adamantium_bracer_left"
+      ],
+      [
+        1,
+        "adamantium boots"
+      ],
+      [
+        1,
+        "adamantium_greaves"
+      ],
+      [
+        1,
+        "adamantium_pauldron_right"
+      ],
+      [
+        1,
+        "adamantium_pauldron_left"
+      ],
+      [
+        1,
+        "adamantium_cuirass"
+      ],
+      [
+        1,
+        "addamantium_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_133",
+    "name": "Ancient Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel_towershield_ancient"
+      ],
+      [
+        1,
+        "steel_gauntlet_right_ancient"
+      ],
+      [
+        1,
+        "steel_gauntlet_left_ancient"
+      ],
+      [
+        1,
+        "steel_boots_ancient"
+      ],
+      [
+        1,
+        "steel_greaves_ancient"
+      ],
+      [
+        1,
+        "steel_pauldron_right_ancient"
+      ],
+      [
+        1,
+        "steel_pauldron_left_ancient"
+      ],
+      [
+        1,
+        "steel_cuirass_ancient"
+      ],
+      [
+        1,
+        "steel_helm_ancient"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_133f",
+    "name": "Ancient Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel_towershield_ancient"
+      ],
+      [
+        1,
+        "steel_gauntlet_right_ancient"
+      ],
+      [
+        1,
+        "steel_gauntlet_left_ancient"
+      ],
+      [
+        1,
+        "steel_boots_ancient"
+      ],
+      [
+        1,
+        "steel_greaves_ancient"
+      ],
+      [
+        1,
+        "steel_pauldron_right_ancient"
+      ],
+      [
+        1,
+        "steel_pauldron_left_ancient"
+      ],
+      [
+        1,
+        "steel_cuirass_ancient"
+      ],
+      [
+        1,
+        "steel_helm_ancient"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_134",
+    "name": "Armun-An Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_134f",
+    "name": "Armun-An Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_armun-an_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_armun-an_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_armun-an_cuirass"
+      ],
+      [
+        1,
+        "bonemold_armun-an_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_135",
+    "name": "Bear Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM bear shield"
+      ],
+      [
+        1,
+        "BM bear right gauntlet"
+      ],
+      [
+        1,
+        "bm bear left gauntlet"
+      ],
+      [
+        1,
+        "BM bear boots"
+      ],
+      [
+        1,
+        "BM bear greaves"
+      ],
+      [
+        1,
+        "BM bear right pauldron"
+      ],
+      [
+        1,
+        "BM Bear left Pauldron"
+      ],
+      [
+        1,
+        "BM bear cuirass"
+      ],
+      [
+        1,
+        "BM Bear Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_135f",
+    "name": "Bear Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM bear shield"
+      ],
+      [
+        1,
+        "BM bear right gauntlet"
+      ],
+      [
+        1,
+        "bm bear left gauntlet"
+      ],
+      [
+        1,
+        "BM bear boots"
+      ],
+      [
+        1,
+        "BM bear greaves"
+      ],
+      [
+        1,
+        "BM bear right pauldron"
+      ],
+      [
+        1,
+        "BM Bear left Pauldron"
+      ],
+      [
+        1,
+        "BM bear cuirass"
+      ],
+      [
+        1,
+        "BM Bear Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_136",
+    "name": "Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_shield"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_cuirass"
+      ],
+      [
+        1,
+        "bonemold_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_136f",
+    "name": "Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_bracer_right"
+      ],
+      [
+        1,
+        "bonemold_bracer_left"
+      ],
+      [
+        1,
+        "bonemold_shield"
+      ],
+      [
+        1,
+        "bonemold_boots"
+      ],
+      [
+        1,
+        "bonemold_greaves"
+      ],
+      [
+        1,
+        "bonemold_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_cuirass"
+      ],
+      [
+        1,
+        "bonemold_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_137",
+    "name": "Chitin Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "chitin_shield"
+      ],
+      [
+        1,
+        "chitin guantlet - right"
+      ],
+      [
+        1,
+        "chitin guantlet - left"
+      ],
+      [
+        1,
+        "chitin boots"
+      ],
+      [
+        1,
+        "chitin greaves"
+      ],
+      [
+        1,
+        "chitin pauldron - right"
+      ],
+      [
+        1,
+        "chitin pauldron - left"
+      ],
+      [
+        1,
+        "chitin cuirass"
+      ],
+      [
+        1,
+        "chitin helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_137f",
+    "name": "Chitin Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "chitin_shield"
+      ],
+      [
+        1,
+        "chitin guantlet - right"
+      ],
+      [
+        1,
+        "chitin guantlet - left"
+      ],
+      [
+        1,
+        "chitin boots"
+      ],
+      [
+        1,
+        "chitin greaves"
+      ],
+      [
+        1,
+        "chitin pauldron - right"
+      ],
+      [
+        1,
+        "chitin pauldron - left"
+      ],
+      [
+        1,
+        "chitin cuirass"
+      ],
+      [
+        1,
+        "chitin helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_138",
+    "name": "Daedric Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "daedric_shield"
+      ],
+      [
+        1,
+        "daedric_gauntlet_right"
+      ],
+      [
+        1,
+        "daedric_gauntlet_left"
+      ],
+      [
+        1,
+        "daedric_boots"
+      ],
+      [
+        1,
+        "daedric_greaves"
+      ],
+      [
+        1,
+        "daedric_pauldron_right"
+      ],
+      [
+        1,
+        "daedric_pauldron_left"
+      ],
+      [
+        1,
+        "daedric_cuirass"
+      ],
+      [
+        1,
+        "daedric_terrifying_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_138f",
+    "name": "Daedric Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "daedric_shield"
+      ],
+      [
+        1,
+        "daedric_gauntlet_right"
+      ],
+      [
+        1,
+        "daedric_gauntlet_left"
+      ],
+      [
+        1,
+        "daedric_boots"
+      ],
+      [
+        1,
+        "daedric_greaves"
+      ],
+      [
+        1,
+        "daedric_pauldron_right"
+      ],
+      [
+        1,
+        "daedric_pauldron_left"
+      ],
+      [
+        1,
+        "daedric_cuirass"
+      ],
+      [
+        1,
+        "daedric_terrifying_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_139",
+    "name": "Dark Brotherhood Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "DarkBrotherhood gauntlet_R"
+      ],
+      [
+        1,
+        "DarkBrotherhood gauntlet_L"
+      ],
+      [
+        1,
+        "DarkBrotherhood Boots"
+      ],
+      [
+        1,
+        "DarkBrotherhood greaves"
+      ],
+      [
+        1,
+        "DarkBrotherhood pauldron_R"
+      ],
+      [
+        1,
+        "DarkBrotherhood pauldron_L"
+      ],
+      [
+        1,
+        "DarkBrotherhood Cuirass"
+      ],
+      [
+        1,
+        "DarkBrotherhood Helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_139f",
+    "name": "Dark Brotherhood Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "DarkBrotherhood gauntlet_R"
+      ],
+      [
+        1,
+        "DarkBrotherhood gauntlet_L"
+      ],
+      [
+        1,
+        "DarkBrotherhood Boots"
+      ],
+      [
+        1,
+        "DarkBrotherhood greaves"
+      ],
+      [
+        1,
+        "DarkBrotherhood pauldron_R"
+      ],
+      [
+        1,
+        "DarkBrotherhood pauldron_L"
+      ],
+      [
+        1,
+        "DarkBrotherhood Cuirass"
+      ],
+      [
+        1,
+        "DarkBrotherhood Helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_14",
+    "name": "Sho-Hadad Chitin Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ChitinRedHelm01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_140",
+    "name": "Dwemer Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dwemer_bracer_right"
+      ],
+      [
+        1,
+        "dwemer_bracer_left"
+      ],
+      [
+        1,
+        "dwemer_shield"
+      ],
+      [
+        1,
+        "dwemer_boots"
+      ],
+      [
+        1,
+        "dwemer_greaves"
+      ],
+      [
+        1,
+        "dwemer_pauldron_right"
+      ],
+      [
+        1,
+        "dwemer_pauldron_left"
+      ],
+      [
+        1,
+        "dwemer_cuirass"
+      ],
+      [
+        1,
+        "dwemer_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_140f",
+    "name": "Dwemer Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dwemer_bracer_right"
+      ],
+      [
+        1,
+        "dwemer_bracer_left"
+      ],
+      [
+        1,
+        "dwemer_shield"
+      ],
+      [
+        1,
+        "dwemer_boots"
+      ],
+      [
+        1,
+        "dwemer_greaves"
+      ],
+      [
+        1,
+        "dwemer_pauldron_right"
+      ],
+      [
+        1,
+        "dwemer_pauldron_left"
+      ],
+      [
+        1,
+        "dwemer_cuirass"
+      ],
+      [
+        1,
+        "dwemer_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_141",
+    "name": "Ebony Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "ebony_bracer_right"
+      ],
+      [
+        1,
+        "ebony_bracer_left"
+      ],
+      [
+        1,
+        "ebony_shield"
+      ],
+      [
+        1,
+        "ebony_boots"
+      ],
+      [
+        1,
+        "ebony_greaves"
+      ],
+      [
+        1,
+        "ebony_pauldron_right"
+      ],
+      [
+        1,
+        "ebony_pauldron_left"
+      ],
+      [
+        1,
+        "ebony_cuirass"
+      ],
+      [
+        1,
+        "ebony_closed_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_141f",
+    "name": "Ebony Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "ebony_bracer_right"
+      ],
+      [
+        1,
+        "ebony_bracer_left"
+      ],
+      [
+        1,
+        "ebony_shield"
+      ],
+      [
+        1,
+        "ebony_boots"
+      ],
+      [
+        1,
+        "ebony_greaves"
+      ],
+      [
+        1,
+        "ebony_pauldron_right"
+      ],
+      [
+        1,
+        "ebony_pauldron_left"
+      ],
+      [
+        1,
+        "ebony_cuirass"
+      ],
+      [
+        1,
+        "ebony_closed_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_142",
+    "name": "Gah-Julan Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_gah-julan_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_cuirass"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_142f",
+    "name": "Gah-Julan Bonemold Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_gah-julan_pauldron_r"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_pauldron_l"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_cuirass"
+      ],
+      [
+        1,
+        "bonemold_gah-julan_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_143",
+    "name": "Glass Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "glass_bracer_right"
+      ],
+      [
+        1,
+        "glass_bracer_left"
+      ],
+      [
+        1,
+        "glass_shield"
+      ],
+      [
+        1,
+        "glass_boots"
+      ],
+      [
+        1,
+        "glass_greaves"
+      ],
+      [
+        1,
+        "glass_pauldron_right"
+      ],
+      [
+        1,
+        "glass_pauldron_left"
+      ],
+      [
+        1,
+        "glass_cuirass"
+      ],
+      [
+        1,
+        "glass_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_143f",
+    "name": "Glass Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "glass_bracer_right"
+      ],
+      [
+        1,
+        "glass_bracer_left"
+      ],
+      [
+        1,
+        "glass_shield"
+      ],
+      [
+        1,
+        "glass_boots"
+      ],
+      [
+        1,
+        "glass_greaves"
+      ],
+      [
+        1,
+        "glass_pauldron_right"
+      ],
+      [
+        1,
+        "glass_pauldron_left"
+      ],
+      [
+        1,
+        "glass_cuirass"
+      ],
+      [
+        1,
+        "glass_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_144",
+    "name": "Her Hand Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Indoril_Almalexia_shield"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_gauntlet_R"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_gauntlet_L"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_boots"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Greaves"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Pauldron_R"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Pauldron_L"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Cuirass"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_144f",
+    "name": "Her Hand Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Indoril_Almalexia_shield"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_gauntlet_R"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_gauntlet_L"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_boots"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Greaves"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Pauldron_R"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Pauldron_L"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_Cuirass"
+      ],
+      [
+        1,
+        "Indoril_Almalexia_helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_145",
+    "name": "Ice Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Ice_Shield"
+      ],
+      [
+        1,
+        "BM_Ice_gauntletR"
+      ],
+      [
+        1,
+        "BM_Ice_gauntletL"
+      ],
+      [
+        1,
+        "BM_Ice_Boots"
+      ],
+      [
+        1,
+        "BM_Ice_greaves"
+      ],
+      [
+        1,
+        "BM_Ice_PauldronR"
+      ],
+      [
+        1,
+        "BM_Ice_PauldronL"
+      ],
+      [
+        1,
+        "BM_Ice_cuirass"
+      ],
+      [
+        1,
+        "BM_Ice_Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_145f",
+    "name": "Ice Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Ice_Shield"
+      ],
+      [
+        1,
+        "BM_Ice_gauntletR"
+      ],
+      [
+        1,
+        "BM_Ice_gauntletL"
+      ],
+      [
+        1,
+        "BM_Ice_Boots"
+      ],
+      [
+        1,
+        "BM_Ice_greaves"
+      ],
+      [
+        1,
+        "BM_Ice_PauldronR"
+      ],
+      [
+        1,
+        "BM_Ice_PauldronL"
+      ],
+      [
+        1,
+        "BM_Ice_cuirass"
+      ],
+      [
+        1,
+        "BM_Ice_Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_146",
+    "name": "Imperial Chain Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial_chain_greaves"
+      ],
+      [
+        1,
+        "imperial_chain_pauldron_right"
+      ],
+      [
+        1,
+        "imperial_chain_pauldron_left"
+      ],
+      [
+        1,
+        "imperial_chain_cuirass"
+      ],
+      [
+        1,
+        "imperial_chain_coif_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_146f",
+    "name": "Imperial Chain Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial_chain_greaves"
+      ],
+      [
+        1,
+        "imperial_chain_pauldron_right"
+      ],
+      [
+        1,
+        "imperial_chain_pauldron_left"
+      ],
+      [
+        1,
+        "imperial_chain_cuirass"
+      ],
+      [
+        1,
+        "imperial_chain_coif_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_147",
+    "name": "Imperial Dragonscale Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dragonscale_towershield"
+      ],
+      [
+        1,
+        "dragonscale_cuirass"
+      ],
+      [
+        1,
+        "dragonscale_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_147f",
+    "name": "Imperial Dragonscale Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dragonscale_towershield"
+      ],
+      [
+        1,
+        "dragonscale_cuirass"
+      ],
+      [
+        1,
+        "dragonscale_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_148",
+    "name": "Imperial Silver Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "silver_cuirass"
+      ],
+      [
+        1,
+        "silver_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_148f",
+    "name": "Imperial Silver Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "silver_cuirass"
+      ],
+      [
+        1,
+        "silver_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_149",
+    "name": "Imperial Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial shield"
+      ],
+      [
+        1,
+        "imperial right gauntlet"
+      ],
+      [
+        1,
+        "imperial left gauntlet"
+      ],
+      [
+        1,
+        "imperial boots"
+      ],
+      [
+        1,
+        "imperial_greaves"
+      ],
+      [
+        1,
+        "imperial right pauldron"
+      ],
+      [
+        1,
+        "imperial left pauldron"
+      ],
+      [
+        1,
+        "imperial cuirass_armor"
+      ],
+      [
+        1,
+        "imperial helmet armor"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_149f",
+    "name": "Imperial Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial shield"
+      ],
+      [
+        1,
+        "imperial right gauntlet"
+      ],
+      [
+        1,
+        "imperial left gauntlet"
+      ],
+      [
+        1,
+        "imperial boots"
+      ],
+      [
+        1,
+        "imperial_greaves"
+      ],
+      [
+        1,
+        "imperial right pauldron"
+      ],
+      [
+        1,
+        "imperial left pauldron"
+      ],
+      [
+        1,
+        "imperial cuirass_armor"
+      ],
+      [
+        1,
+        "imperial helmet armor"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_15",
+    "name": "Chitin Scout Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ChitinScoutHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_150",
+    "name": "Imperial Studded Leather",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial_studded_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_150f",
+    "name": "Imperial Studded Leather",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "imperial_studded_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_151",
+    "name": "Imperial Templar Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "templar bracer right"
+      ],
+      [
+        1,
+        "templar bracer left"
+      ],
+      [
+        1,
+        "templar boots"
+      ],
+      [
+        1,
+        "templar_greaves"
+      ],
+      [
+        1,
+        "templar_pauldron_right"
+      ],
+      [
+        1,
+        "templar_pauldron_left"
+      ],
+      [
+        1,
+        "templar_cuirass"
+      ],
+      [
+        1,
+        "templar_helmet_armor"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_151f",
+    "name": "Imperial Templar Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "templar bracer right"
+      ],
+      [
+        1,
+        "templar bracer left"
+      ],
+      [
+        1,
+        "templar boots"
+      ],
+      [
+        1,
+        "templar_greaves"
+      ],
+      [
+        1,
+        "templar_pauldron_right"
+      ],
+      [
+        1,
+        "templar_pauldron_left"
+      ],
+      [
+        1,
+        "templar_cuirass"
+      ],
+      [
+        1,
+        "templar_helmet_armor"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_152",
+    "name": "Indoril Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "indoril shield"
+      ],
+      [
+        1,
+        "indoril right gauntlet"
+      ],
+      [
+        1,
+        "indoril left gauntlet"
+      ],
+      [
+        1,
+        "indoril boots"
+      ],
+      [
+        1,
+        "indoril pauldron right"
+      ],
+      [
+        1,
+        "indoril pauldron left"
+      ],
+      [
+        1,
+        "indoril cuirass"
+      ],
+      [
+        1,
+        "indoril helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_152f",
+    "name": "Indoril Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "indoril shield"
+      ],
+      [
+        1,
+        "indoril right gauntlet"
+      ],
+      [
+        1,
+        "indoril left gauntlet"
+      ],
+      [
+        1,
+        "indoril boots"
+      ],
+      [
+        1,
+        "indoril pauldron right"
+      ],
+      [
+        1,
+        "indoril pauldron left"
+      ],
+      [
+        1,
+        "indoril cuirass"
+      ],
+      [
+        1,
+        "indoril helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_153",
+    "name": "Iron Set 1",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron_shield"
+      ],
+      [
+        1,
+        "iron_gauntlet_right"
+      ],
+      [
+        1,
+        "iron_gauntlet_left"
+      ],
+      [
+        1,
+        "iron boots"
+      ],
+      [
+        1,
+        "iron_greaves"
+      ],
+      [
+        1,
+        "iron_pauldron_right"
+      ],
+      [
+        1,
+        "iron_pauldron_left"
+      ],
+      [
+        1,
+        "iron_cuirass"
+      ],
+      [
+        1,
+        "iron_helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_153f",
+    "name": "Iron Set 1",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron_shield"
+      ],
+      [
+        1,
+        "iron_gauntlet_right"
+      ],
+      [
+        1,
+        "iron_gauntlet_left"
+      ],
+      [
+        1,
+        "iron boots"
+      ],
+      [
+        1,
+        "iron_greaves"
+      ],
+      [
+        1,
+        "iron_pauldron_right"
+      ],
+      [
+        1,
+        "iron_pauldron_left"
+      ],
+      [
+        1,
+        "iron_cuirass"
+      ],
+      [
+        1,
+        "iron_helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_154",
+    "name": "Iron Bracers",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron_bracer_right"
+      ],
+      [
+        1,
+        "iron_bracer_left"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_155",
+    "name": "Netch Leather Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "netch_leather_shield"
+      ],
+      [
+        1,
+        "netch_leather_gauntlet_right"
+      ],
+      [
+        1,
+        "netch_leather_gauntlet_left"
+      ],
+      [
+        1,
+        "netch_leather_boots"
+      ],
+      [
+        1,
+        "netch_leather_greaves"
+      ],
+      [
+        1,
+        "netch_leather_pauldron_right"
+      ],
+      [
+        1,
+        "netch_leather_pauldron_left"
+      ],
+      [
+        1,
+        "netch_leather_cuirass"
+      ],
+      [
+        1,
+        "netch_leather_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_155f",
+    "name": "Netch Leather Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "netch_leather_shield"
+      ],
+      [
+        1,
+        "netch_leather_gauntlet_right"
+      ],
+      [
+        1,
+        "netch_leather_gauntlet_left"
+      ],
+      [
+        1,
+        "netch_leather_boots"
+      ],
+      [
+        1,
+        "netch_leather_greaves"
+      ],
+      [
+        1,
+        "netch_leather_pauldron_right"
+      ],
+      [
+        1,
+        "netch_leather_pauldron_left"
+      ],
+      [
+        1,
+        "netch_leather_cuirass"
+      ],
+      [
+        1,
+        "netch_leather_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_156",
+    "name": "Nordic Fur Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_gauntlet_right"
+      ],
+      [
+        1,
+        "fur_gauntlet_left"
+      ],
+      [
+        1,
+        "fur_boots"
+      ],
+      [
+        1,
+        "fur_greaves"
+      ],
+      [
+        1,
+        "fur_pauldron_right"
+      ],
+      [
+        1,
+        "fur_pauldron_left"
+      ],
+      [
+        1,
+        "fur_cuirass"
+      ],
+      [
+        1,
+        "fur_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_156f",
+    "name": "Nordic Fur Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_gauntlet_right"
+      ],
+      [
+        1,
+        "fur_gauntlet_left"
+      ],
+      [
+        1,
+        "fur_boots"
+      ],
+      [
+        1,
+        "fur_greaves"
+      ],
+      [
+        1,
+        "fur_pauldron_right"
+      ],
+      [
+        1,
+        "fur_pauldron_left"
+      ],
+      [
+        1,
+        "fur_cuirass"
+      ],
+      [
+        1,
+        "fur_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_157",
+    "name": "Nordic Fur Bracers",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_bracer_right"
+      ],
+      [
+        1,
+        "fur_bracer_left"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_158",
+    "name": "Nordic Iron Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "nordic_iron_cuirass"
+      ],
+      [
+        1,
+        "nordic_iron_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_158f",
+    "name": "Nordic Iron Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "nordic_iron_cuirass"
+      ],
+      [
+        1,
+        "nordic_iron_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_159",
+    "name": "Nordic Mail Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_NordicMail_Shield"
+      ],
+      [
+        1,
+        "BM_NordicMail_gauntletR"
+      ],
+      [
+        1,
+        "BM_NordicMail_gauntletL"
+      ],
+      [
+        1,
+        "BM_NordicMail_Boots"
+      ],
+      [
+        1,
+        "BM_NordicMail_greaves"
+      ],
+      [
+        1,
+        "BM_NordicMail_PauldronR"
+      ],
+      [
+        1,
+        "BM_NordicMail_PauldronL"
+      ],
+      [
+        1,
+        "BM_NordicMail_cuirass"
+      ],
+      [
+        1,
+        "BM_NordicMail_Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_159f",
+    "name": "Nordic Mail Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_NordicMail_Shield"
+      ],
+      [
+        1,
+        "BM_NordicMail_gauntletR"
+      ],
+      [
+        1,
+        "BM_NordicMail_gauntletL"
+      ],
+      [
+        1,
+        "BM_NordicMail_Boots"
+      ],
+      [
+        1,
+        "BM_NordicMail_greaves"
+      ],
+      [
+        1,
+        "BM_NordicMail_PauldronR"
+      ],
+      [
+        1,
+        "BM_NordicMail_PauldronL"
+      ],
+      [
+        1,
+        "BM_NordicMail_cuirass"
+      ],
+      [
+        1,
+        "BM_NordicMail_Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_16",
+    "name": "Mir-Moljuhn Chitin Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ChitinTelHelm01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_160",
+    "name": "Nordic Ringmail Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "nordic_ringmail_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_160f",
+    "name": "Nordic Ringmail Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "nordic_ringmail_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_161",
+    "name": "Nordic Trollbone Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "trollbone_shield"
+      ],
+      [
+        1,
+        "trollbone_cuirass"
+      ],
+      [
+        1,
+        "trollbone_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_161f",
+    "name": "Nordic Trollbone Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "trollbone_shield"
+      ],
+      [
+        1,
+        "trollbone_cuirass"
+      ],
+      [
+        1,
+        "trollbone_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_162",
+    "name": "Orcish Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "orcish_bracer_right"
+      ],
+      [
+        1,
+        "orcish_bracer_left"
+      ],
+      [
+        1,
+        "orcish_towershield"
+      ],
+      [
+        1,
+        "orcish_boots"
+      ],
+      [
+        1,
+        "orcish_greaves"
+      ],
+      [
+        1,
+        "orcish_pauldron_right"
+      ],
+      [
+        1,
+        "orcish_pauldron_left"
+      ],
+      [
+        1,
+        "orcish_cuirass"
+      ],
+      [
+        1,
+        "orcish_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_162f",
+    "name": "Orcish Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "orcish_bracer_right"
+      ],
+      [
+        1,
+        "orcish_bracer_left"
+      ],
+      [
+        1,
+        "orcish_towershield"
+      ],
+      [
+        1,
+        "orcish_boots"
+      ],
+      [
+        1,
+        "orcish_greaves"
+      ],
+      [
+        1,
+        "orcish_pauldron_right"
+      ],
+      [
+        1,
+        "orcish_pauldron_left"
+      ],
+      [
+        1,
+        "orcish_cuirass"
+      ],
+      [
+        1,
+        "orcish_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_163",
+    "name": "Royal Guard Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Helsethguard_gauntlet_right"
+      ],
+      [
+        1,
+        "Helsethguard_gauntlet_left"
+      ],
+      [
+        1,
+        "Helsethguard_boots"
+      ],
+      [
+        1,
+        "Helsethguard_greaves"
+      ],
+      [
+        1,
+        "Helsethguard_pauldron_right"
+      ],
+      [
+        1,
+        "Helsethguard_pauldron_left"
+      ],
+      [
+        1,
+        "Helsethguard_cuirass"
+      ],
+      [
+        1,
+        "Helsethguard_Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_163f",
+    "name": "Royal Guard Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "Helsethguard_gauntlet_right"
+      ],
+      [
+        1,
+        "Helsethguard_gauntlet_left"
+      ],
+      [
+        1,
+        "Helsethguard_boots"
+      ],
+      [
+        1,
+        "Helsethguard_greaves"
+      ],
+      [
+        1,
+        "Helsethguard_pauldron_right"
+      ],
+      [
+        1,
+        "Helsethguard_pauldron_left"
+      ],
+      [
+        1,
+        "Helsethguard_cuirass"
+      ],
+      [
+        1,
+        "Helsethguard_Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_164",
+    "name": "Snow Bear Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_bear_right_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_bear_left_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_bear_boots_snow"
+      ],
+      [
+        1,
+        "BM_bear_greaves_snow"
+      ],
+      [
+        1,
+        "BM_bear_right_pauldron_snow"
+      ],
+      [
+        1,
+        "BM_Bear_left_Pauldron_snow"
+      ],
+      [
+        1,
+        "BM_bear_cuirass_snow"
+      ],
+      [
+        1,
+        "BM_bear_helmet_snow"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_164f",
+    "name": "Snow Bear Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_bear_right_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_bear_left_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_bear_boots_snow"
+      ],
+      [
+        1,
+        "BM_bear_greaves_snow"
+      ],
+      [
+        1,
+        "BM_bear_right_pauldron_snow"
+      ],
+      [
+        1,
+        "BM_Bear_left_Pauldron_snow"
+      ],
+      [
+        1,
+        "BM_bear_cuirass_snow"
+      ],
+      [
+        1,
+        "BM_bear_helmet_snow"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_165",
+    "name": "Snow Wolf Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_wolf_right_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_wolf_left_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_wolf_boots_snow"
+      ],
+      [
+        1,
+        "BM_wolf_greaves_snow"
+      ],
+      [
+        1,
+        "BM_wolf_right_pauldron_snow"
+      ],
+      [
+        1,
+        "BM_wolf_left_pauldron_snow"
+      ],
+      [
+        1,
+        "BM_wolf_cuirass_snow"
+      ],
+      [
+        1,
+        "BM_wolf_helmet_snow"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_165f",
+    "name": "Snow Wolf Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_wolf_right_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_wolf_left_gauntlet_snow"
+      ],
+      [
+        1,
+        "BM_wolf_boots_snow"
+      ],
+      [
+        1,
+        "BM_wolf_greaves_snow"
+      ],
+      [
+        1,
+        "BM_wolf_right_pauldron_snow"
+      ],
+      [
+        1,
+        "BM_wolf_left_pauldron_snow"
+      ],
+      [
+        1,
+        "BM_wolf_cuirass_snow"
+      ],
+      [
+        1,
+        "BM_wolf_helmet_snow"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_166",
+    "name": "Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel_shield"
+      ],
+      [
+        1,
+        "steel_gauntlet_right"
+      ],
+      [
+        1,
+        "steel_gauntlet_left"
+      ],
+      [
+        1,
+        "steel_boots"
+      ],
+      [
+        1,
+        "steel_greaves"
+      ],
+      [
+        1,
+        "steel_pauldron_right"
+      ],
+      [
+        1,
+        "steel_pauldron_left"
+      ],
+      [
+        1,
+        "steel_cuirass"
+      ],
+      [
+        1,
+        "steel_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_166f",
+    "name": "Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel_shield"
+      ],
+      [
+        1,
+        "steel_gauntlet_right"
+      ],
+      [
+        1,
+        "steel_gauntlet_left"
+      ],
+      [
+        1,
+        "steel_boots"
+      ],
+      [
+        1,
+        "steel_greaves"
+      ],
+      [
+        1,
+        "steel_pauldron_right"
+      ],
+      [
+        1,
+        "steel_pauldron_left"
+      ],
+      [
+        1,
+        "steel_cuirass"
+      ],
+      [
+        1,
+        "steel_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_167",
+    "name": "Wolf Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM wolf shield"
+      ],
+      [
+        1,
+        "BM wolf right gauntlet"
+      ],
+      [
+        1,
+        "bm wolf left gauntlet"
+      ],
+      [
+        1,
+        "BM wolf boots"
+      ],
+      [
+        1,
+        "BM wolf greaves"
+      ],
+      [
+        1,
+        "BM Wolf right pauldron"
+      ],
+      [
+        1,
+        "BM Wolf Left Pauldron"
+      ],
+      [
+        1,
+        "BM wolf cuirass"
+      ],
+      [
+        1,
+        "BM Wolf Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_167f",
+    "name": "Wolf Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM wolf shield"
+      ],
+      [
+        1,
+        "BM wolf right gauntlet"
+      ],
+      [
+        1,
+        "bm wolf left gauntlet"
+      ],
+      [
+        1,
+        "BM wolf boots"
+      ],
+      [
+        1,
+        "BM wolf greaves"
+      ],
+      [
+        1,
+        "BM Wolf right pauldron"
+      ],
+      [
+        1,
+        "BM Wolf Left Pauldron"
+      ],
+      [
+        1,
+        "BM wolf cuirass"
+      ],
+      [
+        1,
+        "BM Wolf Helmet"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_168",
+    "name": "Bonemold Towershield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_169",
+    "name": "Chitin Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "chitin_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_17",
+    "name": "Cloth Neck Wrap (Light Brown)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ClothHelm1"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_170",
+    "name": "Cloth Bracers",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "cloth bracer right"
+      ],
+      [
+        1,
+        "cloth bracer left"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_171",
+    "name": "Colovian Fur Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_colovian_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_172",
+    "name": "Daedric Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "daedric_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_174",
+    "name": "Dreugh Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dreugh_shield"
+      ],
+      [
+        1,
+        "dreugh_cuirass"
+      ],
+      [
+        1,
+        "dreugh_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_174f",
+    "name": "Dreugh Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dreugh_shield"
+      ],
+      [
+        1,
+        "dreugh_cuirass"
+      ],
+      [
+        1,
+        "dreugh_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_175",
+    "name": "Duke's Guard Silver Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "silver_dukesguard_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_175f",
+    "name": "Duke's Guard Silver Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "silver_dukesguard_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_176",
+    "name": "Ebony Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "ebony_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_177",
+    "name": "Glass Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "glass_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_178",
+    "name": "Goblin Buckler",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "goblin_shield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_179",
+    "name": "Gondolier's Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "gondolier_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_18",
+    "name": "Cloth Neck Wrap (Light Gray)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ClothHelm2"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_180",
+    "name": "Heavy Leather Boots",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "heavy_leather_boots"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_181",
+    "name": "Hlaalu Guard Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_tshield_hlaaluguard"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_183",
+    "name": "Imperial Newtscale Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "newtscale_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_183f",
+    "name": "Imperial Newtscale Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "newtscale_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_184",
+    "name": "Iron Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_185",
+    "name": "Leather Bracers",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "right leather bracer"
+      ],
+      [
+        1,
+        "left leather bracer"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_186",
+    "name": "Morag Tong Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "morag_tong_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_187",
+    "name": "Native Chuzei Bonemold Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_chuzei_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_188",
+    "name": "Netch Leather Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "netch_leather_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_189",
+    "name": "Nordic Bearskin Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_bearskin_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_189f",
+    "name": "Nordic Bearskin Cuirass",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_bearskin_cuirass"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_19",
+    "name": "Cloth Neck Wrap (Brown)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_ClothHelm3"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_190",
+    "name": "Nordic Leather Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "nordic_leather_shield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_191",
+    "name": "Redoran Guard Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_tshield_redoranguard"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_192",
+    "name": "Redoran Master Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "redoran_master_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_193",
+    "name": "Redoran Watchman's Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "chitin_watchman_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_194",
+    "name": "Riekling Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Ice minion_Shield1"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_195",
+    "name": "Steel Tower Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "steel_towershield"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_196",
+    "name": "Telvanni Dust Adept Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "dust_adept_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_197",
+    "name": "Telvanni Guard Shield",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "bonemold_tshield_telvanniguard"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_198",
+    "name": "Telvanni Mole Crab Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "mole_crab_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_199",
+    "name": "White Colovian Fur Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "fur_colovian_helm_white"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_20",
+    "name": "Daedric Face of Revelation",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_DaeAzuraHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_21",
+    "name": "Face of the Husband of Fire",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_DaeDagonHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_22",
+    "name": "Face of the Forbidden Tickle",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_DaeMolagHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_23",
+    "name": "Face of Comforting Tendrils",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_DaeSheogHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_24",
+    "name": "Egg Miner's Mask",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_EggminerHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_25",
+    "name": "Glass Helm & Assassin Pauldrons",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "glass_bracer_right"
+      ],
+      [
+        1,
+        "glass_bracer_left"
+      ],
+      [
+        1,
+        "glass_boots"
+      ],
+      [
+        1,
+        "glass_greaves"
+      ],
+      [
+        1,
+        "AB_a_GlassAssassinPauldronRight"
+      ],
+      [
+        1,
+        "AB_a_GlassAssassinPauldronLeft"
+      ],
+      [
+        1,
+        "glass_cuirass"
+      ],
+      [
+        1,
+        "AB_a_GlassHelmClose"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_26",
+    "name": "Dunmer Iron Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "iron_bracer_right"
+      ],
+      [
+        1,
+        "iron_bracer_left"
+      ],
+      [
+        1,
+        "AB_a_IronDeBoots"
+      ],
+      [
+        1,
+        "iron_greaves"
+      ],
+      [
+        1,
+        "AB_a_IronDePldRight"
+      ],
+      [
+        1,
+        "AB_a_IronDePldLeft"
+      ],
+      [
+        1,
+        "AB_a_IronDeCuirass"
+      ],
+      [
+        1,
+        "AB_a_IronDeHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_27",
+    "name": "Native Tongman Iron Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_IronDeHelmTong"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_28",
+    "name": "Leather Hat",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_LeatherHat"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_29",
+    "name": "Morag Tong Ar-Hadaz Mask",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_MoragTongHelm01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_30",
+    "name": "Morag Tong Dun-Saro Hood",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_MoragTongHelm02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_31",
+    "name": "Morag Tong Mar-Roth Mask",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_MoragTongHelm03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_32",
+    "name": "Morag Tong Ironovei Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_MoragTongHelm04"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_33",
+    "name": "Boiled Netch Pauldrons",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "netch_leather_gauntlet_right"
+      ],
+      [
+        1,
+        "netch_leather_gauntlet_left"
+      ],
+      [
+        1,
+        "netch_leather_boots"
+      ],
+      [
+        1,
+        "netch_leather_greaves"
+      ],
+      [
+        1,
+        "AB_a_NetchBoilPldRight"
+      ],
+      [
+        1,
+        "AB_a_NetchBoilPldLeft"
+      ],
+      [
+        1,
+        "netch_leather_boiled_cuirass"
+      ],
+      [
+        1,
+        "netch_leather_boiled_helm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_34",
+    "name": "Netchiman's Cap",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_NetchimanCap"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_35",
+    "name": "Orcish Open Helm",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "orcish_bracer_right"
+      ],
+      [
+        1,
+        "orcish_bracer_left"
+      ],
+      [
+        1,
+        "orcish_boots"
+      ],
+      [
+        1,
+        "orcish_greaves"
+      ],
+      [
+        1,
+        "orcish_pauldron_right"
+      ],
+      [
+        1,
+        "orcish_pauldron_left"
+      ],
+      [
+        1,
+        "orcish_cuirass"
+      ],
+      [
+        1,
+        "AB_a_OrcHelmOpen"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_36",
+    "name": "Light Steel Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_SteelGntlRight"
+      ],
+      [
+        1,
+        "AB_a_SteelGntlLeft"
+      ],
+      [
+        1,
+        "AB_a_SteelBoots"
+      ],
+      [
+        1,
+        "AB_a_SteelGreaves"
+      ],
+      [
+        1,
+        "AB_a_SteelPldrRight"
+      ],
+      [
+        1,
+        "AB_a_SteelPldrLeft"
+      ],
+      [
+        1,
+        "AB_a_SteelCuirass"
+      ],
+      [
+        1,
+        "AB_a_SteelHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_37",
+    "name": "Light Steel Set (Open Helm)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_SteelGntlRight"
+      ],
+      [
+        1,
+        "AB_a_SteelGntlLeft"
+      ],
+      [
+        1,
+        "AB_a_SteelBoots"
+      ],
+      [
+        1,
+        "AB_a_SteelGreaves"
+      ],
+      [
+        1,
+        "AB_a_SteelPldrRight"
+      ],
+      [
+        1,
+        "AB_a_SteelPldrLeft"
+      ],
+      [
+        1,
+        "AB_a_SteelCuirass"
+      ],
+      [
+        1,
+        "AB_a_SteelHelmOpen"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_38",
+    "name": "Wicker Hat (Open)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_WickerHelm"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_39",
+    "name": "Wicker Hat",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_a_WickerHelm02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_40",
+    "name": "Common Hood 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_01"
+      ],
+      [
+        1,
+        "AB_c_CommonHood01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_41",
+    "name": "Common Hood 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_42",
+    "name": "Common Hood 02h",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02_h"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02h"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_43",
+    "name": "Common Hood 02hh",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02_hh"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02hh"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_44",
+    "name": "Common Hood 02r",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02_r"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02r"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_45",
+    "name": "Common Hood 02rr",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02_rr"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02rr"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_46",
+    "name": "Common Hood 02t",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02_t"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02t"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_47",
+    "name": "Common Hood 02tt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_02_tt"
+      ],
+      [
+        1,
+        "AB_c_CommonHood02tt"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_48",
+    "name": "Common Hood 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_03"
+      ],
+      [
+        1,
+        "AB_c_CommonHood03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_49",
+    "name": "Common Hood 03a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_03_a"
+      ],
+      [
+        1,
+        "AB_c_CommonHood03a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_50",
+    "name": "Common Hood 03b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_03_b"
+      ],
+      [
+        1,
+        "AB_c_CommonHood03b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_51",
+    "name": "Common Hood 04",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_04"
+      ],
+      [
+        1,
+        "AB_c_CommonHood04"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_52",
+    "name": "Common Hood 05",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_05"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_53",
+    "name": "Common Hood 05a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_05_a"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_54",
+    "name": "Common Hood 05b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_05_b"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_55",
+    "name": "Common Hood 05c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_robe_05_c"
+      ],
+      [
+        1,
+        "AB_c_CommonHood05c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_56",
+    "name": "Common Hood (Black)",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_c_CommonRobeBlack"
+      ],
+      [
+        1,
+        "AB_c_CommonHoodBlack"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_57",
+    "name": "Dwemer Hat",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "AB_c_DwrvHat"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_58",
+    "name": "Expensive Hood 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_robe_01"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_59",
+    "name": "Expensive Hood 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_robe_02"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_60",
+    "name": "Expensive Hood 02a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_robe_02_a"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood02a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_61",
+    "name": "Expensive Hood 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_robe_03"
+      ],
+      [
+        1,
+        "AB_c_ExpensiveHood03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_62",
+    "name": "Exquisite Hood",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "exquisite_robe_01"
+      ],
+      [
+        1,
+        "AB_c_ExquisiteHood01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_63",
+    "name": "Extravagant Hood 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_64",
+    "name": "Extravagant Hood 01a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01_a"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_65",
+    "name": "Extravagant Hood 01b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01_b"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_66",
+    "name": "Extravagant Hood 01c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01_c"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_67",
+    "name": "Extravagant Hood 01h",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01_h"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01h"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_68",
+    "name": "Extravagant Hood 01r",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01_r"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01r"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_69",
+    "name": "Extravagant Hood 01t",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_01_t"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood01t"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_70",
+    "name": "Extravagant Hood 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_robe_02"
+      ],
+      [
+        1,
+        "AB_c_ExtravagantHood02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_71",
+    "name": "Nordic01 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Nordic01_gloveL"
+      ],
+      [
+        1,
+        "BM_Nordic01_gloveR"
+      ],
+      [
+        1,
+        "BM_Nordic01_shirt"
+      ],
+      [
+        1,
+        "BM_Nordic01_shoes"
+      ],
+      [
+        1,
+        "BM_Nordic01_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_71f",
+    "name": "Nordic01 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Nordic01_gloveL"
+      ],
+      [
+        1,
+        "BM_Nordic01_gloveR"
+      ],
+      [
+        1,
+        "BM_Nordic01_shirt"
+      ],
+      [
+        1,
+        "BM_Nordic01_shoes"
+      ],
+      [
+        1,
+        "BM_Nordic01_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_72",
+    "name": "Nordic02 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Nordic02_gloveL"
+      ],
+      [
+        1,
+        "BM_Nordic02_gloveR"
+      ],
+      [
+        1,
+        "BM_Nordic02_shirt"
+      ],
+      [
+        1,
+        "BM_Nordic02_shoes"
+      ],
+      [
+        1,
+        "BM_Nordic02_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_72f",
+    "name": "Nordic02 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Nordic02_gloveL"
+      ],
+      [
+        1,
+        "BM_Nordic02_gloveR"
+      ],
+      [
+        1,
+        "BM_Nordic02_shirt"
+      ],
+      [
+        1,
+        "BM_Nordic02_shoes"
+      ],
+      [
+        1,
+        "BM_Nordic02_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_73",
+    "name": "Nordic Robe",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Nordic01_Robe"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_73f",
+    "name": "Nordic Robe",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Nordic01_Robe"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_74",
+    "name": "Wool01 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Wool01_gloveL"
+      ],
+      [
+        1,
+        "BM_Wool01_gloveR"
+      ],
+      [
+        1,
+        "BM_Wool01_shirt"
+      ],
+      [
+        1,
+        "BM_Wool01_shoes"
+      ],
+      [
+        1,
+        "BM_Wool01_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_74f",
+    "name": "Wool01 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Wool01_gloveL"
+      ],
+      [
+        1,
+        "BM_Wool01_gloveR"
+      ],
+      [
+        1,
+        "BM_Wool01_shirt"
+      ],
+      [
+        1,
+        "BM_Wool01_shoes"
+      ],
+      [
+        1,
+        "BM_Wool01_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_75",
+    "name": "Wool Robe",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Wool01_Robe"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_75f",
+    "name": "Wool Robe",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Wool01_Robe"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_76",
+    "name": "Wool02 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Wool02_gloveL"
+      ],
+      [
+        1,
+        "BM_Wool02_gloveR"
+      ],
+      [
+        1,
+        "BM_Wool02_shirt"
+      ],
+      [
+        1,
+        "BM_Wool02_shoes"
+      ],
+      [
+        1,
+        "BM_Wool02_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_76f",
+    "name": "Wool02 Set",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "BM_Wool02_gloveL"
+      ],
+      [
+        1,
+        "BM_Wool02_gloveR"
+      ],
+      [
+        1,
+        "BM_Wool02_shirt"
+      ],
+      [
+        1,
+        "BM_Wool02_shoes"
+      ],
+      [
+        1,
+        "BM_Wool02_pants"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_77",
+    "name": "Morag Tong Gloves",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_glove_l_moragtong"
+      ],
+      [
+        1,
+        "common_glove_r_moragtong"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_78",
+    "name": "Common Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_glove_left_01"
+      ],
+      [
+        1,
+        "common_glove_right_01"
+      ],
+      [
+        1,
+        "common_shirt_01"
+      ],
+      [
+        1,
+        "common_shoes_01"
+      ],
+      [
+        1,
+        "common_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_78f",
+    "name": "Common Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_glove_left_01"
+      ],
+      [
+        1,
+        "common_glove_right_01"
+      ],
+      [
+        1,
+        "common_shirt_01"
+      ],
+      [
+        1,
+        "common_shoes_01"
+      ],
+      [
+        1,
+        "common_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_79",
+    "name": "Expensive Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_glove_left_01"
+      ],
+      [
+        1,
+        "expensive_glove_right_01"
+      ],
+      [
+        1,
+        "expensive_shirt_01"
+      ],
+      [
+        1,
+        "expensive_shoes_01"
+      ],
+      [
+        1,
+        "expensive_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_79f",
+    "name": "Expensive Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "expensive_glove_left_01"
+      ],
+      [
+        1,
+        "expensive_glove_right_01"
+      ],
+      [
+        1,
+        "expensive_shirt_01"
+      ],
+      [
+        1,
+        "expensive_shoes_01"
+      ],
+      [
+        1,
+        "expensive_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_80",
+    "name": "Extravagant Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_glove_left_01"
+      ],
+      [
+        1,
+        "extravagant_glove_right_01"
+      ],
+      [
+        1,
+        "extravagant_shirt_01"
+      ],
+      [
+        1,
+        "extravagant_shoes_01"
+      ],
+      [
+        1,
+        "extravagant_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_80f",
+    "name": "Extravagant Set 01",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "extravagant_glove_left_01"
+      ],
+      [
+        1,
+        "extravagant_glove_right_01"
+      ],
+      [
+        1,
+        "extravagant_shirt_01"
+      ],
+      [
+        1,
+        "extravagant_shoes_01"
+      ],
+      [
+        1,
+        "extravagant_pants_01"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_81",
+    "name": "Common Set 01a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_a"
+      ],
+      [
+        1,
+        "common_pants_01_a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_81f",
+    "name": "Common Set 01a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_a"
+      ],
+      [
+        1,
+        "common_pants_01_a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_82",
+    "name": "Common Set 01e",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_e"
+      ],
+      [
+        1,
+        "common_pants_01_e"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_82f",
+    "name": "Common Set 01e",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_e"
+      ],
+      [
+        1,
+        "common_pants_01_e"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_83",
+    "name": "Common Set 01u",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_u"
+      ],
+      [
+        1,
+        "common_pants_01_u"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_83f",
+    "name": "Common Set 01u",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_u"
+      ],
+      [
+        1,
+        "common_pants_01_u"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_84",
+    "name": "Common Set 01z",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_z"
+      ],
+      [
+        1,
+        "common_pants_01_z"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_84f",
+    "name": "Common Set 01z",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_01_z"
+      ],
+      [
+        1,
+        "common_pants_01_z"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_85",
+    "name": "Common Set 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02"
+      ],
+      [
+        1,
+        "common_shoes_02"
+      ],
+      [
+        1,
+        "common_pants_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_85f",
+    "name": "Common Set 02",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02"
+      ],
+      [
+        1,
+        "common_shoes_02"
+      ],
+      [
+        1,
+        "common_pants_02"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_86",
+    "name": "Common Shirt 02h",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_h"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_86f",
+    "name": "Common Shirt 02h",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_h"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_87",
+    "name": "Common Shirt 02hh",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_hh"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_87f",
+    "name": "Common Shirt 02hh",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_hh"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_88",
+    "name": "Common Shirt 02r",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_r"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_88f",
+    "name": "Common Shirt 02r",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_r"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_89",
+    "name": "Common Shirt 02rr",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_rr"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_89f",
+    "name": "Common Shirt 02rr",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_rr"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_90",
+    "name": "Common Shirt 02t",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_t"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_90f",
+    "name": "Common Shirt 02t",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_t"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_91",
+    "name": "Common Shirt 02tt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_tt"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_91f",
+    "name": "Common Shirt 02tt",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_02_tt"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_92",
+    "name": "Common Set 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_03"
+      ],
+      [
+        1,
+        "common_shoes_03"
+      ],
+      [
+        1,
+        "common_pants_03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_92f",
+    "name": "Common Set 03",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_03"
+      ],
+      [
+        1,
+        "common_shoes_03"
+      ],
+      [
+        1,
+        "common_pants_03"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_93",
+    "name": "Common Set 03b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_03_b"
+      ],
+      [
+        1,
+        "common_pants_03_b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_93f",
+    "name": "Common Set 03b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_03_b"
+      ],
+      [
+        1,
+        "common_pants_03_b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_94",
+    "name": "Common Set 03c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_03_c"
+      ],
+      [
+        1,
+        "common_pants_03_c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_94f",
+    "name": "Common Set 03c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_03_c"
+      ],
+      [
+        1,
+        "common_pants_03_c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_95",
+    "name": "Common Set 04",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04"
+      ],
+      [
+        1,
+        "common_shoes_04"
+      ],
+      [
+        1,
+        "common_pants_04"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_95f",
+    "name": "Common Set 04",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04"
+      ],
+      [
+        1,
+        "common_shoes_04"
+      ],
+      [
+        1,
+        "common_pants_04"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_96",
+    "name": "Common Shirt 04a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04_a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_96f",
+    "name": "Common Shirt 04a",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04_a"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_97",
+    "name": "Common Set 04b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04_b"
+      ],
+      [
+        1,
+        "common_pants_04_b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_97f",
+    "name": "Common Set 04b",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04_b"
+      ],
+      [
+        1,
+        "common_pants_04_b"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_98",
+    "name": "Common Shirt 04c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04_c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_98f",
+    "name": "Common Shirt 04c",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_04_c"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_99",
+    "name": "Common Set 05",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_05"
+      ],
+      [
+        1,
+        "common_shoes_05"
+      ],
+      [
+        1,
+        "common_pants_05"
+      ]
+    ]
+  },
+  {
+    "type": "Npc",
+    "flags": "",
+    "id": "AB_OutfitNPC_99f",
+    "name": "Common Set 05",
+    "script": "",
+    "mesh": "",
+    "inventory": [
+      [
+        1,
+        "common_shirt_05"
+      ],
+      [
+        1,
+        "common_shoes_05"
+      ],
+      [
+        1,
+        "common_pants_05"
+      ]
+    ]
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_Door_ComPanelLHEXAMPLE",
+    "name": "",
+    "script": "",
+    "mesh": "oaab\\d\\cpandoorlh.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_Door_ComPanelRHEXAMPLE",
+    "name": "",
+    "script": "",
+    "mesh": "oaab\\d\\cpandoorrh.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AB_Ex_ComGravestone6",
+    "name": "",
+    "script": "",
+    "mesh": "oaab\\x\\comgravestone6.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_Ex_DeShipwrFloorTrapEXAMPLE",
+    "name": "Loose Deck",
+    "script": "AB_DeShipwrFloorTrapEXAMPLE_s",
+    "mesh": "oaab\\x\\shipwrfloorlargetrap.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_Ex_ImpGatehouseGrateEXAMPLE",
+    "name": "",
+    "script": "",
+    "mesh": "oaab\\x\\impgatehousegrate.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AB_Ex_ImpGatehouseLeverEXAMPLE",
+    "name": "Wooden Lever",
+    "script": "AB_ImpGatehouseLeverEXAMPLE_s",
+    "mesh": "oaab\\x\\impgatehouselever.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_Furn_DwrvButtonEXAMPLE",
+    "name": "Dwemer Button",
+    "script": "AB_Furn_DwrvButtonEXAMPLE_s",
+    "mesh": "oaab\\u\\dwrvbutton.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AB_Furn_DwrvCrankEXAMPLE",
+    "name": "Crank",
+    "script": "AB_Furn_DwrvCrankEXAMPLE_s",
+    "mesh": "oaab\\u\\dwrv_crank.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_Furn_DwrvLeverEXAMPLE",
+    "name": "Dwemer Lever",
+    "script": "AB_Furn_DwrvLeverEXAMPLE_s",
+    "mesh": "i\\act_dwe_lever00.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AB_Furn_ImpChainPullEXAMPLE",
+    "name": "Metal Ring",
+    "script": "AB_ImpChainPullEXAMPLE_s",
+    "mesh": "oaab\\u\\impchainpull.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AB_Furn_VelSwitchEXAMPLE",
+    "name": "Switch",
+    "script": "AB_VelSwitchEXAMPLE_s",
+    "mesh": "x\\ex_gg_gateswitch_01.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "",
+    "id": "AB_In_DwrvRoomGrateStairsEXAMPL",
+    "name": "",
+    "script": "AB_DwrvGrateStairsEXAMPLE_s",
+    "mesh": "oaab\\i\\dwrvroomgratestairsa.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_In_VelPitHidDoorEXAMPLE",
+    "name": "",
+    "script": "",
+    "mesh": "oaab\\i\\v_pitroom_hiddoor.nif"
+  },
+  {
+    "type": "Activator",
+    "flags": "PERSISTENT",
+    "id": "AB_light_ComSconceLeverEXAMPLE",
+    "name": "Loose Sconce",
+    "script": "AB_ComSconceLeverEXAMPLE_s",
+    "mesh": "oaab\\l\\comsconcelever.nif"
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_AvoidNode",
+    "name": "InfoBox - AvoidNode",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_CandlePlacement",
+    "name": "InfoBox - Candle Placement",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "Block",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_CharacterMarker",
+    "name": "InfoBox - Character Marker",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_ComHiddenPanelDoor",
+    "name": "InfoBox - Com Hidden Panel Door",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_ComPanelSet",
+    "name": "InfoBox - Com Panel Set",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_CraneKit",
+    "name": "InfoBox - Crane Kit",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DePlnBar",
+    "name": "InfoBox - DePlnBar",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DestinationMarker",
+    "name": "InfoBox - Destination Marker",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvActCohererStuff",
+    "name": "InfoBox - Dwemer Act Coherer",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvActFuseBox",
+    "name": "InfoBox - Dwemer Act Fuse Box",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvActGearBox",
+    "name": "InfoBox - Dwemer Act Gear Box",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvActPipeBurst",
+    "name": "InfoBox - Dwemer Act Burst Pipe",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvActPowerBox",
+    "name": "InfoBox - Dwemer Act Power Box",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvBuildInterior",
+    "name": "InfoBox - Dwemer Building Int.",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvDrawers",
+    "name": "InfoBox - Dwemer Drawers",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvLedgePlug",
+    "name": "InfoBox - Dwemer Ledge Plug",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvMachToggle",
+    "name": "InfoBox - Dwemer Machine Toggle",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_DwrvShelves",
+    "name": "InfoBox - Dwemer Shelves",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_HlaHallLedge",
+    "name": "InfoBox - HlaHallLedge",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_HlaRoomStairMid",
+    "name": "InfoBox - HlaRoomStairMid",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_Infernace",
+    "name": "InfoBox - Infernace",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_MemoryStones",
+    "name": "InfoBox - Memory Stones",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_OAABOutfits",
+    "name": "InfoBox - OAAB Outfits",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_Pallets",
+    "name": "InfoBox - Pallets",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_PaperStacks",
+    "name": "InfoBox - Paper Stacks",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "Block",
+      "enchantment": 0
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_RadiusMarker",
+    "name": "InfoBox - Radius Marker",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_ShipwrSail03",
+    "name": "InfoBox - Shipwreck Sail 03",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_ShipwrTrap",
+    "name": "InfoBox - Shipwreck Trapdoor",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_StalClusters",
+    "name": "InfoBox - Stal Clusters",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_StencilHoles",
+    "name": "InfoBox - Stencil Based Holes",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_TelRootRetracting",
+    "name": "InfoBox - TelRootRetracting",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_VanillaOutfits",
+    "name": "InfoBox - Vanilla Outfits",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_VelHearths",
+    "name": "InfoBox - Velothi Hearths",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_WebTrap",
+    "name": "InfoBox - Web Trap",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  },
+  {
+    "type": "Book",
+    "flags": "",
+    "id": "AB_Info_WoodstacksAndAshfall",
+    "name": "InfoBox - Woodstacks & Ashfall",
+    "script": "",
+    "mesh": "oaab\\h\\marker_info.nif",
+    "icon": "OAAB\\h\\marker_info.tga",
+    "enchanting": "",
+    "data": {
+      "weight": 0.0,
+      "value": 0,
+      "book_type": "Book",
+      "skill": "None",
+      "enchantment": 100
+    }
+  }
+]
