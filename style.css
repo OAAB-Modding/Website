@@ -2621,6 +2621,47 @@ button {
   height:13px;
   display:block;
 }
+.asset-effect-row {
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:8px;
+  z-index:5;
+  display:flex;
+  justify-content:center;
+  gap:4px;
+  pointer-events:none;
+}
+.asset-effect-button {
+  width:24px;
+  height:24px;
+  padding:2px;
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+  border:1px solid rgba(244,236,221,0.7);
+  border-radius:4px;
+  background:rgba(12,9,6,0.72);
+  box-shadow:0 1px 6px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(0,0,0,0.2);
+  cursor:pointer;
+  pointer-events:auto;
+}
+.asset-effect-button:hover {
+  border-color:rgba(255,255,255,0.95);
+  background:rgba(21,16,11,0.88);
+  box-shadow:0 1px 8px rgba(0,0,0,0.52), 0 0 0 2px rgba(210,130,63,0.24), inset 0 0 0 1px rgba(0,0,0,0.18);
+}
+.asset-effect-icon {
+  width:18px;
+  height:18px;
+  display:block;
+  object-fit:contain;
+  image-rendering:auto;
+  pointer-events:none;
+}
 .asset-id-overlay {
   position:absolute;
   left:0;

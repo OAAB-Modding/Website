@@ -106,7 +106,7 @@
       <div style="display:{{ filterWrapDisp }};flex-basis:100%;flex-wrap:wrap;align-items:center;gap:12px;" class="filter-collapse">
       <div style="flex:{{ searchFlex }};" class="search-box">
         <svg viewBox="0 0 24 24" fill="none" stroke="#80735f" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search ID, name, mesh, or container: AB_o_CorpseFresh04" spellcheck="false" autocomplete="off" class="search-input">
+        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search ID, name, mesh, effect: Restore, or container: AB_o_CorpseFresh04" spellcheck="false" autocomplete="off" class="search-input">
         <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
           <button onClick="{{ clearSearch }}" title="Clear search" class="search-clear">×</button>
         </sc-if>
@@ -264,6 +264,15 @@
               <button type="button" data-container-id="{{ it.id }}" onClick="{{ pickContainerContents }}" title="{{ it.contentsTitle }}" class="asset-container-button">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="asset-container-icon"><polyline points="9 10 4 15 9 20"></polyline><path d="M20 4v7a4 4 0 0 1-4 4H4"></path></svg>
               </button>
+            </sc-if>
+            <sc-if value="{{ it.hasEffects }}" hint-placeholder-val="{{ false }}">
+              <div class="asset-effect-row">
+                <sc-for list="{{ it.effects }}" as="eff" hint-placeholder-count="4">
+                  <button type="button" data-effect="{{ eff.label }}" onClick="{{ pickEffect }}" title="{{ eff.query }}" class="asset-effect-button">
+                    <img src="{{ eff.img }}" alt="{{ eff.label }}" loading="lazy" decoding="async" draggable="{{ no }}" class="asset-effect-icon">
+                  </button>
+                </sc-for>
+              </div>
             </sc-if>
             <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
               <code class="asset-id-overlay">{{ it.id }}</code>
@@ -448,9 +457,11 @@ class Component extends DCLogic {
     const REPO = 'https://cdn.jsdelivr.net/gh/OAAB-Modding/OAAB-Modding.github.io@main';
     const THUMB = REPO + '/assets/images/library/thumbnails/meshes/';
     const NPC_THUMB = REPO + '/assets/images/library/thumbnails/npc/';
+    const EFFECT = REPO + '/assets/images/library/effects/';
     const LIGHT_MASK = REPO + '/assets/images/library/masks/marker_light_mask.webp';
     this._THUMB = THUMB;
     this._NPC_THUMB = NPC_THUMB;
+    this._EFFECT = EFFECT;
     this._LIGHT_MASK = LIGHT_MASK;
 
     // Data JSON must always reflect the freshly deployed source. jsdelivr caches
@@ -536,6 +547,7 @@ class Component extends DCLogic {
             lightRgb: lightRgb,
             lightMask: markerLight ? LIGHT_MASK : '',
             inventory: Array.isArray(r.inventory) ? r.inventory : null,
+            effects: this.ingredientEffects(r),
           });
         });
         items.sort((a, b) => this.csCompareIds(a.id, b.id));
@@ -713,6 +725,216 @@ class Component extends DCLogic {
     return dr * dr + dg * dg + db * db;
   }
 
+  ingredientEffectIconMap() {
+    if (this._ingredientEffectIconMap) return this._ingredientEffectIconMap;
+    this._ingredientEffectIconMap = {
+      AbsorbAttribute: 'b_tx_s_ab_attrib.webp',
+      AbsorbFatigue: 'b_tx_s_ab_fati.webp',
+      AbsorbHealth: 'b_tx_s_ab_health.webp',
+      AbsorbMagicka: 'b_tx_s_ab_magic.webp',
+      AbsorbSkill: 'b_tx_s_ab_skill.webp',
+      AlmsiviIntervention: 'b_tx_s_alm_intervt.webp',
+      Blind: 'b_tx_s_blind.webp',
+      BoundBattleAxe: 'b_tx_s_bd_battleaxe.webp',
+      BoundBoots: 'b_tx_s_bd_boots.webp',
+      BoundCuirass: 'b_tx_s_bd_cuirass.webp',
+      BoundDagger: 'b_tx_s_bd_dagger.webp',
+      BoundGloves: 'b_tx_s_bd_gloves.webp',
+      BoundHelm: 'b_tx_s_bd_helm.webp',
+      BoundLongbow: 'b_tx_s_bd_lngbow.webp',
+      BoundLongsword: 'b_tx_s_bd_lngswd.webp',
+      BoundMace: 'b_tx_s_bd_mace.webp',
+      BoundShield: 'b_tx_s_bd_shield.webp',
+      BoundSpear: 'b_tx_s_bd_spear.webp',
+      Burden: 'b_tx_s_burden.webp',
+      CalmCreature: 'b_tx_s_cm_crture.webp',
+      CalmHumanoid: 'b_tx_s_cm_hunoid.webp',
+      Chameleon: 'b_tx_s_chameleon.webp',
+      Charm: 'b_tx_s_charm.webp',
+      CommandCreature: 'b_tx_s_cmd_crture.webp',
+      CommandHumanoid: 'b_tx_s_cmd_hunoid.webp',
+      Corprus: 'b_tx_s_corprus.webp',
+      CureBlightDisease: 'b_tx_s_cure_bghtdise.webp',
+      CureCommonDisease: 'b_tx_s_cure_comdise.webp',
+      CureCorprusDisease: 'b_tx_s_cure_corpus.webp',
+      CureParalyzation: 'b_tx_s_cure_paralyse.webp',
+      CurePoison: 'b_tx_s_cure_poision.webp',
+      DamageAttribute: 'b_tx_s_dmg_attrib.webp',
+      DamageFatigue: 'b_tx_s_dmg_fati.webp',
+      DamageHealth: 'b_tx_s_dmg_health.webp',
+      DamageMagicka: 'b_tx_s_dmg_magic.webp',
+      DamageSkill: 'b_tx_s_dmg_skill.webp',
+      DemoralizeCreature: 'b_tx_s_demorl_crture.webp',
+      DemoralizeHumanoid: 'b_tx_s_demorl_hunoid.webp',
+      DetectAnimal: 'b_tx_s_detect_animal.webp',
+      DetectEnchantment: 'b_tx_s_detect_enchtmt.webp',
+      DetectKey: 'b_tx_s_detect_key.webp',
+      DisintegrateArmor: 'b_tx_s_disintgt_armor.webp',
+      DisintegrateWeapon: 'b_tx_s_disintgt_wpn.webp',
+      Dispel: 'b_tx_s_dispel.webp',
+      DivineIntervention: 'b_tx_s_divine_intervt.webp',
+      DrainAttribute: 'b_tx_s_drain_attrib.webp',
+      DrainFatigue: 'b_tx_s_drain_fati.webp',
+      DrainHealth: 'b_tx_s_drain_health.webp',
+      DrainMagicka: 'b_tx_s_drain_magic.webp',
+      DrainSkill: 'b_tx_s_drain_skill.webp',
+      Feather: 'b_tx_s_feather.webp',
+      FireDamage: 'b_tx_s_fire_damage.webp',
+      FireShield: 'b_tx_s_fire_shield.webp',
+      FortifyAttackBonus: 'b_tx_s_ftfy_attack.webp',
+      FortifyAttribute: 'b_tx_s_ftfy_attrib.webp',
+      FortifyFatigue: 'b_tx_s_ftfy_fati.webp',
+      FortifyHealth: 'b_tx_s_ftfy_health.webp',
+      FortifyMagicka: 'b_tx_s_ftfy_magic.webp',
+      FortifyMagickaMultiplier: 'b_tx_s_ftfy_mgcmtplr.webp',
+      FortifySkill: 'b_tx_s_ftfy_skill.webp',
+      FrenzyCreature: 'b_tx_s_frzy_crture.webp',
+      FrenzyHumanoid: 'b_tx_s_frzy_hunoid.webp',
+      FrostDamage: 'b_tx_s_frost_dmg.webp',
+      FrostShield: 'b_tx_s_frost_shield.webp',
+      Invisibility: 'b_tx_s_invisible.webp',
+      Jump: 'b_tx_s_jump.webp',
+      Levitate: 'b_tx_s_levitate.webp',
+      Light: 'b_tx_s_light.webp',
+      LightningShield: 'b_tx_s_light_shield.webp',
+      Lock: 'b_tx_s_lock.webp',
+      Mark: 'b_tx_s_mark.webp',
+      NightEye: 'b_tx_s_night_eye.webp',
+      Open: 'b_tx_s_open.webp',
+      Paralyze: 'b_tx_s_paralyse.webp',
+      Poison: 'b_tx_s_poison.webp',
+      RallyCreature: 'b_tx_s_rlly_crture.webp',
+      RallyHumanoid: 'b_tx_s_rlly_hunoid.webp',
+      Recall: 'b_tx_s_recall.webp',
+      Reflect: 'b_tx_s_reflect.webp',
+      RemoveCurse: 'b_tx_s_rem_curse.webp',
+      ResistBlightDisease: 'b_tx_s_rst_bghtdise.webp',
+      ResistCommonDisease: 'b_tx_s_rst_comdise.webp',
+      ResistCorprusDisease: 'b_tx_s_rst_cpsdise.webp',
+      ResistFire: 'b_tx_s_rst_fire.webp',
+      ResistFrost: 'b_tx_s_rst_frost.webp',
+      ResistMagicka: 'b_tx_s_rst_magic.webp',
+      ResistNormalWeapons: 'b_tx_s_rst_nmlwpn.webp',
+      ResistParalysis: 'b_tx_s_rst_plysis.webp',
+      ResistPoison: 'b_tx_s_rst_poison.webp',
+      ResistShock: 'b_tx_s_rst_shock.webp',
+      RestoreAttribute: 'b_tx_s_rstor_attrib.webp',
+      RestoreFatigue: 'b_tx_s_rstor_fatigue.webp',
+      RestoreHealth: 'b_tx_s_rstor_health.webp',
+      RestoreMagicka: 'b_tx_s_rstor_magic.webp',
+      RestoreSkill: 'b_tx_s_rstor_skill.webp',
+      Sanctuary: 'b_tx_s_sanctuary.webp',
+      Shield: 'b_tx_s_shield.webp',
+      ShockDamage: 'b_tx_s_shock_dmg.webp',
+      Silence: 'b_tx_s_silence.webp',
+      SlowFall: 'b_tx_s_slowfall.webp',
+      Soultrap: 'b_tx_s_soultrap.webp',
+      Sound: 'b_tx_s_sound.webp',
+      SpellAbsorption: 'b_tx_s_spll_absb.webp',
+      SummonAncestralGhost: 'b_tx_s_smmn_anctlght.webp',
+      SummonBear: 'b_tx_s_smmn_bear.webp',
+      SummonBonewolf: 'b_tx_s_smmn_bonewolf.webp',
+      SummonBonelord: 'b_tx_s_smmn_bnlord.webp',
+      SummonClannfear: 'b_tx_s_smmn_clnfear.webp',
+      SummonDaedroth: 'b_tx_s_smmn_daedth.webp',
+      SummonDremora: 'b_tx_s_smmn_drmora.webp',
+      SummonFabricant: 'b_tx_s_smmn_fabrict.webp',
+      SummonFlameAtronach: 'b_tx_s_smmn_flmatrnh.webp',
+      SummonFrostAtronach: 'b_tx_s_smmn_frstatrnh.webp',
+      SummonGoldenSaint: 'b_tx_s_smmn_gldsaint.webp',
+      SummonGreaterBonewalker: 'b_tx_s_smmn_grtrbnwlkr.webp',
+      SummonHunger: 'b_tx_s_smmn_hunger.webp',
+      SummonLeastBonewalker: 'b_tx_s_smmn_lstbnwlkr.webp',
+      SummonScamp: 'b_tx_s_smmn_scamp.webp',
+      SummonSkeletonMinion: 'b_tx_s_smmn_skltlmnn.webp',
+      SummonStormAtronach: 'b_tx_s_smmn_stmatnh.webp',
+      SummonWingedTwilight: 'b_tx_s_smmn_wngtwlght.webp',
+      SummonWolf: 'b_tx_s_smmn_wolf.webp',
+      SunDamage: 'b_tx_s_sun_dmg.webp',
+      SwiftSwim: 'b_tx_s_swiftswim.webp',
+      Telekinesis: 'b_tx_s_telekinesis.webp',
+      TurnUndead: 'b_tx_s_turn_undead.webp',
+      Vampirism: 'b_tx_s_vampire.webp',
+      WaterBreathing: 'b_tx_s_water_breath.webp',
+      WaterWalking: 'b_tx_s_water_walk.webp',
+      WeaknessToBlightDisease: 'b_tx_s_wknstoblghtdise.webp',
+      WeaknessToCommonDisease: 'b_tx_s_wknstocomdise.webp',
+      WeaknessToCorprusDisease: 'b_tx_s_wknstocpsdise.webp',
+      WeaknessToFire: 'b_tx_s_wknstofire.webp',
+      WeaknessToFrost: 'b_tx_s_wknstofrost.webp',
+      WeaknessToMagicka: 'b_tx_s_wknstomagic.webp',
+      WeaknessToNormalWeapons: 'b_tx_s_wknstonmlwpns.webp',
+      WeaknessToPoison: 'b_tx_s_wknstopoison.webp',
+      WeaknessToShock: 'b_tx_s_wknstoshock.webp',
+    };
+    return this._ingredientEffectIconMap;
+  }
+
+  ingredientEffectLabel(rawEffect, skill, attribute) {
+    const effect = String(rawEffect || '').trim();
+    if (!effect || effect === 'None') return '';
+    const labels = {
+      FortifyAttackBonus: 'Fortify Attack',
+      FortifyMagickaMultiplier: 'Fortify Maximum Magicka',
+      NightEye: 'Night Eye',
+      SlowFall: 'SlowFall',
+      SpellAbsorption: 'Spell Absorption',
+      SwiftSwim: 'Swift Swim',
+      WaterBreathing: 'Water Breathing',
+      WaterWalking: 'Water Walking',
+    };
+    const attr = String(attribute || '').trim();
+    const skl = String(skill || '').trim();
+    if (/Attribute$/.test(effect) && attr && attr !== 'None') {
+      return this.effectBaseLabel(effect.replace(/Attribute$/, '')) + ' ' + attr;
+    }
+    if (/Skill$/.test(effect) && skl && skl !== 'None') {
+      return this.effectBaseLabel(effect.replace(/Skill$/, '')) + ' ' + skl;
+    }
+    if (labels[effect]) return labels[effect];
+    return this.effectBaseLabel(effect);
+  }
+
+  effectBaseLabel(value) {
+    return String(value || '')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .replace(/\bTo\b/g, 'to')
+      .replace(/\bMagicka\b/g, 'Magicka')
+      .trim();
+  }
+
+  effectSearchKey(value) {
+    return String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
+  }
+
+  ingredientEffects(record) {
+    const data = record && record.data;
+    const effects = data && Array.isArray(data.effects) ? data.effects : null;
+    if (!effects) return [];
+    const skills = Array.isArray(data.skills) ? data.skills : [];
+    const attributes = Array.isArray(data.attributes) ? data.attributes : [];
+    const icons = this.ingredientEffectIconMap();
+    const base = this._EFFECT || '';
+    const out = [];
+    const seen = Object.create(null);
+    effects.slice(0, 4).forEach((raw, i) => {
+      const effect = String(raw || '').trim();
+      if (!effect || effect === 'None') return;
+      const icon = icons[effect];
+      const label = this.ingredientEffectLabel(effect, skills[i], attributes[i]);
+      const key = this.effectSearchKey(label);
+      if (!icon || !label || seen[key]) return;
+      seen[key] = 1;
+      out.push({
+        label,
+        key,
+        img: base + icon,
+        query: 'effect: ' + label,
+      });
+    });
+    return out;
+  }
+
   // Compose the catalogue shown in the grid. OAAB objects are always present;
   // when the Vanilla toggle is on, the base-game objects (Morrowind, Tribunal,
   // Bloodmoon) are merged in too. Type counts/tabs are derived from the merged
@@ -809,6 +1031,7 @@ class Component extends DCLogic {
             lightRgb: lightRgb,
             lightMask: markerLight ? LIGHT_MASK : '',
             inventory: Array.isArray(r.inventory) ? r.inventory : null,
+            effects: this.ingredientEffects(r),
             vanilla: true,
           });
         });
@@ -943,6 +1166,11 @@ class Component extends DCLogic {
     return m ? m[1].trim() : '';
   }
 
+  parseEffectQuery(query) {
+    const m = /^effect\s*:\s*(.+)$/i.exec(String(query || '').trim());
+    return m ? m[1].trim() : '';
+  }
+
   containerSearchItems(containerId, fallbackItems) {
     const all = (this._oaabItems || []).concat(this._vanillaItems || []);
     const source = all.length ? all : (fallbackItems || []);
@@ -951,6 +1179,14 @@ class Component extends DCLogic {
     const container = byKey[String(containerId || '').trim().toLowerCase()];
     if (!container) return [];
     return [container].concat((container.contentIds || []).map(id => byKey[String(id || '').toLowerCase()]).filter(Boolean));
+  }
+
+  effectSearchItems(effectKey, fallbackItems) {
+    const all = (this._oaabItems || []).concat(this._vanillaItems || []);
+    const source = all.length ? all : (fallbackItems || []);
+    return source.filter(x =>
+      Array.isArray(x.effects) && x.effects.some(e => e.key.indexOf(effectKey) !== -1)
+    );
   }
 
   renderVals() {
@@ -1203,6 +1439,8 @@ class Component extends DCLogic {
     const qPath = q.replace(/\\/g, '/');
     const containerQuery = this.parseContainerQuery(rawQuery);
     const containerKey = containerQuery.toLowerCase();
+    const effectQuery = this.parseEffectQuery(rawQuery);
+    const effectKey = this.effectSearchKey(effectQuery);
     const colorQuery = this.parseColorQuery(rawQuery);
     const colorKey = colorQuery ? colorQuery.hex + '~' + colorQuery.tolerance : '';
     let filtered;
@@ -1213,12 +1451,15 @@ class Component extends DCLogic {
       queryCache.query === q &&
       queryCache.colorKey === colorKey &&
       queryCache.containerKey === containerKey &&
+      queryCache.effectKey === effectKey &&
       queryCache.vanillaItems === this._vanillaItems
     ) {
       filtered = queryCache.filtered;
     } else {
       if (containerQuery) {
         filtered = this.containerSearchItems(containerQuery, all);
+      } else if (effectQuery) {
+        filtered = this.effectSearchItems(effectKey, all);
       } else {
         filtered = !q ? relFiltered : relFiltered.filter(x => {
           const mesh = (x.mesh || '').toLowerCase();
@@ -1232,7 +1473,7 @@ class Component extends DCLogic {
           );
         });
       }
-      this._queryCache = { items: relFiltered, query: q, colorKey, containerKey, vanillaItems: this._vanillaItems, filtered };
+      this._queryCache = { items: relFiltered, query: q, colorKey, containerKey, effectKey, vanillaItems: this._vanillaItems, filtered };
     }
 
     // Materialise only complete rows around the viewport. Fixed-height captions
@@ -1284,6 +1525,8 @@ class Component extends DCLogic {
         contentsTitle: x.contentIds && x.contentIds.length
           ? 'Search this container and ' + x.contentIds.length + ' valid content' + (x.contentIds.length === 1 ? '' : 's')
           : '',
+        hasEffects: !!(x.effects && x.effects.length),
+        effects: x.effects || [],
         nif: x.mesh || (x.img || ''),
         tip: comfortable
           ? (x.mesh || x.id || x.img || '')
@@ -1312,7 +1555,9 @@ class Component extends DCLogic {
     let emptyCopy = "These records exist in the library data but aren't part of the current thumbnail render set.";
     if (q) {
       emptyTitle = 'No matching records.';
-      emptyCopy = 'No object ID, name, or light color matches "' + rawQuery + '".';
+      emptyCopy = effectQuery
+        ? 'No ingredient effect matches "' + effectQuery + '".'
+        : 'No object ID, name, mesh, or light color matches "' + rawQuery + '".';
     } else if (hasFilterWithoutSearch) {
       emptyTitle = 'No matching thumbnails.';
       emptyCopy = 'Try clearing a type, tag, or release filter.';
@@ -1442,6 +1687,37 @@ class Component extends DCLogic {
         if (!id) return;
         const cur = this.parseContainerQuery(this.state.query || '');
         const nextQuery = cur && cur.toLowerCase() === id.toLowerCase() ? '' : 'container: ' + id;
+        this.setState({
+          query: nextQuery,
+          tagOpen: false,
+          typeOpen: false,
+          relOpen: false,
+          virtualStartRow: 0,
+          virtualEndRow: 8,
+        });
+        requestAnimationFrame(() => {
+          if (nextQuery) {
+            const target = document.querySelector('.library-results-header') || document.querySelector('[data-grid]');
+            const toolbar = document.querySelector('[data-tabbar]');
+            if (target) {
+              const offset = (toolbar ? toolbar.getBoundingClientRect().height : 0) + 20;
+              const top = target.getBoundingClientRect().top + window.scrollY - offset;
+              window.scrollTo({ top: Math.max(0, Math.floor(top)), behavior: 'auto' });
+            }
+          }
+          const input = document.querySelector('.search-input');
+          if (input) {
+            try { input.focus({ preventScroll: true }); } catch (err) { input.focus(); }
+          }
+        });
+      },
+      pickEffect: (e) => {
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+        const effect = e.currentTarget && e.currentTarget.dataset ? (e.currentTarget.dataset.effect || '') : '';
+        if (!effect) return;
+        const cur = this.parseEffectQuery(this.state.query || '');
+        const nextQuery = cur && this.effectSearchKey(cur) === this.effectSearchKey(effect) ? '' : 'effect: ' + effect;
         this.setState({
           query: nextQuery,
           tagOpen: false,
