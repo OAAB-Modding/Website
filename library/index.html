@@ -106,7 +106,7 @@
       <div style="display:{{ filterWrapDisp }};flex-basis:100%;flex-wrap:wrap;align-items:center;gap:12px;" class="filter-collapse">
       <div style="flex:{{ searchFlex }};" class="search-box">
         <svg viewBox="0 0 24 24" fill="none" stroke="#80735f" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
-        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search ID, name, mesh, effect: Restore, or container: AB_o_CorpseFresh04" spellcheck="false" autocomplete="off" class="search-input">
+        <input type="text" value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search ID, name, mesh, effect: Restore, or inventory: AB_TelvanniGuardF" spellcheck="false" autocomplete="off" class="search-input">
         <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
           <button onClick="{{ clearSearch }}" title="Clear search" class="search-clear">×</button>
         </sc-if>
@@ -261,7 +261,7 @@
               <button type="button" data-color="{{ it.lightHex }}" onClick="{{ pickColor }}" title="{{ it.lightHex }}" style="background:{{ it.lightColor }};" class="asset-light-swatch"></button>
             </sc-if>
             <sc-if value="{{ it.hasContents }}" hint-placeholder-val="{{ false }}">
-              <button type="button" data-container-id="{{ it.id }}" onClick="{{ pickContainerContents }}" title="{{ it.contentsTitle }}" class="asset-container-button">
+              <button type="button" data-inventory-id="{{ it.id }}" onClick="{{ pickInventoryContents }}" title="{{ it.contentsTitle }}" class="asset-container-button">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="asset-container-icon"><polyline points="9 10 4 15 9 20"></polyline><path d="M20 4v7a4 4 0 0 1-4 4H4"></path></svg>
               </button>
             </sc-if>
@@ -1161,8 +1161,13 @@ class Component extends DCLogic {
     return out.sort((a, b) => this.csCompareIds(a, b));
   }
 
-  parseContainerQuery(query) {
-    const m = /^container\s*:\s*(.+)$/i.exec(String(query || '').trim());
+  inventoryOwnerLabel(type) {
+    const label = String(type || 'inventory');
+    return label.toLowerCase() === 'npc' ? 'NPC' : label.toLowerCase();
+  }
+
+  parseInventoryQuery(query) {
+    const m = /^(?:inventory|container)\s*:\s*(.+)$/i.exec(String(query || '').trim());
     return m ? m[1].trim() : '';
   }
 
@@ -1171,14 +1176,14 @@ class Component extends DCLogic {
     return m ? m[1].trim() : '';
   }
 
-  containerSearchItems(containerId, fallbackItems) {
+  inventorySearchItems(ownerId, fallbackItems) {
     const all = (this._oaabItems || []).concat(this._vanillaItems || []);
     const source = all.length ? all : (fallbackItems || []);
     const byKey = Object.create(null);
     source.forEach(x => { byKey[String(x.id || '').toLowerCase()] = x; });
-    const container = byKey[String(containerId || '').trim().toLowerCase()];
-    if (!container) return [];
-    return [container].concat((container.contentIds || []).map(id => byKey[String(id || '').toLowerCase()]).filter(Boolean));
+    const owner = byKey[String(ownerId || '').trim().toLowerCase()];
+    if (!owner) return [];
+    return [owner].concat((owner.contentIds || []).map(id => byKey[String(id || '').toLowerCase()]).filter(Boolean));
   }
 
   effectSearchItems(effectKey, fallbackItems) {
@@ -1431,14 +1436,14 @@ class Component extends DCLogic {
     ];
 
     // Text search applied on top, matching ID, name, or mesh (case-insensitive).
-    // `container: <id>` switches the search box into a container-expansion mode:
-    // the requested container is shown with any valid contents; empty containers
-    // still resolve to themselves.
+    // `inventory: <id>` switches the search box into an inventory-expansion mode:
+    // the requested container, creature, or NPC is shown with any valid contents.
+    // `container:` is still accepted as a compatibility alias.
     const rawQuery = (this.state.query || '').trim();
     const q = rawQuery.toLowerCase();
     const qPath = q.replace(/\\/g, '/');
-    const containerQuery = this.parseContainerQuery(rawQuery);
-    const containerKey = containerQuery.toLowerCase();
+    const inventoryQuery = this.parseInventoryQuery(rawQuery);
+    const inventoryKey = inventoryQuery.toLowerCase();
     const effectQuery = this.parseEffectQuery(rawQuery);
     const effectKey = this.effectSearchKey(effectQuery);
     const colorQuery = this.parseColorQuery(rawQuery);
@@ -1450,14 +1455,14 @@ class Component extends DCLogic {
       queryCache.items === relFiltered &&
       queryCache.query === q &&
       queryCache.colorKey === colorKey &&
-      queryCache.containerKey === containerKey &&
+      queryCache.inventoryKey === inventoryKey &&
       queryCache.effectKey === effectKey &&
       queryCache.vanillaItems === this._vanillaItems
     ) {
       filtered = queryCache.filtered;
     } else {
-      if (containerQuery) {
-        filtered = this.containerSearchItems(containerQuery, all);
+      if (inventoryQuery) {
+        filtered = this.inventorySearchItems(inventoryQuery, all);
       } else if (effectQuery) {
         filtered = this.effectSearchItems(effectKey, all);
       } else {
@@ -1473,7 +1478,7 @@ class Component extends DCLogic {
           );
         });
       }
-      this._queryCache = { items: relFiltered, query: q, colorKey, containerKey, effectKey, vanillaItems: this._vanillaItems, filtered };
+      this._queryCache = { items: relFiltered, query: q, colorKey, inventoryKey, effectKey, vanillaItems: this._vanillaItems, filtered };
     }
 
     // Materialise only complete rows around the viewport. Fixed-height captions
@@ -1523,7 +1528,7 @@ class Component extends DCLogic {
         lightMask: x.lightMask || '',
         hasContents: !!(x.hasContents && x.contentIds && x.contentIds.length),
         contentsTitle: x.contentIds && x.contentIds.length
-          ? 'Search this container and ' + x.contentIds.length + ' valid content' + (x.contentIds.length === 1 ? '' : 's')
+          ? 'Search this ' + this.inventoryOwnerLabel(x.type) + ' inventory and ' + x.contentIds.length + ' valid content' + (x.contentIds.length === 1 ? '' : 's')
           : '',
         hasEffects: !!(x.effects && x.effects.length),
         effects: x.effects || [],
@@ -1680,13 +1685,13 @@ class Component extends DCLogic {
           }
         });
       },
-      pickContainerContents: (e) => {
+      pickInventoryContents: (e) => {
         if (e.preventDefault) e.preventDefault();
         if (e.stopPropagation) e.stopPropagation();
-        const id = e.currentTarget && e.currentTarget.dataset ? (e.currentTarget.dataset.containerId || '') : '';
+        const id = e.currentTarget && e.currentTarget.dataset ? (e.currentTarget.dataset.inventoryId || '') : '';
         if (!id) return;
-        const cur = this.parseContainerQuery(this.state.query || '');
-        const nextQuery = cur && cur.toLowerCase() === id.toLowerCase() ? '' : 'container: ' + id;
+        const cur = this.parseInventoryQuery(this.state.query || '');
+        const nextQuery = cur && cur.toLowerCase() === id.toLowerCase() ? '' : 'inventory: ' + id;
         this.setState({
           query: nextQuery,
           tagOpen: false,
