@@ -24253,5 +24253,318 @@
       "value": 100,
       "flags": ""
     }
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "goblin_health",
+    "leveled_item_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "items": [
+      [
+        "p_restore_health_b",
+        1
+      ],
+      [
+        "p_restore_health_q",
+        20
+      ],
+      [
+        "p_restore_health_e",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "goblin_weapons_random",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "items": [
+      [
+        "goblin_sword",
+        1
+      ],
+      [
+        "goblin_sword",
+        1
+      ],
+      [
+        "goblin_club",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_adamantium",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 40,
+    "items": [
+      [
+        "ingred_adamantium_ore_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_bulbs",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_horn_lily_bulb_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_cabbage",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_scrib_cabbage_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_golden_sedge",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_golden_sedge_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_noble_sedge",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_noble_sedge_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_rye",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "Ingred_meadow_rye_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_spines",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_lloramor_spines_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_stalks",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_nirthfly_stalks_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_sweetpulp",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_sweetpulp_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_timsa",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "Ingred_timsa-come-by_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "db_assassins",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "db_assassin1c",
+        1
+      ],
+      [
+        "db_assassin1a",
+        5
+      ],
+      [
+        "db_assassin2a",
+        10
+      ],
+      [
+        "db_assassin3a",
+        20
+      ],
+      [
+        "db_assassin4a",
+        30
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "in_durzogs",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "durzog_wild_weaker",
+        1
+      ],
+      [
+        "durzog_wild",
+        20
+      ],
+      [
+        "durzog_war",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "in_dwe_all_tribunal",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "centurion_spider",
+        1
+      ],
+      [
+        "centurion_sphere",
+        5
+      ],
+      [
+        "centurion_steam",
+        10
+      ],
+      [
+        "centurion_projectile",
+        10
+      ],
+      [
+        "centurion_steam_advance",
+        20
+      ],
+      [
+        "centurion_projectile",
+        20
+      ],
+      [
+        "centurion_projectile",
+        20
+      ],
+      [
+        "centurion_steam_advance",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "in_goblins",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "goblin_grunt",
+        1
+      ],
+      [
+        "goblin_footsoldier",
+        20
+      ],
+      [
+        "goblin_bruiser",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "in_tomb_all_lev_trib",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "ancestor_ghost",
+        1
+      ],
+      [
+        "bonelord",
+        10
+      ],
+      [
+        "skeleton champion",
+        10
+      ],
+      [
+        "ancestor_ghost_greater",
+        15
+      ],
+      [
+        "lich",
+        20
+      ]
+    ]
   }
 ]

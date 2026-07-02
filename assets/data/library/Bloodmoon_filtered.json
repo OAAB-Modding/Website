@@ -27942,5 +27942,2311 @@
       "value": 80,
       "flags": ""
     }
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_Imperial Guard Random Weapon",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "silver spear",
+        1
+      ],
+      [
+        "silver shortsword",
+        1
+      ],
+      [
+        "silver longsword",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_skaalhuntLGaunt",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "bm bear left gauntlet",
+        1
+      ],
+      [
+        "bm wolf left gauntlet",
+        1
+      ],
+      [
+        "BM_NordicMail_gauntletL",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_skaalhuntLPauldron",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "BM Bear left Pauldron",
+        1
+      ],
+      [
+        "BM Wolf Left Pauldron",
+        1
+      ],
+      [
+        "BM_NordicMail_PauldronL",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_skaalhuntRGaunt",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "BM bear right gauntlet",
+        1
+      ],
+      [
+        "BM wolf right gauntlet",
+        1
+      ],
+      [
+        "BM_NordicMail_gauntletR",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_skaalhuntRPauldron",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "BM bear right pauldron",
+        1
+      ],
+      [
+        "BM Wolf right pauldron",
+        1
+      ],
+      [
+        "BM_NordicMail_PauldronR",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_skaalhunthelm",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "BM_NordicMail_Helmet",
+        1
+      ],
+      [
+        "BM Wolf Helmet",
+        1
+      ],
+      [
+        "BM Bear Helmet",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "BM_skaalhuntshield",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 30,
+    "items": [
+      [
+        "BM bear shield",
+        1
+      ],
+      [
+        "BM wolf shield",
+        1
+      ],
+      [
+        "BM_NordicMail_Shield",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_chest_loot_01",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 50,
+    "items": [
+      [
+        "l_b_Bandit_goods",
+        1
+      ],
+      [
+        "l_b_loot_tomb01",
+        1
+      ],
+      [
+        "l_n_wpn_missle",
+        1
+      ],
+      [
+        "random_de_cheapfood_01_ne",
+        1
+      ],
+      [
+        "repair_journeyman_01",
+        1
+      ],
+      [
+        "bm_random_nordsilver",
+        20
+      ],
+      [
+        "bm_random_enchanted",
+        20
+      ],
+      [
+        "bm_random_healthpotions",
+        20
+      ],
+      [
+        "bm_random_healthpotions",
+        20
+      ],
+      [
+        "bm_random_skaal",
+        40
+      ],
+      [
+        "bm_randomboots_smugglers",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_corpse_loot_01",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 50,
+    "items": [
+      [
+        "bm_random_healthpotions",
+        1
+      ],
+      [
+        "bm_random_lockpick",
+        1
+      ],
+      [
+        "bm_random_nordsilver",
+        20
+      ],
+      [
+        "bm_random_enchanted",
+        20
+      ],
+      [
+        "bm_random_mead",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_karstaag_barrels",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 33,
+    "items": [
+      [
+        "bm_random_mead",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_karstaag_crates",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 33,
+    "items": [
+      [
+        "random_bear_pelt",
+        1
+      ],
+      [
+        "random_de_cheapfood_01_nc",
+        1
+      ],
+      [
+        "random_wolf_pelt",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_enchanted",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "items": [
+      [
+        "l_m_enchantitem_hlaalu_rank4",
+        1
+      ],
+      [
+        "l_m_enchantitem_hlaalu_rank6",
+        1
+      ],
+      [
+        "l_m_enchantitem_telvanni_rank8",
+        1
+      ],
+      [
+        "l_m_enchantitem_temple_rank6",
+        1
+      ],
+      [
+        "l_m_enchantitem_temple_rank4",
+        1
+      ],
+      [
+        "l_m_enchantitem_redoran_rank8",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_healthpotions",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "items": [
+      [
+        "p_restore_health_c",
+        1
+      ],
+      [
+        "p_restore_health_b",
+        10
+      ],
+      [
+        "p_restore_health_s",
+        20
+      ],
+      [
+        "p_restore_health_q",
+        30
+      ],
+      [
+        "p_restore_health_e",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_lockpick",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "items": [
+      [
+        "pick_apprentice_01",
+        1
+      ],
+      [
+        "pick_journeyman_01",
+        20
+      ],
+      [
+        "pick_master",
+        30
+      ],
+      [
+        "pick_grandmaster",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_mead",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "potion_nord_mead",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_nordhuntweap",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "BM nordic silver axe",
+        1
+      ],
+      [
+        "BM nordic silver battleaxe",
+        1
+      ],
+      [
+        "BM nordic silver claymore",
+        1
+      ],
+      [
+        "BM nordic silver dagger",
+        1
+      ],
+      [
+        "BM nordic silver longsword",
+        1
+      ],
+      [
+        "BM nordic silver mace",
+        1
+      ],
+      [
+        "BM nordic silver shortsword",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_nordictomb",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "items": [
+      [
+        "random gold_lev_20",
+        1
+      ],
+      [
+        "l_m_wpn_missle_arrow",
+        1
+      ],
+      [
+        "l_b_amulets",
+        1
+      ],
+      [
+        "bm_random_healthpotions",
+        1
+      ],
+      [
+        "bm_random_healthpotions",
+        1
+      ],
+      [
+        "hammer_repair",
+        1
+      ],
+      [
+        "pick_journeyman_01",
+        1
+      ],
+      [
+        "bm_random_nordsilver",
+        40
+      ],
+      [
+        "repair_journeyman_01",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_nordsilver",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "items": [
+      [
+        "BM nordic silver axe",
+        1
+      ],
+      [
+        "BM nordic silver battleaxe",
+        1
+      ],
+      [
+        "BM nordic silver claymore",
+        1
+      ],
+      [
+        "BM nordic silver dagger",
+        1
+      ],
+      [
+        "BM nordic silver longsword",
+        1
+      ],
+      [
+        "BM nordic silver mace",
+        1
+      ],
+      [
+        "BM nordic silver shortsword",
+        1
+      ],
+      [
+        "BM_NordicMail_Boots",
+        1
+      ],
+      [
+        "BM_NordicMail_cuirass",
+        1
+      ],
+      [
+        "BM_NordicMail_gauntletL",
+        1
+      ],
+      [
+        "BM_NordicMail_gauntletR",
+        1
+      ],
+      [
+        "BM_NordicMail_greaves",
+        1
+      ],
+      [
+        "BM_NordicMail_Helmet",
+        1
+      ],
+      [
+        "BM_NordicMail_PauldronL",
+        1
+      ],
+      [
+        "BM_NordicMail_PauldronR",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_reaver_helm",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 33,
+    "items": [
+      [
+        "fur_helm",
+        1
+      ],
+      [
+        "nordic_iron_helm",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_riekling_loot",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "items": [
+      [
+        "random_de_blueware_01",
+        1
+      ],
+      [
+        "misc_com_wood_fork",
+        1
+      ],
+      [
+        "Gold_001",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_random_skaal",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "BM_skaalhuntshield",
+        1
+      ],
+      [
+        "BM_skaalhuntRPauldron",
+        1
+      ],
+      [
+        "BM_skaalhuntRGaunt",
+        1
+      ],
+      [
+        "BM_skaalhuntLPauldron",
+        1
+      ],
+      [
+        "BM_skaalhunthelm",
+        1
+      ],
+      [
+        "BM_skaalhuntLGaunt",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomboots_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "BM_NordicMail_Boots",
+        1
+      ],
+      [
+        "iron boots",
+        1
+      ],
+      [
+        "BM wolf boots",
+        1
+      ],
+      [
+        "BM bear boots",
+        1
+      ],
+      [
+        "common_shoes_01",
+        1
+      ],
+      [
+        "BM_Wool01_shoes",
+        1
+      ],
+      [
+        "BM_Wool02_shoes",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomcuirass_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "fur_cuirass",
+        1
+      ],
+      [
+        "BM wolf cuirass",
+        1
+      ],
+      [
+        "BM bear cuirass",
+        1
+      ],
+      [
+        "fur_bearskin_cuirass",
+        1
+      ],
+      [
+        "dreugh_cuirass",
+        1
+      ],
+      [
+        "iron_cuirass",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomgreaves_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "BM wolf greaves",
+        1
+      ],
+      [
+        "BM bear greaves",
+        1
+      ],
+      [
+        "fur_greaves",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomhealth_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "p_restore_health_e",
+        1
+      ],
+      [
+        "p_restore_health_q",
+        1
+      ],
+      [
+        "p_restore_health_s",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomhelmet_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "BM Wolf Helmet",
+        1
+      ],
+      [
+        "BM Bear Helmet",
+        1
+      ],
+      [
+        "fur_helm",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomleft_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "fur_pauldron_left",
+        1
+      ],
+      [
+        "steel_pauldron_left",
+        1
+      ],
+      [
+        "iron_pauldron_left",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomloot_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "l_m_potion",
+        1
+      ],
+      [
+        "l_n_soul gem",
+        1
+      ],
+      [
+        "l_n_lockpicks",
+        1
+      ],
+      [
+        "l_n_probe",
+        1
+      ],
+      [
+        "random gold_lev_20",
+        1
+      ],
+      [
+        "random_gem",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomright_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "fur_bracer_right",
+        1
+      ],
+      [
+        "BM bear right gauntlet",
+        1
+      ],
+      [
+        "BM wolf right gauntlet",
+        1
+      ],
+      [
+        "BM Wolf right pauldron",
+        1
+      ],
+      [
+        "fur_pauldron_right",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomshield_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 50,
+    "items": [
+      [
+        "BM wolf shield",
+        1
+      ],
+      [
+        "BM bear shield",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomweapon_berserker",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "items": [
+      [
+        "random_weapon_melee_basic",
+        1
+      ],
+      [
+        "l_n_wpn_melee_blunt_berzerker",
+        1
+      ],
+      [
+        "l_m_potion_h",
+        1
+      ],
+      [
+        "l_m_potion_h",
+        1
+      ],
+      [
+        "BM nordic silver axe_ber",
+        60
+      ],
+      [
+        "BM nordic silver claymore_ber",
+        60
+      ],
+      [
+        "BM nordic silver longsword_ber",
+        60
+      ],
+      [
+        "BM nordic silver battleaxe_ber",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "bm_randomwpn_smugglers",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "items": [
+      [
+        "iron broadsword",
+        1
+      ],
+      [
+        "iron saber",
+        1
+      ],
+      [
+        "BM Huntsman Spear",
+        20
+      ],
+      [
+        "BM huntsman axe",
+        20
+      ],
+      [
+        "steel dai-katana",
+        20
+      ],
+      [
+        "ebony mace",
+        20
+      ],
+      [
+        "BM nordic silver shortsword",
+        60
+      ],
+      [
+        "BM nordic silver longsword",
+        60
+      ],
+      [
+        "BM nordic silver dagger",
+        60
+      ],
+      [
+        "BM nordic silver mace",
+        60
+      ],
+      [
+        "BM nordic silver battleaxe",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "l_n_wpn_melee_blunt_berzerker",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "items": [
+      [
+        "spiked club",
+        1
+      ],
+      [
+        "chitin club",
+        1
+      ],
+      [
+        "wooden staff",
+        1
+      ],
+      [
+        "iron club",
+        4
+      ],
+      [
+        "iron mace",
+        4
+      ],
+      [
+        "iron warhammer",
+        4
+      ],
+      [
+        "steel staff",
+        6
+      ],
+      [
+        "steel warhammer",
+        6
+      ],
+      [
+        "steel club",
+        6
+      ],
+      [
+        "steel mace",
+        6
+      ],
+      [
+        "silver staff",
+        8
+      ],
+      [
+        "dreugh staff",
+        13
+      ],
+      [
+        "dreugh club",
+        13
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_bear_pelt",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "ingred_bear_pelt",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_belladonna_plant",
+    "leveled_item_flags": "",
+    "chance_none": 70,
+    "items": [
+      [
+        "ingred_belladonna_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_belladonna_spriggan",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 40,
+    "items": [
+      [
+        "random_heartwood",
+        1
+      ],
+      [
+        "ingred_belladonna_01",
+        3
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_boar_leather",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 40,
+    "items": [
+      [
+        "ingred_boar_leather",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_drinks_nord",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 0,
+    "items": [
+      [
+        "potion_comberry_brandy_01",
+        1
+      ],
+      [
+        "potion_comberry_wine_01",
+        1
+      ],
+      [
+        "Potion_Local_Brew_01",
+        1
+      ],
+      [
+        "potion_local_liquor_01",
+        1
+      ],
+      [
+        "potion_nord_mead",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_gravetar",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 40,
+    "items": [
+      [
+        "ingred_gravetar_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_heartwood",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "ingred_heartwood_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_holly",
+    "leveled_item_flags": "",
+    "chance_none": 10,
+    "items": [
+      [
+        "ingred_holly_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_horker_tusk",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 40,
+    "items": [
+      [
+        "ingred_horker_tusk_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_nordictomb_rare",
+    "leveled_item_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 95,
+    "items": [
+      [
+        "random gold_lev_20",
+        1
+      ],
+      [
+        "l_m_potion_h",
+        1
+      ],
+      [
+        "random excellent melee weapon",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_riekling_loot",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM | CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "items": [
+      [
+        "random gold",
+        1
+      ],
+      [
+        "random_de_blueware_01",
+        1
+      ],
+      [
+        "misc_com_wood_fork",
+        1
+      ],
+      [
+        "torch",
+        1
+      ],
+      [
+        "iron club",
+        1
+      ],
+      [
+        "iron dagger",
+        1
+      ],
+      [
+        "miner's pick",
+        1
+      ],
+      [
+        "BM_Nordic02_gloveL",
+        1
+      ],
+      [
+        "common_ring_05",
+        1
+      ],
+      [
+        "common_belt_02",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_ripened_belladonna",
+    "leveled_item_flags": "",
+    "chance_none": 0,
+    "items": [
+      [
+        "ingred_belladonna_01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_snowbear_pelt",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 2,
+    "items": [
+      [
+        "ingred_snowbear_pelt_unique",
+        2
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_snowwolf_pelt",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 2,
+    "items": [
+      [
+        "ingred_snowwolf_pelt_unique",
+        2
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_unripened_belladonna",
+    "leveled_item_flags": "",
+    "chance_none": 20,
+    "items": [
+      [
+        "ingred_belladonna_02",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledItem",
+    "flags": "",
+    "id": "random_wolf_pelt",
+    "leveled_item_flags": "CALCULATE_FOR_EACH_ITEM",
+    "chance_none": 20,
+    "items": [
+      [
+        "ingred_wolf_pelt",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_berserkers",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 33,
+    "creatures": [
+      [
+        "BM_berserker_f1_lvl5",
+        1
+      ],
+      [
+        "BM_berserker_m1_lvl5",
+        1
+      ],
+      [
+        "BM_berserker_f1",
+        20
+      ],
+      [
+        "BM_berserker_m1",
+        20
+      ],
+      [
+        "BM_berserker_m2",
+        40
+      ],
+      [
+        "BM_berserker_f2",
+        40
+      ],
+      [
+        "BM_berserker_m3",
+        60
+      ],
+      [
+        "BM_berserker_f3",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_felcoast",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_riekling",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_felcoast_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_riekling",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        40
+      ],
+      [
+        "BM_riekling_mounted",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_felcoast_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 95,
+    "creatures": [
+      [
+        "bm_ex_berserkers",
+        1
+      ],
+      [
+        "bm_frysehag_all",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_felcoast_sleep",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "BM_wolf_red",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_hirforest",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_wolf_grey_lvl_1",
+        1
+      ],
+      [
+        "BM_bear_brown",
+        10
+      ],
+      [
+        "BM_bear_black",
+        10
+      ],
+      [
+        "BM_spriggan",
+        20
+      ],
+      [
+        "BM_spriggan",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_hirforest_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_spriggan",
+        60
+      ],
+      [
+        "BM_bear_black",
+        60
+      ],
+      [
+        "BM_bear_brown",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_hirforest_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 95,
+    "creatures": [
+      [
+        "bm_ex_berserkers",
+        1
+      ],
+      [
+        "bm_frysehag_all",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_hirforest_sleep",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "BM_wolf_red",
+        1
+      ],
+      [
+        "BM_wolf_grey",
+        1
+      ],
+      [
+        "BM_bear_black",
+        10
+      ],
+      [
+        "BM_bear_brown",
+        10
+      ],
+      [
+        "BM_spriggan",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_horker_h20",
+    "leveled_creature_flags": "",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_horker_large",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_horker_lake",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_horker",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_isinplains",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_wolf_red",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_isinplains_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_bear_brown",
+        1
+      ],
+      [
+        "BM_riekling_mounted",
+        40
+      ],
+      [
+        "BM_frost_boar",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_isinplains_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 95,
+    "creatures": [
+      [
+        "bm_ex_berserkers",
+        1
+      ],
+      [
+        "bm_frysehag_all",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_isinplains_sleep",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "BM_wolf_red",
+        1
+      ],
+      [
+        "BM_bear_brown",
+        10
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_moemountains",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_bear_brown",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        5
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_moemountains_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_riekling_mounted",
+        40
+      ],
+      [
+        "BM_frost_boar",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_moemountains_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 95,
+    "creatures": [
+      [
+        "bm_ex_berserkers",
+        1
+      ],
+      [
+        "bm_frysehag_all",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_moemountains_sleep",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 0,
+    "creatures": [
+      [
+        "BM_bear_brown",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_reaver_archers",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_reaver_archer_10",
+        1
+      ],
+      [
+        "bm_reaver_archer_30",
+        30
+      ],
+      [
+        "bm_reaver_archer_50",
+        50
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_reavers",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_reaver_10",
+        1
+      ],
+      [
+        "bm_reaver_30",
+        30
+      ],
+      [
+        "bm_reaver_50",
+        50
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_rieklingpatrols",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_riekling_mounted",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_rieklingpatrols_20",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 40,
+    "creatures": [
+      [
+        "BM_riekling_mounted",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_rieklingpatrols_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_riekling_mounted",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_rieklingpatrols_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 80,
+    "creatures": [
+      [
+        "BM_riekling_mounted",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_smugglers",
+    "leveled_creature_flags": "",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_smugglers_woodelf",
+        1
+      ],
+      [
+        "bm_smugglers_redguard_f",
+        1
+      ],
+      [
+        "bm_smugglers_imperial",
+        1
+      ],
+      [
+        "bm_smugglers_darkelf_f",
+        1
+      ],
+      [
+        "bm_smugglers_darkelf",
+        1
+      ],
+      [
+        "bm_smugglers_imperial_f",
+        1
+      ],
+      [
+        "bm_smugglers_redguard",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_wolfpack",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_wolf_grey_lvl_1",
+        1
+      ],
+      [
+        "BM_wolf_grey",
+        10
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_wolfpack_20",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_wolf_grey",
+        20
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ],
+      [
+        "BM_wolf_red",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_wolfpack_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 40,
+    "creatures": [
+      [
+        "BM_wolf_red",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_ex_wolfpack_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_wolf_red",
+        60
+      ],
+      [
+        "BM_wolf_red",
+        60
+      ],
+      [
+        "BM_wolf_red",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_frysehag_all",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_in_frysehag_8",
+        1
+      ],
+      [
+        "bm_in_frysehag_20",
+        20
+      ],
+      [
+        "bm_in_frysehag_40",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_berserker_20",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_berserker_f1_lvl5",
+        1
+      ],
+      [
+        "BM_berserker_m1_lvl5",
+        1
+      ],
+      [
+        "BM_berserker_f1",
+        20
+      ],
+      [
+        "BM_berserker_m1",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_berserker_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_berserker_m2",
+        40
+      ],
+      [
+        "BM_berserker_f2",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_berserker_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_berserker_f3",
+        60
+      ],
+      [
+        "BM_berserker_m3",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_frysehag_20",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_frysehag_1",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_frysehag_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_frysehag_2",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_frysehag_8",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_frysehag_3",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_icecaves",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_wolf_grey",
+        1
+      ],
+      [
+        "BM_frost_boar",
+        10
+      ],
+      [
+        "BM_riekling",
+        10
+      ],
+      [
+        "BM_riekling",
+        10
+      ],
+      [
+        "BM_riekling_mounted",
+        20
+      ],
+      [
+        "BM_riekling",
+        20
+      ],
+      [
+        "BM_riekling",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_icecaves_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 40,
+    "creatures": [
+      [
+        "BM_riekling_mounted",
+        40
+      ],
+      [
+        "BM_riekling",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_icecaves_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_riekling",
+        60
+      ],
+      [
+        "BM_riekling_mounted",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_nordburial",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "BM_wolf_skeleton",
+        1
+      ],
+      [
+        "BM_wolf_skeleton",
+        1
+      ],
+      [
+        "BM_draugr01",
+        10
+      ],
+      [
+        "bm skeleton champion gr",
+        10
+      ],
+      [
+        "BM_draugr01",
+        20
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_nordburial_40",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 40,
+    "creatures": [
+      [
+        "BM_draugr01",
+        40
+      ],
+      [
+        "bm skeleton champion gr",
+        40
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_in_nordburial_60",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 60,
+    "creatures": [
+      [
+        "BM_draugr01",
+        60
+      ],
+      [
+        "bm skeleton champion gr",
+        60
+      ],
+      [
+        "BM_draugr01",
+        60
+      ],
+      [
+        "BM_draugr01",
+        60
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_Connor",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 20,
+    "creatures": [
+      [
+        "bm_werewolf_wildernessC",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness01",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild01",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness02",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild02",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness03",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild03",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness04",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild04",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness05",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild05",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness06",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild06",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness07",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild07",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness08",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild08",
+        1
+      ]
+    ]
+  },
+  {
+    "type": "LeveledCreature",
+    "flags": "",
+    "id": "bm_werewolf_wilderness09",
+    "leveled_creature_flags": "CALCULATE_FROM_ALL_LEVELS",
+    "chance_none": 99,
+    "creatures": [
+      [
+        "bm_werewolf_wild09",
+        1
+      ]
+    ]
   }
 ]
